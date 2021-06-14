@@ -5,8 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
-<body>
-	<h1>헤더입니다.</h1>
-</body>
-</html>
+<link rel="stylesheet" href="scss/mainHome.css">
+<header>
+	<h1>header 입니다.</h1>
+</header>	

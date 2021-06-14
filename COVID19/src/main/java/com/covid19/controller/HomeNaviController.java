@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeNaviController {
 	@RequestMapping(value = "/VaccineHome.do", method = RequestMethod.GET)
 	public String VaccineHome() {
-		return "VaccineHome";
+		return "MainHome/VaccineHome";
 	}
 	@RequestMapping(value = "/CoronaConditionHome.do", method = RequestMethod.GET)
 	public String CoronaConditionHome() {
-		return "CoronaConditionHome";
+		return "MainHome/CoronaConditionHome";
 	}
 	
 	
