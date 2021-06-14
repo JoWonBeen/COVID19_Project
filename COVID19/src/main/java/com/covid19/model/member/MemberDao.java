@@ -40,6 +40,20 @@ public class MemberDao {
 		sqlSession.close();
 		return result;
 	}
+	public int insertAdmin(AdminBean adminBean) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		result = sqlSession.insert("insertAdmin", adminBean);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
+			
+	
+	
+	
+	
+	
 	
 	public int updateMember(MemberBean memberBean) {
 		int result = 0;
@@ -67,13 +81,21 @@ public class MemberDao {
 		return password;
 	}
 	
-	public int idCheck(String id) {
+	public int MemberIdCheck(String id) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.selectOne("idCheck", id);
+		result = sqlSession.selectOne("memberIdCheck", id);
 		sqlSession.close();
 		return result;
 	}
+	public int AdminIdCheck(String id) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		result = sqlSession.selectOne("adminIdCheck", id);
+		sqlSession.close();
+		return result;
+	}
+	
 	
 	public MemberBean getLoginMember(MemberBean memberBean) {
 		MemberBean loggedMemberInfo = null;

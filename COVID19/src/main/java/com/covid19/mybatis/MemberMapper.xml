@@ -5,43 +5,57 @@
 <mapper namespace="com.covid19.mybatis.MemberMapper">
 
 	<select id="getSelectOneMember" resultType="MemberBean" parameterType="Integer">
-		SELECT * FROM MEMBER02 WHERE NO = #{no}
+		SELECT * FROM MEMBER WHERE NO = #{no}
 	</select>
 	
 	<select id="getPasswordMember" resultType="String" parameterType="Integer">
-		SELECT PASSWORD FROM MEMBER02 WHERE NO = #{no}
+		SELECT PASSWORD FROM MEMBER WHERE NO = #{no}
 	</select>
 	
-	<delete id="deleteMember" parameterType="Integer">
-		DELETE FROM MEMBER02 WHERE NO = #{no}
-	</delete>
+<!-- 	<delete id="deleteMember" parameterType="Integer"> -->
+<!-- 		DELETE FROM MEMBER WHERE NO = #{no} -->
+<!-- 	</delete> -->
 	
-	<update id="updateMember" parameterType="MemberBean">
-		UPDATE MEMBER02 SET NAME = #{name},
-		                    EMAIL = #{email},
-		                    PHONE = #{phone},
-		                    INTEREST = #{interest},
-		                    AGE = #{age} WHERE NO = #{no}
-	</update>
+<!-- 	<update id="updateMember" parameterType="MemberBean"> -->
+<!-- 		UPDATE MEMBER SET NAME = #{name}, -->
+<!-- 		                    EMAIL = #{email}, -->
+<!-- 		                    PHONE = #{phone}, -->
+<!-- 		                    INTEREST = #{interest}, -->
+<!-- 		                    AGE = #{age} WHERE NO = #{no} -->
+<!-- 	</update> -->
 	<insert id="insertMember" parameterType="MemberBean">
-		INSERT INTO MEMBER02 VALUES (MEMBER_SEQ.NEXTVAL,
+		INSERT INTO MEMBER VALUES (MEMBER_SEQ.NEXTVAL,
 									#{id},
 									#{name},
 									#{password},
-									#{email},
-									#{phone},
-									#{interest},
 									#{age},
-									#{profileImg}
+									#{gender},
+									#{phone},
+									#{type}
+									)
+	</insert>
+	<insert id="insertAdmin" parameterType="AdminBean">
+		INSERT INTO ADMIN VALUES (ADMIN_SEQ.NEXTVAL,
+									#{id},
+									#{name},
+									#{password},
+									#{centerName},
+									#{phone	},
+									#{type}
 									)
 	</insert>
 	
-	<select id="idCheck" parameterType="String" resultType="Integer">
-		SELECT COUNT(*) AS COUNT FROM MEMBER02 WHERE ID = #{ID} 
+	
+	<select id="memberIdCheck" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) AS COUNT FROM MEMBER WHERE ID = #{ID} 
+	</select>
+	
+	<select id="adminIdCheck" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) AS COUNT FROM ADMIN WHERE ID = #{ID} 
 	</select>
 	
 	<select id="getLoginMember" parameterType="MemberBean" resultType="MemberBean">
-		SELECT * FROM MEMBER02 WHERE ID = #{id} AND PASSWORD = #{password}
+		SELECT * FROM MEMBER WHERE ID = #{id} AND PASSWORD = #{password}
 	</select>
 </mapper>
 
