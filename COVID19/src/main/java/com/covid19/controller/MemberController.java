@@ -5,16 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class HomeNaviController {
-	@RequestMapping(value = "/VaccineHome.do", method = RequestMethod.GET)
-	public String VaccineHome() {
+public class MemberController {
+	@RequestMapping(value = "/MemberLogin.do", method = RequestMethod.GET)
+	public String LogIn() {
 		return "mainHome/VaccineHome";
 	}
 	@RequestMapping(value = "/CoronaConditionHome.do", method = RequestMethod.GET)
 	public String CoronaConditionHome() {
 		return "mainHome/CoronaConditionHome";
 	}
-	
-	
-	
 }

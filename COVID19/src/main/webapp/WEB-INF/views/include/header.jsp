@@ -53,6 +53,6 @@
 			</li>
 		</ul>
 	</nav>
-	<a href="" class = "logIn">로그인</a>
+	<a href="LoginForm.do" class = "logIn">로그인</a>
 	
 </header>	
