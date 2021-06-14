@@ -5,9 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="scss/mainHome.css">
 </head>
 <body>
-	<a class = "mainNav">백신 예약 Site</a>
-	<a class = "mainNav">코로나 발생 현황 Site</a>
+	<a href = "" class = "mainNav">백신 예약 Site</a>
+	
+	<a href = "" class = "mainNav">코로나 발생 현황 Site</a>
 </body>
 </html>

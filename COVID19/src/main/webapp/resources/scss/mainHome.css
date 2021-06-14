@@ -1,9 +1,23 @@
 .mainNav {
-  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 30%;
-  height: 30%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 300px;
+  height: 300px;
+  background-color: skyblue;
+  margin: 20px;
+  color: white;
+  text-decoration: none;
 }
 /*# sourceMappingURL=mainHome.css.map */
