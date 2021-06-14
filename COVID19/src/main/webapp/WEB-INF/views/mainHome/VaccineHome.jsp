@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 <body>
-	<h1>백신 페이지 입니다.</h1>
+	<h1 class = "mainTitle">백신 페이지 입니다.</h1>
 
 <%@ include file="../include/footer.jsp" %>
 </body>

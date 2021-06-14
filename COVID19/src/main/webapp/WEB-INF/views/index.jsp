@@ -8,8 +8,8 @@
 <link rel="stylesheet" href="css/mainHome.css">
 </head>
 <body>
-	<a href = "VaccineHome.do" class = "choiceNav">백신 예약 Site</a>
-	
-	<a href = "CoronaConditionHome.do" class = "choiceNav">코로나 발생 현황 Site</a>
+	<p>COVID19</p>
+	<a href = "VaccineHome.do" class = "choiceNav">백신 예약 <br>SITE</a>
+	<a href = "CoronaConditionHome.do" class = "choiceNav">코로나 발생 현황 <br>SITE</a>
 </body>
 </html>

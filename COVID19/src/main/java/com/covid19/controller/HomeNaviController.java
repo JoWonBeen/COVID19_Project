@@ -15,6 +15,4 @@ public class HomeNaviController {
 		return "mainHome/CoronaConditionHome";
 	}
 	
-	
-	
 }
