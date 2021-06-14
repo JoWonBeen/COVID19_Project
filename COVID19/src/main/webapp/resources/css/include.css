@@ -1,0 +1,36 @@
+#header #gnb .gnbList {
+  text-align: center;
+  font-size: 0;
+}
+
+#header #gnb .gnbList a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#header #gnb .gnbList > li {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 16px;
+  position: relative;
+  padding: 10px;
+}
+
+#header #gnb .gnbList > li .depth02 li {
+  padding: 10px 0;
+}
+
+#header .logIn {
+  position: absolute;
+  right: 100px;
+  top: 50px;
+}
+
+#footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}

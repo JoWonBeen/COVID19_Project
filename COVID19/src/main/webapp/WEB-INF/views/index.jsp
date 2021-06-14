@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="scss/mainHome.css">
+<link rel="stylesheet" href="css/mainHome.css">
 </head>
 <body>
 	<a href = "VaccineHome.do" class = "mainNav">백신 예약 Site</a>

@@ -6,8 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
-<footer>
-	<h1>footer 입니다.</h1>
-
+<footer id = "footer">
+	<p>@copyright </p>
 </footer>
 
