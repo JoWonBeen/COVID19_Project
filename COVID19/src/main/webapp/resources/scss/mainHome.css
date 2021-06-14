@@ -1,0 +1,9 @@
+.mainNav {
+  display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30%;
+  height: 30%;
+}
+/*# sourceMappingURL=mainHome.css.map */

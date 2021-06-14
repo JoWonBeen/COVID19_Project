@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>hello spring MVC</h1>
-	<img alt="" src="images/monster.png">
+	<a class = "mainNav">백신 예약 Site</a>
+	<a class = "mainNav">코로나 발생 현황 Site</a>
 </body>
 </html>
