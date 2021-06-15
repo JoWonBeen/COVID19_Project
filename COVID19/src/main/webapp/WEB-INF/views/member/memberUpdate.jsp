@@ -34,13 +34,13 @@
 							</tr>
 							<tr>
 								<th>PHONE</th>
-								<td><input type="text" name="phone" value="${loggedMemberInfo.phone }"></td>
+								<td><input type="text" name="phone" value="${loggedMemberInfo.phone }" onkeyup="phoneFormat(this)"></td>
 							</tr>
 						</c:when>
 						<c:otherwise>
 							<tr>
 								<th>NAME</th>
-								<td><input type="text" name="name" value="${loggedMemberInfo.name }"></td>
+								<td><input type="text" name="name" value="${loggedMemberInfo.name }" maxlength = "7"></td>
 							</tr>
 							<tr>
 								<th>PASSWORD</th>
@@ -52,7 +52,7 @@
 							</tr>
 							<tr>
 								<th>PHONE</th>
-								<td><input type="text" name="phone" value="${loggedMemberInfo.phone }"></td>
+								<td><input type="text" name="phone" value="${loggedMemberInfo.phone }" onkeyup="phoneFormat(this)"></td>
 							</tr>
 						</c:otherwise>
 					</c:choose>

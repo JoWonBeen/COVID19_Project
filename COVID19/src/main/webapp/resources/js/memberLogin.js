@@ -13,6 +13,16 @@ $("#memberJoin").on("click", function(){
 		alert("비밀번호는 필수입니다.");
 		$("#userPassword").focus();
 		return;
+	} else if($("#checkPassword").val().length<=0){
+		alert("비밀번호를 한번 더 입력해주세요.");
+		$("#checkPassword").focus();
+		return;
+	} else if($("#userPassword").val() != $("#checkPassword").val()){
+		alert("비밀번호가 다릅니다.");
+		$("#userPassword").val("");
+		$("#checkPassword").val("");
+		$("#userPassword").focus();
+		return;
 	} else if($("#userBirth").val().length<=0){
 		alert("생년월일은 필수입니다.");
 		$("#userBirth").focus();
@@ -135,4 +145,14 @@ function goLogin(memberType){
 	    location.href = "LoginForm.do";
     } 
 } 
+
+function phoneFormat(el){
+    el.value = el.value.replace(/(\d\d\d)(\d\d\d\d)(\d\d\d\d)/g, '$1-$2-$3');
+}
+function birthFormat(el){
+	if (el.value.length == 6)
+	    el.value = el.value.replace(/(\d\d)(\d\d)(\d\d)/g, '$1/$2/$3');
+}
+
+
 

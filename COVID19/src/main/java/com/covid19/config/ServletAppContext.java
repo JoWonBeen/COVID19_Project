@@ -12,6 +12,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 @ComponentScan("com.covid19.controller.member")
 @ComponentScan("com.covid19.controller.home")
+@ComponentScan("com.covid19.controller.api")
 @ComponentScan("com.covid19.model.member")
 public class ServletAppContext implements WebMvcConfigurer{
 	
