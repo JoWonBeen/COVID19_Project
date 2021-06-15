@@ -1,4 +1,4 @@
-package com.covid19.controller;
+package com.covid19.member.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -62,10 +62,10 @@ public class MemberController {
 			ScriptWriterUtil.alertAndNext(response, "로그인 되었습니다.", "Index.do");
 			session.setAttribute("loggedMemberInfo", loggedMemberInfo);
 		} else if(loggedAdminInfo != null){
-			ScriptWriterUtil.alertAndNext(response, "로그인 되었습니다.", "Index.do");
+			ScriptWriterUtil.alertAndNext(response, "로그인에 실패했습니다..", "Index.do");
 			session.setAttribute("loggedMemberInfo", loggedAdminInfo);			
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "아이디 비밀번호를 확인해주세요");
+			ScriptWriterUtil.alertAndBack(response, "아이디와 비밀번호를 확인해주세요.");
 		}
 		return null;
 	}
@@ -96,10 +96,10 @@ public class MemberController {
 	public String adminSignUp(AdminBean adminBean, HttpServletRequest request, HttpServletResponse response) throws IOException {
 		int result = memberDao.insertAdmin(adminBean);
 		if (result > 0) {
-			ScriptWriterUtil.alertAndNext(response, "회원가입 성공","LoginForm.do");
+			ScriptWriterUtil.alertAndNext(response, "회원가입 되었습니다.","LoginForm.do");
 			return null;
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "회원가입 실패");
+			ScriptWriterUtil.alertAndBack(response, "회원가입에 실패했습니다.");
 			return null;
 		}
 	}
@@ -108,10 +108,10 @@ public class MemberController {
 
 		int result = memberDao.insertMember(memberBean);
 		if (result > 0) {
-			ScriptWriterUtil.alertAndNext(response, "회원가입 성공","LoginForm.do");
+			ScriptWriterUtil.alertAndNext(response, "회원가입 되었습니다.","LoginForm.do");
 			return null;
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "회원가입 실패");
+			ScriptWriterUtil.alertAndBack(response, "회원가입에 실패했습니다.");
 			return null;
 		}
 	}
@@ -179,7 +179,7 @@ public class MemberController {
 				return null;
 			}
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "비밀번호가 일치하지 않습니다.");
+			ScriptWriterUtil.alertAndBack(response, "비밀번호를 확인해주세요.");
 			return null;
 		}
 	}
@@ -208,14 +208,14 @@ public class MemberController {
 				result = memberDao.deleteAdmin(no);
 			}
 			if(result > 0) {
-				ScriptWriterUtil.alertAndNext(response,"회원탈퇴 되었습니다.", "MemberLogout.do");
+				ScriptWriterUtil.alertAndNext(response,"회원정보가 삭제되었습니다.", "MemberLogout.do");
 				return null;
 			} else {
-				ScriptWriterUtil.alertAndBack(response,"회원탈퇴에 실패했습니다.");
+				ScriptWriterUtil.alertAndBack(response,"회원정보가 삭제되지 않았습니다.");
 				return null;
 			}
 		} else {
-			ScriptWriterUtil.alertAndBack(response,"비밀번호가 일치하지 않습니다.");
+			ScriptWriterUtil.alertAndBack(response,"비밀번호를 확인해주세요.");
 			return null;
 		}
 	}
