@@ -22,23 +22,19 @@
 				<tbody>
 					<tr>
 						<th>성명</th>
-						<td><input type="text" name="name" id="userName" value=""></td>
+						<td>${loggedMemberInfo.name }</td>
 					</tr>
 					<tr>
 						<th>ID</th>
-						<td><input type="text" name="id" id="userId" value=""></td>
+						<td>${loggedMemberInfo.id }</td>
 					</tr>
 					<tr>
 						<th>생년월일</th>
-						<td>
-						<select name="yy" id="year"></select>년 
-						<select name="mm" id="month"></select>월 
-						<select name="dd" id="day"></select>일
-						</td>
+						<td>${loggedMemberInfo.birth }</td>
 					</tr>
 					<tr>
 						<th>폰번호</th>
-						<td><input type="text" name="phone" id="userphone"></td>
+						<td>${loggedMemberInfo.phone }</td>
 					</tr>
 					<tr>
 						<th>예약 대상자 구분</th>
@@ -414,7 +410,7 @@
 						<th class="dateBox">예약일시</th>
 						<td>
 						<a href="Calendar.do"><span class="material-icons">event_available</span></a>
-						<input type="text" value="${reserveBean.no} ">
+						<input type="text" name="date" id="date" value="">
 						<select name="hour">
 						<option value="">09</option>
 						<option value="">10</option>
