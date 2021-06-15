@@ -13,3 +13,4 @@ $.ajax({
         console.log(Number(resultData.data[0].slrYmd)-1);
     }
 });
+
