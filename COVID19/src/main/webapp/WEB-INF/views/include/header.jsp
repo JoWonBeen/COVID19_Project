@@ -86,13 +86,14 @@
 			<c:when test="${loggedMemberInfo != null }">
 				<ul>
 					<li>${loggedMemberInfo.name}님</li>
-					<li><a href="MemberInfo.do?no=${loggedMemberInfo.no}&type=${loggedMemberInfo.type}">회원정보수정</a></li>
+					<li><a href="MemberInfo.do">회원정보수정</a></li>
 					<li><a href="MemberLogout.do">로그아웃</a></li>
 				</ul>
 			</c:when>
 			<c:otherwise>
 				<ul>
 					<li><a href="LoginForm.do">로그인</a></li>
+					<li><a href="SignUp.do">회원가입</a></li>
 				</ul>
 			</c:otherwise>
 		</c:choose>

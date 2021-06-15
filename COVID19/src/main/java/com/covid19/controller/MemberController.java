@@ -134,7 +134,7 @@ public class MemberController {
 	
 		
 	@GetMapping("/MemberInfo.do")
-	public String memberInfo(int no, int type, Model model) {
+	public String memberInfo() {
 		return "member/memberInfo";
 	}
 		
@@ -144,7 +144,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/MemberUpdate.do")
-	public String memberUpdate(MemberBean memberBean, AdminBean adminBean, int no, int type, HttpServletRequest request,HttpServletResponse response) throws IOException {
+	public String memberUpdate(MemberBean memberBean, AdminBean adminBean, int no, int type, HttpServletRequest request,HttpServletResponse response, HttpSession session) throws IOException {
 		String dbPassword = "";
 		String realPassword = "";
 		if (type == 1) {
@@ -159,10 +159,19 @@ public class MemberController {
 			int result = 0;
 			if (type == 1) {
 				result = memberDao.updateMember(memberBean);
+				if (result > 0) {
+					memberBean = memberDao.getSelectOneMember(no);
+					session.setAttribute("loggedMemberInfo", memberBean);
+				}
 			} else if (type == 2) {
 				result = memberDao.updateAdmin(adminBean);
+				if (result > 0) {
+					adminBean = memberDao.getSelectOneAdmin(no);
+					session.setAttribute("loggedMemberInfo", adminBean);
+				}
 			}
 			if(result > 0) {
+
 				ScriptWriterUtil.alertAndNext(response, "회원정보가 수정되었습니다.", "MemberInfo.do");
 				return null;
 			} else {
