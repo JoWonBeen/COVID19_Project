@@ -3,6 +3,7 @@
 <%@ include file="../include/includeFile.jsp" %>
 <body>
    <div class="formBox">
+   	  <h2>로그인</h2>
       <form action="MemberLogin.do" id="joinForm" method="POST">
          <table>
             <colgroup>

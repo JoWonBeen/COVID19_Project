@@ -12,5 +12,20 @@
 <link rel="stylesheet" href="css/include.css">
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/memberInfoForm.css">
+<link rel="stylesheet" href="css/mainHome.css">
 <script src="js/jquery-3.6.0.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
+<header id="header">
+		<c:choose>
+			<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
+				<h1 id="logo">
+			        <a href="Index.do"><img src="images/logoMember.png" alt=""> </a>
+			    </h1>
+			</c:when>
+			<c:otherwise>
+				<h1 id="logo">
+			        <a href="Index.do"><img src="images/logoAdmin.png" alt=""> </a>
+			    </h1>
+			</c:otherwise>
+		</c:choose>
+	</header>

@@ -1,4 +1,4 @@
-package com.covid19.controller;
+package com.covid19.controller.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
