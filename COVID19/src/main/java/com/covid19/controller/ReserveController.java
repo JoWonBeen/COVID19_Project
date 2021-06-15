@@ -9,4 +9,8 @@ public class ReserveController {
 	public String reserveForm() {
 		return "reserve/reserve_write";
 	}
+	@GetMapping("/Calendar.do")
+	public String calendar() {
+		return "reserve/calendar";
+	}
 }
