@@ -25,7 +25,7 @@
 		</c:otherwise>
 	</c:choose>
 	<nav id="gnb">
-		<ul class="gnbList" onclick="goLogin(${loggedMemberInfo}); return false;">
+		<ul class="gnbList">
 			<li ><a href="Index.do" class="depth01">COVID19 정보</a>
 				<ul class="depth02">
 					<li><a href="">코로나 증상</a></li>
@@ -44,13 +44,13 @@
 			
 			<c:choose>
 				<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
-					<li><a href="" class="depth01">백신접종 예약</a>
+					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약</a>
 						<ul class="depth02">
 							<li><a href="">대상자 조회</a></li>
 							<li><a href="">백신 예약</a></li>
 						</ul>
 					</li>
-					<li><a href="" class="depth01">백신접종 예약현황</a>
+					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약현황</a>
 						<ul class="depth02">
 							<li><a href="">백신 예약조회</a></li>
 							<li><a href="">백신 예약수정</a></li>
@@ -59,17 +59,17 @@
 					</li>
 				</c:when>
 				<c:otherwise>
-					<li>
+					<li onclick="goLogin(${loggedMemberInfo}); return false;">
 						<a href="" class="depth01">백신 등록</a>
 					</li>
-					<li>
+					<li onclick="goLogin(${loggedMemberInfo}); return false;">
 						<a href="" class="depth01">센터 예방접종 예약현황</a>
 					</li>
 				</c:otherwise>
 			</c:choose>
 			
 			
-			<li><a href="" class="depth01">문의하기</a>
+			<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">문의하기</a>
 				<ul class="depth02">
 					<li><a href="">자주묻는 질문</a></li>
 					<li><a href="">Q&A</a></li>
