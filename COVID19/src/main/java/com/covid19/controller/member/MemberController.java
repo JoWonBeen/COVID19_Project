@@ -57,20 +57,20 @@ public class MemberController {
       loggedAdminInfo = memberDao.getLoginAdmin(adminBean);
       
       if(loggedMemberInfo != null) {
-         ScriptWriterUtil.alertAndNext(response, "ë¡œê·¸ì¸ ë˜ì—ˆìŠµë‹ˆë‹¤.", "Index.do");
+         ScriptWriterUtil.alertAndNext(response, "·Î±×ÀÎ µÇ¾ú½À´Ï´Ù.", "Index.do");
          session.setAttribute("loggedMemberInfo", loggedMemberInfo);
       } else if(loggedAdminInfo != null){
-         ScriptWriterUtil.alertAndNext(response, "ë¡œê·¸ì¸ ë˜ì—ˆìŠµë‹ˆë‹¤.", "Index.do");
+         ScriptWriterUtil.alertAndNext(response, "·Î±×ÀÎ µÇ¾ú½À´Ï´Ù.", "Index.do");
          session.setAttribute("loggedMemberInfo", loggedAdminInfo);         
       } else {
-         ScriptWriterUtil.alertAndBack(response, "ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
+         ScriptWriterUtil.alertAndBack(response, "¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
       }
       return null;
    }
    
    @GetMapping("/MemberLogout.do")
    public String memberLogout(HttpServletResponse response, HttpSession session) throws IOException {
-      ScriptWriterUtil.alertAndNext(response, "ë¡œê·¸ì•„ì›ƒ ë˜ì—ˆìŠµë‹ˆë‹¤.", "Index.do");
+      ScriptWriterUtil.alertAndNext(response, "·Î±×¾Æ¿ô µÇ¾ú½À´Ï´Ù.", "Index.do");
       session.invalidate();
       return null;
    }
@@ -94,10 +94,10 @@ public class MemberController {
    public String adminSignUp(AdminBean adminBean, HttpServletRequest request, HttpServletResponse response) throws IOException {
       int result = memberDao.insertAdmin(adminBean);
       if (result > 0) {
-         ScriptWriterUtil.alertAndNext(response, "íšŒì›ê°€ì… ë˜ì—ˆìŠµë‹ˆë‹¤.","LoginForm.do");
+         ScriptWriterUtil.alertAndNext(response, "È¸¿ø°¡ÀÔ µÇ¾ú½À´Ï´Ù.","LoginForm.do");
          return null;
       } else {
-         ScriptWriterUtil.alertAndBack(response, "íšŒì›ê°€ì…ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
+         ScriptWriterUtil.alertAndBack(response, "È¸¿ø°¡ÀÔ¿¡ ½ÇÆĞÇß½À´Ï´Ù.");
          return null;
       }
    }
@@ -106,10 +106,10 @@ public class MemberController {
 
       int result = memberDao.insertMember(memberBean);
       if (result > 0) {
-         ScriptWriterUtil.alertAndNext(response, "íšŒì›ê°€ì… ë˜ì—ˆìŠµë‹ˆë‹¤.","LoginForm.do");
+         ScriptWriterUtil.alertAndNext(response, "È¸¿ø°¡ÀÔ µÇ¾ú½À´Ï´Ù.","LoginForm.do");
          return null;
       } else {
-         ScriptWriterUtil.alertAndBack(response, "íšŒì›ê°€ì…ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.");
+         ScriptWriterUtil.alertAndBack(response, "È¸¿ø°¡ÀÔ¿¡ ½ÇÆĞÇß½À´Ï´Ù.");
          return null;
       }
    }
@@ -170,14 +170,14 @@ public class MemberController {
          }
          if(result > 0) {
 
-            ScriptWriterUtil.alertAndNext(response, "íšŒì›ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.", "MemberInfo.do");
+            ScriptWriterUtil.alertAndNext(response, "È¸¿øÁ¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.", "MemberInfo.do");
             return null;
          } else {
-            ScriptWriterUtil.alertAndBack(response, "íšŒì›ì •ë³´ê°€ ìˆ˜ì •ë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
+            ScriptWriterUtil.alertAndBack(response, "È¸¿øÁ¤º¸°¡ ¼öÁ¤µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
             return null;
          }
       } else {
-         ScriptWriterUtil.alertAndBack(response, "ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
+         ScriptWriterUtil.alertAndBack(response, "ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
          return null;
       }
    }
@@ -206,14 +206,14 @@ public class MemberController {
             result = memberDao.deleteAdmin(no);
          }
          if(result > 0) {
-            ScriptWriterUtil.alertAndNext(response,"íšŒì›ì •ë³´ê°€ ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.", "MemberLogout.do");
+            ScriptWriterUtil.alertAndNext(response,"È¸¿øÁ¤º¸°¡ »èÁ¦µÇ¾ú½À´Ï´Ù.", "MemberLogout.do");
             return null;
          } else {
-            ScriptWriterUtil.alertAndBack(response,"íšŒì›ì •ë³´ê°€ ì‚­ì œë˜ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.");
+            ScriptWriterUtil.alertAndBack(response,"È¸¿øÁ¤º¸°¡ »èÁ¦µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
             return null;
          }
       } else {
-         ScriptWriterUtil.alertAndBack(response,"ë¹„ë°€ë²ˆí˜¸ë¥¼ í™•ì¸í•´ì£¼ì„¸ìš”.");
+         ScriptWriterUtil.alertAndBack(response,"ºñ¹Ğ¹øÈ£¸¦ È®ÀÎÇØÁÖ¼¼¿ä.");
          return null;
       }
    }
