@@ -2,24 +2,44 @@ package com.covid19.controller.api;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.ArrayList;
+import java.util.HashMap;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.covid19.model.coronaLive.CoronaDateInfoBean;
+import com.covid19.model.coronaLive.CoronaLiveDao;
+import com.covid19.model.coronaLive.CoronaSidoInfoBean;
+
 @Controller
 public class CoronaApiController {
+	
+	@Autowired 
+	CoronaSidoInfoBean coronaSidoInfoBean;
+	
+	@Autowired 
+	CoronaDateInfoBean coronaDateInfoBean;
+	
+	@Autowired 
+	CoronaLiveDao coronaLiveDao;
+	
+	
 	@RequestMapping(value="/CoronaApiCallArea.do",produces="application/json;charset=UTF-8;")
 	@ResponseBody
 	public String CoronaApiCallArea(String start, String end) {
 		StringBuilder sb = new StringBuilder();
         try {
         	StringBuilder urlBuilder = new StringBuilder("http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19SidoInfStateJson"); /*URL*/
-			urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=psv5roBPnwSthETboM9gk3KAPGxzlC%2BQ5VW1do16TbUyrvvP5yzbPprkZcrmmMJPHjAGEh7g8FDzrAdp3qs4pA%3D%3D");
+			urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=TNAnRP7WiL4Eh5Cl3ky3%2Fi550iw24fmyTTi9UzP6uTnhPAan%2FhRVD1pCwaIxAQ1PY7ZhvUpVJ8L0p8hXBkqt8w%3D%3D");
 			urlBuilder.append("&" + URLEncoder.encode("ServiceKey","UTF-8") + "=" + URLEncoder.encode("-", "UTF-8")); 
 	        urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8"));
 	        urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); 
@@ -51,11 +71,10 @@ public class CoronaApiController {
 	@RequestMapping(value="/CoronaApiCallDate.do",produces="application/json;charset=UTF-8;")
 	@ResponseBody
 	public String CoronaApiCallDate(String start, String end) {
-		System.out.println(start + " " +  end);
 		StringBuilder sb = new StringBuilder();
 		try {
 			StringBuilder urlBuilder = new StringBuilder("http://openapi.data.go.kr/openapi/service/rest/Covid19/getCovid19InfStateJson"); /*URL*/
-	        urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=psv5roBPnwSthETboM9gk3KAPGxzlC%2BQ5VW1do16TbUyrvvP5yzbPprkZcrmmMJPHjAGEh7g8FDzrAdp3qs4pA%3D%3D"); /*Service Key*/
+	        urlBuilder.append("?" + URLEncoder.encode("ServiceKey","UTF-8") + "=TNAnRP7WiL4Eh5Cl3ky3%2Fi550iw24fmyTTi9UzP6uTnhPAan%2FhRVD1pCwaIxAQ1PY7ZhvUpVJ8L0p8hXBkqt8w%3D%3D"); /*Service Key*/
 	        urlBuilder.append("&" + URLEncoder.encode("ServiceKey","UTF-8") + "=" + URLEncoder.encode("-", "UTF-8")); /*공공데이터포털에서 받은 인증키*/
 	        urlBuilder.append("&" + URLEncoder.encode("pageNo","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지번호*/
 	        urlBuilder.append("&" + URLEncoder.encode("numOfRows","UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); /*한 페이지 결과 수*/
@@ -82,6 +101,23 @@ public class CoronaApiController {
 			e.printStackTrace();
 		} 
 		return sb.toString();
+	}
+	
+	
+	@RequestMapping(value="/InsertCoronaInfo.do",produces="application/json;charset=UTF-8;")
+	@ResponseBody
+	public int insertCoronaInfo(String stateDt,int deathCnt,int decideCnt,int clearCnt,int localOccCnt, HttpServletRequest request, HttpServletResponse response ) {
+		int result = 0;
+		System.out.println(stateDt + " " +deathCnt + " " +decideCnt + " " +clearCnt + " " +localOccCnt);
+		coronaDateInfoBean.setStartDate(stateDt);
+		coronaDateInfoBean.setDeathCnt(deathCnt);
+		coronaDateInfoBean.setDecideCnt(decideCnt);
+		coronaDateInfoBean.setClearCnt(clearCnt);
+		coronaDateInfoBean.setTodayCnt(localOccCnt);
+		System.out.println(coronaDateInfoBean.toString());
+		result = coronaLiveDao.insertCoronaDateInfo(coronaDateInfoBean);
+	
+		return result;
 	}
 	
 }

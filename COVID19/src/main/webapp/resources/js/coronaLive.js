@@ -1,4 +1,51 @@
 //showCoronaData();
+updateCoronaData();
+function updateCoronaData(){
+	let coronaList = null;
+	$.ajax({
+		url:"GetLastDate.do",
+		success:function(resultData){
+			console.log(resultData);
+		}
+	});
+	let sendData = {
+		start:"20200101",
+		end: dateToYear(new Date())
+	}
+	$.ajax({
+		url:"CoronaApiCallDate.do",
+		data:sendData,
+		success:function(resultData){
+			coronaList = resultData.response.body.items.item;
+			
+			for(let i = 0; i < coronaList.length-1; i++){
+				
+				sendData = {
+					stateDt: coronaList[i].stateDt,
+					deathCnt: coronaList[i].deathCnt,
+					decideCnt: coronaList[i].decideCnt,
+					clearCnt: coronaList[i].clearCnt,
+					localOccCnt: coronaList[i].decideCnt - coronaList[i+1].decideCnt,
+				}
+				$.ajax({
+					url:"InsertCoronaInfo.do",
+					data:sendData,
+					success:function(resultData){
+						console.log(resultData);
+					}
+				});
+			}
+			
+			
+		}
+	});
+		
+
+}
+
+
+
+
 
 function showCoronaData(){
 	let _type = $("#coronaOptionBox #type").val();
@@ -94,7 +141,6 @@ function showCoronaData(){
 		        success:function(resultData){
 					console.log(resultData.response.body.items.item);
 		            let coronaList = resultData.response.body.items.item;
-					let sum_people = 0;
 					
 					for(let i = 0; i < coronaList.length; i++){
 						if(coronaList[i].gubun == _area){
