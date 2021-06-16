@@ -21,6 +21,5 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/covid19/mybatis/MemberMapper.xml" />
-		<mapper resource="com/covid19/mybatis/ReserveMapper.xml" />
 	</mappers>
 </configuration>
