@@ -38,18 +38,7 @@
 					</tr>
 					<tr>
 						<th>예약 대상자 구분</th>
-						<td>
-						<select name="gubun">
-						<option value="">의료종사자</option>
-						<option value="">돌봄종사자(어린이집,유아교사)</option>
-						<option value="">사회필수인력(경찰,소방관,해경등)</option>
-						<option value="">60~75세 미만의 어르신</option>
-						<option value="">군인,군종사자,예비군,민방위</option>
-						<option value="">취약시설 입소 및 종사자</option>
-						<option value="">만성 신장질환자</option>
-						<option value="">일부 지정된 의료기관 종사자</option>
-						</select>
-						</td>
+						<td></td>
 					</tr>
 					<tr>
 						<th>예약 대상 백신</th>
