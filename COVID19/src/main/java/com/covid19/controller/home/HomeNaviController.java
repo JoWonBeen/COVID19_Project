@@ -1,4 +1,4 @@
-package com.covid19.controller;
+package com.covid19.controller.home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,13 +8,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeNaviController {
 	@RequestMapping(value = "/VaccineHome.do", method = RequestMethod.GET)
 	public String VaccineHome() {
-		return "MainHome/VaccineHome";
+		return "mainHome/VaccineHome";
 	}
 	@RequestMapping(value = "/CoronaConditionHome.do", method = RequestMethod.GET)
 	public String CoronaConditionHome() {
-		return "MainHome/CoronaConditionHome";
+		return "mainHome/CoronaConditionHome";
 	}
-	
-	
 	
 }

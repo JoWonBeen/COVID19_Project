@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.covid19.mybatis.ReserveMapper">
+<insert id="insertReserve" parameterType="ReserveBean">
+		INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.NEXTVAL,
+									#{gubun},
+									#{vaccine},
+									#{hospitalAdd},
+									#{rsDate}
+									)
+	</insert>
+
+<select id="getSelectOneDate" resultType="ReserveBean" parameterType="Integer">
+		SELECT * FROM RESERVATION WHERE NO = #{no}
+	</select>
+</mapper>

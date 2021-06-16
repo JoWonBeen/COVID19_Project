@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.covid19.mybatis.MemberMapper">
+
+	<select id="getSelectOneMember" resultType="MemberBean" parameterType="Integer">
+		SELECT * FROM MEMBER WHERE NO = #{no}
+	</select>
+	
+	<select id="getSelectOneAdmin" resultType="AdminBean" parameterType="Integer">
+		SELECT * FROM ADMIN WHERE NO = #{no}
+	</select>
+	
+	<select id="getPasswordMember" resultType="String" parameterType="Integer">
+		SELECT PASSWORD FROM MEMBER WHERE NO = #{no}
+	</select>
+	
+	<select id="getPasswordAdmin" resultType="String" parameterType="Integer">
+		SELECT PASSWORD FROM ADMIN WHERE NO = #{no}
+	</select>
+	
+	<delete id="deleteMember" parameterType="Integer">
+		DELETE FROM MEMBER WHERE NO = #{no}
+	</delete>
+	
+	<delete id="deleteAdmin" parameterType="Integer">
+		DELETE FROM ADMIN WHERE NO = #{no}
+	</delete>
+	
+	<update id="updateMember" parameterType="MemberBean">
+		UPDATE MEMBER SET NAME = #{name},
+		                    PHONE = #{phone}
+		                    WHERE NO = #{no}
+	</update>
+	
+	<update id="updateAdmin" parameterType="AdminBean">
+		UPDATE ADMIN SET NAME = #{name},
+		                    CENTERNAME = #{centerName},
+		                    PHONE = #{phone}
+		                    WHERE NO = #{no}
+	</update>
+	
+	<insert id="insertMember" parameterType="MemberBean">
+		INSERT INTO MEMBER VALUES (MEMBER_SEQ.NEXTVAL,
+									#{id},
+									#{name},
+									#{password},
+									#{birth},
+									#{age},
+									#{gender},
+									#{phone},
+									#{type}
+									)
+	</insert>
+	<insert id="insertAdmin" parameterType="AdminBean">
+		INSERT INTO ADMIN VALUES (ADMIN_SEQ.NEXTVAL,
+									#{id},
+									#{name},
+									#{password},
+									#{centerName},
+									#{phone	},
+									#{type}
+									)
+	</insert>
+	
+	
+	<select id="memberIdCheck" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) AS COUNT FROM MEMBER WHERE ID = #{ID} 
+	</select>
+	
+	<select id="adminIdCheck" parameterType="String" resultType="Integer">
+		SELECT COUNT(*) AS COUNT FROM ADMIN WHERE ID = #{ID} 
+	</select>
+	
+	<select id="getLoginMember" parameterType="MemberBean" resultType="MemberBean">
+		SELECT * FROM MEMBER WHERE ID = #{id} AND PASSWORD = #{password}
+	</select>
+	<select id="getLoginAdmin" parameterType="AdminBean" resultType="AdminBean">
+		SELECT * FROM ADMIN WHERE ID = #{id} AND PASSWORD = #{password}
+	</select>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
