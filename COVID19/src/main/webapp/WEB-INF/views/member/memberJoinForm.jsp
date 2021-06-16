@@ -26,7 +26,7 @@
 					</tr>
 					<tr>
 						<th>PW-CHECK</th>
-						<td><input type="password" name="password" id="checkPassword"></td>
+						<td><input type="password" name="chPassword" id="checkPassword"></td>
 					</tr>
 					<tr>
 						<th>Birth</th>
