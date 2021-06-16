@@ -14,6 +14,24 @@
 									)
 	</insert>
 	
+	<select id="getLastDate" resultType="String">
+		SELECT MAX(STARTDATE) FROM CORONADATEINFO
+	</select>
+	
+	
+	
+	<insert id="insertCoronaDateInfoSido" parameterType="CoronaSidoInfoBean">
+		INSERT INTO CORONASIDOINFO VALUES (CORONASIDOINFO_SEQ.NEXTVAL,
+									#{startDate},
+									#{deathCnt},
+									#{todayCnt},
+									#{area}
+									)
+	</insert>
+	
+	<select id="getLastDateSido" resultType="String">
+		SELECT MAX(STARTDATE) FROM CORONASIDOINFO
+	</select>
 </mapper>
 
 

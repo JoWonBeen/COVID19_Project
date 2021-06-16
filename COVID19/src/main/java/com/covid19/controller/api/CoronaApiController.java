@@ -5,8 +5,6 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.ArrayList;
-import java.util.HashMap;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.covid19.model.coronaLive.CoronaDateInfoBean;
@@ -105,19 +104,57 @@ public class CoronaApiController {
 	
 	
 	@RequestMapping(value="/InsertCoronaInfo.do",produces="application/json;charset=UTF-8;")
-	@ResponseBody
-	public int insertCoronaInfo(String stateDt,int deathCnt,int decideCnt,int clearCnt,int localOccCnt, HttpServletRequest request, HttpServletResponse response ) {
+	@ResponseBody //String stateDt,int deathCnt,int decideCnt,int clearCnt,int localOccCnt
+	public int insertCoronaInfo(@RequestParam(value="dataList") String dataList) {
 		int result = 0;
-		System.out.println(stateDt + " " +deathCnt + " " +decideCnt + " " +clearCnt + " " +localOccCnt);
-		coronaDateInfoBean.setStartDate(stateDt);
-		coronaDateInfoBean.setDeathCnt(deathCnt);
-		coronaDateInfoBean.setDecideCnt(decideCnt);
-		coronaDateInfoBean.setClearCnt(clearCnt);
-		coronaDateInfoBean.setTodayCnt(localOccCnt);
-		System.out.println(coronaDateInfoBean.toString());
-		result = coronaLiveDao.insertCoronaDateInfo(coronaDateInfoBean);
-	
+		String[] dataList1 = dataList.split("&");
+		for(int i = 0; i < dataList1.length; i++) {
+			String[] dataList2 = dataList1[i].split("/");
+			coronaDateInfoBean.setStartDate(dataList2[0]);
+			coronaDateInfoBean.setDeathCnt(Integer.parseInt(dataList2[1]));
+			coronaDateInfoBean.setDecideCnt(Integer.parseInt(dataList2[2]));
+			coronaDateInfoBean.setClearCnt(Integer.parseInt(dataList2[3]));
+			coronaDateInfoBean.setTodayCnt(Integer.parseInt(dataList2[4]));
+			result = coronaLiveDao.insertCoronaDateInfo(coronaDateInfoBean);
+		}
+
 		return result;
+	}
+	
+	@RequestMapping(value="/GetLastDate.do",produces="application/json;charset=UTF-8;")
+	@ResponseBody
+	public String getLastDate() {
+		String lastDate = coronaLiveDao.getLastDate();
+		return lastDate;
+	}
+	
+	
+	
+	
+	
+	
+	@RequestMapping(value="/InsertCoronaInfoSido.do",produces="application/json;charset=UTF-8;")
+	@ResponseBody //String stateDt,int deathCnt,int decideCnt,int clearCnt,int localOccCnt
+	public int insertCoronaInfoSido(@RequestParam(value="dataList") String dataList) {
+		int result = 0;
+		String[] dataList1 = dataList.split("&");
+		for(int i = 0; i < dataList1.length; i++) {
+			String[] dataList2 = dataList1[i].split("/");
+			coronaSidoInfoBean.setStartDate(dataList2[0]);
+			coronaSidoInfoBean.setDeathCnt(Integer.parseInt(dataList2[1]));
+			coronaSidoInfoBean.setTodayCnt(Integer.parseInt(dataList2[2]));
+			coronaSidoInfoBean.setArea(dataList2[3]);
+			result = coronaLiveDao.insertCoronaDateInfoSido(coronaSidoInfoBean);
+		}
+
+		return result;
+	}
+	
+	@RequestMapping(value="/GetLastDateSido.do",produces="application/json;charset=UTF-8;")
+	@ResponseBody
+	public String getLastDateSido() {
+		String lastDate = coronaLiveDao.getLastDateSido();
+		return lastDate;
 	}
 	
 }

@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Component;
 
+import com.covid19.model.member.AdminBean;
 import com.covid19.model.member.MemberBean;
 
 @Component
@@ -32,5 +33,29 @@ public class CoronaLiveDao {
 		sqlSession.commit();
 		sqlSession.close();
 		return result;
+	}
+	
+	public String getLastDate() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		String lastDate = sqlSession.selectOne("getLastDate");
+		sqlSession.close();
+		return lastDate;
+	}
+	
+	
+	public int insertCoronaDateInfoSido(CoronaSidoInfoBean coronaSidoInfoBean) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		result = sqlSession.insert("insertCoronaDateInfoSido", coronaSidoInfoBean);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
+	public String getLastDateSido() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		String lastDate = sqlSession.selectOne("getLastDateSido");
+		sqlSession.close();
+		System.out.println(lastDate);
+		return lastDate;
 	}
 }
