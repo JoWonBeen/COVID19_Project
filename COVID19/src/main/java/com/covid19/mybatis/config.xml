@@ -7,6 +7,7 @@
 	<typeAliases>
 		<typeAlias type="com.covid19.model.member.MemberBean" alias="MemberBean"   />
 		<typeAlias type="com.covid19.model.member.AdminBean" alias="AdminBean"   />
+		<typeAlias type="com.covid19.model.reserve.ReserveBean" alias="ReserveBean"   />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -21,5 +22,7 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/covid19/mybatis/MemberMapper.xml" />
+		<mapper resource="com/covid19/mybatis/ReserveMapper.xml" />
+		
 	</mappers>
 </configuration>

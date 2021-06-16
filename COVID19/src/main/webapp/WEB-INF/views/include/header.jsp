@@ -47,7 +47,7 @@
 					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약</a>
 						<ul class="depth02">
 							<li><a href="">대상자 조회</a></li>
-							<li><a href="">백신 예약</a></li>
+							<li><a href="ReserveForm.do">백신 예약</a></li>
 						</ul>
 					</li>
 					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약현황</a>
