@@ -93,43 +93,43 @@
 						<option>인천</option>
 						</select>
 						<select name="sigungu" id = "detailArea" onChange="changeCategory02();">
-<!-- 							<option selected="selected">강남구</option> -->
-<!-- 							<option>강동구</option> -->
-<!-- 							<option>강북구</option> -->
-<!-- 							<option>강서구</option> -->
-<!-- 							<option>관악구</option> -->
-<!-- 							<option>광진구</option> -->
-<!-- 							<option>구로구</option> -->
-<!-- 							<option>금천구</option> -->
-<!-- 							<option>노원구</option> -->
-<!-- 							<option>도봉구</option> -->
-<!-- 							<option>동대문구</option> -->
-<!-- 							<option>동작구</option> -->
-<!-- 							<option>마포구</option> -->
-<!-- 							<option>서대문구</option> -->
-<!-- 							<option>서초구</option> -->
-<!-- 							<option>성동구</option> -->
-<!-- 							<option>성북구</option> -->
-<!-- 							<option>송파구</option> -->
-<!-- 							<option>양천구</option> -->
-<!-- 							<option>영등포구</option> -->
-<!-- 							<option>용산구</option> -->
-<!-- 							<option>은평구</option> -->
-<!-- 							<option>종로구</option> -->
-<!-- 							<option>중구</option> -->
-<!-- 							<option>중랑구</option> -->
-<!-- 							<option>강서구</option> -->
-<!-- 							<option>금정구</option> -->
+							<option selected="selected">강남구</option>
+							<option>강동구</option>
+							<option>강북구</option>
+							<option>강서구</option>
+							<option>관악구</option>
+							<option>광진구</option>
+							<option>구로구</option>
+							<option>금천구</option>
+							<option>노원구</option>
+							<option>도봉구</option>
+							<option>동대문구</option>
+							<option>동작구</option>
+							<option>마포구</option>
+							<option>서대문구</option>
+							<option>서초구</option>
+							<option>성동구</option>
+							<option>성북구</option>
+							<option>송파구</option>
+							<option>양천구</option>
+							<option>영등포구</option>
+							<option>용산구</option>
+							<option>은평구</option>
+							<option>종로구</option>
+							<option>중구</option>
+							<option>중랑구</option>
+							<option>강서구</option>
+							<option>금정구</option>
 						</select>
 						<select name="hospital" id = "hospital">
-<!-- 						<option selected="selected">강남병원</option> -->
-<!-- 						<option >강남병원01</option> -->
-<!-- 						<option >강남병원02</option> -->
-<!-- 						<option >강남병원03</option> -->
-<!-- 						<option >강남병원04</option> -->
-<!-- 						<option >강남병원05</option> -->
-<!-- 						<option >강남병원06</option> -->
-<!-- 						<option >강남병원07</option> -->
+						<option selected="selected">강남병원</option>
+						<option >강남병원01</option>
+						<option >강남병원02</option>
+						<option >강남병원03</option>
+						<option >강남병원04</option>
+						<option >강남병원05</option>
+						<option >강남병원06</option>
+						<option >강남병원07</option>
 						</select>
 						</td>
 					</tr>
@@ -217,23 +217,23 @@ function changeCategory02(){
 	let nowon = ["노원병원","노원병원01","노원병원02","노원병원03","노원병원04","노원병원05","노원병원06","노원병원07","노원병원08"];
 	
 	
-	let target = $("#hospital");
-	let _this = $("#detailArea");
-	let addList = null;
-	console.log(_this.val());
-	if(_this.val() == "강남구") addList = gangnam;
-	else if(_this.val() == "강동구") addList = gangdong;
-	else if(_this.val() == "강북구") addList = gangbuk;
-	else if(_this.val() == "강서구") addList = gangseo;
-	else if(_this.val() == "관악구") addList = guanak;
-	else if(_this.val() == "광진구") addList = guangjin;
-	else if(_this.val() == "구로구") addList = guro;
-	else if(_this.val() == "금천구") addList = gyemchen;
-	else if(_this.val() == "노원구") addList = nowon;
+	let target01 = $("#hospital");
+	let _this01 = $("#detailArea");
+	let addList01 = null;
+	console.log(_this01.val());
+	if(_this01.val() == "강남구") addList01 = gangnam;
+	else if(_this01.val() == "강동구") addList01 = gangdong;
+	else if(_this01.val() == "강북구") addList01 = gangbuk;
+	else if(_this01.val() == "강서구") addList01 = gangseo;
+	else if(_this01.val() == "관악구") addList01 = guanak;
+	else if(_this01.val() == "광진구") addList01 = guangjin;
+	else if(_this01.val() == "구로구") addList01 = guro;
+	else if(_this01.val() == "금천구") addList01 = gyemchen;
+	else if(_this01.val() == "노원구") addList01 = nowon;
 	 
-	$("#hospital" option").remove();  
-	for (x in addList) {
-		target.append("<option>"+ addList[x] +"</option>");
+	$("#hospital option").remove();  
+	for (x in addList01) {
+		target01.append("<option>"+ addList01[x] +"</option>");
 	}	
 }
 
