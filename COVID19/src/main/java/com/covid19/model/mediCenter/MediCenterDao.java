@@ -8,7 +8,9 @@ import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MediCenterDao {
 	private static SqlSessionFactory sqlSessionFactory;
 
@@ -27,6 +29,10 @@ public class MediCenterDao {
 		List<MediCenterBean> mediCenterList = sqlSession.selectList("showAllCenter");
 		sqlSession.close();
 		return mediCenterList;
+	}
+
+	public String getmediCenterData() {
+		return null;
 	}
 	
 

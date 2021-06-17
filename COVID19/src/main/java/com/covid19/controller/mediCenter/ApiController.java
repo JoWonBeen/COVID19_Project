@@ -110,16 +110,7 @@ public class ApiController {
 	@ResponseBody //String centerName, String address, String phoneNumber
 	public int insertMediCenterInfo(@RequestParam(value="dataList") String dataList) {
 		int result = 0;
-		String[] dataList1 = dataList.split("&");
-		for(int i = 0; i < dataList1.length; i++) {
-			String[] dataList2 = dataList1[i].split("/");
-			coronaDateInfoBean.setStartDate(dataList2[0]);
-			coronaDateInfoBean.setDeathCnt(Integer.parseInt(dataList2[1]));
-			coronaDateInfoBean.setDecideCnt(Integer.parseInt(dataList2[2]));
-			coronaDateInfoBean.setClearCnt(Integer.parseInt(dataList2[3]));
-			coronaDateInfoBean.setTodayCnt(Integer.parseInt(dataList2[4]));
-			result = coronaLiveDao.insertCoronaDateInfo(coronaDateInfoBean);
-		}
+		
 
 		return result;
 	}
