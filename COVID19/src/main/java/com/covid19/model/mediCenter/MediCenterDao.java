@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Component;
 
+
 @Component
 public class MediCenterDao {
 	private static SqlSessionFactory sqlSessionFactory;
@@ -31,6 +32,17 @@ public class MediCenterDao {
 		return mediCenterList;
 	}
 
+	public int insertMediCenter(MediCenterBean mediCenterBean) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		result = sqlSession.insert("insertMediCenter", mediCenterBean);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
+		
+	
+	
 	public String getmediCenterData() {
 		return null;
 	}

@@ -68,9 +68,6 @@ $.ajax({
 //                         let address = mediCenterList[i].address;
 //                         let centerName = mediCenterList[i].centerName;
 //                         let phoneNumber = mediCenterList[i].phoneNumber
-//                         let todayCnt = (mediCenterList[i].decideCnt - coronaList[i+1].decideCnt).toString();
-//                         dataList += stateDt +"/"+ deathCnt +"/"+ decideCnt +"/"+ clearCnt +"/"+ todayCnt;
-//                         dataList += "&";
 //                     }
 //                     sendData = {
 //                         dataList:dataList

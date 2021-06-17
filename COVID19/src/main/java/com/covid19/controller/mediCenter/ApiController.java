@@ -34,9 +34,6 @@ public class ApiController {
         	urlBuilder.append("?" + URLEncoder.encode("page","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지번호*/
         	urlBuilder.append("&" + URLEncoder.encode("perPage","UTF-8") + "=" + URLEncoder.encode("49", "UTF-8")); /*한 페이지 결과 수*/
 			urlBuilder.append("&" + URLEncoder.encode("serviceKey","UTF-8") + "=2MQP2Jqoof9NxfXQ8oLwNvYMcm1OdhGVzEgDikf%2BtaB0RSFmbFXey3Jnd5QBanWx4tpWFe6ZUk1j1GO5G%2FDlFQ%3D%3D");
-			
-			//urlBuilder.append("&" + URLEncoder.encode("startCreateDt","UTF-8") + "=" + URLEncoder.encode("20210615", "UTF-8")); /*검색할 생성일 범위의 시작*/
-			//urlBuilder.append("&" + URLEncoder.encode("endCreateDt","UTF-8") + "=" + URLEncoder.encode("20210615", "UTF-8")); /*검색할 생성일 범위의 종료*/
 			urlBuilder.append("&" + URLEncoder.encode("_type","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /*json타입으로 변환*/
 			
 			URL url = new URL(urlBuilder.toString());
@@ -75,9 +72,6 @@ public class ApiController {
 			urlBuilder.append("?" + URLEncoder.encode("page","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지번호*/
 			urlBuilder.append("&" + URLEncoder.encode("perPage","UTF-8") + "=" + URLEncoder.encode("10", "UTF-8")); /*한 페이지 결과 수*/
 			urlBuilder.append("&" + URLEncoder.encode("serviceKey","UTF-8") + "=2MQP2Jqoof9NxfXQ8oLwNvYMcm1OdhGVzEgDikf%2BtaB0RSFmbFXey3Jnd5QBanWx4tpWFe6ZUk1j1GO5G%2FDlFQ%3D%3D");
-			
-			//urlBuilder.append("&" + URLEncoder.encode("startCreateDt","UTF-8") + "=" + URLEncoder.encode("20210615", "UTF-8")); /*검색할 생성일 범위의 시작*/
-			//urlBuilder.append("&" + URLEncoder.encode("endCreateDt","UTF-8") + "=" + URLEncoder.encode("20210615", "UTF-8")); /*검색할 생성일 범위의 종료*/
 			urlBuilder.append("&" + URLEncoder.encode("_type","UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /*json타입으로 변환*/
 			
 			URL url = new URL(urlBuilder.toString());
