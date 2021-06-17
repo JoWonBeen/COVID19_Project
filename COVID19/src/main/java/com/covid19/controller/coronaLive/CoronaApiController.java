@@ -1,4 +1,4 @@
-package com.covid19.controller.api;
+package com.covid19.controller.coronaLive;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -127,10 +127,6 @@ public class CoronaApiController {
 		String lastDate = coronaLiveDao.getLastDate();
 		return lastDate;
 	}
-	
-	
-	
-	
 	
 	
 	@RequestMapping(value="/InsertCoronaInfoSido.do",produces="application/json;charset=UTF-8;")

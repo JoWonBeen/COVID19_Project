@@ -18,8 +18,6 @@
 		SELECT MAX(STARTDATE) FROM CORONADATEINFO
 	</select>
 	
-	
-	
 	<insert id="insertCoronaDateInfoSido" parameterType="CoronaSidoInfoBean">
 		INSERT INTO CORONASIDOINFO VALUES (CORONASIDOINFO_SEQ.NEXTVAL,
 									#{startDate},
@@ -32,6 +30,22 @@
 	<select id="getLastDateSido" resultType="String">
 		SELECT MAX(STARTDATE) FROM CORONASIDOINFO
 	</select>
+	
+	<select id="getAllAreaData" resultType="CoronaDateInfoBean" parameterType="hashMap">
+		SELECT MAX(STARTDATE) AS STARTDATE, MAX(DEATH_CNT) AS deathCnt, MAX(DECIDE_CNT) AS decideCnt, MAX(CLEAR_CNT) AS clearCnt, SUM(TODAY_CNT) AS todayCnt FROM 
+		(SELECT C2.*, TRUNC((I-1)/#{type}) AS INTERVAL FROM  
+		(SELECT ROWNUM AS I, C1.* FROM 
+		(SELECT * FROM CORONADATEINFO WHERE STARTDATE > #{period} ORDER BY STARTDATE DESC) C1) C2) GROUP BY INTERVAL ORDER BY INTERVAL
+	</select>
+	
+	<select id="getAreaData" resultType="CoronaSidoInfoBean" parameterType="hashMap">
+		SELECT MAX(STARTDATE) AS STARTDATE, MAX(DEATH_CNT) AS deathCnt, SUM(TODAY_CNT) AS todayCnt, MAX(AREA) AS AREA FROM 
+		(SELECT C2.*, TRUNC((I-1)/#{type}) AS INTERVAL FROM  
+		(SELECT ROWNUM AS I, C1.* FROM 
+		(SELECT * FROM CORONASIDOINFO WHERE STARTDATE > #{period} AND AREA = #{area} ORDER BY STARTDATE DESC) C1) C2) GROUP BY INTERVAL ORDER BY INTERVAL
+	</select>
+	
+	
 </mapper>
 
 

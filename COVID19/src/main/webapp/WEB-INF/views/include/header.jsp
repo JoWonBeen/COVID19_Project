@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/memberInfoForm.css">
 <script src="js/jquery-3.6.0.min.js"></script> 
+<script src="js/chart.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
 <header id="header">
     <c:choose>

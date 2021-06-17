@@ -4,7 +4,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -12,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 @ComponentScan("com.covid19.controller.member")
 @ComponentScan("com.covid19.controller.home")
-@ComponentScan("com.covid19.controller.api")
+@ComponentScan("com.covid19.controller.coronaLive")
 @ComponentScan("com.covid19.model.member")
 @ComponentScan("com.covid19.model.coronaLive")
 public class ServletAppContext implements WebMvcConfigurer{

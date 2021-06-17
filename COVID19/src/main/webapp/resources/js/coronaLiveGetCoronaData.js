@@ -1,4 +1,3 @@
-//showCoronaData();
 updateCoronaData();
 updateCoronaDataSido();
 function updateCoronaData(){
@@ -18,10 +17,10 @@ function updateCoronaData(){
 					data:sendData,
 					success:function(resultData){
 						let list_length = 0;
-						console.log(resultData);
 						if(resultData.response.body.items.item != null) {
 							coronaList = resultData.response.body.items.item;
 							list_length = coronaList.length;
+							console.log(coronaList);
 						}
 						let dataList = "";
 						for(let i = 0; i < list_length-1; i++){
@@ -50,8 +49,6 @@ function updateCoronaData(){
 	});
 }
 
-
-
 function updateCoronaDataSido(){
 	let lastDate = null;
 	let coronaList = null;
@@ -59,7 +56,6 @@ function updateCoronaDataSido(){
 		url:"GetLastDateSido.do",
 		success:function(resultData){
 			lastDate = resultData;
-			console.log(lastDate);
 			let sendData = {
 				start:lastDate,
 				end: dateToYear(new Date())
@@ -70,10 +66,10 @@ function updateCoronaDataSido(){
 					data:sendData,
 					success:function(resultData){
 						let list_length = 0;
-						console.log(resultData);
 						if(resultData.response.body.items.item != null) {
 							coronaList = resultData.response.body.items.item;
 							list_length = coronaList.length;
+							console.log(coronaList);
 						}
 						let dataList = "";
 						for(let i = 0; i < list_length-19; i++){
@@ -84,7 +80,6 @@ function updateCoronaDataSido(){
 							dataList += stateDt +"/"+ deathCnt +"/"+ todayCnt +"/"+ area;
 							dataList += "&";
 						}
-						console.log(dataList);					
 						sendData = {
 							dataList:dataList
 						}
@@ -101,7 +96,6 @@ function updateCoronaDataSido(){
 		}
 	});
 }
-
 
 
 function dateToYear(_date) {

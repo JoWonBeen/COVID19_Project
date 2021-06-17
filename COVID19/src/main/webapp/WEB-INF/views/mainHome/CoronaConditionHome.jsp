@@ -12,12 +12,14 @@
 <link rel="stylesheet" href="css/reset.css">
 <link href="css/coronaLive.css" rel="stylesheet">
 <script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/coronaLive.js" defer></script>
+<script src="js/coronaLiveGetCoronaData.js" defer></script>
+<script src="js/coronaLiveChart.js" defer></script>
+<script src="js/chart.min.js" defer></script>
 </head>
 <body>
 	<div id = "coronaOptionBox">
 		<label for="type">종류</label> 
-		<select name="type" id="type" onChange="changeCategory();">
+		<select name="type" id="type" onChange="showCoronaData(); changeCategory();">
 			<option selected="selected">일별</option>
 			<option>주별</option>
 			<option>월별</option>
@@ -55,6 +57,9 @@
 			<option>제주</option>
 		</select>
 	</div>
+	<div id = "chartBox" style = "width:700px; height:600px;">
+        <canvas id="myChart"></canvas><!-- 차트를 그릴 공간 -->
+    </div>
 
 
 </body>

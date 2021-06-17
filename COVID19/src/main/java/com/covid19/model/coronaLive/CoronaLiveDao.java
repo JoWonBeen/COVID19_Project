@@ -2,6 +2,8 @@ package com.covid19.model.coronaLive;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -9,13 +11,10 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Component;
 
-import com.covid19.model.member.AdminBean;
-import com.covid19.model.member.MemberBean;
-
 @Component
 public class CoronaLiveDao {
 	private static SqlSessionFactory sqlSessionFactory;
-
+	
 	static {
 		try {
 			String resource = "com/covid19/mybatis/config.xml";
@@ -55,7 +54,27 @@ public class CoronaLiveDao {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		String lastDate = sqlSession.selectOne("getLastDateSido");
 		sqlSession.close();
-		System.out.println(lastDate);
 		return lastDate;
+	}
+	
+	public List<CoronaDateInfoBean> getAllAreaData(int type, String period) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		HashMap<String, Object> dateOption = new HashMap<String, Object>();
+		dateOption.put("type", type);
+		dateOption.put("period", period);
+		List<CoronaDateInfoBean> coronaDateInfoBeanList = sqlSession.selectList("getAllAreaData", dateOption);
+		sqlSession.close();
+		return coronaDateInfoBeanList;
+	}
+	
+	public List<CoronaSidoInfoBean> getAreaData(int type, int period, String area) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		HashMap<String, Object> dateOption = new HashMap<String, Object>();
+		dateOption.put("type", type);
+		dateOption.put("period", period);
+		dateOption.put("area", area);
+		List<CoronaSidoInfoBean> coronaSidoInfoBean = sqlSession.selectList("getAreaData", dateOption);
+		sqlSession.close();
+		return coronaSidoInfoBean;
 	}
 }
