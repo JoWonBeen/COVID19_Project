@@ -3,15 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.covid19.mybatis.ReserveMapper">
-<select id="getAllReservation" parameterType="hashMap"
+<select id="getAllReservation" parameterType="String"
 		resultType="ReserveBean">
-		SELECT * FROM (SELECT ROWNUM NUM, B.* FROM (SELECT * FROM RESERVATION ORDER BY SYSDATE DESC) B) WHERE NUM <![CDATA[>=]]> #{start} AND NUM <![CDATA[<=]]> #{end}
-</select>
-<select id="getTotal" resultType="Integer">
-		SELECT COUNT(*) AS TOTAL FROM RESERVATION
-</select>
-<select id="getSelectOneReserve" parameterType="Integer" resultType="ReserveBean">
-		SELECT * FROM RESERVATION WHERE NO = #{no}
+		SELECT * FROM RESERVATION WHERE MEMBERID = #{memberId}
 </select>
 <insert id="insertReserve" parameterType="ReserveBean">
 		INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.NEXTVAL,
@@ -19,8 +13,18 @@
 									#{vaccine},
 									#{hospitalAdd},
 									#{rsDate},
-									SYSDATE
+									SYSDATE,
+									#{memberId}
 									)
 	</insert>
-	
+	<update id="updateReserve" parameterType="ReserveBean">
+	UPDATE RESERVATION SET GUBUN=#{gubun},
+						   VACCINE=#{vaccine},
+						   HOSPITALADD=#{hospitalAdd},
+						   RSDATE=#{rsDate}
+						   WHERE MEMBERID=#{memberId}
+	</update>
+	<delete id="deleteReserve" parameterType="String">
+	DELETE FROM RESERVATION WHERE MEMBERID = #{memberId}
+	</delete>
 </mapper>

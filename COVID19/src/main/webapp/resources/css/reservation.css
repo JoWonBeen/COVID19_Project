@@ -1,18 +1,5 @@
 @charset "UTF-8";
 
-* {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-body {
-	font-family: "Noto Sans KR";
-}
-a {
-	text-decoration:none;
-	color:inherit;
-}
 table {
 	border: none;
 	border-collapse: collapse;
@@ -42,7 +29,7 @@ table tr td select {
 }
 
 .formBox {
-	width: 1000px;
+	width: 1500px;
 	margin: 100px auto;
 }
 
@@ -53,7 +40,7 @@ table tr td select {
 
 .formBox .btns {
 	text-align: center;
-	margin-top: 50px;
+	margin-top: 150px;
 }
 
 .formBox .btns * {
@@ -80,49 +67,4 @@ table tr td select {
 
 .formBox .btns #reserve {
 	background-color: rgb(1, 121, 177);
-}
-.formBox .pagination {
-	margin-top: 50px;
-	text-align: center;
-	display:block;
-}
-.formBox .pagination a {
-	display: inline-block;
-	width:30px;
-	height:30px;
-	background-color: #000;
-	color:#fff;
-	font-size: 14px;
-	line-height: 30px;
-	border-radius: 3px;
-}
-
-#list thead th {text-align:center}
-
-#list tbody td {
-	text-align: center;
-}
-#list tbody td.subject {
-	text-align: left;
-	padding-left:50px;
-}
-#list tbody td.space1 {padding-left:50px;}
-#list tbody td.space2 {padding-left:70px;}
-#list tbody td.space3 {padding-left:90px;}
-#list tbody td.space4 {padding-left:110px;}
-#list tbody td.space5 {padding-left:130px;}
-
-#list tbody tr:hover {
-	background-color:#000;
-	color:#fff;	
-}
-
-.formBox .pagination a.clicked {
-	background-color: rgb(1, 121, 177);
-}
-.formBox .pagination a .material-icons {
-	width:30px;
-	height:30px;
-	line-height: 30px;
-	vertical-align: top;
 }

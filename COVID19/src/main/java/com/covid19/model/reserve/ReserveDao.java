@@ -36,27 +36,34 @@ public class ReserveDao {
 			
 		return result;
 	}
-	public List<ReserveBean> getAllReservation(int start, int end) {
-		Map<String,Integer> page = new HashMap<String,Integer>();
-		page.put("start", start);
-		page.put("end", end);
+	public ReserveBean getAllReservation(String memberId) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<ReserveBean> ReservationList = sqlSession.selectList("getAllReservation", page);
-		sqlSession.close();
-		return ReservationList;
-	}
-	public ReserveBean getSelectOneReserve(int no) {
-		ReserveBean reserveBean = new ReserveBean();
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		reserveBean = sqlSession.selectOne("getSelectOneBoard", no);
+		ReserveBean reserveBean = sqlSession.selectOne("getAllReservation", memberId);
 		sqlSession.close();
 		return reserveBean;
 	}
-	public int getTotal() {
-		int total = 0;
+	public int updateReserve(ReserveBean reserveBean) {
+		int result=0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		total = sqlSession.selectOne("getTotal");
+		result = sqlSession.update("updateReserve",reserveBean);
+		sqlSession.commit();
 		sqlSession.close();
-		return total;
+		return result;
 	}
+	public int deleteReserve(String memberId) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		result = sqlSession.delete("deleteReserve",memberId);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
+	public String getPassword(String memberId) {
+		String password = "";
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		password = sqlSession.selectOne("getPassword",memberId);
+		sqlSession.close();
+		return password;
+	}
+	
 }
