@@ -1,39 +1,137 @@
-body { width: 100%; height: 100%; }
+body {
+  width: 100%;
+  height: 100%;
+}
 
-a { text-decoration: none; color: inherit; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-#header { width: 100%; position: fixed; }
+#header {
+  width: 100%;
+  position: fixed;
+}
 
-#header #logo { position: absolute; left: 50px; top: 20px; }
+#header #logo {
+  position: absolute;
+  left: 50px;
+  top: 20px;
+}
 
-#header #logo a img { height: 100px; }
+#header #logo a img {
+  height: 100px;
+}
 
-#header #gnb { padding-top: 20px; }
+#header #gnb {
+  padding-top: 20px;
+}
 
-#header #gnb .gnbList { text-align: center; font-size: 0; }
+#header #gnb .gnbList {
+  text-align: center;
+  font-size: 0;
+}
 
-#header #gnb .gnbList a { text-decoration: none; color: inherit; }
+#header #gnb .gnbList a {
+  text-decoration: none;
+  color: inherit;
+}
 
-#header #gnb .gnbList > li { display: inline-block; vertical-align: top; font-size: 20px; position: relative; width: 12%; }
+#header #gnb .gnbList > li {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 20px;
+  position: relative;
+  width: 12%;
+}
 
-#header #gnb .gnbList > li .depth01 { font-size: 21px; font-weight: 700; display: block; height: 90px; line-height: 90px; }
+#header #gnb .gnbList > li .depth01 {
+  font-size: 21px;
+  font-weight: 700;
+  display: block;
+  height: 90px;
+  line-height: 90px;
+}
 
-#header #gnb .gnbList > li .depth02 { width: 100%; position: absolute; left: 0; display: none; padding: 10px 0; height: 80px; font-size: 17px; font-weight: 700; }
+#header #gnb .gnbList > li .depth02 {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  display: none;
+  padding: 10px 0;
+  height: 80px;
+  font-size: 17px;
+  font-weight: 700;
+}
 
-#header #gnb .gnbList > li .depth02 li { padding: 20px 0; }
+#header #gnb .gnbList > li .depth02 li {
+  padding: 20px 0;
+}
 
-#header #gnb .gnbList > li:hover .depth01 { color: blue; }
+#header #gnb .gnbList > li:hover .depth01 {
+  color: blue;
+}
 
-#header #gnb .gnbList:hover .depth02 { display: block; }
+#header #gnb .gnbList:hover .depth02 {
+  display: block;
+}
 
-#header .loginBox { position: absolute; right: 40px; top: 37px; }
+#header .loginBox {
+  position: absolute;
+  right: 40px;
+  top: 37px;
+}
 
-#header .loginBox ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: black; border-radius: 5px; height: 40px; }
+#header .loginBox ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  border-radius: 5px;
+  height: 40px;
+}
 
-#header .loginBox ul li { margin: 0 10px; font-size: 20px; color: white; }
+#header .loginBox ul li {
+  margin: 0 10px;
+  font-size: 20px;
+  color: white;
+}
 
-#header .loginBox ul li a { text-decoration: none; color: inherit; font-weight: 400; }
+#header .loginBox ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 400;
+}
 
-.mainTitle { height: 1000px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 40px; font-weight: 400; }
+.mainTitle {
+  height: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 40px;
+  font-weight: 400;
+}
 
-#footer { position: absolute; bottom: 50px; width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+#footer {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}

@@ -41,6 +41,9 @@
 				<option value="">경상남도</option>
 				<option value="">제주특별자치도</option>
 			</select>
+			<select>
+				<option value="">시군구</option>
+			</select>
 
 			<ul class="mediCenterList">
 
