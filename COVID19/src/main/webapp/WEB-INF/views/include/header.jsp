@@ -37,8 +37,8 @@
 			</li>
 			<li><a href="" class="depth01">의료기관</a>
 				<ul class="depth02">
-					<li><a href="">의료기관 검색</a></li>
-					<li><a href="">백신 수량</a></li>
+					<li><a href="MediCenterSearch.do">의료기관 검색</a></li>
+					<li><a href="VaccineSearch.do">백신 수량</a></li>
 				</ul>
 			</li>
 			
