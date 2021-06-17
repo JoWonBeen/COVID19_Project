@@ -6,11 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="css/mediCenter.css">
 <script src="js/mediCenter.js" defer></script>
 </head>
 <body>
 	<div id="mediCenter">
-		<header id="header" class="header">
+		<header id="mediCenterheader">
 			<h1>
 				<span class="title">의료기관 검색</span>
 			</h1>

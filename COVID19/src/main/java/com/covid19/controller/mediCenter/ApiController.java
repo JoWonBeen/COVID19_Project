@@ -6,12 +6,23 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.covid19.model.mediCenter.MediCenterBean;
+import com.covid19.model.mediCenter.MediCenterDao;
 
 @Controller
 public class ApiController {
+	
+	@Autowired 
+	MediCenterBean mediCenterBean;
+	
+	@Autowired
+	MediCenterDao mediCenterDao;
 	
 	@RequestMapping(value="/VaccCenterApiCall.do", produces="application/json;charset=UTF-8")
 	@ResponseBody
@@ -19,7 +30,7 @@ public class ApiController {
 		
 		StringBuilder sb = new StringBuilder();
         try {
-        	StringBuilder urlBuilder = new StringBuilder("https://api.odcloud.kr/api/15077603/v1/uddi:42544140-6589-4e9d-88c9-a0cdc6b7b496"); /*URL*/
+        	StringBuilder urlBuilder = new StringBuilder("https://api.odcloud.kr/api/15077586/v1/centers"); /*URL*/
         	urlBuilder.append("?" + URLEncoder.encode("page","UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /*페이지번호*/
         	urlBuilder.append("&" + URLEncoder.encode("perPage","UTF-8") + "=" + URLEncoder.encode("49", "UTF-8")); /*한 페이지 결과 수*/
 			urlBuilder.append("&" + URLEncoder.encode("serviceKey","UTF-8") + "=2MQP2Jqoof9NxfXQ8oLwNvYMcm1OdhGVzEgDikf%2BtaB0RSFmbFXey3Jnd5QBanWx4tpWFe6ZUk1j1GO5G%2FDlFQ%3D%3D");
@@ -94,6 +105,32 @@ public class ApiController {
 		
 		return sb.toString();
 	}
+	
+	@RequestMapping(value="/mediCenterInfo.do",produces="application/json;charset=UTF-8;")
+	@ResponseBody //String centerName, String address, String phoneNumber
+	public int insertMediCenterInfo(@RequestParam(value="dataList") String dataList) {
+		int result = 0;
+		String[] dataList1 = dataList.split("&");
+		for(int i = 0; i < dataList1.length; i++) {
+			String[] dataList2 = dataList1[i].split("/");
+			coronaDateInfoBean.setStartDate(dataList2[0]);
+			coronaDateInfoBean.setDeathCnt(Integer.parseInt(dataList2[1]));
+			coronaDateInfoBean.setDecideCnt(Integer.parseInt(dataList2[2]));
+			coronaDateInfoBean.setClearCnt(Integer.parseInt(dataList2[3]));
+			coronaDateInfoBean.setTodayCnt(Integer.parseInt(dataList2[4]));
+			result = coronaLiveDao.insertCoronaDateInfo(coronaDateInfoBean);
+		}
+
+		return result;
+	}
+	
+	@RequestMapping(value="/GetMediCenterData.do",produces="application/json;charset=UTF-8;")
+	@ResponseBody
+	public String getMediCenter() {
+		String mediCenter = mediCenterDao.getmediCenterData();
+		return mediCenter;
+	}
+	
 	
 	
 	@RequestMapping("/MediCenterSearch.do")
