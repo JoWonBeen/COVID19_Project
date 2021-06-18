@@ -43,9 +43,9 @@ public class MediCenterDao {
 		
 	
 	
-	public String getmediCenterData() {
-		return null;
-	}
+//	public String getmediCenterData() {
+//		return null;
+//	}
 	
 
 }

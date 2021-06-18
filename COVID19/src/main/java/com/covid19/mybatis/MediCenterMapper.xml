@@ -9,6 +9,7 @@
 	<select id="showAllCenter"  resultType="MediCenterBean" parameterType="Integer">
 		SELECT * FROM MEDICENTER
 	</select>
+
 	
 
 	

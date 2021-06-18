@@ -19,7 +19,7 @@
 		<main id="main">
 			<select>
 				<option>전체 의료기관</option>
-				<option value="a">예방접종센터</option>
+				<option value="a">예방접종 센터</option>
 				<option value="b">위탁 의료기관</option>
 			</select> 
 			<select id="sido" onchange="categoryChange(this)">
@@ -49,6 +49,7 @@
 			<ul class="mediCenterList">
 
 			</ul>
+			<button class="btn">의료기관 찾기</button>
 		</main>
 	</div>
 </body>

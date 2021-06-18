@@ -9,7 +9,7 @@ import lombok.Data;
 public class MediCenterBean {
 	private int no;
 	private int gubun;
-	private String CenterName;
+	private String centerName;
 	private String address;
-	private String Phone;
+	private String phone;
 }
