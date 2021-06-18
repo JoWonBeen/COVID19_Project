@@ -38,4 +38,17 @@ public class CoronaChartController {
 		return coronaSidoInfoBeanList;
 	}
 	
+	@RequestMapping(value="/GetMainData.do",produces="application/json;charset=UTF-8;")
+	@ResponseBody
+	public CoronaDateInfoBean getMainData() {
+		coronaDateInfoBean = coronaLiveDao.getMainData();
+		return coronaDateInfoBean;
+	}
+	@RequestMapping(value="/GetAreaTodayData.do",produces="application/json;charset=UTF-8;")
+	@ResponseBody
+	public List<CoronaSidoInfoBean> getAreaTodayData() {
+		List<CoronaSidoInfoBean> coronaSidoInfoBeanList = coronaLiveDao.getAreaTodayData();
+		return coronaSidoInfoBeanList;
+	}
+	
 }

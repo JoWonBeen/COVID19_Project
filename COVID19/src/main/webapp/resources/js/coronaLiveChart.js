@@ -1,5 +1,6 @@
 var myChart = null;
-
+showMainData();
+showAreaData();
 showCoronaData();
 
 function showCoronaData(){
@@ -86,5 +87,38 @@ function showCoronaData(){
             }
         });
 		//--------------------------------------------------
+    })
+}
+
+
+function showMainData(){
+	$.ajax({
+        url:"GetMainData.do",          
+    })
+    .done(function(result){
+    	console.log(result);
+    	let addList = [result.decideCnt, result.deathCnt, result.clearCnt];
+    	$("#totalDataBox td").remove();  
+		for (x in addList) {
+			$("#totalDataBox").append("<td>"+ addList[x] +"</td>");
+		}
+    })
+}
+
+function showAreaData(){
+	$.ajax({
+        url:"GetAreaTodayData.do",          
+    })
+    .done(function(result){
+    	console.log(result); 
+    	for(let i = 0; i < result.length; i++){
+	    	let addList = [result[i].area, result[i].todayCnt, result[i].defCnt, result[i].deathCnt];
+			$("#areaDataBox").append("<tr>");
+			for (x in addList) {
+				$("#areaDataBox").append("<td>"+ addList[x] +"</td>");
+			}
+			$("#areaDataBox").append("</tr>");
+    	}
+    	
     })
 }

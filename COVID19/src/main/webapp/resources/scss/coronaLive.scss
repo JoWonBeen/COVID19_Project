@@ -1,0 +1,65 @@
+body{
+    border: 1px solid blue;
+	height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    #coronaTotalDataBox{
+        border: 1px solid gray;
+        border-radius: 40px;
+        height: 200px;
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;   
+        margin-bottom: 100px; 
+        table{
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            font-weight: 400;
+            
+            tbody{
+                text-align: center;
+                .totalDataNameBox{
+                    th{
+                        border:1px solid red;
+                    }
+                }
+                .totalDataBox{
+
+                }
+            }
+        }
+    }
+    #coronaGraphBox{
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items: center;
+        #coronaOptionBox{
+            margin-bottom: 50px;
+            display: flex;
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid gray;
+                border-radius: 10px;
+                padding: 10px 10px;
+                margin-right: 40px;
+                label{
+                    font-size: 20px;
+                    font-weight: 400;
+                    margin-right: 25px;
+                }
+                select{
+                    width: 70px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+}

@@ -100,5 +100,18 @@ public class CoronaLiveDao {
 		sqlSession.close();
 		return result;
 	}
+	public CoronaDateInfoBean getMainData() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		CoronaDateInfoBean coronaDateInfoBean = sqlSession.selectOne("getMainData");
+		sqlSession.close();
+		return coronaDateInfoBean;
+	}
+	public List<CoronaSidoInfoBean> getAreaTodayData() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<CoronaSidoInfoBean> coronaSidoInfoBeanList = sqlSession.selectList("getAreaTodayData");
+		sqlSession.close();
+		return coronaSidoInfoBeanList;
+	}
+	
 
 }
