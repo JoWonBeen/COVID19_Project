@@ -10,6 +10,7 @@ public class CoronaSidoInfoBean {
 	private int no;
 	private String startDate;
 	private int deathCnt;
+	private int defCnt;
 	private int todayCnt;
 	private String area;
 }

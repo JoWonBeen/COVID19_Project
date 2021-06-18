@@ -10,7 +10,7 @@
 									#{deathCnt},
 									#{decideCnt},
 									#{clearCnt},
-									#{todayCnt}
+									0
 									)
 	</insert>
 	
@@ -22,7 +22,8 @@
 		INSERT INTO CORONASIDOINFO VALUES (CORONASIDOINFO_SEQ.NEXTVAL,
 									#{startDate},
 									#{deathCnt},
-									#{todayCnt},
+									#{defCnt},
+									0,
 									#{area}
 									)
 	</insert>
@@ -44,6 +45,21 @@
 		(SELECT ROWNUM AS I, C1.* FROM 
 		(SELECT * FROM CORONASIDOINFO WHERE STARTDATE > #{period} AND AREA = #{area} ORDER BY STARTDATE DESC) C1) C2) GROUP BY INTERVAL ORDER BY INTERVAL
 	</select>
+	
+	<update id="updateTodayCnt">
+		UPDATE CORONADATEINFO C1
+		SET TODAY_CNT = DECIDE_CNT - (SELECT DECIDE_CNT FROM CORONADATEINFO C2 WHERE TO_DATE(C2.STARTDATE) = TO_DATE(C1.STARTDATE)-1)
+	</update>
+	
+	<update id="deleteRepeatDate">
+		DELETE CORONASIDOINFO
+		WHERE NO IN (SELECT NO FROM CORONASIDOINFO WHERE STARTDATE = '20200408' AND ROWNUM <![CDATA[<=]]> 19)
+	</update>
+	
+	<update id="updateTodayCntSido">
+		UPDATE CORONASIDOINFO C1
+		SET TODAY_CNT = DEF_CNT - (SELECT DEF_CNT FROM CORONASIDOINFO C2 WHERE (TO_DATE(C2.STARTDATE) = TO_DATE(C1.STARTDATE)-1) AND (C2.AREA = C1.AREA))
+	</update>
 	
 	
 </mapper>

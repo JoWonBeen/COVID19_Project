@@ -77,4 +77,28 @@ public class CoronaLiveDao {
 		sqlSession.close();
 		return coronaSidoInfoBean;
 	}
+	
+	
+	public int updateTodayCnt() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int result = sqlSession.update("updateTodayCnt");
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
+	public int deleteRepeatDate() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int result = sqlSession.delete("deleteRepeatDate");
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
+	public int updateTodayCntSido() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int result = sqlSession.update("updateTodayCntSido");
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
+
 }

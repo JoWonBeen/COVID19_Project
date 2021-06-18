@@ -114,9 +114,9 @@ public class CoronaApiController {
 			coronaDateInfoBean.setDeathCnt(Integer.parseInt(dataList2[1]));
 			coronaDateInfoBean.setDecideCnt(Integer.parseInt(dataList2[2]));
 			coronaDateInfoBean.setClearCnt(Integer.parseInt(dataList2[3]));
-			coronaDateInfoBean.setTodayCnt(Integer.parseInt(dataList2[4]));
 			result = coronaLiveDao.insertCoronaDateInfo(coronaDateInfoBean);
 		}
+		result = coronaLiveDao.updateTodayCnt();
 
 		return result;
 	}
@@ -138,10 +138,12 @@ public class CoronaApiController {
 			String[] dataList2 = dataList1[i].split("/");
 			coronaSidoInfoBean.setStartDate(dataList2[0]);
 			coronaSidoInfoBean.setDeathCnt(Integer.parseInt(dataList2[1]));
-			coronaSidoInfoBean.setTodayCnt(Integer.parseInt(dataList2[2]));
+			coronaSidoInfoBean.setDefCnt(Integer.parseInt(dataList2[2]));
 			coronaSidoInfoBean.setArea(dataList2[3]);
 			result = coronaLiveDao.insertCoronaDateInfoSido(coronaSidoInfoBean);
 		}
+		result = coronaLiveDao.deleteRepeatDate();
+		result = coronaLiveDao.updateTodayCntSido();
 
 		return result;
 	}

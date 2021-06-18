@@ -19,7 +19,7 @@
 <body>
 	<div id = "coronaOptionBox">
 		<label for="type">종류</label> 
-		<select name="type" id="type" onChange="showCoronaData(); changeCategory();">
+		<select name="type" id="type" onChange="changeCategory(); showCoronaData();">
 			<option selected="selected">일별</option>
 			<option>주별</option>
 			<option>월별</option>

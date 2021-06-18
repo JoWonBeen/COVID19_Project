@@ -1,6 +1,6 @@
 var myChart = null;
 
-//showCoronaData();
+showCoronaData();
 
 function showCoronaData(){
 	if(myChart != null){
@@ -22,6 +22,7 @@ function showCoronaData(){
 	else if(period == "2주") period = prevData(14, dateToYear(new Date()));
 	else if(period == "1달") period = prevData(30, dateToYear(new Date()));
 	else if(period == "3달") period = prevData(90, dateToYear(new Date()));
+	else if(period == "6달") period = prevData(180, dateToYear(new Date()));
 	else if(period == "1년") period = prevData(365, dateToYear(new Date()));
 	else if(period == "전체") period = prevData(1000, dateToYear(new Date()));
 	

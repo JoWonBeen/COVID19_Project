@@ -28,8 +28,8 @@ function updateCoronaData(){
 							let deathCnt = coronaList[i].deathCnt.toString();
 							let decideCnt = coronaList[i].decideCnt.toString();
 							let clearCnt = coronaList[i].clearCnt.toString();
-							let todayCnt = (coronaList[i].decideCnt - coronaList[i+1].decideCnt).toString();
-							dataList += stateDt +"/"+ deathCnt +"/"+ decideCnt +"/"+ clearCnt +"/"+ todayCnt;
+//							let todayCnt = (coronaList[i].decideCnt - coronaList[i+1].decideCnt).toString();
+							dataList += stateDt +"/"+ deathCnt +"/"+ decideCnt +"/"+ clearCnt;
 							dataList += "&";
 						}
 						sendData = {
@@ -75,9 +75,10 @@ function updateCoronaDataSido(){
 						for(let i = 0; i < list_length-19; i++){
 							let stateDt = StringToDate(coronaList[i].stdDay);
 							let deathCnt = coronaList[i].deathCnt.toString();
-							let todayCnt = (coronaList[i].defCnt - coronaList[i+19].defCnt).toString();
+							let defCnt = coronaList[i].defCnt;
+//							let todayCnt = (coronaList[i].defCnt - coronaList[i+19].defCnt).toString();
 							let area = coronaList[i].gubun;
-							dataList += stateDt +"/"+ deathCnt +"/"+ todayCnt +"/"+ area;
+							dataList += stateDt +"/"+ deathCnt +"/"+ defCnt +"/"+ area;
 							dataList += "&";
 						}
 						sendData = {
@@ -127,9 +128,9 @@ function prevData(amount, _date){
 }
 
 function changeCategory(){
-	let category1 = ["1주", "2주", "1달", "3달", "1년", "전체"];
-	let category2 = ["1주", "2주", "1달", "3달", "1년", "전체"];
-	let category3 = ["1달", "3달", "1년", "전체"];
+	let category1 = ["1주", "2주", "1달", "3달","6달", "1년", "전체"];
+	let category2 = ["1달", "3달","6달", "1년", "전체"];
+	let category3 = ["3달","6달", "1년", "전체"];
 	
 	let target = $("#period");
 	let _this = $("#type");
@@ -141,7 +142,10 @@ function changeCategory(){
 	 
 	$("#period option").remove();  
 	for (x in addList) {
-		target.append("<option>"+ addList[x] +"</option>");
+		if(x == 0)
+			target.append("<option selected='selected'>"+ addList[x] +"</option>");
+		else
+			target.append("<option>"+ addList[x] +"</option>");
 	}	
 }
 
