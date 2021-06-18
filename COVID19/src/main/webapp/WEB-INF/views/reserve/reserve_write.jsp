@@ -46,7 +46,7 @@
 					<tr>
 						<th>예약 대상자 구분</th>
 						<td>
-						<select name="gubun">
+						<select name="gubun" id="gubun">
 						<option selected="selected" disabled>선택하세요</option>
 						<option>의료종사자</option>
 						<option>돌봄종사자(어린이집,유아교사)</option>
@@ -62,7 +62,7 @@
 					<tr>
 						<th>예약 대상 백신</th>
 						<td>
-						<select name="vaccine">
+						<select name="vaccine" id="vaccine">
 						<option selected="selected" disabled>선택하세요</option>
 						<option>아스트라제네카</option>
 						<option>얀센</option>
@@ -143,7 +143,7 @@
 						<td>
 						<span class="material-icons">event_available</span>
 						<input type="text" id="datepicker" name = "date">
-						<select name="hour">
+						<select name="hour" id="hour">
 						<option>09</option>
 						<option>10</option>
 						<option>11</option>
@@ -155,7 +155,7 @@
 						<option>17</option>
 						<option>18</option>
 						</select><span>시</span>
-						<select name="minute">
+						<select name="minute" id="minute">
 						<option>00</option>
 						<option>15</option>
 						<option>30</option>
@@ -244,20 +244,43 @@ function changeCategory02(){
 }
 
 
-
-
-
-
-$(document).ready(function(){ var now = new Date(); 
-var year = now.getFullYear(); 
-var mon = (now.getMonth() + 1) > 9 ? ''+(now.getMonth() + 1) : '0'+(now.getMonth() + 1); 
-var day = (now.getDate()) > 9 ? ''+(now.getDate()) : '0'+(now.getDate()); //년도 selectbox만들기 
-for(var i = 1900 ; i <= year ; i++) { $('#year').append('<option value="' + i + '">' + i + '년</option>'); } // 월별 selectbox 만들기 
-for(var i=1; i <= 12; i++) { var mm = i > 9 ? i : "0"+i ; $('#month').append('<option value="' + mm + '">' + mm + '월</option>'); } // 일별 selectbox 만들기 
-for(var i=1; i <= 31; i++) { var dd = i > 9 ? i : "0"+i ; $('#day').append('<option value="' + dd + '">' + dd+ '일</option>'); } 
-$("#year > option[value="+year+"]").attr("selected", "true"); 
-$("#month > option[value="+mon+"]").attr("selected", "true"); 
-$("#day > option[value="+day+"]").attr("selected", "true"); })
+$("#reserve").on("click",function(){
+    if($("#gubun").val().length<=0) {
+        alert("대상자 구분은 필수 입력 사항입니다.");
+        $("#gubun").focus();
+        return;
+    }else if($("#vaccine").val().length<=0){
+        alert("백신은 필수 입력 사항입니다.");
+        $("#vaccine").focus();
+        return;
+    } else if($("#mainArea").val().length<=0){
+        alert("시도별 선택은 필수 입력 사항입니다.");
+        $("#mainArea").focus();
+        return;
+    } else if($("#detailArea").val().length<=0){
+        alert("시군구별 선택은 필수 입력 사항입니다.");
+        $("#detailArea").focus();
+        return;
+    } else if($("#hospital").val().length<=0){
+        alert("병원은 필수 입력 사항입니다.");
+        $("#hospital").focus();
+        return;
+    } else if($("#datepicker").val().length<=0){
+        alert("날짜는 필수 입력 사항입니다.");
+        $("#datepicker").focus();
+        return;
+    } else if($("#hour").val().length<=0){
+        alert("예약시간은 필수 입력 사항입니다.");
+        $("#hour").focus();
+        return;
+    } else if($("#minute").val().length<=0){
+        alert("예약시간은 필수 입력 사항입니다.");
+        $("#minute").focus();
+        return;
+    }else {
+        $("#reserveForm").submit();
+    }
+});
 </script>
 </body>
 </html>

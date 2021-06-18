@@ -53,8 +53,8 @@
 					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약현황</a>
 						<ul class="depth02">
 							<li><a href="ReserveList.do">백신 예약조회</a></li>
-							<li><a href="">백신 예약수정</a></li>
-							<li><a href="">백신 예약취소</a></li>
+							<li><a href="ReserveModifyForm.do">백신 예약수정</a></li>
+							<li><a href="ReserveDeleteForm.do">백신 예약취소</a></li>
 						</ul>
 					</li>
 				</c:when>

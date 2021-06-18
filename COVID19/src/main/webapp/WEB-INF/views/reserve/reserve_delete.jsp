@@ -21,13 +21,12 @@
 				</tr>
 			</thead>
 			<tbody>
-					<tr>
-						<td><input type="text"></td>
-					</tr>
+				<tr>
+					<td><input type="password" name = "password"></td>
+				</tr>
 			</tbody>
 		</table>
 		<div class="btns">
-				<input type="hidden" value="${loggedMemberInfo.id}" name = "loggedMemberId">
 				<input type="submit" value="확인" id="reserve"> 
 			</div>
 			</form>

@@ -11,6 +11,7 @@ a {
 #header {
   width: 100%;
   position: fixed;
+  top:0;
 }
 
 #header #logo {

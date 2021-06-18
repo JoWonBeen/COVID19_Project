@@ -39,20 +39,24 @@
 			</thead>
 			<tbody>
 					<tr>
-						<td>${loggedMemberInfo.id}</td>
-						<td>${loggedMemberInfo.name}</td>
-						<td>${loggedMemberInfo.birth}</td>
-						<td>${loggedMemberInfo.gender}</td>
-						<td>${loggedMemberInfo.phone}</td>
-						<td>${reserveBean.gubun}</td>
-						<td>${reserveBean.vaccine}</td>
-						<td>${reserveBean.hospitalAdd}</td>
-						<td>${reserveBean.rsDate}</td>
+						<c:choose>
+							<c:when test = "${reserveBean.gubun != null}">
+								<td>${loggedMemberInfo.id}</td>
+								<td>${loggedMemberInfo.name}</td>
+								<td>${loggedMemberInfo.birth}</td>
+								<td>${loggedMemberInfo.gender}</td>
+								<td>${loggedMemberInfo.phone}</td>
+								<td>${reserveBean.gubun}</td>
+								<td>${reserveBean.vaccine}</td>
+								<td>${reserveBean.hospitalAdd}</td>
+								<td>${reserveBean.rsDate}</td>
+							</c:when>
+						</c:choose>
 					</tr>
 			</tbody>
 		</table>
 		<div class="btns">
-				<input type="hidden" value="${loggedMemberInfo.id}" name = "loggedMemberId">
+				
 				<a href="ReserveModifyForm.do">예약수정</a> 
 				<a href="ReserveDeleteForm.do">예약취소</a>
 			</div>

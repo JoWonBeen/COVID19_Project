@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.covid19.model.member.MemberBean;
 import com.covid19.model.member.MemberDao;
@@ -25,6 +26,9 @@ public class ReserveController {
 	
 	@Autowired
 	MemberBean memberBean;
+	
+	@Autowired
+	MemberBean loggedMemberBean;
 	
 	@Autowired
 	MemberDao memberDao;
@@ -53,8 +57,10 @@ public class ReserveController {
 		String month = reserveDate.substring(0, 2);
 		String day = reserveDate.substring(3,5);
 		reserveDate = year + "-" + month + "-" + day;
-		System.out.println(reserveDate);
 		String rsDate = reserveDate + " " + request.getParameter("hour") + ":" + request.getParameter("minute");
+		
+		System.out.println("reserveBean==="+reserveBean);
+		
 		reserveBean.setGubun(gubun);
 		reserveBean.setVaccine(vaccine);
 		reserveBean.setHospitalAdd(hospitalAdd);
@@ -73,29 +79,47 @@ public class ReserveController {
 		
 		
 	}
+	
 	@RequestMapping(value = "/ReserveList.do", produces = "application/json; charset=UTF-8;")
 	public String reserveList(HttpServletRequest request, Model model, HttpSession session) {
 		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
+		//System.out.println("memberBean==="+memberBean.getId());
 		reserveBean = reserveDao.getAllReservation(memberBean.getId());
+		//System.out.println("reserveBean==="+reserveBean.toString());
 		model.addAttribute("reserveBean", reserveBean);
 		return "reserve/reserve_list";
 	}
 	@GetMapping("/ReserveModifyForm.do")
 	public String reserveModifyForm() {
-		
 		return "reserve/reserve_modify";
 	}
 	@PostMapping("/ReserveModify.do")
-	public String reserveModify(HttpServletResponse response, Model model, HttpSession session) throws IOException {
+	public String reserveModify(HttpServletResponse response, Model model, HttpSession session,HttpServletRequest request) throws IOException {
 		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
 		reserveBean = reserveDao.getAllReservation(memberBean.getId());
+		String gubun = request.getParameter("gubun");
+		String vaccine = request.getParameter("vaccine");
+		String hospitalAdd = request.getParameter("sido")+" "+request.getParameter("sigungu")+" "+request.getParameter("hospital");
+		String reserveMemberId = request.getParameter("loggedMemberId");
+		String reserveDate = request.getParameter("date");
+		String year = reserveDate.substring(6); 
+		String month = reserveDate.substring(0, 2);
+		String day = reserveDate.substring(3,5);
+		reserveDate = year + "-" + month + "-" + day;
+		System.out.println(reserveDate);
+		String rsDate = reserveDate + " " + request.getParameter("hour") + ":" + request.getParameter("minute");
+		reserveBean.setGubun(gubun);
+		reserveBean.setVaccine(vaccine);
+		reserveBean.setHospitalAdd(hospitalAdd);
+		reserveBean.setRsDate(rsDate);
+		reserveBean.setMemberId(reserveMemberId);
 		model.addAttribute("reserveBean", reserveBean);
 		int result = reserveDao.updateReserve(reserveBean);
 		if (result > 0) {
-			ScriptWriterUtil.alertAndNext(response, "글이 수정되었습니다.", "ReserveList.do");
+			ScriptWriterUtil.alertAndNext(response, "예약이 수정되었습니다.", "ReserveList.do");
 			return null;
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "글이 수정되지 않았습니다.");
+			ScriptWriterUtil.alertAndBack(response, "예약이 수정되지 않았습니다.");
 			return null;
 		}
 		
@@ -106,15 +130,17 @@ public class ReserveController {
 		return "reserve/reserve_delete";
 	}
 	@PostMapping("/ReserveDelete.do")
-	public String reserveDelete(HttpServletResponse response,String MemberId,String password) throws IOException {
+	public String reserveDelete(HttpServletResponse response, HttpSession session,HttpServletRequest request) throws IOException {
 		
-		memberBean.setPassword(password);
+		loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
+		//reserveBean = reserveDao.getAllReservation(loggedMemberBean.getId());
 		
-		String dbPassword = reserveDao.getPassword(MemberId);
-		if(dbPassword.equals(memberBean.getPassword())) {
-			int result = reserveDao.deleteReserve(MemberId);
+		String password = request.getParameter("password");
+		
+		if(password.equals(loggedMemberBean.getPassword())) {
+			int result = reserveDao.deleteReserve(loggedMemberBean.getId());
 			if(result > 0) {
-				ScriptWriterUtil.alertAndNext(response, "예약이 취소되었습니다.", "BoardList.do");
+				ScriptWriterUtil.alertAndNext(response, "예약이 취소되었습니다.", "ReserveList.do");
 				return null;
 			} else {
 				ScriptWriterUtil.alertAndBack(response, "예약이 취소되지 않았습니다.");
@@ -125,5 +151,14 @@ public class ReserveController {
 			return null;			
 		}
 	}
+	
+	@RequestMapping("/GetReserveData.do")
+	@ResponseBody
+	public ReserveBean getReserveData(HttpSession session) {
+		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
+		reserveBean = reserveDao.getAllReservation(memberBean.getId());
+		return reserveBean;
+	}
+	
 }
 
