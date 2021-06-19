@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.covid19.model.CenterAdmin.CenterAdminDao;
+import com.covid19.model.CenterAdmin.CenterVaccineInfoBean;
 import com.covid19.model.member.AdminBean;
 import com.covid19.model.member.MemberBean;
 import com.covid19.model.member.MemberDao;
@@ -39,6 +41,13 @@ public class MemberController {
    
    @Autowired
    AdminBean loggedAdminInfo;
+   
+   @Autowired 
+   CenterVaccineInfoBean centerVaccineInfoBean;
+	
+   @Autowired
+   CenterAdminDao centerAdminDao;
+   
 
 
    @GetMapping("/LoginForm.do")
@@ -94,6 +103,8 @@ public class MemberController {
    public String adminSignUp(AdminBean adminBean, HttpServletRequest request, HttpServletResponse response) throws IOException {
       int result = memberDao.insertAdmin(adminBean);
       if (result > 0) {
+    	  centerAdminDao.addCenterVaccineData(adminBean.getCenterName());
+    	 
          ScriptWriterUtil.alertAndNext(response, "회원가입 되었습니다.","LoginForm.do");
          return null;
       } else {

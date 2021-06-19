@@ -111,14 +111,37 @@ function showAreaData(){
     })
     .done(function(result){
     	console.log(result); 
+    	let gumyeok = 0;
+    	let sumDate = 0;
     	for(let i = 0; i < result.length; i++){
 	    	let addList = [result[i].area, result[i].todayCnt, result[i].defCnt, result[i].deathCnt];
+	    	if (addList[0] == "검역"){
+				gumyeok = i;
+				continue;
+			}
+			else if(addList[0] == "합계"){
+				sumData = i;
+				continue;
+			}
 			$("#areaDataBox").append("<tr>");
 			for (x in addList) {
-				$("#areaDataBox").append("<td>"+ addList[x] +"</td>");
+				$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
 			}
 			$("#areaDataBox").append("</tr>");
     	}
     	
+    	addList = [result[gumyeok].area, result[gumyeok].todayCnt, result[gumyeok].defCnt, result[gumyeok].deathCnt];
+    	$("#areaDataBox").append("<tr>");
+		for (x in addList) {
+			$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+		}
+		$("#areaDataBox").append("</tr>");
+		
+		addList = [result[sumData].area, result[sumData].todayCnt, result[sumData].defCnt, result[sumData].deathCnt]
+    	$("#areaDataBox").append("<tr>");
+		for (x in addList) {
+			$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+		}
+		$("#areaDataBox").append("</tr>");
     })
 }

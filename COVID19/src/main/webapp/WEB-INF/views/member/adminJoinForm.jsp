@@ -27,7 +27,7 @@
 					</tr>
 					<tr>
 						<th>PW-CHECK</th>
-						<td><input type="password" name="password" id="checkPassword"></td>
+						<td><input type="password" name="checkPassword" id="checkPassword"></td>
 					</tr>
 					<tr>
 						<th>Center Name</th>

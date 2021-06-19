@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.covid19.mybatis.CenterAdminMapper">
+	<insert id="addCenterVaccineDataPfizer" parameterType="String">
+		INSERT INTO CENTERVACCINEINFO VALUES (#{centerName},'화이자',0)
+	</insert>
+	<insert id="addCenterVaccineDataAstrazeneca" parameterType="String">
+		INSERT INTO CENTERVACCINEINFO VALUES (#{centerName},'아스트라제네카',0)
+	</insert>
+	<insert id="addCenterVaccineDataJanssen" parameterType="String">
+		INSERT INTO CENTERVACCINEINFO VALUES (#{centerName},'얀센',0)
+	</insert>
+	<insert id="addCenterVaccineDataModerna" parameterType="String">
+		INSERT INTO CENTERVACCINEINFO VALUES (#{centerName},'모더나',0)
+	</insert>
+	
+	<select id="checkCenterNameIsExist" resultType="Integer" parameterType="String">
+		SELECT COUNT(*) FROM CENTERVACCINEINFO WHERE CENTERNAME = #{centerName}
+	</select>
+	
+	<select id="getCenterVaccineInfo" resultType="CenterVaccineInfoBean" parameterType="String">
+		SELECT * FROM CENTERVACCINEINFO WHERE CENTERNAME = #{centerName}
+	</select>
+	
+	<update id="updateCenterVaccineInfo" parameterType="hashMap">
+		UPDATE CENTERVACCINEINFO SET VACCINECNT = #{vaccineCnt} WHERE CENTERNAME = #{centerName} AND VACCINETYPE = #{vaccineType}
+	</update>
+	
+<!-- 	<select id="getCenterReserveList" resultType="ReserveBean" parameterType="String"> -->
+<!-- 		SELECT * FROM RESERVE WHERE CENTERNAME = #{centerName} -->
+<!-- 	</select> -->
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+

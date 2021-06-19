@@ -2,9 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
 <body>
-	<div id = "mainVisualBox">
-<!-- 		<img src="images/mainVisual01.jpg" alt=""> -->
-	</div>
-<%@ include file="../include/footer.jsp" %>
+<!-- 백신 리스트 뽑아서 출력 -->
+
 </body>
 </html>

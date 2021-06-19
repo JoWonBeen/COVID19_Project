@@ -1,9 +1,8 @@
-body {
-  border: 1px solid blue;
-  height: 100vh;
+#coronaLiveBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100vw;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -16,63 +15,36 @@ body {
           align-items: center;
 }
 
-body #coronaTotalDataBox {
-  border: 1px solid gray;
-  border-radius: 40px;
-  height: 200px;
-  margin-top: 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 100px;
-}
-
-body #coronaTotalDataBox table {
+#coronaLiveBox #coronaTotalDataBox table {
   height: 50px;
   line-height: 50px;
   font-size: 20px;
   font-weight: 400;
+  margin: 100px 0;
 }
 
-body #coronaTotalDataBox table tbody {
+#coronaLiveBox #coronaTotalDataBox table tbody {
   text-align: center;
 }
 
-body #coronaTotalDataBox table tbody .totalDataNameBox th {
-  border: 1px solid red;
+#coronaLiveBox #coronaTotalDataBox table tbody tr th, #coronaLiveBox #coronaTotalDataBox table tbody tr td {
+  border: 1px solid gray;
 }
 
-body #coronaGraphBox {
-  height: 100%;
+#coronaLiveBox #coronaGraphBox #coronaOptionBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-body #coronaGraphBox #coronaOptionBox {
   margin-bottom: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
-body #coronaGraphBox #coronaOptionBox div {
+#coronaLiveBox #coronaGraphBox #coronaOptionBox div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -85,17 +57,46 @@ body #coronaGraphBox #coronaOptionBox div {
   border: 1px solid gray;
   border-radius: 10px;
   padding: 10px 10px;
-  margin-right: 40px;
+  margin: 0 20px;
 }
 
-body #coronaGraphBox #coronaOptionBox div label {
+#coronaLiveBox #coronaGraphBox #coronaOptionBox div label {
   font-size: 20px;
   font-weight: 400;
   margin-right: 25px;
 }
 
-body #coronaGraphBox #coronaOptionBox div select {
+#coronaLiveBox #coronaGraphBox #coronaOptionBox div select {
   width: 70px;
   height: 20px;
 }
-/*# sourceMappingURL=coronaLive.css.map */
+
+#coronaLiveBox #coronaAreaDataBox {
+  margin: 100px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#coronaLiveBox #coronaAreaDataBox table {
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 100px 0;
+}
+
+#coronaLiveBox #coronaAreaDataBox table tbody {
+  text-align: center;
+}
+
+#coronaLiveBox #coronaAreaDataBox table tbody tr th {
+  border: 1px solid gray;
+}
