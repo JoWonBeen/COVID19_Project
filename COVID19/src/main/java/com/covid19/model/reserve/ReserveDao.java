@@ -58,12 +58,13 @@ public class ReserveDao {
 		sqlSession.close();
 		return result;
 	}
-//	public String getPassword(String memberId) {
-//		String password = "";
-//		SqlSession sqlSession = sqlSessionFactory.openSession();
-//		password = sqlSession.selectOne("getPassword",memberId);
-//		sqlSession.close();
-//		return password;
-//	}
+	public int checkReserve(String memberId) {
+		int result=0;
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		result = sqlSession.selectOne("checkReserve", memberId); 
+		sqlSession.close();
+		return result;
+		
+	}
 	
 }

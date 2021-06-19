@@ -7,6 +7,9 @@
 		resultType="ReserveBean">
 		SELECT * FROM RESERVATION WHERE MEMBERID = #{memberId}
 </select>
+<select id="checkReserve" parameterType="String" resultType="Integer">
+	SELECT COUNT(*) FROM RESERVATION WHERE MEMBERID = #{memberId}
+</select>
 <insert id="insertReserve" parameterType="ReserveBean">
 		INSERT INTO RESERVATION VALUES (RESERVATION_SEQ.NEXTVAL,
 									#{gubun},

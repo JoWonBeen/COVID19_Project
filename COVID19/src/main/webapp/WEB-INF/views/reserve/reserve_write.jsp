@@ -47,7 +47,7 @@
 						<th>예약 대상자 구분</th>
 						<td>
 						<select name="gubun" id="gubun">
-						<option selected="selected" disabled>선택하세요</option>
+						<option selected="selected">선택하세요</option>
 						<option>의료종사자</option>
 						<option>돌봄종사자(어린이집,유아교사)</option>
 						<option>사회필수인력(경찰,소방관,해경등)</option>
@@ -63,7 +63,7 @@
 						<th>예약 대상 백신</th>
 						<td>
 						<select name="vaccine" id="vaccine">
-						<option selected="selected" disabled>선택하세요</option>
+						<option selected="selected">선택하세요</option>
 						<option>아스트라제네카</option>
 						<option>얀센</option>
 						<option>화이자</option>
@@ -75,7 +75,7 @@
 						<th>의료기관 선택</th>
 						<td>
 						<select name="sido" id = "mainArea" onChange="changeCategory();">
-						<option selected="selected" disabled>선택하세요</option>
+						<option selected="selected">선택하세요</option>
 						<option>서울</option>
 						<option>부산</option>
 						<option>대구</option>
@@ -96,7 +96,7 @@
 						<option>인천</option>
 						</select>
 						<select name="sigungu" id = "detailArea" onChange="changeCategory02();">
-							<option selected="selected" disabled>선택하세요</option>
+							<option selected="selected">선택하세요</option>
 							<option>강남구</option>
 							<option>강동구</option>
 							<option>강북구</option>
@@ -126,7 +126,7 @@
 							<option>금정구</option>
 						</select>
 						<select name="hospital" id = "hospital">
-						<option selected="selected" disabled>선택하세요</option>
+						<option selected="selected">선택하세요</option>
 						<option>강남병원</option>
 						<option >강남병원01</option>
 						<option >강남병원02</option>
@@ -144,6 +144,7 @@
 						<span class="material-icons">event_available</span>
 						<input type="text" id="datepicker" name = "date">
 						<select name="hour" id="hour">
+						<option selected="selected">선택하세요</option>
 						<option>09</option>
 						<option>10</option>
 						<option>11</option>
@@ -156,6 +157,7 @@
 						<option>18</option>
 						</select><span>시</span>
 						<select name="minute" id="minute">
+						<option selected="selected">선택하세요</option>
 						<option>00</option>
 						<option>15</option>
 						<option>30</option>
@@ -167,17 +169,13 @@
 			</table>
 			<div class="btns">
 				<input type="hidden" value="${loggedMemberInfo.id}" name = "loggedMemberId">
-				<input type="submit" value="확인" id="reserve"> <input
-					type="reset" value="취소" id="cancel">
+				<input type="button" value="확인" id="reserve"> 
+				<input type="reset" value="취소" id="cancel">
 			</div>
 		</form>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 <script>
-$(function() {
-	$("#datepicker").datepicker();
-});
-
 
 function changeCategory(){
 	let seoul = ["강남구","강동구","강북구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구","동대문구","동작구","마포구","서대문구","서초구","성동구","성북구","송파구","양천구","영등포구","용산구","은평구","종로구","중구","중랑구","강서구","금정구"];
@@ -243,39 +241,44 @@ function changeCategory02(){
 	}	
 }
 
+$(function() {
+	$("#datepicker").datepicker();
+});
+
+// $("#datepicker").on("click",function(){
+// 	let now = new Date();
+	
+// 	if($("#datepicker").val() < now){
+// 		alert("선택할 수 없습니다.");
+// 		return;
+// 	} else $("#datepicker").submit();
+// 	}
+// })
 
 $("#reserve").on("click",function(){
-    if($("#gubun").val().length<=0) {
+    if($("#gubun").val() == "선택하세요") {
         alert("대상자 구분은 필수 입력 사항입니다.");
-        $("#gubun").focus();
         return;
-    }else if($("#vaccine").val().length<=0){
+    }else if($("#vaccine").val() == "선택하세요"){
         alert("백신은 필수 입력 사항입니다.");
-        $("#vaccine").focus();
         return;
-    } else if($("#mainArea").val().length<=0){
+    } else if($("#mainArea").val() == "선택하세요"){
         alert("시도별 선택은 필수 입력 사항입니다.");
-        $("#mainArea").focus();
         return;
-    } else if($("#detailArea").val().length<=0){
+    } else if($("#detailArea").val() == "선택하세요"){
         alert("시군구별 선택은 필수 입력 사항입니다.");
-        $("#detailArea").focus();
         return;
-    } else if($("#hospital").val().length<=0){
+    } else if($("#hospital").val() == "선택하세요"){
         alert("병원은 필수 입력 사항입니다.");
-        $("#hospital").focus();
         return;
-    } else if($("#datepicker").val().length<=0){
+    } else if($("#datepicker").val().length <= 0){
         alert("날짜는 필수 입력 사항입니다.");
-        $("#datepicker").focus();
         return;
-    } else if($("#hour").val().length<=0){
+    } else if($("#hour").val() == "선택하세요"){
         alert("예약시간은 필수 입력 사항입니다.");
-        $("#hour").focus();
         return;
-    } else if($("#minute").val().length<=0){
+    } else if($("#minute").val() == "선택하세요"){
         alert("예약시간은 필수 입력 사항입니다.");
-        $("#minute").focus();
         return;
     }else {
         $("#reserveForm").submit();

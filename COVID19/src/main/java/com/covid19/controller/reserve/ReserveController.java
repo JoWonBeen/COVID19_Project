@@ -40,9 +40,17 @@ public class ReserveController {
 	ReserveBean reserveBean;
 	
 	@GetMapping("/ReserveForm.do")
-	public String reserveForm() {
-		
-		return "reserve/reserve_write";
+	public String reserveForm(HttpServletResponse response, HttpSession session,Model model) throws IOException {
+		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo"); // 로그인 정보
+		int result = reserveDao.checkReserve(memberBean.getId()); // 예약내역 확인
+		if (result > 0) { 
+			reserveBean = reserveDao.getAllReservation(memberBean.getId());
+			model.addAttribute("reserveBean", reserveBean);
+			ScriptWriterUtil.alertAndNext(response, "예약내역이 존재합니다.", "ReserveList.do");
+			return null;
+		} else {
+			return "reserve/reserve_write";
+		}
 	}
 	
 	@PostMapping("/ReserveWrite.do")
@@ -70,10 +78,10 @@ public class ReserveController {
 		model.addAttribute("reserveBean", reserveBean);
 		int result = reserveDao.insertReserve(reserveBean);
 		if (result > 0) {
-			ScriptWriterUtil.alertAndNext(response, "글이 등록되었습니다.", "ReserveList.do");
+			ScriptWriterUtil.alertAndNext(response, "예약이 완료 되었습니다.", "ReserveList.do");
 			return null;
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "글이 등록되지 않았습니다.");
+			ScriptWriterUtil.alertAndBack(response, "예약이 완료 되지 않았습니다.");
 			return null;
 		}
 		
