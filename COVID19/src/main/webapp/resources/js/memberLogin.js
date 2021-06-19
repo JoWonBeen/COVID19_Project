@@ -97,6 +97,18 @@ $("#adminJoin").on("click", function(){
 		alert("센터 정보는 필수입니다.");
 		$("#centerName").focus();
 		return;
+	} else if($("#centerName").val().split(" ").length != 3){
+		alert("센터명을 주소와 함께 정확하게 입력해주세요. ex) 서울시 강남구 oo병원");
+		$("#centerName").focus();
+		return;
+	} else if($("#centerName").val().split(" ")[0].slice(-1) != "시"){
+		alert("센터명을 주소와 함께 정확하게 입력해주세요. ex) 서울시 강남구 oo병원");
+		$("#centerName").focus();
+		return;
+	} else if($("#centerName").val().split(" ")[1].slice(-1) != "구" && $("#centerName").val().split(" ")[1].slice(-1) != "군"){
+		alert("센터명을 주소와 함께 정확하게 입력해주세요. ex) 서울시 강남구 oo병원");
+		$("#centerName").focus();
+		return;
 	} else if($("#userPhone").val().length<=0){
 		alert("연락처는 필수입니다.");
 		$("#userPhone").focus();

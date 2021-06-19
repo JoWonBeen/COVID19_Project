@@ -10,6 +10,7 @@
 		<typeAlias type="com.covid19.model.coronaLive.CoronaDateInfoBean" alias="CoronaDateInfoBean"   />
 		<typeAlias type="com.covid19.model.coronaLive.CoronaSidoInfoBean" alias="CoronaSidoInfoBean"   />
 		<typeAlias type="com.covid19.model.CenterAdmin.CenterVaccineInfoBean" alias="CenterVaccineInfoBean"   />
+		<typeAlias type="com.covid19.model.CenterAdmin.CenterVaccineReservaionBean" alias="CenterVaccineReservaionBean"   />
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">

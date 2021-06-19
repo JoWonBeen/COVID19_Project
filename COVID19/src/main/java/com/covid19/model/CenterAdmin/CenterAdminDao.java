@@ -60,12 +60,11 @@ public class CenterAdminDao {
 		return result;
 	}
 	
-	public String getCenterReserveList(String centerName) {		
-//		SqlSession sqlSession = sqlSessionFactory.openSession();
-//		List<ReserveBean> reserveBeanList;
-//		reserveBeanList = sqlSession.selectList("getCenterReserveList",centerName);
-//		sqlSession.close();
-//		return reserveBeanList;
-		return null;
+	public List<CenterVaccineReservaionBean> getCenterReserveList(String centerName) {		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<CenterVaccineReservaionBean> reserveList;
+		reserveList = sqlSession.selectList("getCenterReserveList",centerName);
+		sqlSession.close();
+		return reserveList;
 	}
 }

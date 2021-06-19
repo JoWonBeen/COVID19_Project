@@ -28,9 +28,10 @@
 		UPDATE CENTERVACCINEINFO SET VACCINECNT = #{vaccineCnt} WHERE CENTERNAME = #{centerName} AND VACCINETYPE = #{vaccineType}
 	</update>
 	
-<!-- 	<select id="getCenterReserveList" resultType="ReserveBean" parameterType="String"> -->
-<!-- 		SELECT * FROM RESERVE WHERE CENTERNAME = #{centerName} -->
-<!-- 	</select> -->
+	<select id="getCenterReserveList" resultType="CenterVaccineReservaionBean" parameterType="String">
+		SELECT MEMBERID, NAME, BIRTH, AGE, GENDER, PHONE, GUBUN, VACCINE, HOSPITALADD, RSDATE, REGDATE FROM RESERVATION R, MEMBER M WHERE HOSPITALADD = #{centerName} AND R.MEMBERID = M.ID
+
+	</select>
 	
 </mapper>
 

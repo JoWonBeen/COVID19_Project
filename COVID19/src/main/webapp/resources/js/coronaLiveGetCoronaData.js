@@ -20,7 +20,6 @@ function updateCoronaData(){
 						if(resultData.response.body.items.item != null) {
 							coronaList = resultData.response.body.items.item;
 							list_length = coronaList.length;
-							console.log(coronaList);
 						}
 						let dataList = "";
 						for(let i = 0; i < list_length-1; i++){
@@ -35,13 +34,15 @@ function updateCoronaData(){
 						sendData = {
 							dataList:dataList
 						}
-						$.ajax({
-							url:"InsertCoronaInfo.do",
-							data:sendData,
-							success:function(resultData){
-								console.log(resultData);
-							}
-						})
+						if(dataList != ""){
+							$.ajax({
+								url:"InsertCoronaInfo.do",
+								data:sendData,
+								success:function(resultData){
+									console.log(resultData);
+								}
+							})
+						}
 					}
 				});
 			}
@@ -69,7 +70,6 @@ function updateCoronaDataSido(){
 						if(resultData.response.body.items.item != null) {
 							coronaList = resultData.response.body.items.item;
 							list_length = coronaList.length;
-							console.log(coronaList);
 						}
 						let dataList = "";
 						for(let i = 0; i < list_length-19; i++){
@@ -84,13 +84,15 @@ function updateCoronaDataSido(){
 						sendData = {
 							dataList:dataList
 						}
-						$.ajax({
-							url:"InsertCoronaInfoSido.do",
-							data:sendData,
-							success:function(resultData){
-								console.log(resultData);
-							}
-						})
+						if(dataList != ""){
+							$.ajax({
+								url:"InsertCoronaInfoSido.do",
+								data:sendData,
+								success:function(resultData){
+									console.log(resultData);
+								}
+							})
+						}
 					}
 				});
 			}

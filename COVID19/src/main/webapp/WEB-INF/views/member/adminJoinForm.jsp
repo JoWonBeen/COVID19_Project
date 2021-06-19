@@ -23,7 +23,7 @@
 					</tr>
 					<tr>
 						<th>PASSWORD</th>
-						<td><input type="password" name="password" id="userPassword" minlength = "6" maxlength = "12" required></td>
+						<td><input type="password" name="password" id="userPassword" minlength = "6" maxlength = "12"></td>
 					</tr>
 					<tr>
 						<th>PW-CHECK</th>
@@ -31,7 +31,7 @@
 					</tr>
 					<tr>
 						<th>Center Name</th>
-						<td><input type="text" name="centerName" id="centerName"></td>	
+						<td><input type="text" name="centerName" id="centerName" placeholder = "시 구 병원이름 순서로 입력해주세요. ex)서울시 강남구 oo병원"></td>	
 					</tr>
 					<tr>
 						<th>PHONE</th>

@@ -1,7 +1,7 @@
 var myChart = null;
 showMainData();
-showAreaData();
 showCoronaData();
+showAreaData();
 
 function showCoronaData(){
 	if(myChart != null){
@@ -96,7 +96,6 @@ function showMainData(){
         url:"GetMainData.do",          
     })
     .done(function(result){
-    	console.log(result);
     	let addList = [result.decideCnt, result.deathCnt, result.clearCnt];
     	$("#totalDataBox td").remove();  
 		for (x in addList) {
@@ -110,7 +109,6 @@ function showAreaData(){
         url:"GetAreaTodayData.do",          
     })
     .done(function(result){
-    	console.log(result); 
     	let gumyeok = 0;
     	let sumDate = 0;
     	for(let i = 0; i < result.length; i++){
