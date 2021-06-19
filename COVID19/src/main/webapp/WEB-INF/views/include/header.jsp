@@ -6,11 +6,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="css/include.css">
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/memberInfoForm.css">
+<link rel="stylesheet" href="css/vaccineMainHome.css">
 <script src="js/jquery-3.6.0.min.js"></script> 
+<script src="js/chart.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
+<script src="js/centerAdmin.js" defer></script>
 <header id="header">
     <c:choose>
 		<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
@@ -60,10 +64,10 @@
 				</c:when>
 				<c:otherwise>
 					<li onclick="goLogin(${loggedMemberInfo}); return false;">
-						<a href="" class="depth01">백신 등록</a>
+						<a href="VaccineAdd.do" class="depth01">백신 등록</a>
 					</li>
 					<li onclick="goLogin(${loggedMemberInfo}); return false;">
-						<a href="" class="depth01">센터 예방접종 예약현황</a>
+						<a href="CenterReserveList.do" class="depth01">예방접종 예약현황</a>
 					</li>
 				</c:otherwise>
 			</c:choose>

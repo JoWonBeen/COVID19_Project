@@ -1,0 +1,10 @@
+#mainVisualBox {
+  border: 1px solid blue;
+  width: calc(100% - 2px);
+  overflow: hidden;
+  background: url("../images/mainVisual01.jpg") 50% 50% no-repeat;  
+  background-size: cover;
+  // img{
+  //   width: 100%;
+  // }
+}
