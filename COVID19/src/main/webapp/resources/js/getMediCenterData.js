@@ -1,4 +1,5 @@
- getMediCenterInfo2();
+//getMediCenterInfo1();
+//getMediCenterInfo2();
 
 function getMediCenterInfo1() {
     $.ajax({
@@ -83,9 +84,9 @@ function getMediCenterInfo2() {
                        }
                        sendDataList.push(sendStr);
                     } 
-                    let numberList = [8,9,10];
+                    let numberList = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14];
 					    sendData = {
-					       sendData:sendDataList[numberList[0]]
+					       sendData:sendDataList[numberList[14]]
 					   }
 					   $.ajax({
 					       url: "InsertConsignedInstInfo.do",
@@ -95,20 +96,16 @@ function getMediCenterInfo2() {
 					       }
 					   })
 					   
-					   
-					    sendData = {
-					       sendData:sendDataList[numberList[1]]
-					   }
-					   $.ajax({
-					       url: "InsertConsignedInstInfo.do",
-					       data: sendData,
-					       success: function(resultData) {
-					           console.log(resultData);
-					       }
-					   })
-					   
-					   
-                    
+					//     sendData = {
+					//        sendData:sendDataList[numberList[1]]
+					//    }
+					//    $.ajax({
+					//        url: "InsertConsignedInstInfo.do",
+					//        data: sendData,
+					//        success: function(resultData) {
+					//            console.log(resultData);
+					//        }
+					//    })    
 		        }
 		    });
         }

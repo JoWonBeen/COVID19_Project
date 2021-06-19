@@ -25,9 +25,9 @@ public class MediCenterDao {
 		}
 	}
 	
-	public List<MediCenterBean> showAllCenter() {
+	public List<MediCenterBean> showSearchCenter() {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<MediCenterBean> mediCenterList = sqlSession.selectList("showAllCenter");
+		List<MediCenterBean> mediCenterList = sqlSession.selectList("showSearchCenter");
 		sqlSession.close();
 		return mediCenterList;
 	}

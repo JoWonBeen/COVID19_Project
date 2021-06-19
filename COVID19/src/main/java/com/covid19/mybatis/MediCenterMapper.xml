@@ -6,9 +6,13 @@
 	<insert id="insertMediCenter" parameterType="MediCenterBean">
 		INSERT INTO MEDICENTER VALUES (MEDICENTER_SEQ.NEXTVAL, #{gubun}, #{centerName}, #{address}, #{phone})
 	</insert>
-	<select id="showAllCenter"  resultType="MediCenterBean" parameterType="Integer">
-		SELECT * FROM MEDICENTER
+	<select id="showSearchCenter"  resultType="MediCenterBean">
+		SELECT * FROM MEDICENTER WHERE GUBUN = #{gubun}, ADDRESS LIKE '%'||#{searchKeyword}||'%' 
+
+
 	</select>
+	
+	
 
 	
 

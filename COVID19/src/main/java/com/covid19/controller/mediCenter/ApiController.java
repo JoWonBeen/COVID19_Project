@@ -119,7 +119,7 @@ public class ApiController {
 	@ResponseBody
 	public int insertConsignedInstInfo(@RequestParam(value = "sendData") String sendData) {
 		int result = 0;
-		System.out.println(sendData);
+		//System.out.println(sendData);
 		String dataList[] = sendData.split("\\$");
 		for(int i = 0; i < dataList.length; i++) {
 			String realList[] = dataList[i].split("\\^");
@@ -134,9 +134,4 @@ public class ApiController {
 	}
 
 
-	@RequestMapping("/MediCenterSearch.do")
-	public String mediCenterSearch() {
-
-		return "mediCenter/mediCenterSearch";
-	}
 }
