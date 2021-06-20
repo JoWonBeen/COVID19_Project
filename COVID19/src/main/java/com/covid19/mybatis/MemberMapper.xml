@@ -50,7 +50,8 @@
 									#{age},
 									#{gender},
 									#{phone},
-									#{type}
+									#{type},
+									0
 									)
 	</insert>
 	<insert id="insertAdmin" parameterType="AdminBean">
