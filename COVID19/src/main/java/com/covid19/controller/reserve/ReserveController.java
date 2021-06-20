@@ -67,14 +67,12 @@ public class ReserveController {
 		reserveDate = year + "-" + month + "-" + day;
 		String rsDate = reserveDate + " " + request.getParameter("hour") + ":" + request.getParameter("minute");
 		
-		System.out.println("reserveBean==="+reserveBean);
-		
+		reserveBean = new ReserveBean();
 		reserveBean.setGubun(gubun);
 		reserveBean.setVaccine(vaccine);
 		reserveBean.setHospitalAdd(hospitalAdd);
 		reserveBean.setRsDate(rsDate);
 		reserveBean.setMemberId(reserveMemberId);
-		System.out.println(reserveBean.toString());
 		model.addAttribute("reserveBean", reserveBean);
 		int result = reserveDao.insertReserve(reserveBean);
 		if (result > 0) {
@@ -91,9 +89,7 @@ public class ReserveController {
 	@RequestMapping(value = "/ReserveList.do", produces = "application/json; charset=UTF-8;")
 	public String reserveList(HttpServletRequest request, Model model, HttpSession session) {
 		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
-		//System.out.println("memberBean==="+memberBean.getId());
 		reserveBean = reserveDao.getAllReservation(memberBean.getId());
-		//System.out.println("reserveBean==="+reserveBean.toString());
 		model.addAttribute("reserveBean", reserveBean);
 		return "reserve/reserve_list";
 	}
@@ -114,7 +110,6 @@ public class ReserveController {
 		String month = reserveDate.substring(0, 2);
 		String day = reserveDate.substring(3,5);
 		reserveDate = year + "-" + month + "-" + day;
-		System.out.println(reserveDate);
 		String rsDate = reserveDate + " " + request.getParameter("hour") + ":" + request.getParameter("minute");
 		reserveBean.setGubun(gubun);
 		reserveBean.setVaccine(vaccine);
@@ -141,7 +136,6 @@ public class ReserveController {
 	public String reserveDelete(HttpServletResponse response, HttpSession session,HttpServletRequest request) throws IOException {
 		
 		loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
-		//reserveBean = reserveDao.getAllReservation(loggedMemberBean.getId());
 		
 		String password = request.getParameter("password");
 		

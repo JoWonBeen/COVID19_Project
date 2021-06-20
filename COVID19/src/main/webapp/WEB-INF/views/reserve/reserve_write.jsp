@@ -242,18 +242,10 @@ function changeCategory02(){
 }
 
 $(function() {
-	$("#datepicker").datepicker();
+	$("#datepicker").datepicker({ minDate: 0});
 });
 
-// $("#datepicker").on("click",function(){
-// 	let now = new Date();
-	
-// 	if($("#datepicker").val() < now){
-// 		alert("선택할 수 없습니다.");
-// 		return;
-// 	} else $("#datepicker").submit();
-// 	}
-// })
+
 
 $("#reserve").on("click",function(){
     if($("#gubun").val() == "선택하세요") {

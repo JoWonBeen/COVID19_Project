@@ -45,18 +45,24 @@
 					</tr>
 					<tr>
 						<th>특수직군 여부</th>
-						<td><input type="radio" name="yes" id="yes" value="네">네</td>
-						<td><input type="radio" name="no" id="no" value="아니요">아니요</td>
+						<td>
+						<input type="radio" name="yesorno" id="yes" value="네">네
+						<input type="radio" name="yesorno" id="no" value="아니요">아니요
+						</td>
 					</tr>
 					<tr>
 						<th>만 30세 이상</th>
-						<td><input type="radio" name="yes" id="yes" value="네">네</td>
-						<td><input type="radio" name="no" id="no" value="아니요">아니요</td>
+						<td>
+						<input type="radio" name="yesorno02" id="yes" value="네">네
+						<input type="radio" name="yesorno02" id="no" value="아니요">아니요
+						</td>
 					</tr>
 					<tr>
 						<th>임산부</th>
-						<td><input type="radio" name="yes" id="yes" value="네">네</td>
-						<td><input type="radio" name="no" id="no" value="아니요">아니요</td>
+						<td>
+						<input type="radio" name="yesorno03" id="yes" value="네">네
+						<input type="radio" name="yesorno03" id="no" value="아니요">아니요
+						</td>
 					</tr>
 				</tbody>
 			</table>

@@ -159,7 +159,7 @@
 	<%@ include file="../include/footer.jsp" %>
 <script>
 $(function() {
-	$("#datepicker").datepicker();
+	$("#datepicker").datepicker({ minDate: 0});
 });
 $.ajax({
 	url:"GetReserveData.do",

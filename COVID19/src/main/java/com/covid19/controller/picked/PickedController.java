@@ -2,6 +2,7 @@ package com.covid19.controller.picked;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import com.covid19.model.member.MemberBean;
 import com.covid19.model.member.MemberDao;
@@ -31,4 +32,8 @@ public class PickedController {
 	@Autowired
 	PickedDao pickedDao;
 	
+	@GetMapping("/PickedWriteForm.do")
+	public String pickedWriteForm() {
+		return "picked/picked_writeForm";
+	}
 }
