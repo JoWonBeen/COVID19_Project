@@ -79,8 +79,7 @@
 	<select id="getLoginAdmin" parameterType="AdminBean" resultType="AdminBean">
 		SELECT * FROM ADMIN WHERE ID = #{id} AND PASSWORD = #{password}
 	</select>
-	
-	
+
 </mapper>
 
 

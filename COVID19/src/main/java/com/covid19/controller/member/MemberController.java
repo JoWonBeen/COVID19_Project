@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.covid19.model.CenterAdmin.CenterAdminDao;
+import com.covid19.model.CenterAdmin.CenterVaccineInfoBean;
 import com.covid19.model.member.AdminBean;
 import com.covid19.model.member.MemberBean;
 import com.covid19.model.member.MemberDao;
@@ -39,6 +41,13 @@ public class MemberController {
    
    @Autowired
    AdminBean loggedAdminInfo;
+   
+   @Autowired 
+   CenterVaccineInfoBean centerVaccineInfoBean;
+	
+   @Autowired
+   CenterAdminDao centerAdminDao;
+   
 
 
    @GetMapping("/LoginForm.do")
@@ -94,7 +103,13 @@ public class MemberController {
    public String adminSignUp(AdminBean adminBean, HttpServletRequest request, HttpServletResponse response) throws IOException {
       int result = memberDao.insertAdmin(adminBean);
       if (result > 0) {
+<<<<<<< HEAD
          ScriptWriterUtil.alertAndNext(response, "È¸¿ø°¡ÀÔ µÇ¾ú½À´Ï´Ù.","LoginForm.do");
+=======
+    	  centerAdminDao.addCenterVaccineData(adminBean.getCenterName());
+    	 
+         ScriptWriterUtil.alertAndNext(response, "íšŒì›ê°€ìž… ë˜ì—ˆìŠµë‹ˆë‹¤.","LoginForm.do");
+>>>>>>> JoWonBeen
          return null;
       } else {
          ScriptWriterUtil.alertAndBack(response, "È¸¿ø°¡ÀÔ¿¡ ½ÇÆÐÇß½À´Ï´Ù.");

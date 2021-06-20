@@ -1,0 +1,102 @@
+#coronaLiveBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#coronaLiveBox #coronaTotalDataBox table {
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 100px 0;
+}
+
+#coronaLiveBox #coronaTotalDataBox table tbody {
+  text-align: center;
+}
+
+#coronaLiveBox #coronaTotalDataBox table tbody tr th, #coronaLiveBox #coronaTotalDataBox table tbody tr td {
+  border: 1px solid gray;
+}
+
+#coronaLiveBox #coronaGraphBox #coronaOptionBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+#coronaLiveBox #coronaGraphBox #coronaOptionBox div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin: 0 20px;
+}
+
+#coronaLiveBox #coronaGraphBox #coronaOptionBox div label {
+  font-size: 20px;
+  font-weight: 400;
+  margin-right: 25px;
+}
+
+#coronaLiveBox #coronaGraphBox #coronaOptionBox div select {
+  width: 70px;
+  height: 20px;
+}
+
+#coronaLiveBox #coronaAreaDataBox {
+  margin: 100px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#coronaLiveBox #coronaAreaDataBox table {
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: 400;
+  margin: 100px 0;
+}
+
+#coronaLiveBox #coronaAreaDataBox table tbody {
+  text-align: center;
+}
+
+#coronaLiveBox #coronaAreaDataBox table tbody tr th {
+  border: 1px solid gray;
+}

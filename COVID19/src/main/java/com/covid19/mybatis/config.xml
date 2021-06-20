@@ -7,8 +7,15 @@
 	<typeAliases>
 		<typeAlias type="com.covid19.model.member.MemberBean" alias="MemberBean"   />
 		<typeAlias type="com.covid19.model.member.AdminBean" alias="AdminBean"   />
+<<<<<<< HEAD
 		<typeAlias type="com.covid19.model.reserve.ReserveBean" alias="ReserveBean"   />
 		<typeAlias type="com.covid19.model.picked.PickedBean" alias="PickedBean"   />
+=======
+		<typeAlias type="com.covid19.model.coronaLive.CoronaDateInfoBean" alias="CoronaDateInfoBean"   />
+		<typeAlias type="com.covid19.model.coronaLive.CoronaSidoInfoBean" alias="CoronaSidoInfoBean"   />
+		<typeAlias type="com.covid19.model.CenterAdmin.CenterVaccineInfoBean" alias="CenterVaccineInfoBean"   />
+		<typeAlias type="com.covid19.model.CenterAdmin.CenterVaccineReservaionBean" alias="CenterVaccineReservaionBean"   />
+>>>>>>> master
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">
@@ -23,8 +30,13 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/covid19/mybatis/MemberMapper.xml" />
+<<<<<<< HEAD
 		<mapper resource="com/covid19/mybatis/ReserveMapper.xml" />
 		<mapper resource="com/covid19/mybatis/PickedMapper.xml" />
 		
+=======
+		<mapper resource="com/covid19/mybatis/CoronaLiveMapper.xml" />
+		<mapper resource="com/covid19/mybatis/CenterAdminMapper.xml" />
+>>>>>>> master
 	</mappers>
 </configuration>

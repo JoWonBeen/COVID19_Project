@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.covid19.mybatis.CoronaLiveMapper">
+
+	<insert id="insertCoronaDateInfo" parameterType="CoronaDateInfoBean">
+		INSERT INTO CORONADATEINFO VALUES (CORONADATEINFO_SEQ.NEXTVAL,
+									#{startDate},
+									#{deathCnt},
+									#{decideCnt},
+									#{clearCnt},
+									0
+									)
+	</insert>
+	
+	<select id="getLastDate" resultType="String">
+		SELECT MAX(STARTDATE) FROM CORONADATEINFO
+	</select>
+	
+	<insert id="insertCoronaDateInfoSido" parameterType="CoronaSidoInfoBean">
+		INSERT INTO CORONASIDOINFO VALUES (CORONASIDOINFO_SEQ.NEXTVAL,
+									#{startDate},
+									#{deathCnt},
+									#{defCnt},
+									0,
+									#{area}
+									)
+	</insert>
+	
+	<select id="getLastDateSido" resultType="String">
+		SELECT MAX(STARTDATE) FROM CORONASIDOINFO
+	</select>
+	
+	<select id="getAllAreaData" resultType="CoronaDateInfoBean" parameterType="hashMap">
+		SELECT MAX(STARTDATE) AS STARTDATE, MAX(DEATH_CNT) AS deathCnt, MAX(DECIDE_CNT) AS decideCnt, MAX(CLEAR_CNT) AS clearCnt, SUM(TODAY_CNT) AS todayCnt FROM 
+		(SELECT C2.*, TRUNC((I-1)/#{type}) AS INTERVAL FROM  
+		(SELECT ROWNUM AS I, C1.* FROM 
+		(SELECT * FROM CORONADATEINFO WHERE STARTDATE > #{period} ORDER BY STARTDATE DESC) C1) C2) GROUP BY INTERVAL ORDER BY INTERVAL
+	</select>
+	
+	<select id="getAreaData" resultType="CoronaSidoInfoBean" parameterType="hashMap">
+		SELECT MAX(STARTDATE) AS STARTDATE, MAX(DEATH_CNT) AS deathCnt, SUM(TODAY_CNT) AS todayCnt, MAX(AREA) AS AREA FROM 
+		(SELECT C2.*, TRUNC((I-1)/#{type}) AS INTERVAL FROM  
+		(SELECT ROWNUM AS I, C1.* FROM 
+		(SELECT * FROM CORONASIDOINFO WHERE STARTDATE > #{period} AND AREA = #{area} ORDER BY STARTDATE DESC) C1) C2) GROUP BY INTERVAL ORDER BY INTERVAL
+	</select>
+	
+	<update id="updateTodayCnt">
+		UPDATE CORONADATEINFO C1
+		SET TODAY_CNT = DECIDE_CNT - (SELECT DECIDE_CNT FROM CORONADATEINFO C2 WHERE TO_DATE(C2.STARTDATE) = TO_DATE(C1.STARTDATE)-1)
+	</update>
+	
+	<update id="deleteRepeatDate">
+		DELETE CORONASIDOINFO
+		WHERE NO IN (SELECT NO FROM CORONASIDOINFO WHERE STARTDATE = '20200408' AND ROWNUM <![CDATA[<=]]> 19)
+	</update>
+	
+	<update id="updateTodayCntSido">
+		UPDATE CORONASIDOINFO C1
+		SET TODAY_CNT = DEF_CNT - (SELECT DEF_CNT FROM CORONASIDOINFO C2 WHERE (TO_DATE(C2.STARTDATE) = TO_DATE(C1.STARTDATE)-1) AND (C2.AREA = C1.AREA))
+	</update>
+	
+	<select id="getMainData" resultType="CoronaDateInfoBean">
+		SELECT DEATH_CNT AS deathCnt, DECIDE_CNT as decideCnt, CLEAR_CNT as clearCnt FROM CORONADATEINFO WHERE STARTDATE = (SELECT MAX(STARTDATE) FROM CORONADATEINFO)
+	</select>
+	
+	<select id="getAreaTodayData" resultType="CoronaSidoInfoBean">
+		SELECT AREA, TODAY_CNT AS todayCnt, DEF_CNT AS defCnt, DEATH_CNT AS deathCnt FROM CORONASIDOINFO WHERE TO_DATE(STARTDATE) = TO_DATE((SELECT MAX(STARTDATE) FROM CORONASIDOINFO )) ORDER BY STARTDATE DESC, AREA
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
