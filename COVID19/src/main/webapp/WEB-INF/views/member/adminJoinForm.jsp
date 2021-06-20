@@ -23,19 +23,11 @@
 					</tr>
 					<tr>
 						<th>PASSWORD</th>
-<<<<<<< HEAD
 						<td><input type="password" name="password" id="userPassword" maxlength = "12"></td>
 					</tr>
 					<tr>
 						<th>PW-CHECK</th>
-						<td><input type="password" name="chPassword" id="checkPassword"></td>
-=======
-						<td><input type="password" name="password" id="userPassword" minlength = "6" maxlength = "12"></td>
-					</tr>
-					<tr>
-						<th>PW-CHECK</th>
 						<td><input type="password" name="checkPassword" id="checkPassword"></td>
->>>>>>> JoWonBeen
 					</tr>
 					<tr>
 						<th>Center Name</th>

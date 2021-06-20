@@ -26,11 +26,7 @@
 					</tr>
 					<tr>
 						<th>PW-CHECK</th>
-<<<<<<< HEAD
-						<td><input type="password" name="chPassword" id="checkPassword"></td>
-=======
 						<td><input type="password" name="checkPassword" id="checkPassword"></td>
->>>>>>> JoWonBeen
 					</tr>
 					<tr>
 						<th>Birth</th>

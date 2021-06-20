@@ -63,23 +63,23 @@
 						<th>의료기관 선택</th>
 						<td>
 						<select name="sido" id = "mainArea" onChange="changeCategory();">
-						<option>서울</option>
-						<option>부산</option>
-						<option>대구</option>
-						<option>인천</option>
-						<option>광주</option>
-						<option>대전</option>
-						<option>울산</option>
-						<option>세종</option>
-						<option>경기</option>
-						<option>강원</option>
+						<option>서울특별시</option>
+						<option>부산광역시</option>
+						<option>대구광역시</option>
+						<option>인천광역시</option>
+						<option>광주광역시</option>
+						<option>대전광역시</option>
+						<option>울산광역시</option>
+						<option>세종시</option>
+						<option>경기도</option>
+						<option>강원도</option>
 						<option>충청북도</option>
 						<option>충청남도</option>
 						<option>전라북도</option>
 						<option>전라남도</option>
 						<option>경상북도</option>
 						<option>경상남도</option>
-						<option>제주</option>
+						<option>제주도</option>
 						</select>
 						<select name="sigungu" id = "detailArea" onChange="changeCategory02();">
 							<option>강남구</option>
@@ -185,7 +185,7 @@ $.ajax({
 			else
 				target.append("<option>"+ vaccine[x] +"</option>");
 		}
-		let mainArea = ["서울","부산","대구","인천","광주","대전","울산","세종","경기","강원","충청북도","충청남도","전라북도","전라남도","경상북도","경상남도","제주"];
+		let mainArea = ["서울특별시","부산광역시","대구광역시","인천광역시","광주광역시","대전광역시","울산광역시","세종시","경기도","강원도","충청북도","충청남도","전라북도","전라남도","경상북도","경상남도","제주도"];
 		target = $("#mainArea");
 		
 		let addressArr = result.hospitalAdd.split(" ");
@@ -269,15 +269,15 @@ function changeCategory(){
 	let _this = $("#mainArea");
 	let addList = null;
 	console.log(_this.val());
-	if(_this.val() == "서울") addList = seoul;
-	else if(_this.val() == "부산") addList = busan;
-	else if(_this.val() == "대구") addList = daegu;
-	else if(_this.val() == "인천") addList = inchen;
-	else if(_this.val() == "광주") addList = guangju;
-	else if(_this.val() == "대전") addList = daejeon;
-	else if(_this.val() == "울산") addList = ulsan;
-	else if(_this.val() == "세종") addList = sejong;
-	else if(_this.val() == "경기") addList = gyenggi;
+	if(_this.val() == "서울특별시") addList = seoul;
+	else if(_this.val() == "부산광역시") addList = busan;
+	else if(_this.val() == "대구광역시") addList = daegu;
+	else if(_this.val() == "인천광역시") addList = inchen;
+	else if(_this.val() == "광주광역시") addList = guangju;
+	else if(_this.val() == "대전광역시") addList = daejeon;
+	else if(_this.val() == "울산광역시") addList = ulsan;
+	else if(_this.val() == "세종시") addList = sejong;
+	else if(_this.val() == "경기도") addList = gyenggi;
 	 
 	$("#detailArea option").remove();  
 	for (x in addList) {

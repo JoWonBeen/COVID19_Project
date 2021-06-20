@@ -54,12 +54,7 @@
 							<li><a href="ReserveForm.do">백신 예약</a></li>
 						</ul>
 					</li>
-					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약현황</a>
-						<ul class="depth02">
-							<li><a href="ReserveList.do">백신 예약조회</a></li>
-							<li><a href="ReserveModifyForm.do">백신 예약수정</a></li>
-							<li><a href="ReserveDeleteForm.do">백신 예약취소</a></li>
-						</ul>
+					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="ReserveList.do" class="depth01">백신접종 예약조회</a>
 					</li>
 				</c:when>
 				<c:otherwise>
@@ -74,11 +69,6 @@
 			
 			
 			<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">문의하기</a>
-				<ul class="depth02">
-					<li><a href="">자주묻는 질문</a></li>
-					<li><a href="">Q&A</a></li>
-					<li><a href="">1:1 게시판</a></li>
-				</ul>
 			</li>
 		</ul>
 	</nav>

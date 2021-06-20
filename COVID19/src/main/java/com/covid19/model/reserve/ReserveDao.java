@@ -66,5 +66,12 @@ public class ReserveDao {
 		return result;
 		
 	}
+//	public int checkReserveList(String gubun) {
+//		int result=0;
+//		SqlSession sqlSession = sqlSessionFactory.openSession();
+//		result = sqlSession.selectOne("checkReserveList",gubun);
+//		sqlSession.close();
+//		return result;
+//	}
 	
 }

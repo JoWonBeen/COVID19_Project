@@ -87,11 +87,20 @@ public class ReserveController {
 	}
 	
 	@RequestMapping(value = "/ReserveList.do", produces = "application/json; charset=UTF-8;")
-	public String reserveList(HttpServletRequest request, Model model, HttpSession session) {
-		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
-		reserveBean = reserveDao.getAllReservation(memberBean.getId());
-		model.addAttribute("reserveBean", reserveBean);
-		return "reserve/reserve_list";
+	public String reserveList(HttpServletRequest request,HttpServletResponse response, Model model, HttpSession session) throws IOException {
+		
+		int result = reserveDao.checkReserve(memberBean.getId());
+		if (result > 0) { 
+			memberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
+			reserveBean = reserveDao.getAllReservation(memberBean.getId());
+			model.addAttribute("reserveBean", reserveBean);
+			return "reserve/reserve_list";
+		} else {
+			reserveBean = reserveDao.getAllReservation(memberBean.getId()); // 예약내역 확인
+			model.addAttribute("reserveBean", reserveBean);
+			ScriptWriterUtil.alertAndNext(response, "예약내역이 없습니다.", "VaccineHome.do");
+			return null;
+		}
 	}
 	@GetMapping("/ReserveModifyForm.do")
 	public String reserveModifyForm() {
@@ -142,7 +151,7 @@ public class ReserveController {
 		if(password.equals(loggedMemberBean.getPassword())) {
 			int result = reserveDao.deleteReserve(loggedMemberBean.getId());
 			if(result > 0) {
-				ScriptWriterUtil.alertAndNext(response, "예약이 취소되었습니다.", "ReserveList.do");
+				ScriptWriterUtil.alertAndNext(response, "예약이 취소되었습니다.", "VaccineHome.do");
 				return null;
 			} else {
 				ScriptWriterUtil.alertAndBack(response, "예약이 취소되지 않았습니다.");
