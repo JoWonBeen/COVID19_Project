@@ -19,12 +19,12 @@
 		</header>
 		<main id="main">
 			<select id="centerType" name="centerType">
-				<option>전체 의료기관</option>
-				<option value="a">예방접종 센터</option>
-				<option value="b">위탁 의료기관</option>
+				<option value="All">전체 의료기관</option>
+				<option value="1">예방접종 센터</option>
+				<option value="2">위탁 의료기관</option>
 			</select> 
 			<select id="sido" name="sido" onchange="changeCategory(this)">
-				<option>광역시도</option>
+				<option value="광역시도">광역시도</option>
 				<option value="서울">서울특별시</option>
 				<option value="부산">부산광역시</option>
 				<option value="대구">대구광역시</option>
@@ -44,7 +44,7 @@
 				<option value="제주">제주특별자치도</option>
 			</select>
 			<select id="sigungu" name="sigungu">
-				<option>시군구</option>
+				<option value="시군구">시군구</option>
 			</select>
 
 			<ul class="mediCenterList">

@@ -2,6 +2,7 @@ package com.covid19.model.mediCenter;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -25,13 +26,27 @@ public class MediCenterDao {
 		}
 	}
 	
-	public List<MediCenterBean> showSearchCenter() {
+	public List<MediCenterBean> showAllCenter(String sido, String sigungu) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<MediCenterBean> mediCenterList = sqlSession.selectList("showSearchCenter");
+		HashMap<String, Object> option = new HashMap<String, Object>();
+		option.put("sido", sido);
+		option.put("sigungu", sigungu);
+		List<MediCenterBean> mediCenterList = sqlSession.selectList("showAllCenter", option);
+		sqlSession.close();
+		return mediCenterList;
+	}
+	public List<MediCenterBean> showClassifiedCenter(int gubun, String sido, String sigungu) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		HashMap<String, Object> option = new HashMap<String, Object>();
+		option.put("gubun", gubun);
+		option.put("sido", sido);
+		option.put("sigungu", sigungu);
+		List<MediCenterBean> mediCenterList = sqlSession.selectList("showClassifiedCenter", option);
 		sqlSession.close();
 		return mediCenterList;
 	}
 
+	
 	public int insertMediCenter(MediCenterBean mediCenterBean) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
@@ -41,11 +56,7 @@ public class MediCenterDao {
 		return result;
 	}
 		
-	
-	
-//	public String getmediCenterData() {
-//		return null;
-//	}
+
 	
 
 }

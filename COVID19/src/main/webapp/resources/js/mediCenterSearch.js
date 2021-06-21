@@ -3,19 +3,69 @@
        
 //    }
 // })
-$("#searchBtn").on("click",function(){
-    if($("#sido").val().length<=0){
-        alert("광역시도를 선택해주세요.");
-        $("#mainArea").focus();
+$(".searchBtn").on("click",function(){
+    //console.log("btn이 눌렸어요");
+    if($("#sido").val() == "광역시도"){
+        alert("광역시,도를 선택해주세요.");
         return;
-    } else if($("#detailArea").val().length<=0){
-        alert("시군구를 선택해주세요");
-        $("#detailArea").focus();
+    } else if($("#sigungu").val() == "시군구"){
+        alert("시,군,구를 선택해주세요");
         return;
     }else {
-        $("").submit();
+        searchMediCenter();
     }
 });
+
+function searchMediCenter(){
+    let centerType = $("#centerType").val();
+    let sido = $("#sido").val();
+    let sigungu = $("#sigungu").val();
+
+    if(centerType == "All"){
+        url = "ShowAllCenter.do";
+        sendOptData = {
+            sido:sido,
+            sigungu:sigungu
+        }
+    }    
+    // } else{
+    //     url = "ShowClassifiedCenter.do";
+    //     sendOptData = {
+    //         centerType : centerType,
+    //         sido : sido,
+    //         sigungu : sigungu
+    //     }
+    // }
+
+    $.ajax({
+        url: url,
+        data:sendOptData,
+        success:function(resultData){
+            console.log(resultData);
+            
+            const mediCenterArray = resultData;
+            $(".mediCenterList").html("");
+            $.each(mediCenterArray, function(i,item){
+                $(".mediCenterList").append(`
+                    <li>
+                        <dl>
+                            <dt>센터이름</dt>
+                            <dd>${item.centerName}</dd>
+                        </dl>
+                        <dl>
+                            <dt>주소 : </dt>
+                            <dd>${item.address}</dd>
+                        </dl>
+                        <dl>
+                            <dt>전화번호 : </dt>
+                            <dd>${item.phone}</dd>
+                        </dl>
+                    </li>
+                `);
+            })
+        }
+    })
+}
 
 
 
@@ -49,8 +99,9 @@ function changeCategory(){
     else if(_this.val() == "경기") addList = gyenggi;
      
     $("#sigungu option").remove();  
+    target.append(`<option value="시군구">시군구</option>`);
     for (x in addList) {
-       target.append("<option>"+ addList[x] +"</option>");
+       target.append(`<option value=`+addList[x]+`>`+ addList[x] +"</option>");
     }   
  }
  
