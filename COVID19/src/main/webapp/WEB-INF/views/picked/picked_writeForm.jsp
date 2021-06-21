@@ -17,12 +17,12 @@
 
 <body>
 	<div class="formBox">
-		<h2>예약페이지</h2>
-		<form action="ReserveWrite.do" id="reserveForm" method="POST">
+		<h2>대상자조회</h2>
+		<form action="ReserveForm.do" id="pickedForm" method="GET">
 			<table>
 				<colgroup>
-					<col style="width: 400px">
-					<col style="width: 1100px">
+					<col style="width: 200px">
+					<col style="width: 1300px">
 				</colgroup>
 				<tbody>
 					<tr>
@@ -46,34 +46,49 @@
 					<tr>
 						<th>특수직군 여부</th>
 						<td>
-						<input type="radio" name="yesorno" id="yes" value="네">네
-						<input type="radio" name="yesorno" id="no" value="아니요">아니요
-						</td>
-					</tr>
-					<tr>
-						<th>만 30세 이상</th>
-						<td>
-						<input type="radio" name="yesorno02" id="yes" value="네">네
-						<input type="radio" name="yesorno02" id="no" value="아니요">아니요
+						<input type="radio" name="special" id="special" value="yes">네
+						<input type="radio" name="special" id="special" value="no">아니요
 						</td>
 					</tr>
 					<tr>
 						<th>임산부</th>
 						<td>
-						<input type="radio" name="yesorno03" id="yes" value="네">네
-						<input type="radio" name="yesorno03" id="no" value="아니요">아니요
+						<input type="radio" name="pragnent" id="pragnent" value="yes">네
+						<input type="radio" name="pragnent" id="pragnent" value="no">아니요
 						</td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="btns">
 				<input type="hidden" value="${loggedMemberInfo.id}" name = "loggedMemberId">
-				<input type="submit" value="확인" id="reserve"> <input
+				<input type="button" value="확인" id="check"> <input
 					type="reset" value="취소" id="cancel">
 			</div>
 		</form>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 	
+	<script>
+	
+	
+	$("#check").on("click",function(){
+	var special = $("input:radio[name='special']:checked");
+	var pragnent = $("input:radio[name='pragnent']:checked");
+
+		if(special.val() == undefined || pragnent.val()== undefined){
+			alert("선택해주세요");
+			return;
+		}else{
+			if(special.val() == "yes" && pragnent.val() == "no"){
+				alert("백신 대상자입니다.")
+				$("#pickedForm").submit();
+			}else{
+				alert("백신 대상자가 아닙니다.");
+				return;
+			}
+			
+		}
+	})
+	</script>
 	</body>
 </html>

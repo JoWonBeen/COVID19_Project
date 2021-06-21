@@ -50,7 +50,7 @@
 				<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
 					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약</a>
 						<ul class="depth02">
-							<li><a href="">대상자 조회</a></li>
+							<li><a href="PickedWriteForm.do">대상자 조회</a></li>
 							<li><a href="ReserveForm.do">백신 예약</a></li>
 						</ul>
 					</li>
