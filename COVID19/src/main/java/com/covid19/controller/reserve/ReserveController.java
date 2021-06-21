@@ -98,7 +98,7 @@ public class ReserveController {
 		} else {
 			reserveBean = reserveDao.getAllReservation(memberBean.getId()); // 예약내역 확인
 			model.addAttribute("reserveBean", reserveBean);
-			ScriptWriterUtil.alertAndNext(response, "예약내역이 없습니다.", "PickedWriteForm.do");
+			ScriptWriterUtil.alertAndNext(response, "예약내역이 없습니다.", "ReserveForm.do");
 			return null;
 		}
 	}

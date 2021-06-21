@@ -74,9 +74,12 @@
 	$("#check").on("click",function(){
 	var special = $("input:radio[name='special']:checked");
 	var pragnent = $("input:radio[name='pragnent']:checked");
-
+	
 		if(special.val() == undefined || pragnent.val()== undefined){
 			alert("선택해주세요");
+			return;
+		}else if ($("#birth").val().substr(0,2)>91){
+			alert("만30세 이하는 백신 대상자가 아닙니다.");
 			return;
 		}else{
 			if(special.val() == "yes" && pragnent.val() == "no"){
@@ -88,7 +91,9 @@
 			}
 			
 		}
+	
 	})
+	
 	</script>
 	</body>
 </html>
