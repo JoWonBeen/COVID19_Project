@@ -118,7 +118,6 @@ function changeHospital(){
 	let detailArea = $("#detailArea").val();  
 	let roadName = $("#roadName").val();          
 	let hospitalName = $("#hospital").val();
-	alert("aa");
 	let sendAddress = {
 		mainArea : mainArea,
 		detailArea : detailArea, 

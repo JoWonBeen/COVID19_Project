@@ -24,12 +24,14 @@
 	               <col style="width:200px">
 	               <col style="width:200px">
 	               <col style="width:200px">
+	               <col style="width:200px">
 	            </colgroup>
 	            <tbody>
 	               <tr id = "totalDataNameBox">
 	                  <th>총 확진자</th>
 	                  <th>사망자</th>
 	                  <th>완치자</th>
+	                  <th>오늘 확진자</th>
 	               </tr>
 	               <tr id = "totalDataBox">
 	               </tr>
@@ -40,7 +42,7 @@
 			<div id = "coronaOptionBox">
 				<div>
 					<label for="type">종류</label> 
-					<select name="type" id="type" onChange="changeCategory(); showCoronaData();">
+					<select name="type" id="type" onChange="changeCoronaCategory(); showCoronaData();">
 						<option selected="selected">일별</option>
 						<option>주별</option>
 						<option>월별</option>

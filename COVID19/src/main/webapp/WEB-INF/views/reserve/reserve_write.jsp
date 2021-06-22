@@ -97,10 +97,6 @@
 						<td>
 						<select name="vaccine" id="vaccine">
 						<option selected="selected">선택하세요</option>
-						<option>아스트라제네카</option>
-						<option>얀센</option>
-						<option>화이자</option>
-						<option>모더나</option>
 						</select>
 						</td>
 					</tr>

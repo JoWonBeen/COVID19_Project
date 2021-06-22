@@ -27,6 +27,8 @@
 			</tbody>
 		</table>
 		<div class="btns">
+				<input type="hidden" value="${vaccine }"  name = "vaccine" id="reserve"> 
+				<input type="hidden" value="${hospitalAdd}" name = "hospitalAdd" id="reserve"> 
 				<input type="submit" value="확인" id="reserve"> 
 			</div>
 			</form>

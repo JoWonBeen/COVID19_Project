@@ -1,7 +1,27 @@
 #mainVisualBox {
-/*   border: 1px solid blue; */
-  width: calc(100% - 2px);
-  overflow: hidden;
-  background-image: url("images/mainVisual01.jpg") 50% 50% no-repeat;
+  height: 100vh;
+  width: 100vw;
+  background: url("../images/mainVisual01.jpg") no-repeat;
   background-size: cover;
+}
+
+#mainVisualBox #coronaTotalDataBox {
+  position: absolute;
+  top: 20%;
+  right: 100px;
+}
+
+#mainVisualBox #coronaTotalDataBox table {
+  height: 20px;
+  width: 400px;
+  line-height: 20px;
+  font-size: 15px;
+}
+
+#mainVisualBox #coronaTotalDataBox table tbody {
+  text-align: center;
+}
+
+#mainVisualBox #coronaTotalDataBox table tbody tr th, #mainVisualBox #coronaTotalDataBox table tbody tr td {
+  border: 1px solid gray;
 }

@@ -15,6 +15,7 @@
 <script src="js/chart.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
 <script src="js/centerAdmin.js" defer></script>
+<script src="js/VaccineHome.js" defer></script>
 <header id="header">
     <c:choose>
 		<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">

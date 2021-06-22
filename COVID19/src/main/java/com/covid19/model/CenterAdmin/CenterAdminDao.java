@@ -67,4 +67,31 @@ public class CenterAdminDao {
 		sqlSession.close();
 		return reserveList;
 	}
+	
+	public int reduceVaccine(String vaccineType, String address) {		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int result = 0;
+		HashMap<String, Object> centerInfo = new HashMap<String, Object>();
+		centerInfo.put("address", address);
+		centerInfo.put("vaccineType", vaccineType);
+		
+		result = sqlSession.update("reduceVaccine", centerInfo);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
+	
+	public int addOneVaccine(String vaccineType, String address) {		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int result = 0;
+		HashMap<String, Object> centerInfo = new HashMap<String, Object>();
+		centerInfo.put("address", address);
+		centerInfo.put("vaccineType", vaccineType);
+		result = sqlSession.update("addOneVaccine", centerInfo);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
+	
+	
 }

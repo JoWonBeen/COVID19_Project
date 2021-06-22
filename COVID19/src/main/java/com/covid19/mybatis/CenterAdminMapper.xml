@@ -33,6 +33,13 @@
 
 	</select>
 	
+	<update id="reduceVaccine" parameterType="hashMap">
+		UPDATE CENTERVACCINEINFO SET VACCINECNT = VACCINECNT - 1 WHERE VACCINETYPE = #{vaccineType} AND CENTERNAME = #{address}
+	</update>
+	
+	<update id="addOneVaccine" parameterType="hashMap">
+		UPDATE CENTERVACCINEINFO SET VACCINECNT = VACCINECNT + 1 WHERE VACCINETYPE = #{vaccineType} AND CENTERNAME = #{address}
+	</update>
 </mapper>
 
 

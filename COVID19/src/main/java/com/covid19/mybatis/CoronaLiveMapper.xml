@@ -62,7 +62,7 @@
 	</update>
 	
 	<select id="getMainData" resultType="CoronaDateInfoBean">
-		SELECT DEATH_CNT AS deathCnt, DECIDE_CNT as decideCnt, CLEAR_CNT as clearCnt FROM CORONADATEINFO WHERE STARTDATE = (SELECT MAX(STARTDATE) FROM CORONADATEINFO)
+		SELECT DEATH_CNT AS deathCnt, DECIDE_CNT as decideCnt, CLEAR_CNT as clearCnt, TODAY_CNT as todayCnt FROM CORONADATEINFO WHERE STARTDATE = (SELECT MAX(STARTDATE) FROM CORONADATEINFO)
 	</select>
 	
 	<select id="getAreaTodayData" resultType="CoronaSidoInfoBean">

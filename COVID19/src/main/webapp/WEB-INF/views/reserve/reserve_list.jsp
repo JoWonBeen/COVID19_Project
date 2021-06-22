@@ -58,7 +58,7 @@
 		<div class="btns">
 				
 				<a href="ReserveModifyForm.do">예약수정</a> 
-				<a href="ReserveDeleteForm.do">예약취소</a>
+				<a href="ReserveDeleteForm.do?hospitalAdd=${reserveBean.hospitalAdd}&vaccine=${reserveBean.vaccine}">예약취소</a>
 			</div>
 			</form>
 	</div>
