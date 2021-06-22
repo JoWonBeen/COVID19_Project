@@ -15,9 +15,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan("com.covid19.controller.api")
 @ComponentScan("com.covid19.controller.reserve")
 @ComponentScan("com.covid19.controller.picked")
+@ComponentScan("com.covid19.controller.replyBoard")
 @ComponentScan("com.covid19.model.member")
 @ComponentScan("com.covid19.model.reserve")
 @ComponentScan("com.covid19.model.picked")
+@ComponentScan("com.covid19.model.replyBoard")
 
 @ComponentScan("com.covid19.controller.coronaLive")
 @ComponentScan("com.covid19.controller.CenterAdmin")

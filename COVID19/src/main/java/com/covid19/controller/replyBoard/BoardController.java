@@ -1,11 +1,13 @@
 package com.covid19.controller.replyBoard;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.websocket.Session;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -135,11 +137,13 @@ public class BoardController {
 	}
 	
 	@PostMapping("/BoardModify.do")
-	public String boardModifyForm(ReplyBoardBean replyBoardBean, HttpServletResponse response, int no) throws IOException {
-		String dbPassword = replyBoardDao.getPasswordBoard(no);
-		if(dbPassword.equals(replyBoardBean.getPassword())) {
+	public String boardModifyForm(ReplyBoardBean replyBoardBean,HttpSession session,HttpServletRequest request, HttpServletResponse response) throws IOException {
+		
+		loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
+		String password = request.getParameter("password");
+		if(password.equals(loggedMemberBean.getPassword())) {
 			
-			int result = replyBoardDao.updateBoard(replyBoardBean); 
+			int result = replyBoardDao.updateBoard(loggedMemberBean.getId()); 
 			if(result > 0) {
 				ScriptWriterUtil.alertAndNext(response, "글이 수정되었습니다.", "BoardList.do");
 				return null;
@@ -159,10 +163,8 @@ public class BoardController {
 	}
 	
 	@PostMapping("/BoardWrite.do")
-	public String boardWrite(ReplyBoardBean replyBoardBean, HttpServletResponse response) throws IOException {
-		
+	public String boardWrite(ReplyBoardBean replyBoardBean, HttpServletResponse response, HttpServletRequest request, HttpSession session) throws IOException {
 		int result = replyBoardDao.insertBoard(replyBoardBean);
-
 		if (result > 0) {
 			ScriptWriterUtil.alertAndNext(response, "글이 등록되었습니다.", "BoardList.do");
 			return null;
@@ -173,9 +175,6 @@ public class BoardController {
 		}
 	}
 	
-	// 내보낼때는 JSON으로 결과를 내보낸다.
-	// ResponseBody를 Annotation 하면 JSP를 호출하지 않고, 그냥 자기 자신을 보여준다.
-	// 보통 JSON파일을 적용할 때 사용한다.
 
 	@GetMapping("/BoardRewriteForm.do")
 	public String boardRewriteForm(HttpServletRequest request, Model model) {

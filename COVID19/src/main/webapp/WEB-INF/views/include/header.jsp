@@ -68,7 +68,7 @@
 			</c:choose>
 			
 			
-			<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">문의하기</a>
+			<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="BoardList.do" class="depth01">문의하기</a>
 			</li>
 		</ul>
 	</nav>

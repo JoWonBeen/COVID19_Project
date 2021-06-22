@@ -23,6 +23,10 @@ table tr td input[type="text"], table tr td input[type="password"],
 	border-radius: 3px;
 	width: 150px;
 }
+table tr td input[id="subject"] {
+	height:30px;
+	width: 600px;
+}
 
 table tr td select {
 	width: 120px;
@@ -34,6 +38,7 @@ table tr td select {
 }
 
 .formBox h2 {
+	padding-top: 200px;
 	margin-bottom: 50px;
 	text-align: center;
 }

@@ -19,7 +19,7 @@ public class ReplyBoardDao {
 
 	static {
 		try {
-			String resource = "com/jo/mybatis/config.xml";
+			String resource = "com/covid19/mybatis/config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		} catch (IOException e) {
@@ -59,7 +59,7 @@ public class ReplyBoardDao {
 		replyBoardBean.setReStep(reStep);
 		replyBoardBean.setReLevel(reLevel);
 		replyBoardBean.setReadCount(0);
-		
+		System.out.println(replyBoardBean.toString());
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		result = sqlSession.insert("insertBoard",replyBoardBean);
 		sqlSession.commit();
@@ -97,10 +97,10 @@ public class ReplyBoardDao {
 		return result;
 	}
 	
-	public int updateBoard(ReplyBoardBean replyBoardBean) {
+	public int updateBoard(String memberId) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.update("updateBoard", replyBoardBean);
+		result = sqlSession.update("updateBoard", memberId);
 		sqlSession.commit();
 		sqlSession.close();
 		return result;
