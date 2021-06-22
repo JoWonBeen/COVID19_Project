@@ -66,20 +66,20 @@ public class MemberController {
       loggedAdminInfo = memberDao.getLoginAdmin(adminBean);
       
       if(loggedMemberInfo != null) {
-         ScriptWriterUtil.alertAndNext(response, "�α��� �Ǿ����ϴ�.", "Index.do");
+         ScriptWriterUtil.alertAndNext(response, "로그인 되었습니다.", "Index.do");
          session.setAttribute("loggedMemberInfo", loggedMemberInfo);
       } else if(loggedAdminInfo != null){
-         ScriptWriterUtil.alertAndNext(response, "�α��� �Ǿ����ϴ�.", "Index.do");
+         ScriptWriterUtil.alertAndNext(response, "로그인 되었습니다.", "Index.do");
          session.setAttribute("loggedMemberInfo", loggedAdminInfo);         
       } else {
-         ScriptWriterUtil.alertAndBack(response, "���̵�� ��й�ȣ�� Ȯ�����ּ���.");
+         ScriptWriterUtil.alertAndBack(response, "로그인에 실패했습니다.");
       }
       return null;
    }
    
    @GetMapping("/MemberLogout.do")
    public String memberLogout(HttpServletResponse response, HttpSession session) throws IOException {
-      ScriptWriterUtil.alertAndNext(response, "�α׾ƿ� �Ǿ����ϴ�.", "Index.do");
+      ScriptWriterUtil.alertAndNext(response, "로그아웃 되었습니다.", "Index.do");
       session.invalidate();
       return null;
    }
@@ -110,13 +110,11 @@ public class MemberController {
       
 	  int result = memberDao.insertAdmin(adminBean);
       if (result > 0) {
-         ScriptWriterUtil.alertAndNext(response, "ȸ������ �Ǿ����ϴ�.","LoginForm.do");
-    	  centerAdminDao.addCenterVaccineData(adminBean.getCenterName());
-    	 
+    	 centerAdminDao.addCenterVaccineData(adminBean.getCenterName());
          ScriptWriterUtil.alertAndNext(response, "회원가입 되었습니다.","LoginForm.do");
          return null;
       } else {
-         ScriptWriterUtil.alertAndBack(response, "ȸ�����Կ� �����߽��ϴ�.");
+         ScriptWriterUtil.alertAndBack(response, "회원가입에 실패했습니다.");
          return null;
       }
    }
@@ -125,10 +123,10 @@ public class MemberController {
 
       int result = memberDao.insertMember(memberBean);
       if (result > 0) {
-         ScriptWriterUtil.alertAndNext(response, "ȸ������ �Ǿ����ϴ�.","LoginForm.do");
+         ScriptWriterUtil.alertAndNext(response, "회원가입 되었습니다..","LoginForm.do");
          return null;
       } else {
-         ScriptWriterUtil.alertAndBack(response, "ȸ�����Կ� �����߽��ϴ�.");
+         ScriptWriterUtil.alertAndBack(response, "회원가입에 실패했습니다.");
          return null;
       }
    }
@@ -189,14 +187,14 @@ public class MemberController {
          }
          if(result > 0) {
 
-            ScriptWriterUtil.alertAndNext(response, "ȸ�������� �����Ǿ����ϴ�.", "MemberInfo.do");
+            ScriptWriterUtil.alertAndNext(response, "회원정보가 수정되었습니다..", "MemberInfo.do");
             return null;
          } else {
-            ScriptWriterUtil.alertAndBack(response, "ȸ�������� �������� �ʾҽ��ϴ�.");
+            ScriptWriterUtil.alertAndBack(response, "회원정보가 수정되지 않았습니다.");
             return null;
          }
       } else {
-         ScriptWriterUtil.alertAndBack(response, "��й�ȣ�� Ȯ�����ּ���.");
+         ScriptWriterUtil.alertAndBack(response, "비밀번호가 일치하지 않습니다.");
          return null;
       }
    }
@@ -225,14 +223,14 @@ public class MemberController {
             result = memberDao.deleteAdmin(no);
          }
          if(result > 0) {
-            ScriptWriterUtil.alertAndNext(response,"ȸ�������� �����Ǿ����ϴ�.", "MemberLogout.do");
+            ScriptWriterUtil.alertAndNext(response,"회원탈퇴 되었습니다.", "MemberLogout.do");
             return null;
          } else {
-            ScriptWriterUtil.alertAndBack(response,"ȸ�������� �������� �ʾҽ��ϴ�.");
+            ScriptWriterUtil.alertAndBack(response,"회원탈퇴에 실패했습니다..");
             return null;
          }
       } else {
-         ScriptWriterUtil.alertAndBack(response,"��й�ȣ�� Ȯ�����ּ���.");
+         ScriptWriterUtil.alertAndBack(response,"비밀번호가 일치하지 않습니다.");
          return null;
       }
    }

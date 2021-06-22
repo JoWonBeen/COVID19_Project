@@ -28,10 +28,6 @@
 							<td>${loggedMemberInfo.birth }</td>
 						</tr>
 						<tr>
-							<th>AGE</th>
-							<td>${loggedMemberInfo.age }</td>
-						</tr>
-						<tr>
 							<th>GENDER</th>
 							<td>${loggedMemberInfo.gender}</td>
 						</tr>
