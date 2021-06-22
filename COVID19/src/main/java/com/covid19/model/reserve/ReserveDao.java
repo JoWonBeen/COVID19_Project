@@ -12,6 +12,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Component;
 
+import com.covid19.model.coronaLive.CoronaDateInfoBean;
+
 
 @Component
 public class ReserveDao {
@@ -69,13 +71,22 @@ public class ReserveDao {
 	
 	public List<String> getHospitalByAddress(String mainArea, String detailArea, String roadName) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		String address = mainArea + " " + detailArea + " ";
-		HashMap<String, Object> addressHashMap = new HashMap<String, Object>();
-		addressHashMap.put("address", address);
-		addressHashMap.put("roadName", roadName);
-		List<String> hospitalList = sqlSession.selectList("getHospitalByAddress", addressHashMap); 
+		HashMap<String, Object> addressOption = new HashMap<String, Object>();
+		String address = mainArea + " " + detailArea + " %" + roadName + "%";
+		addressOption.put("address", address);
+		List<String> hospitalList = sqlSession.selectList("getHospitalByAddress", addressOption);
 		sqlSession.close();
-		return hospitalList;	
+		return hospitalList;
+	}
+	
+	public List<String> getVaccineCountInfo(String mainArea, String detailArea, String roadName, String hospitalName) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		HashMap<String, Object> addressOption = new HashMap<String, Object>();
+		String address = mainArea + " " + detailArea + " " + roadName + " " + hospitalName;
+		addressOption.put("address", address);
+		List<String> hospitalList = sqlSession.selectList("getVaccineCountInfo", addressOption);
+		sqlSession.close();
+		return hospitalList;
 	}
 
 	

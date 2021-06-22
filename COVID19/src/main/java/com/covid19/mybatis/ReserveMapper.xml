@@ -33,7 +33,12 @@
 	<delete id="deleteReserve" parameterType="String">
 	DELETE FROM RESERVATION WHERE MEMBERID = #{memberId}
 	</delete>
+	
 	<select id="getHospitalByAddress" parameterType="hashMap" resultType="String">
-		SELECT CENTERNAME FROM MEDICENTER WHERE ADDRESS LIKE '#{address} <![CDATA[&]]>#{roadName}<![CDATA[&]]>'
+		SELECT CENTERNAME FROM MEDICENTER WHERE ADDRESS LIKE #{address}
+	</select>
+	
+	<select id="getVaccineCountInfo" parameterType="hashMap" resultType="String">
+		SELECT VACCINETYPE FROM CENTERVACCINEINFO WHERE CENTERNAME = #{address} AND VACCINECNT > 0
 	</select>
 </mapper>

@@ -188,6 +188,12 @@ public class ReserveController {
 		List<String> hospitalList = reserveDao.getHospitalByAddress(mainArea, detailArea, roadName);
 		return hospitalList;
 	}
-	
+	@RequestMapping("/GetVaccineCountInfo.do")
+	@ResponseBody
+	public List<String> getVaccineCountInfo(String mainArea, String detailArea, String roadName, String hospitalName) {
+		List<String> hospitalList = reserveDao.getVaccineCountInfo(mainArea, detailArea, roadName, hospitalName);
+		return hospitalList;
+	}
+
 }
 

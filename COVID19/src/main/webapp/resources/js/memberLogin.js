@@ -89,21 +89,17 @@ $("#adminJoin").on("click", function(){
 		alert("비밀번호는 필수입니다.");
 		$("#userPassword").focus();
 		return;
-	} else if($("#centerName").val().length<=0){
-		alert("센터 정보는 필수입니다.");
-		$("#centerName").focus();
+	} else if($("#mainArea").val() == "선택하세요"){
+		alert("주소 선택은 필수입니다.");
 		return;
-	} else if($("#centerName").val().split(" ").length != 3){
-		alert("센터명을 주소와 함께 정확하게 입력해주세요. ex) 서울시 강남구 oo병원");
-		$("#centerName").focus();
+	} else if($("#detailArea").val() == "선택하세요"){
+		alert("주소 선택은 필수입니다.");
 		return;
-	} else if($("#centerName").val().split(" ")[0].slice(-1) != "시"){
-		alert("센터명을 주소와 함께 정확하게 입력해주세요. ex) 서울시 강남구 oo병원");
-		$("#centerName").focus();
+	} else if($("#roadName").val().length<=0){
+		alert("도로명은 필수입니다.");
 		return;
-	} else if($("#centerName").val().split(" ")[1].slice(-1) != "구" && $("#centerName").val().split(" ")[1].slice(-1) != "군"){
-		alert("센터명을 주소와 함께 정확하게 입력해주세요. ex) 서울시 강남구 oo병원");
-		$("#centerName").focus();
+	} else if($("#hospital").val() == "선택하세요"){
+		alert("병원 선택은 필수입니다.");
 		return;
 	} else if($("#userPhone").val().length<=0){
 		alert("연락처는 필수입니다.");
