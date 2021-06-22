@@ -136,6 +136,7 @@
 			</div>
 		</form>
 	</div>
+<<<<<<< HEAD
 	<%@ include file="../include/footer.jsp" %>
 <<<<<<< HEAD
 <script>
@@ -146,8 +147,10 @@
 =======
 >>>>>>> JoWonBeen_master_merge
 
+=======
+>>>>>>> JoWonBeen_master_merge
 </body>
-
+<%@ include file="../include/footer.jsp" %>
 </html>
 
 
