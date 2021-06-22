@@ -66,12 +66,17 @@ public class ReserveDao {
 		return result;
 		
 	}
-//	public int checkReserveList(String gubun) {
-//		int result=0;
-//		SqlSession sqlSession = sqlSessionFactory.openSession();
-//		result = sqlSession.selectOne("checkReserveList",gubun);
-//		sqlSession.close();
-//		return result;
-//	}
+	
+	public List<String> getHospitalByAddress(String mainArea, String detailArea, String roadName) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		String address = mainArea + " " + detailArea + " ";
+		HashMap<String, Object> addressHashMap = new HashMap<String, Object>();
+		addressHashMap.put("address", address);
+		addressHashMap.put("roadName", roadName);
+		List<String> hospitalList = sqlSession.selectList("getHospitalByAddress", addressHashMap); 
+		sqlSession.close();
+		return hospitalList;	
+	}
+
 	
 }

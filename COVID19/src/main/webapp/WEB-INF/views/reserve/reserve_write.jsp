@@ -82,7 +82,7 @@
 						<option>경상남도</option>
 						<option>제주도</option>
 						</select>
-						<select name="sigungu" id = "detailArea" onChange="changeCategory02();">
+						<select name="sigungu" id = "detailArea"> <!-- onChange="changeCategory02();" -->
 							<option selected="selected">선택하세요</option>
 							<option>강남구</option>
 							<option>강동구</option>
@@ -112,6 +112,7 @@
 							<option>강서구</option>
 							<option>금정구</option>
 						</select>
+						<input type="text" name="roadName" id="roadName" onkeyup="choiceHospital(this)" placeholder = "ex)중부대로">
 						<select name="hospital" id = "hospital">
 						<option selected="selected">선택하세요</option>
 						<option>강남병원</option>
@@ -224,37 +225,62 @@ function changeCategory(){
 	}	
 }
 
-function changeCategory02(){
-	let gangnam = ["강남병원","강남병원01","강남병원02","강남병원03","강남병원04","강남병원05","강남병원06","강남병원07"];
-	let gangdong = ["강동병원","강동병원01","강동병원02","강동병원03","강동병원04","강동병원05","강동병원06","강동병원07","강동병원08","강동병원09",];
-	let gangbuk = ["강북병원","강북병원01","강북병원02","강북병원03","강북병원04","강북병원05","강북병원06","강북병원07","강북병원08"];
-	let gangseo = ["강서병원","강서병원01","강서병원02","강서병원03","강서병원04","강서병원05","강서병원06","강서병원07","강서병원08"];
-	let guanak = ["관악병원","관악병원01","관악병원02","관악병원03","관악병원04","관악병원05","관악병원06","관악병원07","관악병원08"];
-	let guangjin = ["광진병원","광진병원01","광진병원02","광진병원03","광진병원04","광진병원05","광진병원06","광진병원07","광진병원08"];
-	let guro = ["구로병원","구로병원01","구로병원02","구로병원03","구로병원04","구로병원05","구로병원06","구로병원07","구로병원08"];
-	let gyemchen = ["금천병원","금천병원01","금천병원02","금천병원03","금천병원04","금천병원05","금천병원06","금천병원07","금천병원08"];
-	let nowon = ["노원병원","노원병원01","노원병원02","노원병원03","노원병원04","노원병원05","노원병원06","노원병원07","노원병원08"];
-	
-	
-	let target01 = $("#hospital");
-	let _this01 = $("#detailArea");
-	let addList01 = null;
-	console.log(_this01.val());
-	if(_this01.val() == "강남구") addList01 = gangnam;
-	else if(_this01.val() == "강동구") addList01 = gangdong;
-	else if(_this01.val() == "강북구") addList01 = gangbuk;
-	else if(_this01.val() == "강서구") addList01 = gangseo;
-	else if(_this01.val() == "관악구") addList01 = guanak;
-	else if(_this01.val() == "광진구") addList01 = guangjin;
-	else if(_this01.val() == "구로구") addList01 = guro;
-	else if(_this01.val() == "금천구") addList01 = gyemchen;
-	else if(_this01.val() == "노원구") addList01 = nowon;
-	 
-	$("#hospital option").remove();  
-	for (x in addList01) {
-		target01.append("<option>"+ addList01[x] +"</option>");
-	}	
+function choiceHospital(el){
+	let roadName = el.value;            // 도로명
+	let mainArea = $("#mainArea").val();      // oo시
+	let detailArea = $("#detailArea").val();  // oo구
+	if(roadName.slice(-1) == "로" || roadName.slice(-1) == "길"){
+		console.log(roadName);
+		console.log(mainArea);
+		console.log(detailArea);
+		sendAddress = {
+			mainArea : mainArea,
+			detailArea : detailArea, 
+			roadName : roadName
+		};
+	    $.ajax({
+	    	url:"GetHospitalByAddress.do",
+			data:sendAddress          
+	    })
+	    .done(function(result){
+	    	console.log(result);
+	    });
+	}
+	    
 }
+
+
+// function changeCategory02(){
+// 	let gangnam = ["강남병원","강남병원01","강남병원02","강남병원03","강남병원04","강남병원05","강남병원06","강남병원07"];
+// 	let gangdong = ["강동병원","강동병원01","강동병원02","강동병원03","강동병원04","강동병원05","강동병원06","강동병원07","강동병원08","강동병원09",];
+// 	let gangbuk = ["강북병원","강북병원01","강북병원02","강북병원03","강북병원04","강북병원05","강북병원06","강북병원07","강북병원08"];
+// 	let gangseo = ["강서병원","강서병원01","강서병원02","강서병원03","강서병원04","강서병원05","강서병원06","강서병원07","강서병원08"];
+// 	let guanak = ["관악병원","관악병원01","관악병원02","관악병원03","관악병원04","관악병원05","관악병원06","관악병원07","관악병원08"];
+// 	let guangjin = ["광진병원","광진병원01","광진병원02","광진병원03","광진병원04","광진병원05","광진병원06","광진병원07","광진병원08"];
+// 	let guro = ["구로병원","구로병원01","구로병원02","구로병원03","구로병원04","구로병원05","구로병원06","구로병원07","구로병원08"];
+// 	let gyemchen = ["금천병원","금천병원01","금천병원02","금천병원03","금천병원04","금천병원05","금천병원06","금천병원07","금천병원08"];
+// 	let nowon = ["노원병원","노원병원01","노원병원02","노원병원03","노원병원04","노원병원05","노원병원06","노원병원07","노원병원08"];
+	
+	
+// 	let target01 = $("#hospital");
+// 	let _this01 = $("#detailArea");
+// 	let addList01 = null;
+// 	console.log(_this01.val());
+// 	if(_this01.val() == "강남구") addList01 = gangnam;
+// 	else if(_this01.val() == "강동구") addList01 = gangdong;
+// 	else if(_this01.val() == "강북구") addList01 = gangbuk;
+// 	else if(_this01.val() == "강서구") addList01 = gangseo;
+// 	else if(_this01.val() == "관악구") addList01 = guanak;
+// 	else if(_this01.val() == "광진구") addList01 = guangjin;
+// 	else if(_this01.val() == "구로구") addList01 = guro;
+// 	else if(_this01.val() == "금천구") addList01 = gyemchen;
+// 	else if(_this01.val() == "노원구") addList01 = nowon;
+	 
+// 	$("#hospital option").remove();  
+// 	for (x in addList01) {
+// 		target01.append("<option>"+ addList01[x] +"</option>");
+// 	}	
+// }
 
 $(function() {
 	$("#datepicker").datepicker({ minDate: 0});

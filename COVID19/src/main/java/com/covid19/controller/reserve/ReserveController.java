@@ -182,5 +182,12 @@ public class ReserveController {
 		return reserveBean;
 	}
 	
+	@RequestMapping("/GetHospitalByAddress.do")
+	@ResponseBody
+	public List<String> getHospitalByAddress(String mainArea, String detailArea, String roadName) {
+		List<String> hospitalList = reserveDao.getHospitalByAddress(mainArea, detailArea, roadName);
+		return hospitalList;
+	}
+	
 }
 

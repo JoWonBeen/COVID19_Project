@@ -33,4 +33,7 @@
 	<delete id="deleteReserve" parameterType="String">
 	DELETE FROM RESERVATION WHERE MEMBERID = #{memberId}
 	</delete>
+	<select id="getHospitalByAddress" parameterType="hashMap" resultType="String">
+		SELECT CENTERNAME FROM MEDICENTER WHERE ADDRESS LIKE '#{address} <![CDATA[&]]>#{roadName}<![CDATA[&]]>'
+	</select>
 </mapper>
