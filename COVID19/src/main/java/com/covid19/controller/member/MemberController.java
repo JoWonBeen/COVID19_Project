@@ -101,7 +101,14 @@ public class MemberController {
    }
    @PostMapping("/AdminJoin.do")
    public String adminSignUp(AdminBean adminBean, HttpServletRequest request, HttpServletResponse response) throws IOException {
-      int result = memberDao.insertAdmin(adminBean);
+      String mainArea = request.getParameter("mainArea");
+      String detailArea = request.getParameter("detailArea");
+      String roadName = request.getParameter("roadName");
+      String hospital = request.getParameter("hospital");
+      String hospitalAddress = mainArea + " " + detailArea + " " + roadName + " " + hospital;
+      adminBean.setCenterName(hospitalAddress);
+      
+	  int result = memberDao.insertAdmin(adminBean);
       if (result > 0) {
          ScriptWriterUtil.alertAndNext(response, "ȸ������ �Ǿ����ϴ�.","LoginForm.do");
     	  centerAdminDao.addCenterVaccineData(adminBean.getCenterName());
