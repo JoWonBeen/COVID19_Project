@@ -17,6 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan("com.covid19.controller.vaccineStatus")
 @ComponentScan("com.covid19.model.member")
 @ComponentScan("com.covid19.model.mediCenter")
+@ComponentScan("com.covid19.model.vaccineStatus")
 public class ServletAppContext implements WebMvcConfigurer{
 	
 	public void configureViewResolvers(ViewResolverRegistry registry) {

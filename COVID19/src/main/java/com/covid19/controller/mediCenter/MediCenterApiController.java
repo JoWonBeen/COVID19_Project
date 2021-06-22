@@ -16,7 +16,7 @@ import com.covid19.model.mediCenter.MediCenterBean;
 import com.covid19.model.mediCenter.MediCenterDao;
 
 @Controller
-public class ApiController {
+public class MediCenterApiController {
 
 	@Autowired
 	MediCenterBean mediCenterBean;
