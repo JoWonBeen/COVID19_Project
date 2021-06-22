@@ -3,7 +3,8 @@
        
 //    }
 // })
-$(".searchBtn").on("click",function(){
+
+$("#search").on("click",function(){
     //console.log("btn이 눌렸어요");
     if($("#sido").val() == "광역시도"){
         alert("광역시,도를 선택해주세요.");
@@ -20,22 +21,26 @@ function searchMediCenter(){
     let centerType = $("#centerType").val();
     let sido = $("#sido").val();
     let sigungu = $("#sigungu").val();
+    //console.log(typeof(centerType));
 
     if(centerType == "All"){
         url = "ShowAllCenter.do";
         sendOptData = {
             sido:sido,
             sigungu:sigungu
+        }   
+    } else{
+        url = "ShowClassifiedCenter.do";
+        if(centerType == "예방접종센터") centerType = 1;
+        if(centerType == "위탁의료기관") centerType = 2;
+        // centerType = parseInt(centerType);
+        console.log(typeof(centerType));
+        sendOptData = {
+            centerType : centerType,
+            sido : sido,
+            sigungu : sigungu,
         }
-    }    
-    // } else{
-    //     url = "ShowClassifiedCenter.do";
-    //     sendOptData = {
-    //         centerType : centerType,
-    //         sido : sido,
-    //         sigungu : sigungu
-    //     }
-    // }
+    }
 
     $.ajax({
         url: url,
@@ -49,7 +54,6 @@ function searchMediCenter(){
                 $(".mediCenterList").append(`
                     <li>
                         <dl>
-                            <dt>센터이름</dt>
                             <dd>${item.centerName}</dd>
                         </dl>
                         <dl>
