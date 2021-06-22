@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="css/mainHome.css">
 <script src="js/jquery-3.6.0.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
+<script src="js/reserve.js" defer></script>
 <header id="header">
 		<c:choose>
 			<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
