@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.covid19.mybatis.PickedMapper">
+<select id="getAllBoard" parameterType="hashMap"
+		resultType="ReplyBoardBean">
+		SELECT * FROM (
+		SELECT B.*, ROWNUM AS NUM FROM (SELECT * FROM REPLYBOARD02 ORDER BY REF DESC,
+		RELEVEL ASC) B)
+		WHERE NUM <![CDATA[>=]]>
+		#{start} AND NUM <![CDATA[<=]]>
+		#{end}
+	</select>
+
+	<select id="getTotal" resultType="Integer">
+		SELECT COUNT(*) AS TOTAL FROM REPLYBOARD02
+	</select>
+	
+	<select id="getMaxRef" resultType="Integer">
+		SELECT NVL(MAX(REF),1) FROM REPLYBOARD02
+	</select>
+
+	<insert id="insertBoard" parameterType="ReplyBoardBean">
+		<selectKey keyProperty="no" resultType="Integer" order="BEFORE">
+			SELECT REPLYBOARD03_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO REPLYBOARD02 VALUES (
+										#{no},
+										#{name},
+										#{email},
+										#{subject},
+										#{password},
+										SYSDATE,
+										#{ref},
+										#{reStep},
+										#{reLevel},
+										#{readCount},
+										#{contents}
+									   )
+	</insert>
+	
+	<update id="updateReadCount" parameterType="Integer">
+		UPDATE REPLYBOARD02 SET READCOUNT = READCOUNT + 1 WHERE NO = #{no}
+	</update>
+	
+	<select id="getSelectOneBoard" parameterType="Integer" resultType="ReplyBoardBean">
+		SELECT * FROM REPLYBOARD02 WHERE NO = #{no}
+	</select>
+	
+	<update id="updateBoard" parameterType="ReplyBoardBean">
+		UPDATE REPLYBOARD02 SET NAME=#{name},
+		                      EMAIL=#{email},
+		                      SUBJECT=#{subject},
+		                      CONTENTS=#{contents} 
+		                      WHERE NO = #{no}
+	</update>
+	
+	<update id="updateRefAndLevel" parameterType="ReplyBoardBean">
+		UPDATE REPLYBOARD02 SET RELEVEL = RELEVEL + 1 WHERE REF = #{ref} AND RELEVEL > #{reLevel}
+	</update>
+	
+	<insert id="rewriteBoard" parameterType="ReplyBoardBean">
+		<selectKey keyProperty="no" resultType="Integer" order="BEFORE">
+			SELECT REPLYBOARD03_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO REPLYBOARD02 VALUES ( #{no},
+										#{name},
+										#{email},
+										#{subject},
+										#{password},
+										SYSDATE,
+										#{ref},
+										#{reStep},
+										#{reLevel},
+										#{readCount},
+										#{contents}
+										)
+	</insert>
+	
+	<select id="getPasswordBoard" parameterType="Integer" resultType="String">
+		SELECT PASSWORD FROM REPLYBOARD02 WHERE NO = #{no}
+	</select>
+	
+	<delete id="deleteBoard" parameterType="Integer">
+		DELETE FROM REPLYBOARD02 WHERE NO = #{no}
+	</delete>
+	
+</mapper>
