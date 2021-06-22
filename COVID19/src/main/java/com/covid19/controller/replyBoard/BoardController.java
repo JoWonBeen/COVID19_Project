@@ -152,7 +152,7 @@ public class BoardController {
 				return null;
 			}
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "글이 수정되지 않았습니다.");
+			ScriptWriterUtil.alertAndBack(response, "비밀번호를 확인해주세요.");
 			return null;
 		}
 	}

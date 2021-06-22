@@ -44,11 +44,11 @@
 	</select>
 	
 	<update id="updateBoard" parameterType="ReplyBoardBean">
-		UPDATE REPLYBOARD SET NAME=#{name},
-		                      EMAIL=#{email},
+		UPDATE REPLYBOARD SET EMAIL=#{email},
 		                      SUBJECT=#{subject},
 		                      CONTENTS=#{contents} 
-		                      WHERE NO = #{no}
+		                      WHERE MEMBERID = #{memberId}
+		                      
 	</update>
 	
 	<update id="updateRefAndLevel" parameterType="ReplyBoardBean">
