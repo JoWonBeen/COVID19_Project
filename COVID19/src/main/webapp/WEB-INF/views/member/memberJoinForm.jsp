@@ -30,11 +30,7 @@
 					</tr>
 					<tr>
 						<th>Birth</th>
-						<td><input type="text" name="birth" id="userBirth" onkeyup="birthFormat(this)" maxlength = "6"></td>
-					</tr>
-					<tr>
-						<th>AGE</th>
-						<td><input type="text" name="age" id="userAge"></td>
+						<td><input type="text" name="birth" id="userBirth" onkeyup="birthFormat(this)" maxlength = "6" placeholder = "ex)950101"></td>
 					</tr>
 					<tr>
 						<th>GENDER</th>

@@ -175,19 +175,6 @@
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 <script>
-$("#mainArea","#detailArea","#hospital").on("click", function(){
-	let sendData = {$(hospitalAdd).val(),$(vaccineCnt).val()}
-$.ajax({
-	url:"ReserveForm.do",
-	data:sendData,
-	success:function(data){
-		let vaccineCnt = data.vaccineCnt;
-		if($("#hospitalAdd #vaccineCnt").val() == 0){
-			alert("백신수량이 없습니다.");
-		}
-	}
-});
-})
 
 
 

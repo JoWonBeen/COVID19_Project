@@ -47,7 +47,6 @@
 									#{name},
 									#{password},
 									#{birth},
-									#{age},
 									#{gender},
 									#{phone},
 									#{type},
@@ -80,7 +79,10 @@
 	<select id="getLoginAdmin" parameterType="AdminBean" resultType="AdminBean">
 		SELECT * FROM ADMIN WHERE ID = #{id} AND PASSWORD = #{password}
 	</select>
-
+	
+	<update id="updateMemberTargetCheck" parameterType="String">
+		UPDATE MEMBER SET TARGETCHECK = 1 WHERE ID = #{memberId}
+	</update>
 </mapper>
 
 

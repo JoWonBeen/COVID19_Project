@@ -41,8 +41,14 @@ public class ReserveController {
 	
 	@GetMapping("/ReserveForm.do")
 	public String reserveForm(HttpServletResponse response, HttpSession session,Model model) throws IOException {
-		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo"); // 로그인 정보
-		int result = reserveDao.checkReserve(memberBean.getId()); // 예약내역 확인
+		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo"); 
+		int result = reserveDao.checkReserve(memberBean.getId());
+		
+		if (memberBean.getTargetCheck() == 0) { 
+			ScriptWriterUtil.alertAndNext(response, "접종 대상자 조회를 해주세요.", "PickedWriteForm.do");
+			return null;
+		}
+		
 		if (result > 0) { 
 			reserveBean = reserveDao.getAllReservation(memberBean.getId());
 			model.addAttribute("reserveBean", reserveBean);
@@ -88,10 +94,15 @@ public class ReserveController {
 	
 	@RequestMapping(value = "/ReserveList.do", produces = "application/json; charset=UTF-8;")
 	public String reserveList(HttpServletRequest request,HttpServletResponse response, Model model, HttpSession session) throws IOException {
+		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo"); 
+		
+		if (memberBean.getTargetCheck() == 0) { 
+			ScriptWriterUtil.alertAndNext(response, "접종 대상자 조회를 해주세요.", "PickedWriteForm.do");
+			return null;
+		}
 		
 		int result = reserveDao.checkReserve(memberBean.getId());
 		if (result > 0) { 
-			memberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
 			reserveBean = reserveDao.getAllReservation(memberBean.getId());
 			model.addAttribute("reserveBean", reserveBean);
 			return "reserve/reserve_list";

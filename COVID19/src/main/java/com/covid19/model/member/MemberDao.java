@@ -144,6 +144,14 @@ public class MemberDao {
 		return result;
 	}
 	
+	public int updateMemberTargetCheck(String memberId) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		result = sqlSession.update("updateMemberTargetCheck", memberId);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
 }
 
 

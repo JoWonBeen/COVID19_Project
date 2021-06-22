@@ -27,10 +27,6 @@ $("#memberJoin").on("click", function(){
 		alert("생년월일은 필수입니다.");
 		$("#userBirth").focus();
 		return;
-	} else if($("#userAge").val().length<=0){
-		alert("나이는 필수입니다.");
-		$("#userAge").focus();
-		return;
 	} else if($("#gender").val().length<=0){
 		alert("성별은 필수입니다.");
 		$("#gender").focus();

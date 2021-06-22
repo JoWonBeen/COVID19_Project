@@ -18,7 +18,7 @@
 <body>
 	<div class="formBox">
 		<h2>대상자조회</h2>
-		<form action="ReserveForm.do" id="pickedForm" method="GET">
+		<form action="TargetCheck.do" id="pickedForm" method="GET">
 			<table>
 				<colgroup>
 					<col style="width: 200px">
@@ -60,9 +60,8 @@
 				</tbody>
 			</table>
 			<div class="btns">
-				<input type="hidden" value="${loggedMemberInfo.id}" name = "loggedMemberId">
-				<input type="button" value="확인" id="check"> <input
-					type="reset" value="취소" id="cancel">
+				<input type="button" value="확인" id="check"> 
+				<input type="reset" value="취소" id="cancel">
 			</div>
 		</form>
 	</div>
@@ -78,20 +77,9 @@
 		if(special.val() == undefined || pragnent.val()== undefined){
 			alert("선택해주세요");
 			return;
-		}else if ($("#birth").val().substr(0,2)>91){
-			alert("만30세 이하는 백신 대상자가 아닙니다.");
-			return;
-		}else{
-			if(special.val() == "yes" && pragnent.val() == "no"){
-				alert("백신 대상자입니다.")
-				$("#pickedForm").submit();
-			}else{
-				alert("백신 대상자가 아닙니다.");
-				return;
-			}
-			
+		} else{
+			$("#pickedForm").submit();
 		}
-	
 	})
 	
 	</script>
