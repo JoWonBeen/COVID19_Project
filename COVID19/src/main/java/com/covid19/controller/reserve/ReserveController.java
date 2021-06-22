@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.covid19.model.CenterAdmin.CenterAdminDao;
 import com.covid19.model.member.MemberBean;
 import com.covid19.model.member.MemberDao;
 import com.covid19.model.reserve.ReserveBean;
@@ -38,6 +39,9 @@ public class ReserveController {
 	
 	@Autowired
 	ReserveBean reserveBean;
+	
+	@Autowired
+	CenterAdminDao centerAdminDao;
 	
 	@GetMapping("/ReserveForm.do")
 	public String reserveForm(HttpServletResponse response, HttpSession session,Model model) throws IOException {
@@ -64,7 +68,7 @@ public class ReserveController {
 		
 		String gubun = request.getParameter("gubun");
 		String vaccine = request.getParameter("vaccine");
-		String hospitalAdd = request.getParameter("sido")+" "+request.getParameter("sigungu")+" "+request.getParameter("hospital");
+		String hospitalAdd = request.getParameter("sido")+" "+request.getParameter("sigungu")+" "+ request.getParameter("roadName") + " " + request.getParameter("hospital");
 		String reserveMemberId = request.getParameter("loggedMemberId");
 		String reserveDate = request.getParameter("date");
 		String year = reserveDate.substring(6); 
@@ -82,6 +86,7 @@ public class ReserveController {
 		model.addAttribute("reserveBean", reserveBean);
 		int result = reserveDao.insertReserve(reserveBean);
 		if (result > 0) {
+			centerAdminDao.reduceVaccine(vaccine, hospitalAdd);
 			ScriptWriterUtil.alertAndNext(response, "예약이 완료 되었습니다.", "ReserveList.do");
 			return null;
 		} else {
@@ -148,8 +153,11 @@ public class ReserveController {
 		
 	}
 	@GetMapping("/ReserveDeleteForm.do")
-	public String reserveDeleteForm() {
-		
+	public String reserveDeleteForm(HttpServletRequest request, Model model) {
+		String hospitalAdd = request.getParameter("hospitalAdd");
+		String vaccine = request.getParameter("vaccine");
+		request.setAttribute("vaccine", vaccine);
+		request.setAttribute("hospitalAdd", hospitalAdd);
 		return "reserve/reserve_delete";
 	}
 	@PostMapping("/ReserveDelete.do")
@@ -162,6 +170,9 @@ public class ReserveController {
 		if(password.equals(loggedMemberBean.getPassword())) {
 			int result = reserveDao.deleteReserve(loggedMemberBean.getId());
 			if(result > 0) {
+				String hospitalAdd = request.getParameter("hospitalAdd");
+				String vaccine = request.getParameter("vaccine");
+				centerAdminDao.addOneVaccine(vaccine, hospitalAdd);
 				ScriptWriterUtil.alertAndNext(response, "예약이 취소되었습니다.", "VaccineHome.do");
 				return null;
 			} else {

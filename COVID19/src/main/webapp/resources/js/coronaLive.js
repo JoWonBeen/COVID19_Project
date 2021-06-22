@@ -135,7 +135,7 @@ function prevData(amount, _date){
     return _buf_date;
 }
 
-function changeCategory(){
+function changeCoronaCategory(){
 	let category1 = ["1주", "2주", "1달", "3달", "1년", "전체"];
 	let category2 = ["1주", "2주", "1달", "3달", "1년", "전체"];
 	let category3 = ["1달", "3달", "1년", "전체"];

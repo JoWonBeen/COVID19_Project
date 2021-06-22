@@ -1,8 +1,3 @@
-body {
-  width: 100%;
-  height: 100%;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -10,8 +5,8 @@ a {
 
 #header {
   width: 100%;
-  position: fixed;
-  top:0;
+  position: absolute;
+  z-index: 99;
 }
 
 #header #logo {
@@ -79,8 +74,8 @@ a {
 
 #header .loginBox {
   position: absolute;
-  right: 40px;
-  top: 37px;
+  right: 30px;
+  top: calc(60px - 20px);
 }
 
 #header .loginBox ul {
@@ -100,29 +95,14 @@ a {
 
 #header .loginBox ul li {
   margin: 0 10px;
-  font-size: 20px;
+  font-size: 13px;
   color: white;
 }
 
 #header .loginBox ul li a {
   text-decoration: none;
   color: inherit;
-  font-weight: 400;
-}
-
-.mainTitle {
-  height: 1000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 40px;
-  font-weight: 400;
+  font-weight: 200;
 }
 
 #footer {

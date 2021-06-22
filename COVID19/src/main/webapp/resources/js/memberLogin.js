@@ -89,6 +89,16 @@ $("#adminJoin").on("click", function(){
 		alert("비밀번호는 필수입니다.");
 		$("#userPassword").focus();
 		return;
+	} else if($("#checkPassword").val().length<=0){
+		alert("비밀번호를 한번 더 입력해주세요.");
+		$("#checkPassword").focus();
+		return;
+	} else if($("#userPassword").val() != $("#checkPassword").val()){
+		alert("비밀번호가 다릅니다.");
+		$("#userPassword").val("");
+		$("#checkPassword").val("");
+		$("#userPassword").focus();
+		return;
 	} else if($("#mainArea").val() == "선택하세요"){
 		alert("주소 선택은 필수입니다.");
 		return;

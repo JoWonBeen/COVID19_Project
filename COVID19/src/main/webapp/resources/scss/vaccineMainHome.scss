@@ -1,10 +1,28 @@
 #mainVisualBox {
-  border: 1px solid blue;
-  width: calc(100% - 2px);
-  overflow: hidden;
-  background: url("../images/mainVisual01.jpg") 50% 50% no-repeat;  
+  height: 100vh;
+  width: 100vw;
+  background: url("../images/mainVisual01.jpg") no-repeat;  
   background-size: cover;
-  // img{
-  //   width: 100%;
-  // }
+  #coronaTotalDataBox {
+    position: absolute;
+    top:20%;
+    right: 100px;
+    table {
+      height: 20px;
+      width: 400px;
+      line-height: 20px;
+      font-size: 15px;
+      tbody {
+        text-align: center;
+        tr{
+          th, td{
+            
+            border: 1px solid gray;
+          }
+
+        }
+      }
+    }
+  }
+  
 }
