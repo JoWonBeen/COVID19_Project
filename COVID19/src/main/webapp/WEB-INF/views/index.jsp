@@ -8,4 +8,5 @@
 		<a href = "CoronaConditionHome.do" class = "choiceNav">코로나 발생 현황 <br>SITE</a>
 	</div>
 </body>
+<%@ include file="include/footer.jsp" %>
 </html>

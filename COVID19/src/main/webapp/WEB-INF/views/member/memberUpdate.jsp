@@ -17,20 +17,24 @@
 					<c:choose>
 						<c:when test="${loggedMemberInfo.type == 1 }">
 							<tr>
+								<th>ID</th>
+								<td><input type="text" name="id" value="${loggedMemberInfo.id }" readonly></td>
+							</tr>
+							<tr>
 								<th>NAME</th>
 								<td><input type="text" name="name" value="${loggedMemberInfo.name }"></td>
 							</tr>
 							<tr>
 								<th>PASSWORD</th>
-								<td><input type="password" name="password" value=""></td>
+								<td><input type="password" name="password" value="" placeholder = "비밀번호를 입력해주세요."></td>
 							</tr>
 							<tr>
 								<th>AGE</th>
-								<td>${loggedMemberInfo.age }</td>
+								<td><input type="text" name="birth" value="${loggedMemberInfo.birth }" readonly></td>
 							</tr>
 							<tr>
 								<th>GENDER</th>
-								<td>${loggedMemberInfo.gender}</td>
+								<td><input type="gender" name="gender" value="${loggedMemberInfo.gender }" readonly></td>
 							</tr>
 							<tr>
 								<th>PHONE</th>
@@ -38,6 +42,11 @@
 							</tr>
 						</c:when>
 						<c:otherwise>
+							<tr>
+								<th>ID</th>
+								<td><input type="text" name="id" value="${loggedMemberInfo.id }" readonly></td>
+							</tr>
+							
 							<tr>
 								<th>NAME</th>
 								<td><input type="text" name="name" value="${loggedMemberInfo.name }" maxlength = "7"></td>
