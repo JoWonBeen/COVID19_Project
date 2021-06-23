@@ -13,24 +13,33 @@
 				<tbody>
 					<tr>
 						<th>ID</th>
-						<td><input type="text" name="id" id="userID" maxlength = "8">
-						<button id="memberIdCheck">중복확인</button></td>
+						<td><input type="text" name="id" id="userID">
+							<button id="memberIdCheck">중복확인</button></td>
 					</tr>
 					<tr>
 						<th>NAME</th>
-						<td><input type="text" name="name" id="userName" value="" maxlength = "7"></td>
+						<td><input type="text" name="name" id="userName" value=""></td>
 					</tr>
 					<tr>
 						<th>PASSWORD</th>
 						<td><input type="password" name="password" id="userPassword"></td>
 					</tr>
 					<tr>
+<<<<<<< HEAD
 						<th>PW-CHECK</th>
 						<td><input type="password" name="checkPassword" id="checkPassword"></td>
 					</tr>
 					<tr>
 						<th>Birth</th>
 						<td><input type="text" name="birth" id="userBirth" onkeyup="birthFormat(this)" maxlength = "6" placeholder = "ex)950101"></td>
+=======
+						<th>Birth</th>
+						<td><input type="text" name="birth" id="userBirth"></td>
+					</tr>
+					<tr>
+						<th>AGE</th>
+						<td><input type="text" name="age" id="userAge"></td>
+>>>>>>> JangHyeRim
 					</tr>
 					<tr>
 						<th>GENDER</th>
@@ -43,7 +52,7 @@
 					</tr>
 					<tr>
 						<th>PHONE</th>
-						<td><input type="text" name="phone" value="" id="userPhone" onkeyup="phoneFormat(this)"></td>
+						<td><input type="text" name="phone" value="" id="userPhone"></td>
 					</tr>
 	
 				</tbody>

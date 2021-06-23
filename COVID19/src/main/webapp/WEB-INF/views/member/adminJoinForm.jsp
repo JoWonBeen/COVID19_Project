@@ -13,21 +13,25 @@
 				<tbody>
 					<tr>
 						<th>ID</th>
-						<td><input type="text" name="id" id="userID" maxlength = "10">
+						<td><input type="text" name="id" id="userID">
 							<button id="adminIdCheck">중복확인</button>
 						</td>
 					</tr>
 					<tr>
 						<th>NAME</th>
-						<td><input type="text" name="name" id="userName" value=""maxlength = "8"></td>
+						<td><input type="text" name="name" id="userName" value=""></td>
 					</tr>
 					<tr>
 						<th>PASSWORD</th>
+<<<<<<< HEAD
 						<td><input type="password" name="password" id="userPassword" maxlength = "12"></td>
 					</tr>
 					<tr>
 						<th>PW-CHECK</th>
 						<td><input type="password" name="checkPassword" id="checkPassword"></td>
+=======
+						<td><input type="password" name="password" id="userPassword"></td>
+>>>>>>> JangHyeRim
 					</tr>
 					<tr>
 						<th>Center Name</th>
@@ -63,7 +67,7 @@
 					</tr>
 					<tr>
 						<th>PHONE</th>
-						<td><input type="text" name="phone" id="userPhone" onkeyup="phoneFormat(this)"></td>
+						<td><input type="text" name="phone" id="userPhone"></td>
 					</tr>
 	
 				</tbody>

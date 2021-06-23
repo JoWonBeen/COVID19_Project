@@ -7,7 +7,6 @@
 <script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/getVaccineStatusData.js" defer></script>
 <body>
-<<<<<<< HEAD
 	<div id = "mainVisualBox">
 		<div id = "coronaTotalDataBox">
 			<table>
@@ -31,10 +30,6 @@
 	         </table>
 		</div>
 	</div>
-=======
-	<h1 class="mainTitle">백신 접종 현황</h1>
-
->>>>>>> JangHyeRim
 <%@ include file="../include/footer.jsp" %>
 </body>
 </html>
