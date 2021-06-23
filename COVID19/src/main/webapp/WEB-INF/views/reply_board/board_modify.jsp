@@ -34,10 +34,10 @@
 						<th>제목</th>
 						<td><input type="text" name="subject" id="subject" value="${replyBoardBean.subject}"></td>
 					</tr>
-					<tr>
-						<th>비밀번호</th>
-						<td><input type="password" name="password" id="userPassword"></td>
-					</tr>
+<!-- 					<tr> -->
+<!-- 						<th>비밀번호</th> -->
+<!-- 						<td><input type="password" name="password" id="userPassword"></td> -->
+<!-- 					</tr> -->
 					<tr>
 						<th>내용</th>
 						<td><textarea name="contents" id="contents">${replyBoardBean.contents}</textarea></td>
@@ -45,15 +45,22 @@
 				</tbody>
 			</table>
 			<div class="btns">
-				<input type="hidden" value="${loggedMemberInfo.id}" name = "loggedMemberId">
+				<input type="hidden" value="${replyBoardBean.no}" name = "no" class="no">
 				<input type="button" value="수정" id="join">
 				<a href="BoardList.do">목록</a>
 			</div>
 <!-- 		</form> -->
 	</div>
-	<script>
-	</script>
 	<%@ include file="../include/footer.jsp" %>
+	<script>
+	let boardNo = $(".no").val();
+	$("#join").on("click", function(){
+		let check = confirm("수정하시겠습니까?");
+		if(check == true){
+			location.href = "BoardModify.do?no="+boardNo;
+		}
+	})
+	</script>
 </body>
 </html>
 

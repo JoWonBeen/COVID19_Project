@@ -48,6 +48,19 @@
 					</tr>
 				</tbody>
 			</table>
+<!-- 			<div class="btns"> -->
+<%-- 			<c:choose> --%>
+<%-- 			<c:when test="${loggedMemberInfo!=null }"> --%>
+<%-- 				<a href="BoardModifyForm.do?no=${replyBoardBean.no}">수정</a> --%>
+<%-- 				<a href="BoardDeleteForm.do?no=${replyBoardBean.no}">삭제</a> --%>
+<%-- 			</c:when> --%>
+<%-- 			<c:when test = "${adminBean.type.val() == 2}"> --%>
+<%-- 			<a href="BoardRewriteForm.do?no=${replyBoardBean.no}&ref=${replyBoardBean.ref}&reStep=${replyBoardBean.reStep}&reLevel=${replyBoardBean.reLevel}" id="join">답글쓰기</a> --%>
+<%-- 			</c:when> --%>
+<%-- 			</c:choose> --%>
+<!-- 			<a href="BoardList.do">목록</a> -->
+<!-- 			</div> -->
+			
 			<div class="btns">
 				<c:if test="${loggedMemberInfo!=null }">
 					<a href="BoardRewriteForm.do?no=${replyBoardBean.no}&ref=${replyBoardBean.ref}&reStep=${replyBoardBean.reStep}&reLevel=${replyBoardBean.reLevel}" id="join">답글쓰기</a>

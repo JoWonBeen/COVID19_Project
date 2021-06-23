@@ -24,23 +24,23 @@
 				</colgroup>
 				<tbody>
 					<tr>
-						<th>NAME</th>
+						<th>성명</th>
 						<td><input type="text" name="name" id="userName" value=""></td>
 					</tr>
 					<tr>
-						<th>E-MAIL</th>
+						<th>이메일</th>
 						<td><input type="text" name="email" id="userEmail" value=""></td>
 					</tr>
 					<tr>
-						<th>SUBJECT</th>
+						<th>제목</th>
 						<td><input type="text" name="subject" id="subject" value="[re]"></td>
 					</tr>
 					<tr>
-						<th>PASSWORD</th>
+						<th>비밀번호</th>
 						<td><input type="password" name="password" id="userPassword"></td>
 					</tr>
 					<tr>
-						<th>CONTENTS</th>
+						<th>내용</th>
 						<td>
 							<textarea name="contents" id="contents"></textarea>
 						</td>

@@ -47,7 +47,7 @@
 		UPDATE REPLYBOARD SET EMAIL=#{email},
 		                      SUBJECT=#{subject},
 		                      CONTENTS=#{contents} 
-		                      WHERE MEMBERID = #{memberId}
+		                      WHERE NO = #{boardNo}
 		                      
 	</update>
 	

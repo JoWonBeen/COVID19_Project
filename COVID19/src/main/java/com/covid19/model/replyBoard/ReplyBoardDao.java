@@ -97,10 +97,12 @@ public class ReplyBoardDao {
 		return result;
 	}
 	
-	public int updateBoard(String memberId) {
+	
+	
+	public int updateBoard(int boardNo) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.update("updateBoard", memberId);
+		result = sqlSession.update("updateBoard", boardNo);
 		sqlSession.commit();
 		sqlSession.close();
 		return result;

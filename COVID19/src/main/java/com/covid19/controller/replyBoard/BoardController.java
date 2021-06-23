@@ -131,22 +131,16 @@ public class BoardController {
 		return "reply_board/board_modify";
 	}
 	
-	@PostMapping("/BoardModify.do")
-	public String boardModifyForm(ReplyBoardBean replyBoardBean,HttpSession session,HttpServletRequest request, HttpServletResponse response) throws IOException {
+	@RequestMapping("/BoardModify.do")
+	public String boardModifyForm(HttpSession session,HttpServletRequest request, HttpServletResponse response,Model model) throws IOException {
 		
-		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
-		String password = request.getParameter("password");
-		if(password.equals(loggedMemberBean.getPassword())) {
-			int result = replyBoardDao.updateBoard(loggedMemberBean.getId()); 
-			if(result > 0) {
-				ScriptWriterUtil.alertAndNext(response, "글이 수정되었습니다.", "BoardList.do");
-				return null;
-			} else {
-				ScriptWriterUtil.alertAndBack(response, "글이 수정되지 않았습니다.");
-				return null;
-			}
+		int no = Integer.parseInt(request.getParameter("no"));
+		int result = replyBoardDao.updateBoard(no);
+		if(result > 0) {
+			ScriptWriterUtil.alertAndNext(response, "글이 수정되었습니다.", "BoardList.do");
+			return null;
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "비밀번호를 확인해주세요.");
+			ScriptWriterUtil.alertAndBack(response, "글이 수정되지 않았습니다.");
 			return null;
 		}
 	}

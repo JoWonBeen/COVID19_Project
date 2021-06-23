@@ -21,10 +21,10 @@
 						<th>SUBJECT</th>
 						<td>${replyBoardBean.subject}</td>
 					</tr>
-					<tr>
-						<th>PASSWORD</th>
-						<td><input type="password" name="password" id="userPassword"></td>
-					</tr>
+<!-- 					<tr> -->
+<!-- 						<th>PASSWORD</th> -->
+<!-- 						<td><input type="password" name="password" id="userPassword"></td> -->
+<!-- 					</tr> -->
 				</tbody>
 			</table>
 			<div class="btns">
@@ -34,9 +34,6 @@
 			</div>
 <!-- 		</form> -->
 	</div>
-	<script>
-	
-	</script>
 	<%@ include file="../include/footer.jsp" %>
 <script>
 	let boardNo = $(".no").val();
