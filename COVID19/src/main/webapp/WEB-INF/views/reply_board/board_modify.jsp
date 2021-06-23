@@ -34,10 +34,6 @@
 						<th>제목</th>
 						<td><input type="text" name="subject" id="subject" value="${replyBoardBean.subject}"></td>
 					</tr>
-<!-- 					<tr> -->
-<!-- 						<th>비밀번호</th> -->
-<!-- 						<td><input type="password" name="password" id="userPassword"></td> -->
-<!-- 					</tr> -->
 					<tr>
 						<th>내용</th>
 						<td><textarea name="contents" id="contents">${replyBoardBean.contents}</textarea></td>
@@ -53,11 +49,14 @@
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 	<script>
-	let boardNo = $(".no").val();
+
 	$("#join").on("click", function(){
 		let check = confirm("수정하시겠습니까?");
+		let boardNo = $(".no").val();
+		let subject = $("#subject").val();
+		let contents = $("#contents").val();
 		if(check == true){
-			location.href = "BoardModify.do?no="+boardNo;
+			location.href = "BoardModify.do?no="+boardNo+"&subject="+subject+"&contents="+contents;
 		}
 	})
 	</script>

@@ -44,10 +44,9 @@
 	</select>
 	
 	<update id="updateBoard" parameterType="ReplyBoardBean">
-		UPDATE REPLYBOARD SET EMAIL=#{email},
-		                      SUBJECT=#{subject},
+		UPDATE REPLYBOARD SET SUBJECT=#{subject},
 		                      CONTENTS=#{contents} 
-		                      WHERE NO = #{boardNo}
+		                      WHERE NO = #{no}
 		                      
 	</update>
 	
@@ -56,13 +55,8 @@
 	</update>
 	
 	<insert id="rewriteBoard" parameterType="ReplyBoardBean">
-		<selectKey keyProperty="no" resultType="Integer" order="BEFORE">
-			SELECT REPLYBOARD_SEQ.NEXTVAL FROM DUAL
-		</selectKey>
-		INSERT INTO REPLYBOARD VALUES ( #{no},
-										#{email},
+		INSERT INTO REPLYBOARD VALUES ( REPLYBOARD_SEQ.NEXTVAL,
 										#{subject},
-										SYSDATE,
 										#{ref},
 										#{reStep},
 										#{reLevel},
@@ -70,11 +64,6 @@
 										#{contents}
 										)
 	</insert>
-	
-<!-- 	<select id="getPasswordBoard" parameterType="Integer" resultType="String"> -->
-<!-- 		SELECT PASSWORD FROM REPLYBOARD02 WHERE NO = #{no} -->
-<!-- 	</select> -->
-	
 	<delete id="deleteBoard" parameterType="Integer">
 		DELETE FROM REPLYBOARD WHERE NO = #{boardNo}
 	</delete>

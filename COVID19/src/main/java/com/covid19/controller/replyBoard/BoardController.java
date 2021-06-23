@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.covid19.model.member.AdminBean;
 import com.covid19.model.member.MemberBean;
 import com.covid19.model.member.MemberDao;
 import com.covid19.model.replyBoard.ReplyBoardBean;
@@ -34,6 +35,7 @@ public class BoardController {
 	
 	@Autowired
 	MemberBean loggedMemberBean;
+	
 	
 	@Autowired
 	MemberBean memberBean;
@@ -89,15 +91,21 @@ public class BoardController {
 
 
 	@GetMapping("/BoardView.do")
-	public String boardView(Model model, int no, String memberId, HttpSession session, HttpServletResponse response) throws IOException {
-		loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
-		if(loggedMemberBean.getId().equals(memberId)) {
+	public String boardView(Model model, int no, String memberId, int type, HttpSession session, HttpServletResponse response) throws IOException {
+		if(type == 2) {
 			replyBoardBean = replyBoardDao.getSelectOneBoard(no);
 			model.addAttribute("replyBoardBean", replyBoardBean);
 			return "reply_board/board_view";
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "비밀글 입니다.");
-			return null;			
+			loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
+			if(loggedMemberBean.getId().equals(memberId)) {
+				replyBoardBean = replyBoardDao.getSelectOneBoard(no);
+				model.addAttribute("replyBoardBean", replyBoardBean);
+				return "reply_board/board_view";
+			} else {
+				ScriptWriterUtil.alertAndBack(response, "비밀글 입니다.");
+				return null;			
+			}
 		}
 	}
 
@@ -132,10 +140,9 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/BoardModify.do")
-	public String boardModifyForm(HttpSession session,HttpServletRequest request, HttpServletResponse response,Model model) throws IOException {
+	public String boardModifyForm(ReplyBoardBean replyBoardBean, HttpSession session,HttpServletRequest request, HttpServletResponse response,Model model) throws IOException {
 		
-		int no = Integer.parseInt(request.getParameter("no"));
-		int result = replyBoardDao.updateBoard(no);
+		int result = replyBoardDao.updateBoard(replyBoardBean);
 		if(result > 0) {
 			ScriptWriterUtil.alertAndNext(response, "글이 수정되었습니다.", "BoardList.do");
 			return null;

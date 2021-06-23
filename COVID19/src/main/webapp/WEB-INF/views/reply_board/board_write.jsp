@@ -31,10 +31,6 @@
 						<td><input type="text" name="memberId" id="userId" value="${loggedMemberInfo.id }" readonly></td>
 					</tr>
 					<tr>
-						<th>이메일</th>
-						<td><input type="text" name="email" id="userEmail" ></td>
-					</tr>
-					<tr>
 						<th>폰번호</th>
 						<td><input type="text" name="phone" id="userphone" value="${loggedMemberInfo.phone }" readonly></td>
 					</tr>

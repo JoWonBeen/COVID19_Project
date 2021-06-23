@@ -27,7 +27,7 @@
 				<tr>
 					<th>NO</th>
 					<th>SUBJECT</th>
-					<th>NAME</th>
+					<th>ID</th>
 					<th>DATE</th>
 					<th>HIT</th>
 				</tr>
@@ -44,11 +44,11 @@
 							<c:if test = "${replyBoardBean.reStep > 1 }">
 								<img src = "images/re.svg">
 							</c:if>
-							<a href="BoardView.do?no=${replyBoardBean.no }&memberId=${replyBoardBean.memberId}">${replyBoardBean.subject}</a>
+							<a href="BoardView.do?no=${replyBoardBean.no }&memberId=${replyBoardBean.memberId}&type=${loggedMemberInfo.type}">${replyBoardBean.subject}</a>
 						</td>
 						
-						<td>${loggedMemberInfo.name}</td>
-						<td><fmt:formatDate pattern = "yyyy-mm-dd hh:mm" value = "${replyBoardBean.regDate}" /></td>
+						<td>${replyBoardBean.memberId}</td>
+						<td><fmt:formatDate pattern = "yyyy-MM-dd hh:mm" value = "${replyBoardBean.regDate}" /></td>
 						<td>${replyBoardBean.readCount}</td>
 					</tr>
 				</c:forEach>

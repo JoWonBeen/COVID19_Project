@@ -99,10 +99,11 @@ public class ReplyBoardDao {
 	
 	
 	
-	public int updateBoard(int boardNo) {
+	public int updateBoard(ReplyBoardBean replyBoardBean) {
+		System.out.println(replyBoardBean.toString());
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.update("updateBoard", boardNo);
+		result = sqlSession.update("updateBoard", replyBoardBean);
 		sqlSession.commit();
 		sqlSession.close();
 		return result;
