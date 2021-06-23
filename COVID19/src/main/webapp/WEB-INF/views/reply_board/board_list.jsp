@@ -44,7 +44,7 @@
 							<c:if test = "${replyBoardBean.reStep > 1 }">
 								<img src = "images/re.svg">
 							</c:if>
-							<a href="BoardView.do?no=${replyBoardBean.no }">${replyBoardBean.subject}</a>
+							<a href="BoardView.do?no=${replyBoardBean.no }&memberId=${replyBoardBean.memberId}">${replyBoardBean.subject}</a>
 						</td>
 						
 						<td>${loggedMemberInfo.name}</td>

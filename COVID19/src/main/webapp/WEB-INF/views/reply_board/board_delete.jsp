@@ -6,7 +6,7 @@
 <body>
 	<div class="formBox">
 		<h2>자유게시판</h2>
-		<form id="joinForm" method="POST" action="BoardDelete.do">
+<!-- 		<form id="joinForm" method="POST" action="BoardDelete.do"> -->
 			<table>
 				<colgroup>
 					<col style="width: 150px">
@@ -14,8 +14,8 @@
 				</colgroup>
 				<tbody>
 					<tr>
-						<th>NAME</th>
-						<td>${replyBoardBean.name}</td>
+						<th>ID</th>
+						<td>${replyBoardBean.memberId}</td>
 					</tr>
 					<tr>
 						<th>SUBJECT</th>
@@ -28,16 +28,26 @@
 				</tbody>
 			</table>
 			<div class="btns">
-				<input type="hidden" name="no" value="${no}">
-				<input type="submit" value="삭제" id="join">
+				<input type="hidden" value="${replyBoardBean.no}" name = "no" class="no">
+				<input type="button" value="삭제" id="join">
 				<a href="BoardList.do">목록</a>
 			</div>
-		</form>
+<!-- 		</form> -->
 	</div>
 	<script>
 	
 	</script>
 	<%@ include file="../include/footer.jsp" %>
+<script>
+	let boardNo = $(".no").val();
+	$("#join").on("click", function(){
+		let check = confirm("진짜 삭제하시겠습니까?");
+		if(check == true){
+			
+			location.href = "BoardDelete.do?no="+boardNo;
+		}
+	})
+</script>
 </body>
 </html>
 

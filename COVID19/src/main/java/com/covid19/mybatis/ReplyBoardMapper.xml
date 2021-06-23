@@ -75,8 +75,8 @@
 <!-- 		SELECT PASSWORD FROM REPLYBOARD02 WHERE NO = #{no} -->
 <!-- 	</select> -->
 	
-	<delete id="deleteBoard" parameterType="String">
-		DELETE FROM REPLYBOARD WHERE MEMBERID = #{memberId}
+	<delete id="deleteBoard" parameterType="Integer">
+		DELETE FROM REPLYBOARD WHERE NO = #{boardNo}
 	</delete>
 	
 </mapper>

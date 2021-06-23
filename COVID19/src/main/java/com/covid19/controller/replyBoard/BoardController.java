@@ -1,13 +1,11 @@
 package com.covid19.controller.replyBoard;
 
 import java.io.IOException;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.covid19.model.member.MemberBean;
 import com.covid19.model.member.MemberDao;
@@ -90,11 +89,16 @@ public class BoardController {
 
 
 	@GetMapping("/BoardView.do")
-	public String boardView(Model model, int no) {
-		replyBoardBean = replyBoardDao.getSelectOneBoard(no);
-
-		model.addAttribute("replyBoardBean", replyBoardBean);
-		return "reply_board/board_view";
+	public String boardView(Model model, int no, String memberId, HttpSession session, HttpServletResponse response) throws IOException {
+		loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
+		if(loggedMemberBean.getId().equals(memberId)) {
+			replyBoardBean = replyBoardDao.getSelectOneBoard(no);
+			model.addAttribute("replyBoardBean", replyBoardBean);
+			return "reply_board/board_view";
+		} else {
+			ScriptWriterUtil.alertAndBack(response, "비밀글 입니다.");
+			return null;			
+		}
 	}
 
 	@GetMapping("/BoardDeleteForm.do")
@@ -102,28 +106,20 @@ public class BoardController {
 		replyBoardBean = replyBoardDao.getSelectOneBoard(no);
 
 		model.addAttribute("replyBoardBean", replyBoardBean);
-		model.addAttribute("no", no);
 		return "reply_board/board_delete";	
 	}
 
-	@PostMapping("/BoardDelete.do")
+	@RequestMapping("/BoardDelete.do")
 	public String boardDelete(HttpSession session,HttpServletResponse response, HttpServletRequest request) throws IOException {
 
-		loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
-		String password = request.getParameter("password");
-
-		if(password.equals(loggedMemberBean.getPassword())) {
-			int result = replyBoardDao.deleteBoard(loggedMemberBean.getId());
-			if(result > 0) {
-				ScriptWriterUtil.alertAndNext(response, "글이 삭제되었습니다.", "BoardList.do");
-				return null;
-			} else {
-				ScriptWriterUtil.alertAndBack(response, "글이 삭제되지 않았습니다.");
-				return null;
-			}
+		int no = Integer.parseInt(request.getParameter("no"));
+		int result = replyBoardDao.deleteBoard(no);
+		if(result > 0) {
+			ScriptWriterUtil.alertAndNext(response, "글이 삭제되었습니다.", "BoardList.do");
+			return null;
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "비밀번호를 확인해 주세요.");
-			return null;			
+			ScriptWriterUtil.alertAndBack(response, "글이 삭제되지 않았습니다.");
+			return null;
 		}
 	}
 
@@ -132,17 +128,15 @@ public class BoardController {
 
 		replyBoardBean = replyBoardDao.getSelectOneBoard(no);
 		model.addAttribute("replyBoardBean", replyBoardBean);
-		model.addAttribute("no", no);
 		return "reply_board/board_modify";
 	}
 	
 	@PostMapping("/BoardModify.do")
 	public String boardModifyForm(ReplyBoardBean replyBoardBean,HttpSession session,HttpServletRequest request, HttpServletResponse response) throws IOException {
 		
-		loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
+		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
 		String password = request.getParameter("password");
 		if(password.equals(loggedMemberBean.getPassword())) {
-			
 			int result = replyBoardDao.updateBoard(loggedMemberBean.getId()); 
 			if(result > 0) {
 				ScriptWriterUtil.alertAndNext(response, "글이 수정되었습니다.", "BoardList.do");

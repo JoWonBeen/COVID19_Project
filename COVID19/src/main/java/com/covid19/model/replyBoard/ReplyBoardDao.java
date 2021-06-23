@@ -88,10 +88,10 @@ public class ReplyBoardDao {
 		return replyBoardBean;
 	}
 	
-	public int deleteBoard(String memberId) {
+	public int deleteBoard(int boardNo) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.delete("deleteBoard",memberId);
+		result = sqlSession.delete("deleteBoard",boardNo);
 		sqlSession.commit();
 		sqlSession.close();
 		return result;

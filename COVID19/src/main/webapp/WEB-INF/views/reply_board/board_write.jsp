@@ -49,7 +49,6 @@
 				</tbody>
 			</table>
 			<div class="btns">
-				<input type="hidden" value="${loggedMemberInfo.id}" name = "loggedMemberId">
 				<input type="submit" value="확인" id="join"> <input
 					type="reset" value="취소" id="cancel">
 			</div>

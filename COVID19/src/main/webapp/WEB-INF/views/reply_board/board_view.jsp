@@ -25,23 +25,23 @@
 				</colgroup>
 				<tbody>
 					<tr>
-						<th>NAME</th>
+						<th>성명</th>
 						<td>${loggedMemberInfo.name}</td>
 						<th>HIT</th>
 						<td>${replyBoardBean.readCount}</td>
 					</tr>
 					<tr>
-						<th>E-MAIL</th>
+						<th>이메일</th>
 						<td>${replyBoardBean.email}</td>
 						<th>DATE</th>
 						<td><fmt:formatDate pattern = "yyyy-MM-dd hh:mm" value = "${replyBoardBean.regDate}" /></td>
 					</tr>
 					<tr>
-						<th>SUBJECT</th>
+						<th>제목</th>
 						<td colspan="3">${replyBoardBean.subject}</td>
 					</tr>
 					<tr>
-						<th>CONTENTS</th>
+						<th>내용</th>
 						<td colspan="3">
 							<div name="contents" id="contents" readonly>${replyBoardBean.contents}</div>
 						</td>

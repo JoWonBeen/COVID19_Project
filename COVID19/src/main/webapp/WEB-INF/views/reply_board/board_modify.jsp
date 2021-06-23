@@ -15,7 +15,7 @@
 <body>
 	<div class="formBox">
 		<h2>문의하기</h2>
-		<form id="joinForm" method="POST" action="BoardModify.do">
+<!-- 		<form id="joinForm" method="POST" action="BoardModify.do"> -->
 			<table>
 				<colgroup>
 					<col style="width: 200px">
@@ -23,33 +23,33 @@
 				</colgroup>
 				<tbody>
 					<tr>
-						<th>NAME</th>
+						<th>성명</th>
 						<td><input type="text" name="name" id="userName" value="${loggedMemberInfo.name}"></td>
 					</tr>
 					<tr>
-						<th>E-MAIL</th>
+						<th>이메일</th>
 						<td><input type="text" name="email" id="userEmail" value="${replyBoardBean.email}"></td>
 					</tr>
 					<tr>
-						<th>SUBJECT</th>
+						<th>제목</th>
 						<td><input type="text" name="subject" id="subject" value="${replyBoardBean.subject}"></td>
 					</tr>
 					<tr>
-						<th>PASSWORD</th>
+						<th>비밀번호</th>
 						<td><input type="password" name="password" id="userPassword"></td>
 					</tr>
 					<tr>
-						<th>CONTENTS</th>
+						<th>내용</th>
 						<td><textarea name="contents" id="contents">${replyBoardBean.contents}</textarea></td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="btns">
 				<input type="hidden" value="${loggedMemberInfo.id}" name = "loggedMemberId">
-				<input type="submit" value="수정" id="join">
+				<input type="button" value="수정" id="join">
 				<a href="BoardList.do">목록</a>
 			</div>
-		</form>
+<!-- 		</form> -->
 	</div>
 	<script>
 	</script>
