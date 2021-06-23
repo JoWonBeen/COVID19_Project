@@ -12,6 +12,9 @@ $("#search").on("click",function(){
     } else if($("#sigungu").val() == "시군구"){
         alert("시,군,구를 선택해주세요");
         return;
+    } else if($("#roadName").val().length == 0 ){
+        alert("도로명을 입력해주세요");
+        return;
     }else {
         searchMediCenter();
     }
@@ -21,29 +24,29 @@ function searchMediCenter(){
     let centerType = $("#centerType").val();
     let sido = $("#sido").val();
     let sigungu = $("#sigungu").val();
-    //console.log(typeof(centerType));
+    let roadName = $("#roadName").val();
 
+	let centerGubun = "0";
     if(centerType == "All"){
-        url = "ShowAllCenter.do";
         sendOptData = {
+        	gubun:centerGubun,
             sido:sido,
-            sigungu:sigungu
+            sigungu:sigungu,
+            roadName:roadName
         }   
     } else{
-        url = "ShowClassifiedCenter.do";
-        if(centerType == "예방접종센터") centerType = 1;
-        if(centerType == "위탁의료기관") centerType = 2;
-        // centerType = parseInt(centerType);
-        console.log(typeof(centerType));
+        if(centerType == "예방접종센터") centerGubun = "1";
+        if(centerType == "위탁의료기관") centerGubun = "2";
         sendOptData = {
-            centerType : centerType,
-            sido : sido,
-            sigungu : sigungu,
+            gubun:centerGubun,
+            sido:sido,
+            sigungu:sigungu,
+            roadName:roadName
         }
     }
 
     $.ajax({
-        url: url,
+        url: "ShowAllCenter.do",
         data:sendOptData,
         success:function(resultData){
             console.log(resultData);

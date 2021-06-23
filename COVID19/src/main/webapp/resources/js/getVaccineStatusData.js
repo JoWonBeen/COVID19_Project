@@ -13,7 +13,6 @@ function getVaccineStatusData(){
 
 
 
-
 function changeCategory(){
 	let category1 = ["1주", "2주", "1달", "3달","6달", "1년", "전체"];
 	let category2 = ["1달", "3달","6달", "1년", "전체"];

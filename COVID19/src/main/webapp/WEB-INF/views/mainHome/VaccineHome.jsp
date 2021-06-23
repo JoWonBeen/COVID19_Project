@@ -5,7 +5,7 @@
 	rel="stylesheet">
 <link href="css/vaccinationStatus.css" rel="stylesheet">
 <script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/vaccinationStatus.js" defer></script>
+<script src="js/getVaccineStatusData.js" defer></script>
 <body>
 	<h1 class="mainTitle">백신 접종 현황</h1>
 

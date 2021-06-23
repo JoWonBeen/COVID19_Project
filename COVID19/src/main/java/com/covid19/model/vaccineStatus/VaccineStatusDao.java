@@ -22,10 +22,10 @@ public class VaccineStatusDao {
 		}
 	}
 	
-	public int insertVaccineStatusInfo(VaccineStatusBean vaccineStatusBean) {
+	public int insertVaccineStatus(VaccineStatusBean vaccineStatusBean) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.insert("insertVaccineStatusInfo", vaccineStatusBean);
+		result = sqlSession.insert("insertVaccineStatus", vaccineStatusBean);
 		sqlSession.commit();
 		sqlSession.close();
 		return result;

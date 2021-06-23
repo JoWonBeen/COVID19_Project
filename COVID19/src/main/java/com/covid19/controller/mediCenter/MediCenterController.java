@@ -27,16 +27,10 @@ public class MediCenterController {
 
 	@RequestMapping(value = "/ShowAllCenter.do", produces = "application/json;charset=UTF-8;")
 	@ResponseBody
-	public List<MediCenterBean> showAllCenter(String sido, String sigungu) {
-		List<MediCenterBean> mediCenterList = mediCenterDao.showAllCenter(sido, sigungu);
+	public List<MediCenterBean> showAllCenter(int gubun, String sido, String sigungu, String roadName) {
+		List<MediCenterBean> mediCenterList = mediCenterDao.showAllCenter(gubun, sido, sigungu, roadName);
 		return mediCenterList;
 	}
 
-	@RequestMapping(value = "/ShowClassifiedCenter.do", produces = "application/json;charset=UTF-8;")
-	@ResponseBody
-	public List<MediCenterBean> showClassifiedCenter(int gubun, String sido, String sigungu) {
-		List<MediCenterBean> mediCenterList = mediCenterDao.showClassifiedCenter(gubun, sido, sigungu);
-		return mediCenterList;
-	}
 
 }

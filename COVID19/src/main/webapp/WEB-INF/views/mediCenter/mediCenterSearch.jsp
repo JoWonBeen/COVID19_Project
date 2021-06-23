@@ -46,6 +46,7 @@
 			<select id="sigungu" name="sigungu">
 				<option value="시군구">시군구</option>
 			</select>
+			<input type="text" id="roadName" name="roadName" placeholder="도로명을 입력하세요">
 			<input type="button" value="의료기관 찾기" id="search">
 			<ul class="mediCenterList">
 
