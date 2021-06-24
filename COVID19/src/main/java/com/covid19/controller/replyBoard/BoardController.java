@@ -14,7 +14,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.covid19.model.member.AdminBean;
 import com.covid19.model.member.MemberBean;
 import com.covid19.model.member.MemberDao;
 import com.covid19.model.replyBoard.ReplyBoardBean;
@@ -33,6 +35,7 @@ public class BoardController {
 	
 	@Autowired
 	MemberBean loggedMemberBean;
+	
 	
 	@Autowired
 	MemberBean memberBean;
@@ -88,11 +91,22 @@ public class BoardController {
 
 
 	@GetMapping("/BoardView.do")
-	public String boardView(Model model, int no) {
-		replyBoardBean = replyBoardDao.getSelectOneBoard(no);
-
-		model.addAttribute("replyBoardBean", replyBoardBean);
-		return "reply_board/board_view";
+	public String boardView(Model model, int no, String memberId, int type, HttpSession session, HttpServletResponse response) throws IOException {
+		if(type == 2) {
+			replyBoardBean = replyBoardDao.getSelectOneBoard(no);
+			model.addAttribute("replyBoardBean", replyBoardBean);
+			return "reply_board/board_view";
+		} else {
+			loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
+			if(loggedMemberBean.getId().equals(memberId)) {
+				replyBoardBean = replyBoardDao.getSelectOneBoard(no);
+				model.addAttribute("replyBoardBean", replyBoardBean);
+				return "reply_board/board_view";
+			} else {
+				ScriptWriterUtil.alertAndBack(response, "비밀글 입니다.");
+				return null;			
+			}
+		}
 	}
 
 	@GetMapping("/BoardDeleteForm.do")
@@ -100,28 +114,20 @@ public class BoardController {
 		replyBoardBean = replyBoardDao.getSelectOneBoard(no);
 
 		model.addAttribute("replyBoardBean", replyBoardBean);
-		model.addAttribute("no", no);
 		return "reply_board/board_delete";	
 	}
 
-	@PostMapping("/BoardDelete.do")
+	@RequestMapping("/BoardDelete.do")
 	public String boardDelete(HttpSession session,HttpServletResponse response, HttpServletRequest request) throws IOException {
 
-		loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
-		String password = request.getParameter("password");
-
-		if(password.equals(loggedMemberBean.getPassword())) {
-			int result = replyBoardDao.deleteBoard(loggedMemberBean.getId());
-			if(result > 0) {
-				ScriptWriterUtil.alertAndNext(response, "글이 삭제되었습니다.", "BoardList.do");
-				return null;
-			} else {
-				ScriptWriterUtil.alertAndBack(response, "글이 삭제되지 않았습니다.");
-				return null;
-			}
+		int no = Integer.parseInt(request.getParameter("no"));
+		int result = replyBoardDao.deleteBoard(no);
+		if(result > 0) {
+			ScriptWriterUtil.alertAndNext(response, "글이 삭제되었습니다.", "BoardList.do");
+			return null;
 		} else {
-			ScriptWriterUtil.alertAndBack(response, "비밀번호를 확인해 주세요.");
-			return null;			
+			ScriptWriterUtil.alertAndBack(response, "글이 삭제되지 않았습니다.");
+			return null;
 		}
 	}
 
@@ -130,23 +136,16 @@ public class BoardController {
 
 		replyBoardBean = replyBoardDao.getSelectOneBoard(no);
 		model.addAttribute("replyBoardBean", replyBoardBean);
-		model.addAttribute("no", no);
 		return "reply_board/board_modify";
 	}
 	
-	@PostMapping("/BoardModify.do")
-	public String boardModifyForm(ReplyBoardBean replyBoardBean, HttpServletResponse response, int no) throws IOException {
-		String dbPassword = replyBoardDao.getPasswordBoard(no);
-		if(dbPassword.equals(replyBoardBean.getPassword())) {
-			
-			int result = replyBoardDao.updateBoard(replyBoardBean); 
-			if(result > 0) {
-				ScriptWriterUtil.alertAndNext(response, "글이 수정되었습니다.", "BoardList.do");
-				return null;
-			} else {
-				ScriptWriterUtil.alertAndBack(response, "글이 수정되지 않았습니다.");
-				return null;
-			}
+	@RequestMapping("/BoardModify.do")
+	public String boardModifyForm(ReplyBoardBean replyBoardBean, HttpSession session,HttpServletRequest request, HttpServletResponse response,Model model) throws IOException {
+		
+		int result = replyBoardDao.updateBoard(replyBoardBean);
+		if(result > 0) {
+			ScriptWriterUtil.alertAndNext(response, "글이 수정되었습니다.", "BoardList.do");
+			return null;
 		} else {
 			ScriptWriterUtil.alertAndBack(response, "글이 수정되지 않았습니다.");
 			return null;
@@ -159,10 +158,8 @@ public class BoardController {
 	}
 	
 	@PostMapping("/BoardWrite.do")
-	public String boardWrite(ReplyBoardBean replyBoardBean, HttpServletResponse response) throws IOException {
-		
+	public String boardWrite(ReplyBoardBean replyBoardBean, HttpServletResponse response, HttpServletRequest request, HttpSession session) throws IOException {
 		int result = replyBoardDao.insertBoard(replyBoardBean);
-
 		if (result > 0) {
 			ScriptWriterUtil.alertAndNext(response, "글이 등록되었습니다.", "BoardList.do");
 			return null;
@@ -173,28 +170,17 @@ public class BoardController {
 		}
 	}
 	
-	// 내보낼때는 JSON으로 결과를 내보낸다.
-	// ResponseBody를 Annotation 하면 JSP를 호출하지 않고, 그냥 자기 자신을 보여준다.
-	// 보통 JSON파일을 적용할 때 사용한다.
 
 	@GetMapping("/BoardRewriteForm.do")
-	public String boardRewriteForm(HttpServletRequest request, Model model) {
-		int no = Integer.parseInt(request.getParameter("no"));
-		int ref = Integer.parseInt(request.getParameter("ref"));
-		int reStep = Integer.parseInt(request.getParameter("reStep"));
-		int reLevel = Integer.parseInt(request.getParameter("reLevel"));
-		
-		model.addAttribute("no", no);
-		model.addAttribute("ref", ref);
-		model.addAttribute("reStep", reStep);
-		model.addAttribute("reLevel", reLevel);
+	public String boardRewriteForm(ReplyBoardBean replyBoardBean, Model model) {
+		model.addAttribute("replyBoardBean", replyBoardBean);
 		return "reply_board/board_rewrite";
 	}
 	
 	
-	@PostMapping("/BoardRewrite.do")
-	public String boardRewrite(ReplyBoardBean replyBoardBean, HttpServletResponse response, HttpServletRequest request) throws IOException {
-		
+	@RequestMapping("/BoardRewrite.do")
+	public String boardRewrite(ReplyBoardBean replyBoardBean, HttpServletResponse response) throws IOException {
+	
 		int result = replyBoardDao.rewriteBoard(replyBoardBean);
 		if (result > 0) {
 			ScriptWriterUtil.alertAndNext(response, "답글이 등록되었습니다.", "BoardList.do");

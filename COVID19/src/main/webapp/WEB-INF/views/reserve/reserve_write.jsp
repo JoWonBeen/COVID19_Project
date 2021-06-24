@@ -138,14 +138,7 @@
 	</div>
 <<<<<<< HEAD
 	<%@ include file="../include/footer.jsp" %>
-<<<<<<< HEAD
-<script>
-<<<<<<< HEAD
-=======
 
->>>>>>> LimSuHyeon
-=======
->>>>>>> JoWonBeen_master_merge
 
 =======
 >>>>>>> JoWonBeen_master_merge

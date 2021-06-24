@@ -19,7 +19,7 @@ public class ReplyBoardDao {
 
 	static {
 		try {
-			String resource = "com/jo/mybatis/config.xml";
+			String resource = "com/covid19/mybatis/config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 		} catch (IOException e) {
@@ -59,7 +59,6 @@ public class ReplyBoardDao {
 		replyBoardBean.setReStep(reStep);
 		replyBoardBean.setReLevel(reLevel);
 		replyBoardBean.setReadCount(0);
-		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		result = sqlSession.insert("insertBoard",replyBoardBean);
 		sqlSession.commit();
@@ -88,16 +87,19 @@ public class ReplyBoardDao {
 		return replyBoardBean;
 	}
 	
-	public int deleteBoard(String memberId) {
+	public int deleteBoard(int boardNo) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.delete("deleteBoard",memberId);
+		result = sqlSession.delete("deleteBoard",boardNo);
 		sqlSession.commit();
 		sqlSession.close();
 		return result;
 	}
 	
+	
+	
 	public int updateBoard(ReplyBoardBean replyBoardBean) {
+		System.out.println(replyBoardBean.toString());
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		result = sqlSession.update("updateBoard", replyBoardBean);
@@ -117,6 +119,7 @@ public class ReplyBoardDao {
 	
 	public int rewriteBoard(ReplyBoardBean replyBoardBean) {
 		int result = 0;
+		int no = replyBoardBean.getNo();	
 		int ref = replyBoardBean.getRef();
 		int reStep = replyBoardBean.getReStep();
 		int reLevel = replyBoardBean.getReLevel();
@@ -124,12 +127,13 @@ public class ReplyBoardDao {
 		updateRefAndLevel(replyBoardBean);
 		reStep += 1;
 		reLevel+=1;
+		replyBoardBean.setNo(no);
 		replyBoardBean.setRef(ref);
 		replyBoardBean.setReStep(reStep);
 		replyBoardBean.setReLevel(reLevel);
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.insert("rewriteBoard", replyBoardBean);
+		result = sqlSession.insert("insertBoard", replyBoardBean);
 		sqlSession.commit();
 		sqlSession.close();
 		return result;

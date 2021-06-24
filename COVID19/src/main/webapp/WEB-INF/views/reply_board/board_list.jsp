@@ -3,22 +3,31 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <%@ include file="../include/header.jsp" %>
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="css/reservation.css">
+<link rel="stylesheet" href="css/reset.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 <body>
 	<div class="formBox" id="list">
-		<h2>자유게시판</h2>
+		<h2>문의게시판</h2>
 		<table>
 			<colgroup>
-				<col style="width: 50px">
-				<col style="width: 600px">
-				<col style="width: 150px">
-				<col style="width: 150px">
-				<col style="width: 50px">
+				<col style="width: 100px">
+				<col style="width: 700px">
+				<col style="width: 200px">
+				<col style="width: 300px">
+				<col style="width: 20px">
 			</colgroup>
 			<thead>
 				<tr>
 					<th>NO</th>
 					<th>SUBJECT</th>
-					<th>NAME</th>
+					<th>ID</th>
 					<th>DATE</th>
 					<th>HIT</th>
 				</tr>
@@ -35,11 +44,11 @@
 							<c:if test = "${replyBoardBean.reStep > 1 }">
 								<img src = "images/re.svg">
 							</c:if>
-							<a href="BoardView.do?no=${replyBoardBean.no }">${replyBoardBean.subject}</a>
+							<a href="BoardView.do?no=${replyBoardBean.no }&memberId=${replyBoardBean.memberId}&type=${loggedMemberInfo.type}">${replyBoardBean.subject}</a>
 						</td>
 						
-						<td>${replyBoardBean.name}</td>
-						<td><fmt:formatDate pattern = "yyyy-mm-dd hh:mm" value = "${replyBoardBean.regDate}" /></td>
+						<td>${replyBoardBean.memberId}</td>
+						<td><fmt:formatDate pattern = "yyyy-MM-dd hh:mm" value = "${replyBoardBean.regDate}" /></td>
 						<td>${replyBoardBean.readCount}</td>
 					</tr>
 				</c:forEach>
