@@ -10,7 +10,6 @@ import lombok.Data;
 @Data
 public class ReplyBoardBean {
 	private int no;
-	private String email;
 	private String subject;
 	private Date regDate;
 	private int ref;        

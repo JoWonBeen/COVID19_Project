@@ -5,7 +5,7 @@
 <%@ include file="../include/header.jsp" %>
 <body>
 	<div class="formBox">
-		<h2>자유게시판</h2>
+		<h2>문의게시판</h2>
 <!-- 		<form id="joinForm" method="POST" action="BoardDelete.do"> -->
 			<table>
 				<colgroup>

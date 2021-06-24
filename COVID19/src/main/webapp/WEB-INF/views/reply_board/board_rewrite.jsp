@@ -15,7 +15,7 @@
       rel="stylesheet">
 <body>
 	<div class="formBox">
-		<h2>자유게시판</h2>
+		<h2>문의게시판</h2>
 		<form action="BoardRewrite.do" id="joinForm" method="POST">
 			<table>
 				<colgroup>
@@ -25,7 +25,7 @@
 				<tbody>
 					<tr>
 						<th>아이디</th>
-						<td><input type="text" name="name" id="userName" value="${loggedMemberInfo.id }"></td>
+						<td><input type="text" name="memberId" id="userId" value="${loggedMemberInfo.id }"></td>
 					</tr>
 					<tr>
 						<th>제목</th>
@@ -40,9 +40,10 @@
 				</tbody>
 			</table>
 			<div class="btns">
-				<input type="hidden" name="ref" value="${ref}">
-				<input type="hidden" name="reStep" value="${reStep}">
-				<input type="hidden" name="reLevel" value="${reLevel}">
+				<input type="hidden" value="${replyBoardBean.no}" name = "no" class="no">
+				<input type="hidden" name="ref" class="ref" value="${replyBoardBean.ref}">
+				<input type="hidden" name="reStep" class="reStep" value="${replyBoardBean.reStep}">
+				<input type="hidden" name="reLevel" class="reLevel" value="${replyBoardBean.reLevel}">
 				<input type="submit" value="확인" id="join">
 				<input type="reset" value="취소" id="cancel">
 				<a href="BoardList.do">목록</a>
@@ -50,6 +51,7 @@
 		</form>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
+	
 </body>
 </html>
 

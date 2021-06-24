@@ -23,7 +23,6 @@
 
 	<insert id="insertBoard" parameterType="ReplyBoardBean">
 		INSERT INTO REPLYBOARD VALUES (REPLYBOARD_SEQ.NEXTVAL,
-										#{email},
 										#{subject},
 										SYSDATE,
 										#{ref},
@@ -53,17 +52,7 @@
 	<update id="updateRefAndLevel" parameterType="ReplyBoardBean">
 		UPDATE REPLYBOARD SET RELEVEL = RELEVEL + 1 WHERE REF = #{ref} AND RELEVEL > #{reLevel}
 	</update>
-	
-	<insert id="rewriteBoard" parameterType="ReplyBoardBean">
-		INSERT INTO REPLYBOARD VALUES ( REPLYBOARD_SEQ.NEXTVAL,
-										#{subject},
-										#{ref},
-										#{reStep},
-										#{reLevel},
-										#{readCount},
-										#{contents}
-										)
-	</insert>
+
 	<delete id="deleteBoard" parameterType="Integer">
 		DELETE FROM REPLYBOARD WHERE NO = #{boardNo}
 	</delete>

@@ -59,7 +59,6 @@ public class ReplyBoardDao {
 		replyBoardBean.setReStep(reStep);
 		replyBoardBean.setReLevel(reLevel);
 		replyBoardBean.setReadCount(0);
-		System.out.println(replyBoardBean.toString());
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		result = sqlSession.insert("insertBoard",replyBoardBean);
 		sqlSession.commit();
@@ -120,6 +119,7 @@ public class ReplyBoardDao {
 	
 	public int rewriteBoard(ReplyBoardBean replyBoardBean) {
 		int result = 0;
+		int no = replyBoardBean.getNo();	
 		int ref = replyBoardBean.getRef();
 		int reStep = replyBoardBean.getReStep();
 		int reLevel = replyBoardBean.getReLevel();
@@ -127,12 +127,13 @@ public class ReplyBoardDao {
 		updateRefAndLevel(replyBoardBean);
 		reStep += 1;
 		reLevel+=1;
+		replyBoardBean.setNo(no);
 		replyBoardBean.setRef(ref);
 		replyBoardBean.setReStep(reStep);
 		replyBoardBean.setReLevel(reLevel);
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.insert("rewriteBoard", replyBoardBean);
+		result = sqlSession.insert("insertBoard", replyBoardBean);
 		sqlSession.commit();
 		sqlSession.close();
 		return result;

@@ -172,23 +172,15 @@ public class BoardController {
 	
 
 	@GetMapping("/BoardRewriteForm.do")
-	public String boardRewriteForm(HttpServletRequest request, Model model) {
-		int no = Integer.parseInt(request.getParameter("no"));
-		int ref = Integer.parseInt(request.getParameter("ref"));
-		int reStep = Integer.parseInt(request.getParameter("reStep"));
-		int reLevel = Integer.parseInt(request.getParameter("reLevel"));
-		
-		model.addAttribute("no", no);
-		model.addAttribute("ref", ref);
-		model.addAttribute("reStep", reStep);
-		model.addAttribute("reLevel", reLevel);
+	public String boardRewriteForm(ReplyBoardBean replyBoardBean, Model model) {
+		model.addAttribute("replyBoardBean", replyBoardBean);
 		return "reply_board/board_rewrite";
 	}
 	
 	
-	@PostMapping("/BoardRewrite.do")
-	public String boardRewrite(ReplyBoardBean replyBoardBean, HttpServletResponse response, HttpServletRequest request) throws IOException {
-		
+	@RequestMapping("/BoardRewrite.do")
+	public String boardRewrite(ReplyBoardBean replyBoardBean, HttpServletResponse response) throws IOException {
+	
 		int result = replyBoardDao.rewriteBoard(replyBoardBean);
 		if (result > 0) {
 			ScriptWriterUtil.alertAndNext(response, "답글이 등록되었습니다.", "BoardList.do");

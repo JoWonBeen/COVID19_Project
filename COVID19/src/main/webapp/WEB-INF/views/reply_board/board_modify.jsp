@@ -14,7 +14,7 @@
       rel="stylesheet">
 <body>
 	<div class="formBox">
-		<h2>문의하기</h2>
+		<h2>문의게시판</h2>
 <!-- 		<form id="joinForm" method="POST" action="BoardModify.do"> -->
 			<table>
 				<colgroup>
@@ -25,10 +25,6 @@
 					<tr>
 						<th>성명</th>
 						<td><input type="text" name="name" id="userName" value="${loggedMemberInfo.name}"></td>
-					</tr>
-					<tr>
-						<th>이메일</th>
-						<td><input type="text" name="email" id="userEmail" value="${replyBoardBean.email}"></td>
 					</tr>
 					<tr>
 						<th>제목</th>

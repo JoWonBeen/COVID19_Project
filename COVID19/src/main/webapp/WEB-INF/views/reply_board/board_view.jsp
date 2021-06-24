@@ -31,8 +31,6 @@
 						<td>${replyBoardBean.readCount}</td>
 					</tr>
 					<tr>
-						<th>이메일</th>
-						<td>${replyBoardBean.email}</td>
 						<th>DATE</th>
 						<td><fmt:formatDate pattern = "yyyy-MM-dd hh:mm" value = "${replyBoardBean.regDate}" /></td>
 					</tr>

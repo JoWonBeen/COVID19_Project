@@ -14,7 +14,7 @@
       rel="stylesheet">
 <body>
 	<div class="formBox" id="list">
-		<h2>자유게시판</h2>
+		<h2>문의게시판</h2>
 		<table>
 			<colgroup>
 				<col style="width: 100px">
