@@ -27,10 +27,6 @@
   text-align: center;
 }
 
-#coronaLiveBox #coronaTotalDataBox table tbody tr th, #coronaLiveBox #coronaTotalDataBox table tbody tr td {
-  border: 1px solid gray;
-}
-
 #coronaLiveBox #coronaGraphBox #coronaOptionBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -54,7 +50,6 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid gray;
   border-radius: 10px;
   padding: 10px 10px;
   margin: 0 20px;
@@ -95,8 +90,4 @@
 
 #coronaLiveBox #coronaAreaDataBox table tbody {
   text-align: center;
-}
-
-#coronaLiveBox #coronaAreaDataBox table tbody tr th {
-  border: 1px solid gray;
 }

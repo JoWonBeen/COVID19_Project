@@ -1,6 +1,6 @@
 #mainVisualBox {
+  overflow: hidden;
   height: 100vh;
-  width: 100vw;
   background: url("../images/mainVisual01.jpg") no-repeat;
   background-size: cover;
 }

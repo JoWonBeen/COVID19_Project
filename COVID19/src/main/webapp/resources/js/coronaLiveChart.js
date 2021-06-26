@@ -91,6 +91,22 @@ function showCoronaData(){
 }
 
 
+Number.prototype.format = function(){
+    if(this==0) return 0;
+    var reg = /(^[+-]?\d+)(\d{3})/;
+    var n = (this + '');
+    while (reg.test(n)) n = n.replace(reg, '$1' + ',' + '$2');
+    return n;
+};
+ 
+String.prototype.format = function(){
+    var num = parseFloat(this);
+    if( isNaN(num) ) return "0";
+    return num.format();
+};
+
+
+
 function showMainData(){
 	$.ajax({
         url:"GetMainData.do",          
@@ -99,7 +115,8 @@ function showMainData(){
     	let addList = [result.decideCnt, result.deathCnt, result.clearCnt, result.todayCnt];
     	$("#totalDataBox td").remove();  
 		for (x in addList) {
-			$("#totalDataBox").append("<td>"+ addList[x] +"</td>");
+			$("#totalDataBox").append("<td>"+ addList[x].format() +" 명</td>");
+			
 		}
     })
 }
@@ -123,7 +140,11 @@ function showAreaData(){
 			}
 			$("#areaDataBox").append("<tr>");
 			for (x in addList) {
-				$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+//				$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+				if(x==0)
+					$("#areaDataBox").append("<td>"+ addList[x] +"</td>");
+				else
+					$("#areaDataBox").append("<td>"+ addList[x].format() +" 명</td>");
 			}
 			$("#areaDataBox").append("</tr>");
     	}
@@ -131,14 +152,22 @@ function showAreaData(){
     	addList = [result[gumyeok].area, result[gumyeok].todayCnt, result[gumyeok].defCnt, result[gumyeok].deathCnt];
     	$("#areaDataBox").append("<tr>");
 		for (x in addList) {
-			$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+//			$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+			if(x==0)
+				$("#areaDataBox").append("<td>"+ addList[x] +"</td>");
+			else
+				$("#areaDataBox").append("<td>"+ addList[x].format() +" 명</td>");
 		}
 		$("#areaDataBox").append("</tr>");
 		
 		addList = [result[sumData].area, result[sumData].todayCnt, result[sumData].defCnt, result[sumData].deathCnt]
     	$("#areaDataBox").append("<tr>");
 		for (x in addList) {
-			$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+//			$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+			if(x==0)
+				$("#areaDataBox").append("<td>"+ addList[x] +"</td>");
+			else
+				$("#areaDataBox").append("<td>"+ addList[x].format() +" 명</td>");
 		}
 		$("#areaDataBox").append("</tr>");
     })

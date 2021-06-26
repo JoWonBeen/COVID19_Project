@@ -1,5 +1,4 @@
 <footer id = "footer">
-	<p>@copyright </p>
+	<p>Copyright 2021. KOMYEODEUM All rights reserved </p>
 </footer>
-
 
