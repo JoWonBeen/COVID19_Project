@@ -1,11 +1,4 @@
-// $(".searchBtn").on("click", function(){
-//    if($("#centerType").val() == "") {
-       
-//    }
-// })
-
 $("#search").on("click",function(){
-    //console.log("btn이 눌렸어요");
     if($("#sido").val() == "광역시도"){
         alert("광역시,도를 선택해주세요.");
         return;
@@ -33,7 +26,8 @@ function searchMediCenter(){
             sido:sido,
             sigungu:sigungu,
             roadName:roadName
-        }   
+        }
+    //console.log(sendOptData);   
     } else{
         if(centerType == "예방접종센터") centerGubun = "1";
         if(centerType == "위탁의료기관") centerGubun = "2";
@@ -46,7 +40,7 @@ function searchMediCenter(){
     }
 
     $.ajax({
-        url: "ShowAllCenter.do",
+        url: "ShowCenter.do",
         data:sendOptData,
         success:function(resultData){
             console.log(resultData);
@@ -95,15 +89,15 @@ function changeCategory(){
     let addList = null;
     console.log(_this.val());
 
-    if(_this.val() == "서울") addList = seoul;
-    else if(_this.val() == "부산") addList = busan;
-    else if(_this.val() == "대구") addList = daegu;
-    else if(_this.val() == "인천") addList = inchen;
-    else if(_this.val() == "광주") addList = gwangju;
-    else if(_this.val() == "대전") addList = daejeon;
-    else if(_this.val() == "울산") addList = ulsan;
-    else if(_this.val() == "세종") addList = sejong;
-    else if(_this.val() == "경기") addList = gyenggi;
+    if(_this.val() == "서울특별시") addList = seoul;
+    else if(_this.val() == "부산광역시") addList = busan;
+    else if(_this.val() == "대구광역시") addList = daegu;
+    else if(_this.val() == "인천특별시") addList = inchen;
+    else if(_this.val() == "광주광역시") addList = gwangju;
+    else if(_this.val() == "대전광역시") addList = daejeon;
+    else if(_this.val() == "울산광역시") addList = ulsan;
+    else if(_this.val() == "세종특별자치시") addList = sejong;
+    else if(_this.val() == "경기도") addList = gyenggi;
      
     $("#sigungu option").remove();  
     target.append(`<option value="시군구">시군구</option>`);
@@ -113,3 +107,76 @@ function changeCategory(){
  }
  
  
+
+
+
+
+
+
+ $("#searchVacc").on("click",function(){
+    if($("#mainArea").val() == "광역시도"){
+        alert("광역시,도를 선택해주세요.");
+        return;
+    } else if($("#detailArea").val() == "시군구"){
+        alert("시,군,구를 선택해주세요");
+        return;
+    } else if($("#roadName").val().length == 0 ){
+        alert("도로명을 입력해주세요");
+        return;
+    }else {
+        searchMediCenter();
+    }
+});
+
+function searchMediCenter(){
+    let centerType = $("#centerType").val();
+    let mainArea = $("#mainArea").val();
+    let detailArea = $("#detailArea").val();
+    let roadName = $("#roadName").val();
+
+	let centerGubun = "0";
+    if(centerType == "All"){
+        sendOptData = {
+        	gubun:centerGubun,
+            sido:mainArea,
+            sigungu:detailArea,
+            roadName:roadName
+        }
+    //console.log(sendOptData);   
+    } else{
+        if(centerType == "예방접종센터") centerGubun = "1";
+        if(centerType == "위탁의료기관") centerGubun = "2";
+        sendOptData = {
+            gubun:centerGubun,
+            sido:mainArea,
+            sigungu:detailArea,
+            roadName:roadName
+        }
+    }
+
+    $.ajax({
+        url: "ShowCenterWithVacc.do",
+        data:sendOptData,
+        success:function(resultData){
+            console.log(resultData);
+            
+            const mediCenterArray = resultData;
+            $(".mediCenterList").html("");
+            $.each(mediCenterArray, function(i,item){
+                $(".mediCenterList").append(`
+                <li>
+                    <dl>
+                        <dd>${item.centerName}</dd>
+                    </dl>
+                    <dl>
+                        <dd>${item.vaccineType}</dd>
+                    </dl>
+                    <dl>
+                        <dd>${item.vaccineCnt}</dd>
+                    </dl>
+                </li>
+                `);
+            })
+        }
+    })
+}

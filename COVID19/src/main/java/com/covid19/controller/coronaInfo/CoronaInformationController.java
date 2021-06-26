@@ -19,6 +19,10 @@ public class CoronaInformationController {
 	public String vaccinationTargetTimimg() {
 		return "coronaInfo/vaccinationTargetTimimg";
 	}
+	@RequestMapping(value = "/VaccineStatus.do", method = RequestMethod.GET)
+	public String vaccinationstatus() {
+		return "coronaInfo/vaccinationStatus";
+	}
 	@RequestMapping(value = "/VaccineSymptoms.do", method = RequestMethod.GET)
 	public String vaccinationSymptoms() {
 		return "coronaInfo/vaccinationSymptoms";

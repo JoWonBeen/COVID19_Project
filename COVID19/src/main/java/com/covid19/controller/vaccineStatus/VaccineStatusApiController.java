@@ -49,8 +49,14 @@ public class VaccineStatusApiController {
 
 		return sb.toString();
 	}
-}
-		
+
+
+//	@RequestMapping("/VaccineStatus.do")
+//	public String vaccineStatus() {
+//	
+//		return "coronaInfo/vaccinationStatus.jsp";
+//	}
+}		
 
 //urlBuilder.append("&" + URLEncoder.encode("cond[sido::EQ]","UTF-8") + "=" + URLEncoder.encode("전국", "UTF-8")); /*City name*/
 //urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::EQ]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 24:00:00", "UTF-8")); /*Statistics base date*/

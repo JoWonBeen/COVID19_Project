@@ -25,12 +25,27 @@ public class MediCenterController {
 		return "mediCenter/mediCenterSearch";
 	}
 
-	@RequestMapping(value = "/ShowAllCenter.do", produces = "application/json;charset=UTF-8;")
+	@RequestMapping("/MediCenterVaccSearch.do")
+	public String mediCenterVaccSearch() {
+		
+		return "mediCenter/mediCenterVaccSearch";
+	}
+
+
+	@RequestMapping(value = "/ShowCenter.do", produces = "application/json;charset=UTF-8;")
 	@ResponseBody
 	public List<MediCenterBean> showAllCenter(int gubun, String sido, String sigungu, String roadName) {
-		List<MediCenterBean> mediCenterList = mediCenterDao.showAllCenter(gubun, sido, sigungu, roadName);
+		List<MediCenterBean> mediCenterList = mediCenterDao.showCenter(gubun, sido, sigungu, roadName);
 		return mediCenterList;
 	}
 
+	@RequestMapping(value = "/ShowCenterWithVacc.do", produces = "application/json;charset=UTF-8;")
+	@ResponseBody
+	public List<MediCenterBean> showCenterWithVacc(int gubun, String sido, String sigungu, String roadName) {
+		List<MediCenterBean> mediCenterList = mediCenterDao.showCenterWithVacc(gubun, sido, sigungu, roadName);
+		return mediCenterList;
+	}
+	
+	
 
 }

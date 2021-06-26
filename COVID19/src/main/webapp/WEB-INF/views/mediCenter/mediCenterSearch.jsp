@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="css/mediCenter.css">
-<script src="js/getMediCenterData.js" defer></script>
+<script src="js/mediCenterGetData.js" defer></script>
 <script src="js/mediCenterSearch.js" defer></script>
 </head>
 <body>
@@ -25,7 +25,7 @@
 			</select> 
 			<select id="sido" name="sido" onchange="changeCategory(this)">
 				<option value="광역시도">광역시도</option>
-				<option value="서울">서울특별시</option>
+				<option value="서울특별시">서울특별시</option>
 				<option value="부산">부산광역시</option>
 				<option value="대구">대구광역시</option>
 				<option value="인천">인천광역시</option>

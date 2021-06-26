@@ -26,7 +26,16 @@ public class MediCenterDao {
 		}
 	}
 	
-	public List<MediCenterBean> showAllCenter(int gubun, String sido, String sigungu, String roadName) {
+	public int insertMediCenter(MediCenterBean mediCenterBean) {
+		int result = 0;
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		result = sqlSession.insert("insertMediCenter", mediCenterBean);
+		sqlSession.commit();
+		sqlSession.close();
+		return result;
+	}
+
+	public List<MediCenterBean> showCenter(int gubun, String sido, String sigungu, String roadName) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		HashMap<String, Object> option = new HashMap<String, Object>();
 		String address = sido + " " + sigungu + " %" + roadName + "%";
@@ -46,13 +55,22 @@ public class MediCenterDao {
 		return mediCenterList;
 	}
 	
-	public int insertMediCenter(MediCenterBean mediCenterBean) {
-		int result = 0;
+
+	public List<MediCenterBean> showCenterWithVacc(int gubun, String sido, String sigungu, String roadName) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.insert("insertMediCenter", mediCenterBean);
-		sqlSession.commit();
+		HashMap<String, Object> option = new HashMap<String, Object>();
+		String address = sido + " " + sigungu + " %" + roadName + "%";
+		
+		option.put("gubun", gubun);
+		option.put("address", address);
+		List<MediCenterBean> mediCenterList;
+//		if(gubun == 0) {			
+			mediCenterList = sqlSession.selectList("showCenterWithVacc", option);
+//		} else {
+//			mediCenterList = sqlSession.selectList("showClassifiedCenter", option);
+//		}
 		sqlSession.close();
-		return result;
+		return mediCenterList;
 	}
 		
 
