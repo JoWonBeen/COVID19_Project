@@ -1,16 +1,15 @@
 
-.choiceNavList{
+#choiceNavList{
     height: 100vh;
-    width:100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     .title{
-        width: 300px;
+        width: 600px;
         position: absolute;
-        left: calc(50%-150px);
-        top: 150px;
+        left: calc(50%-300px);
+        top: 50px;
         display: flex;
         justify-content: center;
         font-size: 45px;
@@ -30,6 +29,7 @@
         text-decoration: none;   
         text-align: center;
         line-height: 2.3em;
+        border-radius: 40px;
     }
 }
  
