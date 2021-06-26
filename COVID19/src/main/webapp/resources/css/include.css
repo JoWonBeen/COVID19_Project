@@ -11,6 +11,7 @@ a {
   position: absolute;
   left: 50px;
   top: 20px;
+  z-index: 100;
 }
 
 #header #logo a img {
@@ -18,6 +19,7 @@ a {
 }
 
 #header #gnb {
+  position: relative;
   padding-top: 20px;
 }
 
@@ -51,6 +53,7 @@ a {
   width: 100%;
   position: absolute;
   left: 0;
+  display: none;
   padding: 10px 0;
   height: 80px;
   font-size: 17px;
@@ -70,8 +73,16 @@ a {
   z-index: 99;
 }
 
-#header #gnb .gnbList:hover li .depth02 li {
-  background-color: red;
+#header #gnb .gnbList:hover:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 350px;
+  width: 100%;
+  z-index: 98;
+  background-color: white;
 }
 
 #header .loginBox {
@@ -108,7 +119,7 @@ a {
 }
 
 #header:hover ~ #mainVisualBox {
-  opacity: 0.65;
+  opacity: 0.5;
 }
 
 #footer {
