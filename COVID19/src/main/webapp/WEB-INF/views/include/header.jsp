@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
-<head>
 <meta charset="UTF-8">
 <title>COVID19 Reservation</title>
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
@@ -95,5 +93,3 @@
 	</div>
 
 </header>
-</head>
-</html>

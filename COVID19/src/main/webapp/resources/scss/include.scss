@@ -41,7 +41,7 @@ a {
                     width: 100%;
                     position: absolute;
                     left: 0;
-                    display: none;
+                    // display: none;
                     padding: 10px 0;
                     height: 80px;
                     font-size: 17px;
@@ -58,8 +58,18 @@ a {
             }
         }
         .gnbList:hover{
-            .depth02{
-                display:block;
+            
+            li{
+                .depth02{
+
+                    display:block;
+                    z-index: 99;
+                    li{
+
+                        background-color: red;
+                    }
+                    
+                }
             }
         }
     }
@@ -86,6 +96,9 @@ a {
             }
         }
     }
+}
+#header:hover ~ #mainVisualBox{
+    opacity: 0.65;
 }
 
 

@@ -1,6 +1,6 @@
 #mainVisualBox {
   overflow: hidden;
-  height: 100vh;
+  height: calc(100vh - 150px);
   background: url("../images/mainVisual01.jpg") no-repeat;
   background-size: cover;
 }

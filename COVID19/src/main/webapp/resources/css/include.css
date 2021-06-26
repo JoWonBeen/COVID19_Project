@@ -51,7 +51,6 @@ a {
   width: 100%;
   position: absolute;
   left: 0;
-  display: none;
   padding: 10px 0;
   height: 80px;
   font-size: 17px;
@@ -66,8 +65,13 @@ a {
   color: blue;
 }
 
-#header #gnb .gnbList:hover .depth02 {
+#header #gnb .gnbList:hover li .depth02 {
   display: block;
+  z-index: 99;
+}
+
+#header #gnb .gnbList:hover li .depth02 li {
+  background-color: red;
 }
 
 #header .loginBox {
@@ -101,6 +105,10 @@ a {
   text-decoration: none;
   color: inherit;
   font-weight: 200;
+}
+
+#header:hover ~ #mainVisualBox {
+  opacity: 0.65;
 }
 
 #footer {
