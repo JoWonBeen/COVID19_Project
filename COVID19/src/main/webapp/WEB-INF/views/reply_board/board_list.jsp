@@ -42,7 +42,9 @@
 						<td>${numbering - status.index}</td>
 						<td class="subject space${replyBoardBean.reStep }">
 							<c:if test = "${replyBoardBean.reStep > 1 }">
-								<img src = "images/re.svg">
+								<span class="material-icons">
+								subdirectory_arrow_right
+								</span>
 							</c:if>
 							<a href="BoardView.do?no=${replyBoardBean.no }&memberId=${replyBoardBean.memberId}&type=${loggedMemberInfo.type}">${replyBoardBean.subject}</a>
 						</td>
