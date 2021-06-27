@@ -1,3 +1,78 @@
+#darkModeBox {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 50px;
+  right: 50px;
+}
+
+#darkModeBox p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-right: 30px;
+  color: #464D52;
+}
+
+#darkModeBox p span {
+  padding-right: 5px;
+}
+
+#darkModeBox #modeBtn {
+  position: relative;
+  width: 50px;
+  height: 15px;
+  z-index: 99;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #cccccc;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+  border-radius: 34px;
+}
+
+#darkModeBox #modeBtn::before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 0px;
+  bottom: -4px;
+  border-radius: 50%;
+  background-color: #464d52;
+  -webkit-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+#darkModeBox.dark #modeBtn {
+  background-color: #5673EB;
+}
+
+#darkModeBox.dark #modeBtn::before {
+  background-color: #CFCFCF;
+  -webkit-transform: translateX(28px);
+          transform: translateX(28px);
+}
+
+#darkModeBox.dark p {
+  color: #B7C1CC;
+}
+
 #coronaLiveBox {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,6 +88,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: #464D52;
 }
 
 #coronaLiveBox #coronaTotalDataBox table {
@@ -90,4 +166,9 @@
 
 #coronaLiveBox #coronaAreaDataBox table tbody {
   text-align: center;
+}
+
+#coronaLiveBox.dark {
+  background-color: #101421;
+  color: #B7C1CC;
 }

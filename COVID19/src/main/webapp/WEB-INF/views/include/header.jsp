@@ -14,6 +14,8 @@
 <script src="js/memberLogin.js" defer></script>
 <script src="js/centerAdmin.js" defer></script>
 <script src="js/VaccineHome.js" defer></script>
+<script src="js/include.js" defer></script>
+<script src="js/gsap/gsap.min.js"></script>
 <header id="header">
     <c:choose>
 		<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
