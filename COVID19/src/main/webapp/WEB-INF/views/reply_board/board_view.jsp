@@ -13,6 +13,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <body>
+<div id="largeBox">
 	<div class="formBox">
 		<h2>문의하기</h2>
 		<form id="joinForm" method="POST">
@@ -55,6 +56,7 @@
 				<a href="BoardList.do">목록</a>
 			</div>
 		</form>
+	</div>
 	</div>
 	<script>
 	</script>

@@ -16,6 +16,7 @@
 
 
 <body>
+<div id="largeBox">
 	<div class="formBox">
 		<h2>예약페이지</h2>
 		<form action="ReserveModify.do" id="reserveForm" method="POST">
@@ -155,6 +156,7 @@
 				<input type="reset" value="취소" id="cancel">
 			</div>
 		</form>
+	</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 <script>

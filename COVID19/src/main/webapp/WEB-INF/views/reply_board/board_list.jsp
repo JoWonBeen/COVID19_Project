@@ -13,6 +13,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <body>
+<div id="largeBox">
 	<div class="formBox" id="list">
 		<h2>문의게시판</h2>
 		<table>
@@ -85,6 +86,7 @@
 				<a href="BoardWriteForm.do" id="join">글쓰기</a>
 			</div>
 		</c:if>
+	</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 </body>

@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <body>
+<div id="largeBox">
 	<div class="formBox" id="list">
 		<h2>예약조회</h2>
 		<form action="" method="GET">
@@ -61,6 +62,7 @@
 				<a href="ReserveDeleteForm.do?hospitalAdd=${reserveBean.hospitalAdd}&vaccine=${reserveBean.vaccine}">예약취소</a>
 			</div>
 			</form>
+	</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 </body>

@@ -17,6 +17,7 @@
 
 
 <body>
+<div id="largeBox">
 	<div class="formBox">
 		<h2>예약페이지</h2>
 		<form action="ReserveWrite.do" id="reserveForm" method="POST">
@@ -136,12 +137,7 @@
 			</div>
 		</form>
 	</div>
-<<<<<<< HEAD
-	<%@ include file="../include/footer.jsp" %>
-
-
-=======
->>>>>>> JoWonBeen_master_merge
+	</div>
 </body>
 <%@ include file="../include/footer.jsp" %>
 </html>
