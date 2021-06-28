@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 #mainVisualBox { overflow: hidden; height: 100vh; background: url("../images/mainVisual01.jpg") no-repeat; background-size: cover; }
+=======
+#mainVisualBox {
+  overflow: hidden;
+  height: calc(100vh - 150px);
+  background: url("../images/mainVisual01.jpg") no-repeat;
+  background-size: cover;
+}
+>>>>>>> master
 
 #mainVisualBox #coronaTotalDataBox { position: absolute; top: 20%; right: 100px; }
 

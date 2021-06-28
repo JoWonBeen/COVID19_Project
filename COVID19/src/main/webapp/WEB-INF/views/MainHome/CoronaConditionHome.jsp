@@ -7,6 +7,10 @@
 <script src="js/coronaLiveChart.js" defer></script>
 <script src="js/chart.min.js" defer></script>
 <body>
+	<div id = "darkModeBox">
+		<p><span class="material-icons">dark_mode</span>다크모드</p>
+		<button id = "modeBtn"></button>
+	</div>
 	<div id = "coronaLiveBox">
 		<div id = "coronaTotalDataBox">
 			<table>
@@ -32,7 +36,7 @@
 			<div id = "coronaOptionBox">
 				<div>
 					<label for="type">종류</label> 
-					<select name="type" id="type" onChange="changeCoronaCategory(); showCoronaData();">
+					<select name="type" id="type" onChange="changeCoronaLiveCategory(); showCoronaData();">
 						<option selected="selected">일별</option>
 						<option>주별</option>
 						<option>월별</option>
