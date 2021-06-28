@@ -561,6 +561,12 @@
 			</div>
 		</form>
 	</div>
+<<<<<<< HEAD
+	<%@ include file="../include/footer.jsp" %>
+
+
+=======
+>>>>>>> JoWonBeen_master_merge
 </body>
 <%@ include file="../include/footer.jsp" %>
 =======

@@ -1,16 +1,15 @@
 
-.choiceNavList{
+#choiceNavList{
     height: 100vh;
-    width:100vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     .title{
-        width: 300px;
+        width: 600px;
         position: absolute;
-        left: calc(50%-150px);
-        top: 150px;
+        left: calc(50%-300px);
+        top: 50px;
         display: flex;
         justify-content: center;
         font-size: 45px;
@@ -20,16 +19,32 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 300px;
-        height: 300px;
-        background-color: skyblue;
+        width: 500px;
+        height: 500px;
         margin: 0 100px;
-        color: white;
-        font-size: 28px;
+        color: black;
+        font-size: 25px;
         font-weight: 700;
         text-decoration: none;   
         text-align: center;
         line-height: 2.3em;
+        border-radius: 40px;
+        &.mainRight{
+            background: url("../images/mainHomeRight.png") 50% 50% no-repeat;
+            background-size: cover;
+        }
+        &.mainLeft{
+            background: url("../images/mainHomeLeft.png") 50% 50% no-repeat;
+            background-size: cover;
+        }
+        &.joinRight{
+            background: url("../images/joinHomeRight.png") 50% 50% no-repeat;
+            background-size: cover;
+        }
+        &.joinLeft{
+            background: url("../images/joinHomeLeft.png") 50% 50% no-repeat;
+            background-size: cover;
+        }
     }
 }
  

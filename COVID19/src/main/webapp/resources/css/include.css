@@ -5,15 +5,14 @@ a {
 
 #header {
   width: 100%;
-  position: absolute;
-  top: 0;
-  z-index: 99;
+  height: 130px;
 }
 
 #header #logo {
   position: absolute;
   left: 50px;
   top: 20px;
+  z-index: 100;
 }
 
 #header #logo a img {
@@ -21,6 +20,7 @@ a {
 }
 
 #header #gnb {
+  position: relative;
   padding-top: 20px;
 }
 
@@ -69,8 +69,21 @@ a {
   color: blue;
 }
 
-#header #gnb .gnbList:hover .depth02 {
+#header #gnb .gnbList:hover li .depth02 {
   display: block;
+  z-index: 99;
+}
+
+#header #gnb .gnbList:hover:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 350px;
+  width: 100%;
+  z-index: 98;
+  background-color: white;
 }
 
 #header .loginBox {
@@ -106,15 +119,63 @@ a {
   font-weight: 200;
 }
 
+#header:hover ~ #mainVisualBox {
+  opacity: 0.5;
+}
+
 #footer {
-  position: relative;
-  z-index: 99;
-  bottom: 50px;
   width: 100%;
+  height: 100px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #CDCFD5;
+  color: white;
+}
+
+#btnTop {
+  outline: none;
+  border: none;
+  position: fixed;
+  right: 100px;
+  bottom: -100px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #E07800;
+  color: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#btnTop.show {
+  bottom: 100px;
+}
+
+#coronaLiveBox.dark ~ #btnTop {
+  background-color: #B7C1CC;
+}
+
+#coronaLiveBox.dark ~ footer {
+  background-color: #101421;
+  color: #B7C1CC;
+}
+
+body.dark #header {
+  background-color: #101421;
 }

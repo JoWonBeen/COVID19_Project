@@ -1,22 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-	rel="stylesheet">
-<link rel="stylesheet" href="css/include.css">
-<link rel="stylesheet" href="css/reset.css">
+<%@ include file="../include/includeFile.jsp" %>
 <link href="css/coronaLive.css" rel="stylesheet">
-<script src="js/jquery-3.6.0.min.js"></script>
 <script src="js/coronaLiveGetCoronaData.js" defer></script>
 <script src="js/coronaLiveChart.js" defer></script>
 <script src="js/chart.min.js" defer></script>
-</head>
 <body>
+	<div id = "darkModeBox">
+		<p><span class="material-icons">dark_mode</span>다크모드</p>
+		<button id = "modeBtn"></button>
+	</div>
 	<div id = "coronaLiveBox">
 		<div id = "coronaTotalDataBox">
 			<table>
@@ -42,7 +36,7 @@
 			<div id = "coronaOptionBox">
 				<div>
 					<label for="type">종류</label> 
-					<select name="type" id="type" onChange="changeCoronaCategory(); showCoronaData();">
+					<select name="type" id="type" onChange="changeCoronaLiveCategory(); showCoronaData();">
 						<option selected="selected">일별</option>
 						<option>주별</option>
 						<option>월별</option>
@@ -107,4 +101,4 @@
 		</div>
 	</div>
 </body>
-</html>
+<%@ include file="../include/footer.jsp" %>

@@ -16,15 +16,23 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @ComponentScan("com.covid19.controller.mediCenter")
 @ComponentScan("com.covid19.controller.member")
 @ComponentScan("com.covid19.controller.picked")
+<<<<<<< HEAD
 @ComponentScan("com.covid19.controller.reserve")
 @ComponentScan("com.covid19.controller.vaccineStatus")
 @ComponentScan("com.covid19.model.CenterAdmin")
 @ComponentScan("com.covid19.model.coronaLive")
 @ComponentScan("com.covid19.model.mediCenter")
+=======
+@ComponentScan("com.covid19.controller.replyBoard")
+>>>>>>> master
 @ComponentScan("com.covid19.model.member")
 @ComponentScan("com.covid19.model.picked")
+<<<<<<< HEAD
 @ComponentScan("com.covid19.model.reserve")
 @ComponentScan("com.covid19.model.vaccineStatus")
+=======
+@ComponentScan("com.covid19.model.replyBoard")
+>>>>>>> master
 
 
 public class ServletAppContext implements WebMvcConfigurer{

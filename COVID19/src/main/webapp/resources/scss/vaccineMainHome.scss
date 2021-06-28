@@ -1,8 +1,9 @@
 #mainVisualBox {
-  height: 100vh;
-  width: 100vw;
+  overflow: hidden;
+  height: calc(100vh - 150px);
   background: url("../images/mainVisual01.jpg") no-repeat;  
   background-size: cover;
+  // opacity: 0.65;
   #coronaTotalDataBox {
     position: absolute;
     top:20%;

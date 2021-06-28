@@ -4,13 +4,12 @@ a {
 }
 #header{
     width: 100%;
-    position: absolute;
-    top:0;
-    z-index: 99;
+    height: 130px;
     #logo{
         position:absolute; 
         left:50px;         
         top:20px;
+        z-index: 100;
         a {
             img{
                 height: 100px;
@@ -18,14 +17,15 @@ a {
         }
     }
     #gnb{
+        position: relative;
         padding-top: 20px;
         .gnbList{
+            text-align:center; 
+            font-size:0; 
             a{
                 text-decoration: none;
                 color: inherit;
             }
-            text-align:center; 
-            font-size:0; 
             >li{
                 display: inline-block; 
                 vertical-align :top; 
@@ -61,8 +61,27 @@ a {
             }
         }
         .gnbList:hover{
-            .depth02{
-                display:block;
+            
+            li{
+                .depth02{
+                    display:block;
+                    z-index: 99;
+                    li{
+                    }
+                    
+                }
+            }
+            &:before{
+                content: "";
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 100%;
+                height: 350px;
+                width: 100%;
+                z-index: 98;
+                background-color: white;
+
             }
         }
     }
@@ -90,14 +109,49 @@ a {
         }
     }
 }
+#header:hover ~ #mainVisualBox{
+    opacity: 0.5;
+}
 
 
 
 #footer{
-    position: relative;
-    z-index: 99;
-    bottom: 50px;
     width: 100%;
+    height: 100px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    background-color: #CDCFD5;
+    color: white;
+}
+
+#btnTop{
+    outline: none;
+    border: none;
+    position: fixed;
+    right:100px;
+    bottom:-100px;
+    width:60px;
+    height:60px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E07800;
+    color : white;
+    transition: all 0.5s ease;
+    &.show{
+        bottom:100px;
+    }
+}
+
+#coronaLiveBox.dark ~ #btnTop{
+    background-color: #B7C1CC;
+}
+#coronaLiveBox.dark ~ footer{
+    background-color: #101421;
+    color: #B7C1CC;
+}
+body.dark #header{
+    background-color: #101421;
 }
