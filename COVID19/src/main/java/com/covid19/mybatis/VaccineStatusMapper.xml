@@ -9,9 +9,26 @@
 													    #{area},
 													    #{firstCnt},
 													    #{secondCnt},
-													    #{totalFirstCnt}
+													    #{totalFirstCnt},
 													    #{totalSecondCnt})
 	</insert>
+	<select id="getVaccStatusLastDate" resultType="String">
+		SELECT MAX(BASEDATE) FROM VACCINESTATUS
+	</select>
+	
+	<select id="getVaccineMainData" parameterType="String" resultType="VaccineStatusBean" >
+		SELECT DISTINCT FIRST_CNT AS firstCnt, SECOND_CNT as secondCnt, TOTALFIRST_CNT as totalFirstCnt, TOTALSECOND_CNT as totalSecondCnt
+		  FROM VACCINESTATUS 
+     	 WHERE BASEDATE = (SELECT MAX(BASEDATE) FROM VACCINESTATUS) AND AREA = #{area}
+	</select>
+
+	<select id="getVaccineAreaData" resultType="VaccineStatusBean" >
+		SELECT DISTINCT AREA as area, SECOND_CNT as secondCnt, TOTALSECOND_CNT as totalSecondCnt
+		  FROM VACCINESTATUS 
+     	 WHERE BASEDATE = (SELECT MAX(BASEDATE) FROM VACCINESTATUS) ORDER BY AREA
+	</select>
+	
+	
 	
 </mapper>
 

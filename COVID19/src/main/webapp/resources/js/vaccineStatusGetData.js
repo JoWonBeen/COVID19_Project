@@ -1,15 +1,78 @@
-getVaccineStatusData();
+//updateVaccineStatusData();
 
-function getVaccineStatusData(){
+function updateVaccineStatusData(){
     //console.log("fuct실행");
-    $.ajax({
-        url:"VaccineStatusApiCall.do",
-        success:function(resultData){
-            console.log(resultData);
-        }
-    })
+	let lastDate = null;
+	let vaccineList = null;
+	// $.ajax({
+	// 	url:"GetVaccStatusLastDate.do",
+	// 	success:function(resultData){
+	// 		lastDate = resultData;
+	// 		let sendData = {
+	// 			baseDate:lastDate,
+	// 			//end: dateToYear(new Date())
+	// 		}
+	// 		if(lastDate < dateToYear(new Date())){
+				$.ajax({
+					url:"VaccineStatusApiCall.do",
+					//data:sendData,
+					success:function(resultData){
+						console.log(resultData);
+						let list_length = 0;
+						if(resultData.data != null) {
+							vaccineList = resultData.data;
+							list_length = vaccineList.length;
+							console.log(vaccineList);
+							console.log(list_length);
+						}
+						let dataList = "";
+						for(let i = 0; i < list_length; i++){
+							let baseDate = vaccineList[i].baseDate;
+							let area = vaccineList[i].sido;
+							let firstCnt = vaccineList[i].firstCnt.toString();
+							let secondCnt = vaccineList[i].secondCnt.toString();
+							let totalFirstCnt = vaccineList[i].totalFirstCnt.toString();
+							let totalSecondCnt = vaccineList[i].totalSecondCnt.toString();
+
+							dataList += baseDate +"/"+ area +"/"+ firstCnt +"/"+ secondCnt +"/"+ totalFirstCnt + "/" + totalSecondCnt;
+							dataList += "&";
+						}
+						sendData = {
+							dataList:dataList
+						}
+						if(dataList != ""){
+							$.ajax({
+								url:"InsertVaccineInfo.do",
+								data:sendData,
+								success:function(resultData){
+									console.log(resultData);
+								}
+							})
+						}
+					}
+				})
+	// 		}
+	// 	}
+	// })			
 }
 
+
+
+
+function dateToYear(_date) {
+    let year = _date.getFullYear();
+    let month = _date.getMonth() + 1;
+    if (month < 10) month = '0' + month;
+    let date = _date.getDate();
+    if (date < 10) date = '0' + date;
+    return year + '' + month + '' + date;
+}
+function StringToDate(_str) {
+	let arr = _str.split(" ");
+    _date = new Date(parseInt(arr[0]),parseInt(arr[1])-1,parseInt(arr[2]));
+    _buf_date = dateToYear(_date);
+    return _buf_date;
+}
 
 
 

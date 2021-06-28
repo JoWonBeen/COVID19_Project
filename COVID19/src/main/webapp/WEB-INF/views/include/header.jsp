@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="css/memberInfoForm.css">
 <link rel="stylesheet" href="css/vaccineMainHome.css">
 <script src="js/jquery-3.6.0.min.js"></script> 
+<script src="js/swiper-bundle.min.js"></script>
 <script src="js/chart.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
 <script src="js/centerAdmin.js" defer></script>
