@@ -22,16 +22,7 @@
 <script src="js/gsap/gsap.min.js"></script>
 
 <header id="header">
-		<c:choose>
-			<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
-				<h1 id="logo">
-			        <a href="Index.do"><img src="images/logoMember.png" alt=""> </a>
-			    </h1>
-			</c:when>
-			<c:otherwise>
-				<h1 id="logo">
-			        <a href="Index.do"><img src="images/logoAdmin.png" alt=""> </a>
-			    </h1>
-			</c:otherwise>
-		</c:choose>
+	<h1 id="logo">
+        <a href="Index.do"><img src="images/logo.png" alt=""> </a>
+    </h1>
 	</header>

@@ -10,7 +10,7 @@
         justify-content: center;
         align-items: center;
         padding-right: 30px;
-        color: #464D52;
+        color: #717b81;
         span{
             padding-right: 5px;
 
@@ -73,7 +73,6 @@
                 text-align: center;
                 tr{
                     th, td{
-                        // border: 1px solid gray;
                     }
                 }
             }
@@ -89,7 +88,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                // border: 1px solid gray;
                 border-radius: 10px;
                 padding: 10px 10px;
                 margin: 0 20px;
@@ -99,8 +97,16 @@
                     margin-right: 25px;
                 }
                 select{
-                    width: 70px;
-                    height: 20px;
+                    width: 70px; 
+                    padding: 0.8em .5em; 
+                    font-family: inherit;  
+                    background: url('../images/selectBoxBlack.png') no-repeat 95% 50%;
+                    border: 1px solid #464D52;
+                    border-radius: 0px; 
+                    -webkit-appearance: none; 
+                    -moz-appearance: none;
+                    appearance: none;
+                    color: #464D52;
                 }
             }
         }
@@ -121,7 +127,6 @@
                 text-align: center;
                 tr{
                     th{
-                        // border: 1px solid gray;
                     }
                 }
             }
@@ -130,5 +135,9 @@
     &.dark{
         background-color: #101421;
         color: #B7C1CC;
+        select{
+            color:  #B7C1CC !important;
+            background-color: #101421 !important;
+        }
     }
 }

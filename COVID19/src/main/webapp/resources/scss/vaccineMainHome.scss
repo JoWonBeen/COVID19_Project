@@ -6,23 +6,16 @@
   // opacity: 0.65;
   #coronaTotalDataBox {
     position: absolute;
-    top:20%;
+    top:30%;
     right: 100px;
-    table {
-      height: 20px;
-      width: 400px;
-      line-height: 20px;
-      font-size: 15px;
-      tbody {
-        text-align: center;
-        tr{
-          th, td{
-            
-            border: 1px solid gray;
-          }
+    
+    p{
+      font-size: 30px;
+      font-weight: 400;
+      color: white;
+      border:1px solid white;
+      padding: 20px;
 
-        }
-      }
     }
   }
   
