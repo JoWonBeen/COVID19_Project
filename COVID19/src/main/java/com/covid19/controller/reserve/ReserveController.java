@@ -109,6 +109,8 @@ public class ReserveController {
 		int result = reserveDao.checkReserve(memberBean.getId());
 		if (result > 0) { 
 			reserveBean = reserveDao.getAllReservation(memberBean.getId());
+			String[] addArr = reserveBean.getHospitalAdd().split(" ");
+			reserveBean.setHospitalAdd(addArr[addArr.length-1]);
 			model.addAttribute("reserveBean", reserveBean);
 			return "reserve/reserve_list";
 		} else {

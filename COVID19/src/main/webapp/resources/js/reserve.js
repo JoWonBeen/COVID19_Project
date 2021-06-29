@@ -4,7 +4,7 @@ function resetHospital(){
 }
 
 $(function(){
-	$("#datepicker").datepicker();
+	$("#datepicker").datepicker({ minDate: 0});
 });
 
 function changeAddressCategory(){

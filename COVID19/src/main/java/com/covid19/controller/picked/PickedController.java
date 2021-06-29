@@ -78,4 +78,13 @@ public class PickedController {
 	public String coronaSymptoms() {
 		return "picked/coronaSymptoms";
 	}
+	@GetMapping("/CoronaVaccineTypes.do")
+	public String coronaVaccineTypes() {
+		return "picked/coronaVaccineTypes";
+	}
+	@GetMapping("/VaccinationTargetTiming.do")
+	public String vaccinationTargetTiming() {
+		return "picked/vaccinationTargetTiming";
+	}
+	
 }
