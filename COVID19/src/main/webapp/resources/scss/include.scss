@@ -1,13 +1,24 @@
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#header, #footer, #mainVisualBox, #memberLoginBox, #coronaLivePageBox{
+    font-family: 'GmarketSansBold';
+}
+
 a {
 	text-decoration:none;
 	color:inherit;
 }
 #header{
+    font-family: 'GmarketSansBold';
     width: 100%;
     height: 130px;
     #logo{
         position:absolute; 
-        left:50px;         
+        left:15px;         
         top:20px;
         z-index: 100;
         a {
@@ -108,6 +119,13 @@ a {
             }
         }
     }
+    .coronaLiveNav{
+        position: absolute;
+        right:40px;
+        top:10px;
+        font-size: 12px;
+        color: #717b81;
+    }
 }
 #header:hover ~ #mainVisualBox{
     opacity: 0.5;
@@ -137,7 +155,7 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #E07800;
+    background-color: #B7C1CC;
     color : white;
     transition: all 0.5s ease;
     &.show{
@@ -145,13 +163,14 @@ a {
     }
 }
 
-#coronaLiveBox.dark ~ #btnTop{
-    background-color: #B7C1CC;
-}
-#coronaLiveBox.dark ~ footer{
+
+#coronaLivePageBox.dark ~ footer{
     background-color: #101421;
     color: #B7C1CC;
 }
 body.dark #header{
     background-color: #101421;
+    #logo{
+        color: white;
+    }
 }

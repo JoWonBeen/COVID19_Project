@@ -2,9 +2,6 @@ $.ajax({
     url:"GetMainData.do",          
 })
 .done(function(result){
-	let addList = [result.decideCnt, result.deathCnt, result.clearCnt, result.todayCnt];
-	$("#totalDataBox td").remove();  
-	for (x in addList) {
-		$("#totalDataBox").append("<td>"+ addList[x] +"</td>");
-	}
+	$("#coronaTotalDataBox p").remove();  
+	$("#coronaTotalDataBox").append("<p>확진자 수 : "+ result.todayCnt +"명</p>");
 })
