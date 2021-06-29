@@ -67,7 +67,7 @@ public class VaccineStatusDao {
 		return vaccineStatusList;
 	}
 	
-	public List<VaccineStatusBean> getVaccineAllAreaData(int type, int period, String area) {
+	public List<VaccineStatusBean> getVaccineAllAreaData(int type, String period, String area) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		HashMap<String, Object> dateOption = new HashMap<String, Object>();
 		dateOption.put("type", type);

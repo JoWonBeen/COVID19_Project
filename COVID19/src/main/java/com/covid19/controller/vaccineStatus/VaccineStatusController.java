@@ -34,7 +34,7 @@ public class VaccineStatusController {
 		return vaccineStatusBean;
 	}
 	
-	// 모든 지역을 통합한 데이터 가져오기.
+	//백신접종 데이터 가져오기.
 	@RequestMapping(value="/GetVaccineAllData.do",produces="application/json;charset=UTF-8;")
 	@ResponseBody
 	public List<VaccineStatusBean> getVaccineAllData(int type, String period) {
@@ -42,10 +42,10 @@ public class VaccineStatusController {
 		return vaccineStatusBean;
 	}
 	
-	// 특정 지역 데이터 가져오기.
+	//지역 백신접종 데이터 가져오기.
 	@RequestMapping(value="/GetVaccineAllAreaData.do",produces="application/json;charset=UTF-8;")
 	@ResponseBody
-	public List<VaccineStatusBean> getVaccineAllAreaData(int type, int period, String area) {
+	public List<VaccineStatusBean> getVaccineAllAreaData(int type, String period, String area) {
 		List<VaccineStatusBean> vaccineStatusBean = vaccineStatusDao.getVaccineAllAreaData(type, period, area);
 		return vaccineStatusBean;
 	}
