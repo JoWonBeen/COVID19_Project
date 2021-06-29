@@ -11,6 +11,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.springframework.stereotype.Component;
 
+
 @Component
 public class VaccineStatusDao {
 	
@@ -55,6 +56,28 @@ public class VaccineStatusDao {
 		sqlSession.close();
 		return vaccineStatusBean;
 	}
+	
+	public List<VaccineStatusBean> getVaccineAllData(int type, String period) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		HashMap<String, Object> dateOption = new HashMap<String, Object>();
+		dateOption.put("type", type);
+		dateOption.put("period", period);
+		List<VaccineStatusBean> vaccineStatusList = sqlSession.selectList("getVaccineAllData", dateOption);
+		sqlSession.close();
+		return vaccineStatusList;
+	}
+	
+	public List<VaccineStatusBean> getVaccineAllAreaData(int type, int period, String area) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		HashMap<String, Object> dateOption = new HashMap<String, Object>();
+		dateOption.put("type", type);
+		dateOption.put("period", period);
+		dateOption.put("area", area);
+		List<VaccineStatusBean> vaccineStatusList = sqlSession.selectList("getVaccineAllAreaData", dateOption);
+		sqlSession.close();
+		return vaccineStatusList;
+	}
+	
 	
 		
 }

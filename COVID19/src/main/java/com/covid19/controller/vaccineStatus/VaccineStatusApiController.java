@@ -33,18 +33,11 @@ public class VaccineStatusApiController {
 		try {
 			StringBuilder urlBuilder = new StringBuilder("https://api.odcloud.kr/api/15077756/v1/vaccine-stat"); /* URL */
 			urlBuilder.append("?" + URLEncoder.encode("page", "UTF-8") + "=" + URLEncoder.encode("1", "UTF-8")); /* 페이지번호 */
-			urlBuilder.append("&" + URLEncoder.encode("perPage", "UTF-8") + "="+ URLEncoder.encode("1968", "UTF-8")); /* 한 페이지 결과 수 */
+			urlBuilder.append("&" + URLEncoder.encode("perPage", "UTF-8") + "="+ URLEncoder.encode("100000", "UTF-8")); /* 한 페이지 결과 수 */
 			urlBuilder.append("&" + URLEncoder.encode("serviceKey", "UTF-8") + "=2MQP2Jqoof9NxfXQ8oLwNvYMcm1OdhGVzEgDikf%2BtaB0RSFmbFXey3Jnd5QBanWx4tpWFe6ZUk1j1GO5G%2FDlFQ%3D%3D");
 			urlBuilder.append("&" + URLEncoder.encode("_type", "UTF-8") + "=" + URLEncoder.encode("json", "UTF-8")); /* json타입으로 변환 */
-			//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::EQ]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 00:00:00", "UTF-8")); /*Statistics base date*/
-			//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::LT]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 00:00:00", "UTF-8")); /*Statistics base date*/
-			//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::LTE]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 00:00:00", "UTF-8")); /*Statistics base date*/
-			//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::GT]","UTF-8") + "=" + URLEncoder.encode("2021.06.26 00:00:00", "UTF-8")); /*Statistics base date*/
-			urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::GTE]","UTF-8") + "=" + URLEncoder.encode("2021-03-11 00:00:00", "UTF-8")); /*Statistics base date*/
-			//urlBuilder.append("&" + URLEncoder.encode("cond[sido::EQ]","UTF-8") + "=" + URLEncoder.encode("전국", "UTF-8")); /*City name*/
-
-
-			
+			urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::GT]","UTF-8") + "=" + URLEncoder.encode(baseDate, "UTF-8")); /*Statistics base date*/
+			//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::GTE]","UTF-8") + "=" + URLEncoder.encode(baseDate, "UTF-8")); /*Statistics base date*/
 			URL url = new URL(urlBuilder.toString());
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
@@ -92,16 +85,23 @@ public class VaccineStatusApiController {
 	
 	@RequestMapping(value="/GetVaccStatusLastDate.do",produces="application/json;charset=UTF-8;")
 	@ResponseBody
-	public String getLastDate() {
+	public String getVaccStatusLastDate() {
 		String lastDate = vaccineStatusDao.getVaccStatusLastDate();
+		if(lastDate == null) {
+			lastDate = "20210301";
+		}
+		else {
+			String[] buf = lastDate.split("-");
+			lastDate = buf[0]+buf[1]+buf[2].substring(0,2);
+		}
 		return lastDate;
-	}	
+	}
+	
 }
 
+//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::EQ]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 00:00:00", "UTF-8")); /*Statistics base date*/
+//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::LT]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 00:00:00", "UTF-8")); /*Statistics base date*/
+//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::LTE]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 00:00:00", "UTF-8")); /*Statistics base date*/
+//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::GT]","UTF-8") + "=" + URLEncoder.encode("2021.06.26 00:00:00", "UTF-8")); /*Statistics base date*/
+//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::GTE]","UTF-8") + "=" + URLEncoder.encode(baseDate, "UTF-8")); /*Statistics base date*/
 //urlBuilder.append("&" + URLEncoder.encode("cond[sido::EQ]","UTF-8") + "=" + URLEncoder.encode("전국", "UTF-8")); /*City name*/
-//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::EQ]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 24:00:00", "UTF-8")); /*Statistics base date*/
-//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::LT]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 24:00:00", "UTF-8")); /*Statistics base date*/
-//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::LTE]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 24:00:00", "UTF-8")); /*Statistics base date*/
-//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::GT]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 24:00:00", "UTF-8")); /*Statistics base date*/
-//urlBuilder.append("&" + URLEncoder.encode("cond[baseDate::GTE]","UTF-8") + "=" + URLEncoder.encode("2021.03.10 24:00:00", "UTF-8")); /*Statistics base date*/
-

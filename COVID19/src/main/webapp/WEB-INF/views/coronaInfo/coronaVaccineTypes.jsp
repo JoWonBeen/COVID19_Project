@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <div class = "container">
+    <div class="container">
         <h1 class="mainMenu">COVID19 정보</h1>
 	    <h2 class="subMenu">코로나19 백신 정보</h2>
         <div class="contents">

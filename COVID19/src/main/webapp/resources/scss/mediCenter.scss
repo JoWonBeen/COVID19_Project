@@ -1,6 +1,6 @@
 #mediCenter {
-  position: absolute;
-  top: 200px;
-  display: flex;
-  flex-direction: column;
+  .formBox {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -1,23 +1,23 @@
-//updateVaccineStatusData();
+
+updateVaccineStatusData();
 
 function updateVaccineStatusData(){
-    //console.log("fuct실행");
 	let lastDate = null;
 	let vaccineList = null;
-	// $.ajax({
-	// 	url:"GetVaccStatusLastDate.do",
-	// 	success:function(resultData){
-	// 		lastDate = resultData;
-	// 		let sendData = {
-	// 			baseDate:lastDate,
-	// 			//end: dateToYear(new Date())
-	// 		}
-	// 		if(lastDate < dateToYear(new Date())){
+	$.ajax({
+		url:"GetVaccStatusLastDate.do",
+		success:function(resultData){
+			lastDate = resultData;
+			if(lastDate < dateToYearVaccine(new Date())){
+				lastDate = StringToDateVaccine(lastDate);
+				let sendData = {
+					baseDate:lastDate,
+				}
 				$.ajax({
 					url:"VaccineStatusApiCall.do",
-					//data:sendData,
+					data:sendData,
 					success:function(resultData){
-						console.log(resultData);
+						//console.log(resultData);
 						let list_length = 0;
 						if(resultData.data != null) {
 							vaccineList = resultData.data;
@@ -51,15 +51,14 @@ function updateVaccineStatusData(){
 						}
 					}
 				})
-	// 		}
-	// 	}
-	// })			
+			}
+		}
+	})			
 }
 
 
 
-
-function dateToYear(_date) {
+function dateToYearVaccine(_date) {
     let year = _date.getFullYear();
     let month = _date.getMonth() + 1;
     if (month < 10) month = '0' + month;
@@ -67,19 +66,34 @@ function dateToYear(_date) {
     if (date < 10) date = '0' + date;
     return year + '' + month + '' + date;
 }
-function StringToDate(_str) {
-	let arr = _str.split(" ");
-    _date = new Date(parseInt(arr[0]),parseInt(arr[1])-1,parseInt(arr[2]));
-    _buf_date = dateToYear(_date);
+function StringToDateVaccine(_str) {
+	//console.log(_str);
+	if(typeof _str == "number"){
+		_str = _str.toString();
+	}
+	let str = _str.slice(0,4) +"-"+ _str.slice(4,6) +"-"+ _str.slice(6,8) + " "+"00:00:00";
+    return str;
+}
+
+function prevDataVaccine(amount, _date){
+	//console.log(_date);
+	if(typeof _date == "number"){
+		_date = _date.toString();
+	}
+	_date = new Date(Number(_date.substring(0,4)),Number(_date.substring(4,6))-1,Number(_date.substring(6,8)));
+    let _buf_date = _date;
+	
+    _buf_date.setDate(_buf_date.getDate() - amount);
+    _buf_date = dateToYearVaccine(_buf_date);
     return _buf_date;
 }
 
 
 
-function changeCategory(){
-	let category1 = ["1주", "2주", "1달", "3달","6달", "1년", "전체"];
-	let category2 = ["1달", "3달","6달", "1년", "전체"];
-	let category3 = ["3달","6달", "1년", "전체"];
+function changeVaccineCategory(){
+	let category1 = ["1주", "2주", "1달", "3달", "전체"];
+	let category2 = ["1달", "3달", "전체"];
+	let category3 = ["3달", "전체"];
 	
 	let target = $("#period");
 	let _this = $("#type");

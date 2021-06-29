@@ -27,7 +27,7 @@ function searchMediCenter(){
             sigungu:sigungu,
             roadName:roadName
         }
-    //console.log(sendOptData);   
+    console.log(sendOptData);   
     } else{
         if(centerType == "예방접종센터") centerGubun = "1";
         if(centerType == "위탁의료기관") centerGubun = "2";
@@ -124,11 +124,11 @@ function changeCategory(){
         alert("도로명을 입력해주세요");
         return;
     }else {
-        searchMediCenter();
+        searchMediCenter2();
     }
 });
 
-function searchMediCenter(){
+function searchMediCenter2(){
     let centerType = $("#centerType").val();
     let mainArea = $("#mainArea").val();
     let detailArea = $("#detailArea").val();
@@ -162,21 +162,51 @@ function searchMediCenter(){
             
             const mediCenterArray = resultData;
             $(".mediCenterList").html("");
-            $.each(mediCenterArray, function(i,item){
-                $(".mediCenterList").append(`
-                <li>
-                    <dl>
-                        <dd>${item.centerName}</dd>
-                    </dl>
-                    <dl>
-                        <dd>${item.vaccineType}</dd>
-                    </dl>
-                    <dl>
-                        <dd>${item.vaccineCnt}</dd>
-                    </dl>
-                </li>
-                `);
-            })
+            for(let i = 0; i<mediCenterArray.length; i++){
+            	if(i%4==0){
+            		$(".mediCenterList").append(`
+		                <li>
+		                    <dl>
+		                        <dd>${mediCenterArray[i].centerName}</dd>
+		                    </dl>
+		                    <dl>
+		                        <dd>${mediCenterArray[i].vaccineType}</dd>
+		                    </dl>
+		                    <dl>
+		                        <dd>${mediCenterArray[i].vaccineCnt}</dd>
+		                    </dl>
+		                </li>
+	                `);
+            	}
+            	else{
+            		$(".mediCenterList").append(`
+		                <li>
+		                    <dl>
+		                        <dd>${mediCenterArray[i].vaccineType}</dd>
+		                    </dl>
+		                    <dl>
+		                        <dd>${mediCenterArray[i].vaccineCnt}</dd>
+		                    </dl>
+		                </li>
+	                `);
+            	}
+            }
+            
+//            $.each(mediCenterArray, function(i,item){
+//                $(".mediCenterList").append(`
+//                <li>
+//                    <dl>
+//                        <dd>${item.centerName}</dd>
+//                    </dl>
+//                    <dl>
+//                        <dd>${item.vaccineType}</dd>
+//                    </dl>
+//                    <dl>
+//                        <dd>${item.vaccineCnt}</dd>
+//                    </dl>
+//                </li>
+//                `);
+//            })
         }
     })
 }

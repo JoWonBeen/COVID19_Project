@@ -1,6 +1,4 @@
-#mediCenter {
-  position: absolute;
-  top: 200px;
+#mediCenter .formBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

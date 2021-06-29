@@ -10,7 +10,7 @@
 	    <h2 class="subMenu">백신접종 대상 및 시기</h2>
         <div class="contents">
             <table>
-                <caption><span class="hdn">접종 순서 진행표 - 그룹(가, 나, 다, 라), 목표, 대상군</span></caption>
+                <!-- <caption><span class="hdn">접종 순서 진행표 - 그룹(가, 나, 다, 라), 목표, 대상군</span></caption> -->
                 <colgroup>
                 <col style="width:15%;">
                 <col style="width:25%;">

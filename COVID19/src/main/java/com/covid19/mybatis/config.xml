@@ -14,12 +14,9 @@
 		<typeAlias type="com.covid19.model.coronaLive.CoronaSidoInfoBean" alias="CoronaSidoInfoBean"   />
 		<typeAlias type="com.covid19.model.CenterAdmin.CenterVaccineInfoBean" alias="CenterVaccineInfoBean"   />
 		<typeAlias type="com.covid19.model.CenterAdmin.CenterVaccineReservaionBean" alias="CenterVaccineReservaionBean"   />
-<<<<<<< HEAD
 		<typeAlias type="com.covid19.model.mediCenter.MediCenterBean" alias="MediCenterBean"   />
 		<typeAlias type="com.covid19.model.vaccineStatus.VaccineStatusBean" alias="VaccineStatusBean"   />
-=======
 
->>>>>>> master
 	</typeAliases>
 	<environments default="development">
 		<environment id="development">

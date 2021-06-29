@@ -1,12 +1,7 @@
-.container {
-  position: absolute;
-  top: 30%;
-}
-
-.container .mainMenu {
+.container .formBox .mainMenu {
   font-size: 24px;
 }
 
-.container .subMenu {
+.container .formBox .subMenu {
   font-size: 24px;
 }

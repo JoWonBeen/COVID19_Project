@@ -29,6 +29,23 @@
 	</select>
 	
 	
+	<select id="getVaccineAllData" resultType="VaccineStatusBean" parameterType="hashMap">
+		SELECT MAX(BASEDATE) AS baseDate, MAX(SECOND_CNT) AS secondCnt FROM         
+		(SELECT V2.*, TRUNC((I-1)/#{type}) AS INTERVAL FROM 
+		(SELECT ROWNUM AS I, V1.* FROM 
+		(SELECT * FROM VACCINESTATUS WHERE BASEDATE > #{period} ORDER BY BASEDATE DESC) v1) V2)
+        GROUP BY INTERVAL ORDER BY INTERVAL
+	</select>
+	
+	<select id="getVaccineAllAreaData" resultType="VaccineStatusBean" parameterType="hashMap">
+		SELECT MAX(BASEDATE) AS baseDate, MAX(SECOND_CNT) AS secondCnt FROM 
+		(SELECT V2.*, TRUNC((I-1)/#{type}) AS INTERVAL FROM 
+		(SELECT ROWNUM AS I, V1.* FROM 
+		(SELECT * FROM VACCINESTATUS WHERE BASEDATE > #{period} AND AREA = #{area} ORDER BY BASEDATE DESC) V1) V2)
+		GROUP BY INTERVAL ORDER BY INTERVAL
+	</select>
+	
+	
 	
 </mapper>
 

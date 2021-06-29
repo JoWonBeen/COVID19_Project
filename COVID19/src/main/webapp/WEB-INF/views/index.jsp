@@ -8,12 +8,9 @@
 		<a href = "CoronaConditionHome.do" class = "choiceNav mainRight"></a>
 	</div>
 </body>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <%@ include file="include/footer.jsp" %>
-=======
->>>>>>> master
+
+
+
 </html>
-=======
-</html>
->>>>>>> JangHyeRim

@@ -39,7 +39,6 @@ public class MediCenterDao {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		HashMap<String, Object> option = new HashMap<String, Object>();
 		String address = sido + " " + sigungu + " %" + roadName + "%";
-		
 		option.put("gubun", gubun);
 		option.put("address", address);
 		//option.put("sido", sido);
