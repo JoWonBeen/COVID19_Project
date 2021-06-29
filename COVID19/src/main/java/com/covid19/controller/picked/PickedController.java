@@ -73,4 +73,9 @@ public class PickedController {
 			return null;
 		}
 	}
+	
+	@GetMapping("/CoronaSymptoms.do")
+	public String coronaSymptoms() {
+		return "picked/coronaSymptoms";
+	}
 }
