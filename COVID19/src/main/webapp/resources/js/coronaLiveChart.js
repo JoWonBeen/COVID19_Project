@@ -178,6 +178,13 @@ const darkModeBtn = $("#modeBtn");
 darkModeBtn.on("click", function(){
      $("#coronaLiveBox").toggleClass("dark");
      $("#darkModeBox").toggleClass("dark");
+     $("#coronaLivePageBox").toggleClass("dark");
      $("body").toggleClass("dark");
+ 	 if($("#coronaLivePageBox").hasClass("dark")){
+	 	$("#header #logo a img").attr("src","images/logo-white.png");
+	} else{
+		$("#header #logo a img").attr("src","images/logo.png");	
+	}
+     
 
 })
