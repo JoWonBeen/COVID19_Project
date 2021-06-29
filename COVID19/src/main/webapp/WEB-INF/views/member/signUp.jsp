@@ -3,9 +3,9 @@
 <%@ include file="../include/includeFile.jsp" %>
 <body>
 	<div id = "choiceNavList">
-		<p class = "title">회원가입</p>
-		<a href = "AdminJoinForm.do" class = "choiceNav">센터 관계자 회원가입</a>
-		<a href = "MemberJoinForm.do" class = "choiceNav">일반 회원가입</a>
+<!-- 		<p class = "title">회원가입</p> -->
+		<a href = "AdminJoinForm.do" class = "choiceNav joinLeft"></a>
+		<a href = "MemberJoinForm.do" class = "choiceNav joinRight"></a>
 	</div>
 </body>
 </html>

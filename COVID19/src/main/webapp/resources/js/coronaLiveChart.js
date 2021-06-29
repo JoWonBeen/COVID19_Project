@@ -172,3 +172,12 @@ function showAreaData(){
 		$("#areaDataBox").append("</tr>");
     })
 }
+
+// 다크모드
+const darkModeBtn = $("#modeBtn");
+darkModeBtn.on("click", function(){
+     $("#coronaLiveBox").toggleClass("dark");
+     $("#darkModeBox").toggleClass("dark");
+     $("body").toggleClass("dark");
+
+})

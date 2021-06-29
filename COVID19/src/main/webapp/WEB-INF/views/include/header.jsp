@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
-<head>
 <meta charset="UTF-8">
 <title>COVID19 Reservation</title>
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
@@ -16,6 +14,8 @@
 <script src="js/memberLogin.js" defer></script>
 <script src="js/centerAdmin.js" defer></script>
 <script src="js/VaccineHome.js" defer></script>
+<script src="js/include.js" defer></script>
+<script src="js/gsap/gsap.min.js"></script>
 <header id="header">
     <c:choose>
 		<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
@@ -95,5 +95,3 @@
 	</div>
 
 </header>
-</head>
-</html>

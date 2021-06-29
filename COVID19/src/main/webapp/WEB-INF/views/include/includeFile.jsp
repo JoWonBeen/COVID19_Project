@@ -17,6 +17,10 @@
 <script src="js/jquery-3.6.0.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
 <script src="js/reserve.js" defer></script>
+<script src="js/coronaLiveGetCoronaData.js" defer></script>
+<script src="js/include.js" defer></script>
+<script src="js/gsap/gsap.min.js"></script>
+
 <header id="header">
 		<c:choose>
 			<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
