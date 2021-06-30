@@ -9,17 +9,26 @@
 	            <ul class = "swiper-wrapper">
 	                <li class = "swiper-slide">
 						<div class = "mainVisual01">
-							<p>I hope you get the COVID19 VACCINE soon.</p>
+							<div class = "sloganBox">
+								<p>We provide</p>
+								<p>Best Vaccine Reservation Service.</p>
+							</div>
 						</div>
 	                </li>
 	                <li class = "swiper-slide">
 	                	<div class = "mainVisual02">
-	                		<p>I hope the COVID19 disappears as soon as possible.</p>
+		                	<div class = "sloganBox">
+		                		<p>We hope</p>
+		                		<p>You get the COVID19 VACCINE soon.</p>
+		                	</div>
 	                	</div>
 	                </li>
 	                <li class = "swiper-slide">
 	                	<div class = "mainVisual03">
-	                		<p>Book the COVID19 VACCINE efficiently using our system!</p>
+		                	<div class = "sloganBox">
+		                		<p>Book the COVID19 VACCINE efficiently</p>
+		                		<p>Using our system!</p>
+		                	</div>
 	                	</div>
 	                </li>
 	            </ul>
