@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/memberInfoForm.css">
 <link rel="stylesheet" href="css/vaccineMainHome.css">
+<script src="js/coronaLiveGetCoronaData.js" defer></script>
 <script src="js/jquery-3.6.0.min.js"></script> 
 <script src="js/chart.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
@@ -17,18 +18,9 @@
 <script src="js/include.js" defer></script>
 <script src="js/gsap/gsap.min.js"></script>
 <header id="header">
-    <c:choose>
-		<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
-			<h1 id="logo">
-		        <a href="Index.do"><img src="images/logoMember.png" alt=""> </a>
-		    </h1>
-		</c:when>
-		<c:otherwise>
-			<h1 id="logo">
-		        <a href="Index.do"><img src="images/logoAdmin.png" alt=""> </a>
-		    </h1>
-		</c:otherwise>
-	</c:choose>
+	<h1 id="logo">
+        <a href="Index.do"><img src="images/logo.png" alt=""> </a>
+    </h1>
 	<nav id="gnb">
 		<ul class="gnbList">
 			<li ><a href="Index.do" class="depth01">COVID19 정보</a>
@@ -49,7 +41,7 @@
 			
 			<c:choose>
 				<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
-					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약</a>
+					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="ReserveForm.do" class="depth01">백신접종 예약</a>
 						<ul class="depth02">
 							<li><a href="PickedWriteForm.do">대상자 조회</a></li>
 							<li><a href="ReserveForm.do">백신 예약</a></li>
@@ -93,5 +85,7 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
-
+	<div class="coronaLiveNav">	
+		<a href = "CoronaConditionHome.do">Corona Live 바로가기</a>
+	</div>
 </header>
