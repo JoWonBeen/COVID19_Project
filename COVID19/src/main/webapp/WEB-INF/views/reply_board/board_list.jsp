@@ -40,7 +40,7 @@
 				                                 step="1" 
 				                                 varStatus="status">
 					<tr>
-						<td>${numbering - status.index}</td>
+						<td style="text-align: center;">${numbering - status.index}</td>
 						<td class="subject space${replyBoardBean.reStep }">
 							<c:if test = "${replyBoardBean.reStep > 1 }">
 								<span class="material-icons">
@@ -50,9 +50,9 @@
 							<a href="BoardView.do?no=${replyBoardBean.no }&memberId=${replyBoardBean.memberId}&type=${loggedMemberInfo.type}">${replyBoardBean.subject}</a>
 						</td>
 						
-						<td>${replyBoardBean.memberId}</td>
-						<td><fmt:formatDate pattern = "yyyy-MM-dd hh:mm" value = "${replyBoardBean.regDate}" /></td>
-						<td>${replyBoardBean.readCount}</td>
+						<td style="text-align: center;">${replyBoardBean.memberId}</td>
+						<td style="text-align: center;"><fmt:formatDate pattern = "yyyy-MM-dd hh:mm" value = "${replyBoardBean.regDate}" /></td>
+						<td style="text-align: center;">${replyBoardBean.readCount}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
