@@ -8,4 +8,4 @@
 		<a href = "AdminJoinForm.do" class = "choiceNav joinRight"></a>
 	</div>
 </body>
-</html>
+</html>	
