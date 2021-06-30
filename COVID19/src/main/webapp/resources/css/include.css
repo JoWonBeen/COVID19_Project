@@ -1,55 +1,202 @@
-@font-face { font-family: 'GmarketSansBold'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff"); font-weight: normal; font-style: normal; }
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
-#header, #footer, #mainVisualBox, #memberLoginBox, #coronaLivePageBox, #vaccineMainHomeBox { font-family: 'GmarketSansBold'; }
+#header, #footer, #mainVisualBox, #memberLoginBox, #coronaLivePageBox, #vaccineMainHomeBox {
+  font-family: 'GmarketSansBold';
+}
 
-a { text-decoration: none; color: inherit; }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-#header { font-family: 'GmarketSansBold'; width: 100%; height: 130px; }
+#header {
+  font-family: 'GmarketSansBold';
+  width: 100%;
+  height: 130px;
+}
 
-#header #logo { position: absolute; left: 15px; top: 20px; z-index: 100; }
+#header #logo {
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  z-index: 100;
+}
 
-#header #logo a img { height: 100px; }
+#header #logo a img {
+  height: 100px;
+}
 
-#header #gnb { position: relative; padding-top: 20px; }
+#header #gnb {
+  position: relative;
+  padding-top: 20px;
+}
 
-#header #gnb .gnbList { text-align: center; font-size: 0; }
+#header #gnb .gnbList {
+  text-align: center;
+  font-size: 0;
+}
 
-#header #gnb .gnbList a { text-decoration: none; color: inherit; }
+#header #gnb .gnbList a {
+  text-decoration: none;
+  color: inherit;
+}
 
-#header #gnb .gnbList > li { display: inline-block; vertical-align: top; font-size: 20px; position: relative; width: 12%; }
+#header #gnb .gnbList > li {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 20px;
+  position: relative;
+  width: 12%;
+}
 
-#header #gnb .gnbList > li .depth01 { font-size: 21px; font-weight: 700; display: block; height: 90px; line-height: 90px; }
+#header #gnb .gnbList > li .depth01 {
+  font-size: 21px;
+  font-weight: 700;
+  display: block;
+  height: 90px;
+  line-height: 90px;
+}
 
-#header #gnb .gnbList > li .depth02 { width: 100%; position: absolute; left: 0; display: none; padding: 10px 0; height: 80px; font-size: 17px; font-weight: 700; }
+#header #gnb .gnbList > li .depth02 {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  display: none;
+  padding: 10px 0;
+  height: 80px;
+  font-size: 17px;
+  font-weight: 700;
+}
 
-#header #gnb .gnbList > li .depth02 li { padding: 20px 0; }
+#header #gnb .gnbList > li .depth02 li {
+  padding: 20px 0;
+}
 
-#header #gnb .gnbList > li:hover .depth01 { color: blue; }
+#header #gnb .gnbList > li:hover .depth01 {
+  color: blue;
+}
 
-#header #gnb .gnbList:hover li .depth02 { display: block; z-index: 99; }
+#header #gnb .gnbList:hover li .depth02 {
+  display: block;
+  z-index: 99;
+}
 
-#header #gnb .gnbList:hover:before { content: ""; display: block; position: absolute; left: 0; top: 100%; height: 350px; width: 100%; z-index: 98; background-color: white; }
+#header #gnb .gnbList:hover:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  height: 350px;
+  width: 100%;
+  z-index: 98;
+  background-color: white;
+}
 
-#header .loginBox { position: absolute; right: 30px; top: calc(60px - 20px); }
+#header .loginBox {
+  position: absolute;
+  right: 30px;
+  top: calc(60px - 20px);
+}
 
-#header .loginBox ul { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: black; border-radius: 5px; height: 40px; }
+#header .loginBox ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: black;
+  border-radius: 5px;
+  height: 40px;
+}
 
-#header .loginBox ul li { margin: 0 10px; font-size: 13px; color: white; }
+#header .loginBox ul li {
+  margin: 0 10px;
+  font-size: 13px;
+  color: white;
+}
 
-#header .loginBox ul li a { text-decoration: none; color: inherit; font-weight: 200; }
+#header .loginBox ul li a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 200;
+}
 
-#header .coronaLiveNav { position: absolute; right: 40px; top: 10px; font-size: 12px; color: #717b81; }
+#header .coronaLiveNav {
+  position: absolute;
+  right: 40px;
+  top: 10px;
+  font-size: 12px;
+  color: #717b81;
+}
 
-#header:hover ~ #mainVisualBox { opacity: 0.5; }
+#header:hover ~ #mainVisualBox {
+  opacity: 0.5;
+}
 
-#footer { width: 100%; height: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #CDCFD5; color: white; margin-top: 200px; }
+#footer {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #CDCFD5;
+  color: white;
+  margin-top: 200px;
+}
 
-#btnTop { outline: none; border: none; position: fixed; right: 100px; bottom: -100px; width: 60px; height: 60px; border-radius: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #B7C1CC; color: white; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; }
+#btnTop {
+  outline: none;
+  border: none;
+  position: fixed;
+  right: 100px;
+  bottom: -100px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #B7C1CC;
+  color: white;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
 
-#btnTop.show { bottom: 100px; }
+#btnTop.show {
+  bottom: 100px;
+}
 
-#coronaLivePageBox.dark ~ footer { background-color: #101421; color: #B7C1CC; }
+#coronaLivePageBox.dark ~ footer {
+  background-color: #101421;
+  color: #B7C1CC;
+}
 
-body.dark #header { background-color: #101421; }
+body.dark #header {
+  background-color: #101421;
+}
 
-body.dark #header #logo { color: white; }
+body.dark #header #logo {
+  color: white;
+}
