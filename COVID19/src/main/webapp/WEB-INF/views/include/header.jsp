@@ -26,46 +26,49 @@
     </h1>
 	<nav id="gnb">
 		<ul class="gnbList">
-			<li ><a href="Index.do" class="depth01">COVID19 정보</a>
-				<ul class="depth02">
-					<li><a href="">코로나 증상</a></li>
-					<li><a href="">코로나 백신</a></li>
-					<li><a href="">접종대상&시기</a></li>
-					<li><a href="">백신 접종현황</a></li>
-					<li><a href="">백신 부작용&처치방안</a></li>
-				</ul>
-			</li>
-			<li><a href="" class="depth01">의료기관</a>
-				<ul class="depth02">
-					<li><a href="">의료기관 검색</a></li>
-					<li><a href="">백신 수량</a></li>
-				</ul>
-			</li>
-			
 			<c:choose>
-				<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
-					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약</a>
+				<c:when test="${loggedMemberInfo.type != 3 || loggedMemberInfo == null}">
+					<li ><a href="Index.do" class="depth01">COVID19 정보</a>
 						<ul class="depth02">
-							<li><a href="PickedWriteForm.do">대상자 조회</a></li>
-							<li><a href="ReserveForm.do">백신 예약</a></li>
+							<li><a href="">코로나 증상</a></li>
+							<li><a href="">코로나 백신</a></li>
+							<li><a href="">접종대상&시기</a></li>
+							<li><a href="">백신 접종현황</a></li>
+							<li><a href="">백신 부작용&처치방안</a></li>
 						</ul>
 					</li>
-					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="ReserveList.do" class="depth01">백신접종 예약조회</a>
+					<li><a href="" class="depth01">의료기관</a>
+						<ul class="depth02">
+							<li><a href="">의료기관 검색</a></li>
+							<li><a href="">백신 수량</a></li>
+						</ul>
 					</li>
+					
+					<c:choose>
+						<c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
+							<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약</a>
+								<ul class="depth02">
+									<li><a href="PickedWriteForm.do">대상자 조회</a></li>
+									<li><a href="ReserveForm.do">백신 예약</a></li>
+								</ul>
+							</li>
+							<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="ReserveList.do" class="depth01">백신접종 예약조회</a></li>
+							<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="BoardList.do" class="depth01">문의하기</a></li>
+						</c:when>
+						<c:otherwise>
+							<li onclick="goLogin(${loggedMemberInfo}); return false;">
+								<a href="VaccineAdd.do" class="depth01">백신 등록</a>
+							</li>
+							<li onclick="goLogin(${loggedMemberInfo}); return false;">
+								<a href="CenterReserveList.do" class="depth01">예방접종 예약현황</a>
+							</li>
+						</c:otherwise>
+					</c:choose>
 				</c:when>
 				<c:otherwise>
-					<li onclick="goLogin(${loggedMemberInfo}); return false;">
-						<a href="VaccineAdd.do" class="depth01">백신 등록</a>
-					</li>
-					<li onclick="goLogin(${loggedMemberInfo}); return false;">
-						<a href="CenterReserveList.do" class="depth01">예방접종 예약현황</a>
-					</li>
+					<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="BoardList.do" class="depth01">문의하기</a></li>
 				</c:otherwise>
 			</c:choose>
-			
-			
-			<li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="BoardList.do" class="depth01">문의하기</a>
-			</li>
 		</ul>
 	</nav>
 
