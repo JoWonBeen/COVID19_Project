@@ -14,7 +14,7 @@
 		<form action="ReserveDelete.do" method="POST">
 		<table>
 			<colgroup>
-				<col style="width: 300px">
+				<col style="width: 200px">
 			</colgroup>
 			<thead>
 				<tr>

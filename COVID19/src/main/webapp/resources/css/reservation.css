@@ -1,8 +1,8 @@
-#largeBox .formBox { width: 1500px; margin: 100px auto; }
+#largeBox .formBox { width: 1500px; margin: 50px auto; }
 
-#largeBox .formBox table { border: none; border-collapse: collapse; border-top: 1px solid #d9d9d9; }
+#largeBox .formBox table { border: none; border-collapse: collapse; border: 1px solid #d9d9d9; }
 
-#largeBox .formBox table tr th { background-color: #f8f8f8; padding: 15px; border-bottom: 1px solid #d9d9d9; }
+#largeBox .formBox table tr th { background-color: #f8f8f8; padding: 15px; border-bottom: 1px solid #d9d9d9; text-align: center; }
 
 #largeBox .formBox table tr td { padding: 15px; border-bottom: 1px solid #d9d9d9; }
 
@@ -12,7 +12,7 @@
 
 #largeBox .formBox table tr td select { width: 120px; }
 
-#largeBox .formBox h2 { padding-top: 50px; margin-bottom: 50px; text-align: center; }
+#largeBox .formBox h2 { margin-bottom: 80px; text-align: center; }
 
 #largeBox .formBox .btns { text-align: center; margin-top: 150px; }
 

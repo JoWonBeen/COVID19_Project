@@ -74,17 +74,4 @@ public class PickedController {
 		}
 	}
 	
-	@GetMapping("/CoronaSymptoms.do")
-	public String coronaSymptoms() {
-		return "picked/coronaSymptoms";
-	}
-	@GetMapping("/CoronaVaccineTypes.do")
-	public String coronaVaccineTypes() {
-		return "picked/coronaVaccineTypes";
-	}
-	@GetMapping("/VaccinationTargetTiming.do")
-	public String vaccinationTargetTiming() {
-		return "picked/vaccinationTargetTiming";
-	}
-	
 }

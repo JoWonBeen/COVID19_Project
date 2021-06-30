@@ -28,16 +28,18 @@
 					<tr>
 						<th>아이디</th>
 						<td>${replyBoardBean.memberId}</td>
-						<th>HIT</th>
+						<th>조회수</th>
 						<td>${replyBoardBean.readCount}</td>
 					</tr>
-					<tr>
-						<th>DATE</th>
-						<td><fmt:formatDate pattern = "yyyy-MM-dd hh:mm" value = "${replyBoardBean.regDate}" /></td>
-					</tr>
+<!-- 					<tr> -->
+<!-- 						<th>날짜</th> -->
+<%-- 						<td><fmt:formatDate pattern = "yyyy-MM-dd hh:mm" value = "${replyBoardBean.regDate}" /></td> --%>
+<!-- 					</tr> -->
 					<tr>
 						<th>제목</th>
-						<td colspan="3">${replyBoardBean.subject}</td>
+						<td>${replyBoardBean.subject}</td>
+						<th>날짜</th>
+						<td><fmt:formatDate pattern = "yyyy-MM-dd hh:mm" value = "${replyBoardBean.regDate}" /></td>
 					</tr>
 					<tr>
 						<th>내용</th>

@@ -1,14 +1,3 @@
-
-#mainVisualBox { overflow: hidden; height: calc(100vh - 150px); background: url("../images/mainVisual01.jpg") no-repeat; background-size: cover; }
-
-#mainVisualBox #coronaTotalDataBox { position: absolute; top: 20%; right: 100px; }
-
-#mainVisualBox #coronaTotalDataBox table { height: 20px; width: 400px; line-height: 20px; font-size: 15px; }
-
-#mainVisualBox #coronaTotalDataBox table tbody { text-align: center; }
-
-#mainVisualBox #coronaTotalDataBox table tbody tr th, #mainVisualBox #coronaTotalDataBox table tbody tr td { border: 1px solid gray; }
-
 #vaccineMainHomeBox #mainVisualBox { overflow: hidden; height: 800px; background: url("../images/mainVisual01.jpg") no-repeat; background-size: cover; }
 
 #vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox { position: absolute; top: 30%; right: 100px; }
@@ -22,4 +11,3 @@
 #vaccineMainHomeBox #vaccineStatusSection .mainTitle:before { content: ""; display: block; position: absolute; left: calc(50%); top: 0px; width: 1px; height: 40px; z-index: 99; background: white; }
 
 #vaccineMainHomeBox #vaccineStatusSection .contentsBox { padding-bottom: 100px; }
-

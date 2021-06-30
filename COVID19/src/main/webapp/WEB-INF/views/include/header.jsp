@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="css/vaccineMainHome.css">
 <script src="js/coronaLiveGetCoronaData.js" defer></script>
 <script src="js/jquery-3.6.0.min.js"></script> 
+<script src="js/swiper-bundle.min.js"></script>
 <script src="js/chart.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
 <script src="js/centerAdmin.js" defer></script>
@@ -23,19 +24,19 @@
     </h1>
 	<nav id="gnb">
 		<ul class="gnbList">
-			<li ><a href="Index.do" class="depth01">COVID19 정보</a>
+			<li ><a href="CoronaSymptoms.do" class="depth01">COVID19 정보</a>
 				<ul class="depth02">
-					<li><a href="">코로나 증상</a></li>
-					<li><a href="">코로나 백신</a></li>
-					<li><a href="">접종대상&시기</a></li>
-					<li><a href="">백신 접종현황</a></li>
-					<li><a href="">백신 부작용&처치방안</a></li>
+					<li><a href="CoronaSymptoms.do">코로나 증상</a></li>
+					<li><a href="CoronaVaccineTypes.do">코로나 백신</a></li>
+					<li><a href="VaccineTargetTiming.do">접종대상&시기</a></li>
+					<li><a href="VaccineStatus.do">백신 접종현황</a></li>
+					<li><a href="VaccineSymptoms.do">백신 부작용&처치방안</a></li>
 				</ul>
 			</li>
-			<li><a href="" class="depth01">의료기관</a>
+			<li><a href="MediCenterSearch.do" class="depth01">의료기관</a>
 				<ul class="depth02">
-					<li><a href="">의료기관 검색</a></li>
-					<li><a href="">백신 수량</a></li>
+					<li><a href="MediCenterSearch.do">의료기관 검색</a></li>
+					<li><a href="MediCenterVaccSearch.do">백신 수량</a></li>
 				</ul>
 			</li>
 			

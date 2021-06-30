@@ -22,8 +22,8 @@
 		<form action="ReserveModify.do" id="reserveForm" method="POST">
 			<table>
 				<colgroup>
-					<col style="width: 400px">
-					<col style="width: 1100px">
+					<col style="width: 200px">
+					<col style="width: 800px">
 				</colgroup>
 				<tbody>
 					<tr>

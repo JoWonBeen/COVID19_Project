@@ -22,7 +22,7 @@
 				<table>
 					<colgroup>
 						<col style="width: 200px">
-						<col style="width: 1300px">
+						<col style="width: 800px">
 					</colgroup>
 					<tbody>
 						<tr>
@@ -31,7 +31,7 @@
 								value="${loggedMemberInfo.name }  " readonly></td>
 						</tr>
 						<tr>
-							<th>ID</th>
+							<th>아이디</th>
 							<td><input type="text" name="id" id="userId"
 								value="${loggedMemberInfo.id }" readonly></td>
 						</tr>
@@ -47,15 +47,17 @@
 						</tr>
 						<tr>
 							<th>특수직군 여부</th>
-							<td><input type="radio" name="special" id="special"
-								value="yes">네 <input type="radio" name="special"
-								id="special" value="no">아니요</td>
+							<td>
+							<input type="radio" name="special" id="special" value="yes" style="width:50px;">네 
+							<input type="radio" name="special" id="special" value="no" style="width:50px;">아니요
+							</td>
 						</tr>
 						<tr>
 							<th>임산부</th>
-							<td><input type="radio" name="pragnent" id="pragnent"
-								value="yes">네 <input type="radio" name="pragnent"
-								id="pragnent" value="no">아니요</td>
+							<td>
+							<input type="radio" name="pragnent" id="pragnent" value="yes" style="width:50px;">네 
+							<input type="radio" name="pragnent" id="pragnent" value="no" style="width:50px;">아니요
+							</td>
 						</tr>
 					</tbody>
 				</table>
