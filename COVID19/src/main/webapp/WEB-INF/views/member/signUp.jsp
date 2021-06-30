@@ -4,8 +4,8 @@
 <body>
 	<div id = "choiceNavList">
 <!-- 		<p class = "title">회원가입</p> -->
-		<a href = "AdminJoinForm.do" class = "choiceNav joinLeft"></a>
-		<a href = "MemberJoinForm.do" class = "choiceNav joinRight"></a>
+		<a href = "MemberJoinForm.do" class = "choiceNav joinLeft"></a>
+		<a href = "AdminJoinForm.do" class = "choiceNav joinRight"></a>
 	</div>
 </body>
 </html>
