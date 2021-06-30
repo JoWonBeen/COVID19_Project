@@ -11,12 +11,10 @@
 <script src="js/mediCenterSearch.js" defer></script>
 </head>
 <body>
-	<div id="mediCenter">
+	<div id="mediCenterSearchBox">
 		<div class="formBox">
 			<header id="mediCenterheader">
-				<h1>
-					<span class="title">의료기관 검색</span>
-				</h1>
+				<p class="subMenu">의료기관 검색</p>
 			</header>
 			<main id="main">
 				<select id="centerType" name="centerType">
@@ -49,9 +47,17 @@
 				</select>
 				<input type="text" id="roadName" name="roadName" placeholder="도로명을 입력하세요">
 				<input type="button" value="의료기관 찾기" id="search">
-				<ul class="mediCenterList">
-	
-				</ul>
+				<table>
+					<colgroup>
+						<col style="width:400px">
+						<col style="width:400px">
+					</colgroup>	
+					<tbody class="mediCenterList">
+						<tr>
+							<td colspan= "2">의료기관 검색결과</td>
+						</tr>
+					</tbody>	
+				</table>
 			</main>
 		</div>
 	</div>

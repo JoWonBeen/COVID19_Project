@@ -1,51 +1,13 @@
-#vaccineMainHomeBox #mainVisualBox {
-  overflow: hidden;
-  height: 800px;
-  background: url("../images/mainVisual01.jpg") no-repeat;
-  background-size: cover;
-}
+#vaccineMainHomeBox #mainVisualBox { overflow: hidden; height: 800px; background: url("../images/mainVisual01.jpg") no-repeat; background-size: cover; }
 
-#vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox {
-  position: absolute;
-  top: 30%;
-  right: 100px;
-}
+#vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox { position: absolute; top: 30%; right: 100px; }
 
-#vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox p {
-  font-size: 30px;
-  font-weight: 400;
-  color: white;
-  border: 1px solid white;
-  padding: 20px;
-}
+#vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox p { font-size: 30px; font-weight: 400; color: white; border: 1px solid white; padding: 20px; }
 
-#vaccineMainHomeBox #vaccineStatusSection {
-  text-align: center;
-  margin-top: 150px;
-  background-color: #c9c9c9;
-  position: relative;
-  color: white;
-}
+#vaccineMainHomeBox #vaccineStatusSection { text-align: center; margin-top: 150px; background-color: #c9c9c9; position: relative; color: white; }
 
-#vaccineMainHomeBox #vaccineStatusSection .mainTitle {
-  font-size: 35px;
-  font-weight: 400;
-  padding-top: 80px;
-  margin-bottom: 100px;
-}
+#vaccineMainHomeBox #vaccineStatusSection .mainTitle { font-size: 35px; font-weight: 400; padding-top: 80px; margin-bottom: 100px; }
 
-#vaccineMainHomeBox #vaccineStatusSection .mainTitle:before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: calc(50%);
-  top: 0px;
-  width: 1px;
-  height: 40px;
-  z-index: 99;
-  background: white;
-}
+#vaccineMainHomeBox #vaccineStatusSection .mainTitle:before { content: ""; display: block; position: absolute; left: calc(50%); top: 0px; width: 1px; height: 40px; z-index: 99; background: white; }
 
-#vaccineMainHomeBox #vaccineStatusSection .contentsBox {
-  padding-bottom: 100px;
-}
+#vaccineMainHomeBox #vaccineStatusSection .contentsBox { padding-bottom: 100px; }

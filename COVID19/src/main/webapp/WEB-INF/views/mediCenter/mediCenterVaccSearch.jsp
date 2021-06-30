@@ -15,7 +15,7 @@
 		<div class="formBox">
 			<header id="mediCenterheader">
 				<h1>
-					<span class="title">백신 수량</span>
+					<span class="title">백신수량 검색</span>
 				</h1>
 			</header>
 			<main id="main">
@@ -52,9 +52,17 @@
 	                <option selected="selected">선택하세요</option>
 	            </select>
 				<input type="button" value="백신수량 확인하기" id="searchVacc">
-				<ul class="mediCenterList">
-	               
-				</ul>
+				<table>
+					<colgroup>
+						<col style="width:400px">
+						<col style="width:400px">
+					</colgroup>	
+					<tbody class="mediCenterList">
+						<tr>
+							<td colspan= "2">백신수량 검색결과</td>
+						</tr>
+					</tbody>	
+				</table>
 			</main>
 		</div>
 	</div>
