@@ -18,8 +18,6 @@ $("#memberJoin").on("click", function(){
 		alert("비밀번호는 필수입니다.");
 		$("#userPassword").focus();
 		return;
-<<<<<<< HEAD
-=======
 	} else if(!pw_pattern1.test($("#userPassword").val())||!pw_pattern2.test($("#userPassword").val())||!pw_pattern3.test($("#userPassword").val())||$("#userPassword").val().length<=7){
 		alert("비밀번호는 영문, 숫자, 특수문자를 포함한 8자 이상이 되어야합니다.");
 		$("#userPassword").focus();
@@ -34,7 +32,6 @@ $("#memberJoin").on("click", function(){
 		$("#checkPassword").val("");
 		$("#userPassword").focus();
 		return;
->>>>>>> JoWonBeen_master_merge
 	} else if($("#userBirth").val().length<=0){
 		alert("생년월일은 필수입니다.");
 		$("#userBirth").focus();
@@ -193,8 +190,6 @@ function goLogin(memberType){
     } 
 } 
 
-<<<<<<< HEAD
-=======
 function phoneFormat(el){
     el.value = el.value.replace(/(\d\d\d)(\d\d\d\d)(\d\d\d\d)/g, '$1-$2-$3');
 }
@@ -218,4 +213,3 @@ function engAndNumberFunc(t){
 
 
 
->>>>>>> JoWonBeen_master_merge
