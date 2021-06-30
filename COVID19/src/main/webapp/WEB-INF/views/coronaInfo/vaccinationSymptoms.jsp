@@ -36,7 +36,7 @@
                  </li>
                  <li class="swiper-slide">
                     <div class="">
-                        <img src="images/sol2.PNG" alt="">
+                        <img src="images/sol3.PNG" alt="">
                     </div>
                     <div class="txt">
                         <h2 class="title"></h2>
