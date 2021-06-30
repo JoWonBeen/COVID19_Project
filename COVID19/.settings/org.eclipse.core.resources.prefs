@@ -1,2 +1,6 @@
 eclipse.preferences.version=1
+<<<<<<< HEAD
+encoding//src/main/java/com/covid19/controller/member/MemberController.java=UTF-8
+=======
 encoding//src/main/webapp/WEB-INF/views/include/footer.jsp=UTF-8
+>>>>>>> master

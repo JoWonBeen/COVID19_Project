@@ -1,5 +1,4 @@
 package com.covid19.model.reserve;
-
 import java.sql.Date;
 
 import org.springframework.stereotype.Component;

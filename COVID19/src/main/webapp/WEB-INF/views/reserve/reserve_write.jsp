@@ -15,7 +15,6 @@
 <script src="js/reserve.js" defer></script>
 
 
-
 <body>
 	<div class="formBox">
 		<h2>예약페이지</h2>
@@ -48,15 +47,15 @@
 						<th>예약 대상자 구분</th>
 						<td>
 						<select name="gubun" id="gubun">
-						<option selected="selected">선택하세요</option>
-						<option>의료종사자</option>
-						<option>돌봄종사자(어린이집,유아교사)</option>
-						<option>사회필수인력(경찰,소방관,해경등)</option>
-						<option>60~75세 미만의 어르신</option>
-						<option>군인,군종사자,예비군,민방위</option>
-						<option>취약시설 입소 및 종사자</option>
-						<option>만성 신장질환자</option>
-						<option>일부 지정된 의료기관 종사자</option>
+							<option selected="selected">선택하세요</option>
+							<option>의료종사자</option>
+							<option>돌봄종사자(어린이집,유아교사)</option>
+							<option>사회필수인력(경찰,소방관,해경등)</option>
+							<option>60~75세 미만의 어르신</option>
+							<option>군인,군종사자,예비군,민방위</option>
+							<option>취약시설 입소 및 종사자</option>
+							<option>만성 신장질환자</option>
+							<option>일부 지정된 의료기관 종사자</option>
 						</select>
 						</td>
 					</tr>
@@ -96,7 +95,7 @@
 						<th>예약 대상 백신</th>
 						<td>
 						<select name="vaccine" id="vaccine">
-						<option selected="selected">선택하세요</option>
+							<option selected="selected">선택하세요</option>
 						</select>
 						</td>
 					</tr>
@@ -107,23 +106,23 @@
 						<input type="text" id="datepicker" name = "date">
 						<select name="hour" id="hour">
 						<option selected="selected">선택하세요</option>
-						<option>09</option>
-						<option>10</option>
-						<option>11</option>
-						<option>12</option>
-						<option>13</option>
-						<option>14</option>
-						<option>15</option>
-						<option>16</option>
-						<option>17</option>
-						<option>18</option>
+							<option>09</option>
+							<option>10</option>
+							<option>11</option>
+							<option>12</option>
+							<option>13</option>
+							<option>14</option>
+							<option>15</option>
+							<option>16</option>
+							<option>17</option>
+							<option>18</option>
 						</select><span>시</span>
 						<select name="minute" id="minute">
-						<option selected="selected">선택하세요</option>
-						<option>00</option>
-						<option>15</option>
-						<option>30</option>
-						<option>45</option>
+							<option selected="selected">선택하세요</option>
+							<option>00</option>
+							<option>15</option>
+							<option>30</option>
+							<option>45</option>
 						</select><span>분</span>
 						</td>
 					</tr>
@@ -136,17 +135,9 @@
 			</div>
 		</form>
 	</div>
-<<<<<<< HEAD
 	<%@ include file="../include/footer.jsp" %>
-
-
-=======
->>>>>>> JoWonBeen_master_merge
 </body>
-<%@ include file="../include/footer.jsp" %>
 </html>
-
-
 
 
 

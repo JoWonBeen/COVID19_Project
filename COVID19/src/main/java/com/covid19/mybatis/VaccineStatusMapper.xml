@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.covid19.mybatis.VaccineStatusMapper">
+	<insert id="insertVaccineStatus" parameterType="VaccineStatusBean">
+		INSERT INTO VACCINESTATUS VALUES (VACCINESTATUS_SEQ.NEXTVAL,
+													    #{baseDate},
+													    #{area},
+													    #{firstCnt},
+													    #{secondCnt},
+													    #{totalFirstCnt},
+													    #{totalSecondCnt})
+	</insert>
+	<select id="getVaccStatusLastDate" resultType="String">
+		SELECT MAX(BASEDATE) FROM VACCINESTATUS
+	</select>
+	
+	<select id="getVaccineMainData" parameterType="String" resultType="VaccineStatusBean" >
+		SELECT DISTINCT FIRST_CNT AS firstCnt, SECOND_CNT as secondCnt, TOTALFIRST_CNT as totalFirstCnt, TOTALSECOND_CNT as totalSecondCnt
+		  FROM VACCINESTATUS 
+     	 WHERE BASEDATE = (SELECT MAX(BASEDATE) FROM VACCINESTATUS) AND AREA = #{area}
+	</select>
+
+	<select id="getVaccineAreaData" resultType="VaccineStatusBean" >
+		SELECT DISTINCT AREA as area, SECOND_CNT as secondCnt, TOTALSECOND_CNT as totalSecondCnt
+		  FROM VACCINESTATUS 
+     	 WHERE BASEDATE = (SELECT MAX(BASEDATE) FROM VACCINESTATUS) ORDER BY AREA
+	</select>
+	
+	
+	<select id="getVaccineAllData" resultType="VaccineStatusBean" parameterType="hashMap">
+		SELECT MAX(BASEDATE) AS baseDate, MAX(SECOND_CNT) AS secondCnt FROM         
+		(SELECT V2.*, TRUNC((I-1)/#{type}) AS INTERVAL FROM 
+		(SELECT ROWNUM AS I, V1.* FROM 
+		(SELECT * FROM VACCINESTATUS WHERE BASEDATE > #{period} ORDER BY BASEDATE DESC) v1) V2)
+        GROUP BY INTERVAL ORDER BY INTERVAL
+	</select>
+	
+	<select id="getVaccineAllAreaData" resultType="VaccineStatusBean" parameterType="hashMap">
+		SELECT MAX(BASEDATE) AS baseDate, MAX(SECOND_CNT) AS secondCnt FROM 
+		(SELECT V2.*, TRUNC((I-1)/#{type}) AS INTERVAL FROM 
+		(SELECT ROWNUM AS I, V1.* FROM 
+		(SELECT * FROM VACCINESTATUS WHERE BASEDATE > #{period} AND AREA = #{area} ORDER BY BASEDATE DESC) V1) V2)
+		GROUP BY INTERVAL ORDER BY INTERVAL
+	</select>
+	
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 
 import com.covid19.model.coronaLive.CoronaDateInfoBean;
 
+import com.covid19.model.member.MemberBean;
 
 @Component
 public class ReserveDao {
@@ -90,4 +91,12 @@ public class ReserveDao {
 	}
 
 	
+	
+	public ReserveBean getSelectOneDate(int no) {
+		ReserveBean reserveBean = new ReserveBean();
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		reserveBean = sqlSession.selectOne("getSelectOneDate",no);
+		sqlSession.close();
+		return reserveBean;
+	}
 }

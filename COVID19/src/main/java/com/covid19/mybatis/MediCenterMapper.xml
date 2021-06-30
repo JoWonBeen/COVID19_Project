@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.covid19.mybatis.MediCenterMapper">
+	<insert id="insertMediCenter" parameterType="MediCenterBean">
+		INSERT INTO MEDICENTER VALUES (MEDICENTER_SEQ.NEXTVAL, #{gubun}, #{centerName}, #{address}, #{phone})
+	</insert>
+	<select id="showAllCenter"  resultType="MediCenterBean" parameterType="HashMap">
+		SELECT * FROM MEDICENTER WHERE ADDRESS LIKE #{address} 
+							  ORDER BY GUBUN 
+	</select>
+	<select id="showClassifiedCenter"  resultType="MediCenterBean" parameterType="HashMap">
+		SELECT * FROM MEDICENTER WHERE GUBUN = #{gubun}
+								   AND ADDRESS LIKE #{address} 
+							  ORDER BY GUBUN   
+	</select>
+	
+	<!-- SELECT CENTERNAME FROM MEDICENTER WHERE ADDRESS LIKE #{address} -->
+		
+	<select id="showCenterWithVacc" resultType="CenterVaccineInfoBean" parameterType="HashMap">
+		SELECT * FROM CENTERVACCINEINFO WHERE CENTERNAME Like #{address}
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
