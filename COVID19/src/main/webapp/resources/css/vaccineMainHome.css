@@ -1,111 +1,500 @@
-#vaccineMainHomeBox { background-color: #f8f8f8; }
+#vaccineMainHomeBox {
+  background-color: #f8f8f8;
+}
 
-#vaccineMainHomeBox #mainVisualBox { overflow: hidden; height: 800px; position: relative; }
+#vaccineMainHomeBox #mainVisualBox {
+  overflow: hidden;
+  height: 800px;
+  position: relative;
+}
 
-#vaccineMainHomeBox #mainVisualBox ul li { position: relative; }
+#vaccineMainHomeBox #mainVisualBox ul li {
+  position: relative;
+}
 
-#vaccineMainHomeBox #mainVisualBox ul li .sloganBox { position: absolute; left: 200px; top: 50%; font-size: 40px; font-weight: 400; line-height: 1.8em; color: white; }
+#vaccineMainHomeBox #mainVisualBox ul li .sloganBox {
+  position: absolute;
+  left: 200px;
+  top: 50%;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: white;
+}
 
-#vaccineMainHomeBox #mainVisualBox ul li .mainVisual01 { width: 100%; height: 800px; background: url("../images/mainVisual01.jpg") no-repeat; background-size: cover; }
+#vaccineMainHomeBox #mainVisualBox ul li .mainVisual01 {
+  width: 100%;
+  height: 800px;
+  background: url("../images/mainVisual01.jpg") no-repeat;
+  background-size: cover;
+}
 
-#vaccineMainHomeBox #mainVisualBox ul li .mainVisual02 { width: 100%; height: 800px; background: url("../images/mainVisual02.jpg") no-repeat; background-size: cover; }
+#vaccineMainHomeBox #mainVisualBox ul li .mainVisual02 {
+  width: 100%;
+  height: 800px;
+  background: url("../images/mainVisual02.jpg") no-repeat;
+  background-size: cover;
+}
 
-#vaccineMainHomeBox #mainVisualBox ul li .mainVisual03 { width: 100%; height: 800px; background: url("../images/mainVisual03.jpg") no-repeat; background-size: cover; }
+#vaccineMainHomeBox #mainVisualBox ul li .mainVisual03 {
+  width: 100%;
+  height: 800px;
+  background: url("../images/mainVisual03.jpg") no-repeat;
+  background-size: cover;
+}
 
-#vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox { position: absolute; top: 10%; right: 100px; z-index: 100; }
+#vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox {
+  position: absolute;
+  top: 10%;
+  right: 100px;
+  z-index: 100;
+}
 
-#vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox p { font-size: 30px; font-weight: 400; color: white; border: 1px solid white; border-radius: 20px; padding: 20px; }
+#vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox p {
+  font-size: 30px;
+  font-weight: 400;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px;
+}
 
-#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox { position: absolute; left: 10px; top: 0px; width: 50px; height: 800px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; z-index: 150; }
+#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  width: 50px;
+  height: 800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 150;
+}
 
-#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .pagination { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
-#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .pagination .swiper-pagination-bullet { width: 20px; height: 20px; cursor: pointer; margin: 10px 0; background: transparent; border: 3px solid white; border-radius: 100px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; outline: none; opacity: 1; }
+#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .pagination .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin: 10px 0;
+  background: transparent;
+  border: 3px solid white;
+  border-radius: 100px;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  outline: none;
+  opacity: 1;
+}
 
-#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .pagination .swiper-pagination-bullet-active { background: white; height: 50px; }
+#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .pagination .swiper-pagination-bullet-active {
+  background: white;
+  height: 50px;
+}
 
-#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .prev { background: none; border: none; outline: none; padding: 0; cursor: pointer; z-index: 999; }
+#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .prev {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 999;
+}
 
-#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .next { background: none; border: none; outline: none; padding: 0; cursor: pointer; z-index: 999; }
+#vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .next {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 999;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection { text-align: center; margin-top: 150px; background-color: #b8cfd4; position: relative; color: white; }
+#vaccineMainHomeBox #vaccineStatusSection {
+  text-align: center;
+  margin-top: 150px;
+  background-color: #b8cfd4;
+  position: relative;
+  color: white;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .mainTitle { font-size: 35px; font-weight: 400; padding-top: 80px; margin-bottom: 100px; }
+#vaccineMainHomeBox #vaccineStatusSection .mainTitle {
+  font-size: 35px;
+  font-weight: 400;
+  padding-top: 80px;
+  margin-bottom: 100px;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .mainTitle:before { content: ""; display: block; position: absolute; left: calc(50%); top: 0px; width: 1px; height: 40px; z-index: 99; background: white; }
+#vaccineMainHomeBox #vaccineStatusSection .mainTitle:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50%);
+  top: 0px;
+  width: 1px;
+  height: 40px;
+  z-index: 99;
+  background: white;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .contentsBox { padding-bottom: 50px; }
+#vaccineMainHomeBox #vaccineStatusSection .contentsBox {
+  padding-bottom: 50px;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div { border: 1px solid white; border-radius: 20px; }
+#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div {
+  border: 1px solid white;
+  border-radius: 20px;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div table { font-size: 20px; }
+#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div table {
+  font-size: 20px;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div table tbody .firstTurn { color: #0982a0; }
+#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div table tbody .firstTurn {
+  color: #0982a0;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div table tbody .secondTurn { color: #c73232; }
+#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div table tbody .secondTurn {
+  color: #c73232;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div table tbody tr th { padding: 15px 25px; }
+#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div table tbody tr th {
+  padding: 15px 25px;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div table tbody tr td { padding: 15px 25px; }
+#vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox div table tbody tr td {
+  padding: 15px 25px;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .moreBtn { padding-bottom: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+#vaccineMainHomeBox #vaccineStatusSection .moreBtn {
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
-#vaccineMainHomeBox #vaccineStatusSection .moreBtn a { text-decoration: none; border: 1px solid #B7C1CC; display: block; width: 120px; height: 30px; line-height: 30px; border-radius: 10px; color: white; background-color: #86adb8; padding: 10px 30px; }
+#vaccineMainHomeBox #vaccineStatusSection .moreBtn a {
+  text-decoration: none;
+  border: 1px solid #B7C1CC;
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 10px;
+  color: white;
+  background-color: #86adb8;
+  padding: 10px 30px;
+}
 
-#vaccineMainHomeBox #coronaSymptomMainHome { text-align: center; margin-top: 150px; background-color: #c9c9c9; position: relative; color: white; }
+#vaccineMainHomeBox #coronaSymptomMainHome {
+  text-align: center;
+  margin-top: 150px;
+  background-color: #c9c9c9;
+  position: relative;
+  color: white;
+}
 
-#vaccineMainHomeBox #coronaSymptomMainHome .mainTitle { font-size: 35px; font-weight: 400; padding-top: 80px; margin-bottom: 100px; }
+#vaccineMainHomeBox #coronaSymptomMainHome .mainTitle {
+  font-size: 35px;
+  font-weight: 400;
+  padding-top: 80px;
+  margin-bottom: 100px;
+}
 
-#vaccineMainHomeBox #coronaSymptomMainHome .mainTitle:before { content: ""; display: block; position: absolute; left: calc(50%); top: 0px; width: 1px; height: 40px; z-index: 99; background: white; }
+#vaccineMainHomeBox #coronaSymptomMainHome .mainTitle:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50%);
+  top: 0px;
+  width: 1px;
+  height: 40px;
+  z-index: 99;
+  background: white;
+}
 
-#vaccineMainHomeBox #coronaSymptomMainHome .contentsBox { padding-bottom: 50px; }
+#vaccineMainHomeBox #coronaSymptomMainHome .contentsBox {
+  padding-bottom: 50px;
+}
 
-#vaccineMainHomeBox #coronaSymptomMainHome .contentsBox .coronaSymptomMainDataBox { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+#vaccineMainHomeBox #coronaSymptomMainHome .contentsBox .coronaSymptomMainDataBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
-#vaccineMainHomeBox #coronaSymptomMainHome .contentsBox .coronaSymptomMainDataBox div { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin: 0 70px; }
+#vaccineMainHomeBox #coronaSymptomMainHome .contentsBox .coronaSymptomMainDataBox div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 70px;
+}
 
-#vaccineMainHomeBox #coronaSymptomMainHome .contentsBox .coronaSymptomMainDataBox div img { margin-bottom: 30px; width: 150px; }
+#vaccineMainHomeBox #coronaSymptomMainHome .contentsBox .coronaSymptomMainDataBox div img {
+  margin-bottom: 30px;
+  width: 150px;
+}
 
-#vaccineMainHomeBox #coronaSymptomMainHome .contentsBox .coronaSymptomMainDataBox div p { font-size: 18px; }
+#vaccineMainHomeBox #coronaSymptomMainHome .contentsBox .coronaSymptomMainDataBox div p {
+  font-size: 18px;
+}
 
-#vaccineMainHomeBox #coronaSymptomMainHome .moreBtn { padding-bottom: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+#vaccineMainHomeBox #coronaSymptomMainHome .moreBtn {
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
-#vaccineMainHomeBox #coronaSymptomMainHome .moreBtn a { text-decoration: none; border: 1px solid #B7C1CC; display: block; width: 120px; height: 30px; line-height: 30px; border-radius: 10px; color: white; background-color: #8b949e; padding: 10px 30px; }
+#vaccineMainHomeBox #coronaSymptomMainHome .moreBtn a {
+  text-decoration: none;
+  border: 1px solid #B7C1CC;
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 10px;
+  color: white;
+  background-color: #8b949e;
+  padding: 10px 30px;
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome { text-align: center; margin-top: 150px; background-color: #a8ccba; position: relative; color: white; }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome {
+  text-align: center;
+  margin-top: 150px;
+  background-color: #a8ccba;
+  position: relative;
+  color: white;
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome .mainTitle { font-size: 35px; font-weight: 400; padding-top: 80px; margin-bottom: 100px; }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome .mainTitle {
+  font-size: 35px;
+  font-weight: 400;
+  padding-top: 80px;
+  margin-bottom: 100px;
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome .mainTitle:before { content: ""; display: block; position: absolute; left: calc(50%); top: 0px; width: 1px; height: 40px; z-index: 99; background: white; }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome .mainTitle:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50%);
+  top: 0px;
+  width: 1px;
+  height: 40px;
+  z-index: 99;
+  background: white;
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox { padding-bottom: 80px; }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox {
+  padding-bottom: 80px;
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox .coronaVaccineInfoMainDataBox { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox .coronaVaccineInfoMainDataBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox .coronaVaccineInfoMainDataBox div { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin: 0 50px; height: 100%; overflow: hidden; width: 230px; height: 140px; }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox .coronaVaccineInfoMainDataBox div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 50px;
+  height: 100%;
+  overflow: hidden;
+  width: 230px;
+  height: 140px;
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox .coronaVaccineInfoMainDataBox div img { margin-bottom: 40px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox .coronaVaccineInfoMainDataBox div img {
+  margin-bottom: 40px;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox .coronaVaccineInfoMainDataBox div p { font-size: 24px; }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox .coronaVaccineInfoMainDataBox div p {
+  font-size: 24px;
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox .coronaVaccineInfoMainDataBox div:hover img { -webkit-transform: scale(1.2); transform: scale(1.2); }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome .contentsBox .coronaVaccineInfoMainDataBox div:hover img {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome .moreBtn { padding-bottom: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome .moreBtn {
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
-#vaccineMainHomeBox #coronaVaccineInfoMainHome .moreBtn a { text-decoration: none; border: 1px solid #B7C1CC; display: block; width: 120px; height: 30px; line-height: 30px; border-radius: 10px; color: white; background-color: #82a091; padding: 10px 30px; }
+#vaccineMainHomeBox #coronaVaccineInfoMainHome .moreBtn a {
+  text-decoration: none;
+  border: 1px solid #B7C1CC;
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 10px;
+  color: white;
+  background-color: #82a091;
+  padding: 10px 30px;
+}
 
-#vaccineMainHomeBox #goReservation { text-align: center; margin-top: 150px; position: relative; color: #46484b; height: 500px; z-index: 1; }
+#vaccineMainHomeBox #goReservation {
+  text-align: center;
+  margin-top: 150px;
+  position: relative;
+  color: #46484b;
+  height: 500px;
+  z-index: 1;
+}
 
-#vaccineMainHomeBox #goReservation::before { content: ""; background: url("../images/reservationBg.png") no-repeat; background-size: cover; opacity: 0.5; position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: -1; }
+#vaccineMainHomeBox #goReservation::before {
+  content: "";
+  background: url("../images/reservationBg.png") no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+}
 
-#vaccineMainHomeBox #goReservation .mainTitle { font-size: 35px; font-weight: 400; padding-top: 150px; margin-bottom: 150px; }
+#vaccineMainHomeBox #goReservation .mainTitle {
+  font-size: 35px;
+  font-weight: 400;
+  padding-top: 150px;
+  margin-bottom: 150px;
+}
 
-#vaccineMainHomeBox #goReservation .mainTitle:before { content: ""; display: block; position: absolute; left: calc(50%); top: 0px; width: 1px; height: 40px; z-index: 99; background: white; }
+#vaccineMainHomeBox #goReservation .mainTitle:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: calc(50%);
+  top: 0px;
+  width: 1px;
+  height: 40px;
+  z-index: 99;
+  background: white;
+}
 
-#vaccineMainHomeBox #goReservation .moreBtn { padding-bottom: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+#vaccineMainHomeBox #goReservation .moreBtn {
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 
-#vaccineMainHomeBox #goReservation .moreBtn a { text-decoration: none; border: 1px solid #B7C1CC; display: block; width: 120px; height: 30px; line-height: 30px; border-radius: 10px; color: white; background-color: #8b949e; padding: 10px 30px; }
+#vaccineMainHomeBox #goReservation .moreBtn a {
+  text-decoration: none;
+  border: 1px solid #B7C1CC;
+  display: block;
+  width: 120px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 10px;
+  color: white;
+  background-color: #8b949e;
+  padding: 10px 30px;
+}
 
-#vaccineMainHomeBox .moreBtn a:hover { border: 1px solid white !important; }
+#vaccineMainHomeBox .moreBtn a:hover {
+  border: 1px solid white !important;
+}

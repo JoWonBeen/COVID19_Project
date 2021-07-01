@@ -52,7 +52,6 @@ function showVaccineData(){
 		data:sendOptionData,          
     })
     .done(function(result){          
-        console.log(result);
         let total = result.length;
         dateArray = [];                            //날짜
         vaccineDataArray = [];                     //접종완료자 수   
@@ -103,7 +102,6 @@ function showMainVaccineData(){
         url:"GetVaccineMainData.do",   
         data:sendData,
         success:function(result){
-            console.log(result);
             let addList = [result.firstCnt, result.secondCnt, result.totalFirstCnt, result.totalSecondCnt];
             $("#vaccTotalDataBox td").remove();  
             for (x in addList) {
@@ -119,7 +117,6 @@ function showAreaVaccineData(){
         url:"GetVaccineAreaData.do",          
     })
     .done(function(result){
-        console.log(result);
         let sum = 0;
     	for(let i = 0; i < result.length; i++){
 	    	let addList = [result[i].area, result[i].secondCnt, result[i].totalSecondCnt];

@@ -1,15 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="css/mediCenter.css">
-<script src="js/mediCenterGetData.js" defer></script>
-<script src="js/mediCenterSearch.js" defer></script>
-</head>
 <body>
 	<div id="mediCenterSearchBox">
 		<div class="formBox">
@@ -22,7 +13,7 @@
 					<option value="예방접종센터">예방접종 센터</option>
 					<option value="위탁의료기관">위탁 의료기관</option>
 				</select> 
-				<select id="sido" name="sido" onchange="changeCategory(this)">
+				<select id="sido" name="sido" onchange="changeMediCenterAreaCategory(this)">
 					<option value="광역시도">광역시도</option>
 					<option value="서울특별시">서울특별시</option>
 					<option value="부산">부산광역시</option>
@@ -63,4 +54,3 @@
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 </body>
-</html>

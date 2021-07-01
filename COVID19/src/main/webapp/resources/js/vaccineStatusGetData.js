@@ -17,13 +17,10 @@ function updateVaccineStatusData(){
 					url:"VaccineStatusApiCall.do",
 					data:sendData,
 					success:function(resultData){
-						//console.log(resultData);
 						let list_length = 0;
 						if(resultData.data != null) {
 							vaccineList = resultData.data;
 							list_length = vaccineList.length;
-							console.log(vaccineList);
-							console.log(list_length);
 						}
 						let dataList = "";
 						for(let i = 0; i < list_length; i++){

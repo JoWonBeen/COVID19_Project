@@ -26,6 +26,34 @@
 <script src="js/include.js" defer></script>
 <script src="js/gsap/gsap.min.js"></script>
 <script src="js/swiper-bundle.min.js"></script>
+
+<!-- coronaSymptoms -->
+<link rel="stylesheet" href="css/coronaSymptoms.css">
+<!-- coronVaccineTypes -->
+<link rel="stylesheet" href="css/coronaVaccineTypes.css">
+<!-- vaccinationTargetTiming -->
+<link rel="stylesheet" href="css/vaccinationTargetTiming.css">
+
+<!-- mediCenterSearch -->
+<link rel="stylesheet" href="css/mediCenter.css">
+<script src="js/mediCenterGetData.js" defer></script>
+<script src="js/mediCenterSearch.js" defer></script>
+<!-- mediCenterVaccSearch -->
+<!-- <link rel="stylesheet" href="css/mediCenter.css"> -->
+<!-- <script src="js/mediCenterSearch.js" defer></script> -->
+<script src="js/reserve.js" defer></script>
+
+<!-- board -->
+<link rel="stylesheet" href="css/reservation.css">
+
+<!-- reservation -->
+<link rel="stylesheet" href="css/reservation.css">
+
+<!-- reserve_modify -->
+<script src="js/reserve_modify.js" defer></script>
+<!-- reserve_write -->
+<script src="js/reserve.js" defer></script>
+
 <header id="header">
    <h1 id="logo">
         <a href="Index.do"><img src="images/logo.png" alt=""> </a>
@@ -52,7 +80,7 @@
 		         </li>
                <c:choose>
                   <c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
-                     <li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약</a>
+                     <li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="ReserveForm.do" class="depth01">백신접종 예약</a>
                         <ul class="depth02">
                            <li><a href="PickedWriteForm.do">대상자 조회</a></li>
                            <li><a href="ReserveForm.do">백신 예약</a></li>

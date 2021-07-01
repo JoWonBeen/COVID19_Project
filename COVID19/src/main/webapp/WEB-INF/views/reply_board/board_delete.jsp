@@ -36,13 +36,11 @@
 	$("#join").on("click", function(){
 		let check = confirm("진짜 삭제하시겠습니까?");
 		if(check == true){
-			
 			location.href = "BoardDelete.do?no="+boardNo;
 		}
 	})
 </script>
 </body>
-</html>
 
 
 
