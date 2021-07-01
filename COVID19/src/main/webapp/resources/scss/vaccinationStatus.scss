@@ -1,5 +1,11 @@
 #vaccinationStatusBox {
   .formBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     .menuBox {
       width: 1300px;
       p {
@@ -21,15 +27,32 @@
       }
     }
     .contents {
+      width: 1300px;
+      position: relative;
+      left: 0px;
+      select {
+        width: 90px;
+        padding: 0.8em 0.5em;
+        font-family: inherit;
+        background: url("../images/selectBoxBlack.png") no-repeat 95% 50%;
+        border: 1px solid #464d52;
+        border-radius: 0px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        color: #464d52;
+      }
       table {
         border: 1px solid #d9d9d9;
         border-collapse: collapse;
         tr {
           font-size: 15px;
+          padding: 20px;
           th {
             vertical-align: middle;
             font-size: 20px;
             background-color: #f8f8f8;
+            padding: 15px;
             border-bottom: 1px solid #d9d9d9;
           }
           td {
@@ -38,16 +61,35 @@
             padding: 15px;
             border-bottom: 1px solid #d9d9d9;
             text-align: center;
-            h3 {
-              .material-icons {
-                color: #696464;
-              }
-            }
           }
         }
+        td {
+          vertical-align: middle;
+          position: relative;
+          padding: 15px;
+          border-bottom: 1px solid #d9d9d9;
+          text-align: center;
+        }
       }
-      #vaccineOptionBox {
+      #vaccineGraphBox {
+        width: 800px;
+        margin: 50px 0px;
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        #vaccineOptionBox {
+          width: 600px;
+          display: flex;
+          margin-bottom: 40px;
+          justify-content: space-around;
+        }
+      }
+      #vaccineAreaDataBox {
+        width: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
     }
   }

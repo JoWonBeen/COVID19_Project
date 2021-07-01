@@ -61,7 +61,7 @@ function showVaccineData(){
         for (let i = total-1; i>=0 ; i--){
             dateArray.push(result[i].baseDate.substring(0,11));       //날짜
             vaccineDataArray.push(result[i].secondCnt);               //접종완료자 수
-			backgroundColorArray.push('rgba(255, 99, 132, 0.2)');
+			backgroundColorArray.push('rgba(99, 255, 132, 0.2)');
         }
          // 읽어온 데이터를 가지고 차트를 그려봅시다.
         var ctx = document.getElementById('myChart');    //chart 그릴 공간
@@ -129,18 +129,18 @@ function showAreaVaccineData(){
 			}
 		
 			$("#areaDataBox").append("<tr>");
-			for (x in addList) {
-				$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
-			}
+                for (x in addList) {
+                    $("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+                }
 			$("#areaDataBox").append("</tr>");
     	}
     	
     	addList = [result[sum].area, result[sum].secondCnt, result[sum].totalSecondCnt];
     	$("#areaDataBox").append("<tr>");
         addList[0] = "합계";
-		for (x in addList) {
-			$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
-		}
+            for (x in addList) {
+                $("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+            }
 		$("#areaDataBox").append("</tr>");
 		
     })

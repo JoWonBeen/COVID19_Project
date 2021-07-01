@@ -1,5 +1,11 @@
 #coronaSymptomsBox {
   .formBox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     .menuBox {
       width: 1300px;
       p {
@@ -25,10 +31,15 @@
       border: 1px solid #d9d9d9;
       border-collapse: collapse;
       tr {
+        padding: 20px;
+        // font-size: 20px;
+        // font-weight: 400;
         th {
           vertical-align: middle;
           background-color: #f8f8f8;
           border-bottom: 1px solid #d9d9d9;
+          padding: 15px;
+          margin-right: 50px;
         }
         td {
           position: relative;

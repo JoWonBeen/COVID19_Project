@@ -1,3 +1,5 @@
+#vaccinationStatusBox .formBox { width: 100%; height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
 #vaccinationStatusBox .formBox .menuBox { width: 1300px; }
 
 #vaccinationStatusBox .formBox .menuBox p { position: relative; left: 0px; }
@@ -8,14 +10,22 @@
 
 #vaccinationStatusBox .formBox .menuBox .subMenu .material-icons { color: #5f5f64; }
 
+#vaccinationStatusBox .formBox .contents { width: 1300px; position: relative; left: 0px; }
+
+#vaccinationStatusBox .formBox .contents select { width: 90px; padding: 0.8em 0.5em; font-family: inherit; background: url("../images/selectBoxBlack.png") no-repeat 95% 50%; border: 1px solid #464d52; border-radius: 0px; -webkit-appearance: none; -moz-appearance: none; appearance: none; color: #464d52; }
+
 #vaccinationStatusBox .formBox .contents table { border: 1px solid #d9d9d9; border-collapse: collapse; }
 
-#vaccinationStatusBox .formBox .contents table tr { font-size: 15px; }
+#vaccinationStatusBox .formBox .contents table tr { font-size: 15px; padding: 20px; }
 
-#vaccinationStatusBox .formBox .contents table tr th { vertical-align: middle; font-size: 20px; background-color: #f8f8f8; border-bottom: 1px solid #d9d9d9; }
+#vaccinationStatusBox .formBox .contents table tr th { vertical-align: middle; font-size: 20px; background-color: #f8f8f8; padding: 15px; border-bottom: 1px solid #d9d9d9; }
 
 #vaccinationStatusBox .formBox .contents table tr td { vertical-align: middle; position: relative; padding: 15px; border-bottom: 1px solid #d9d9d9; text-align: center; }
 
-#vaccinationStatusBox .formBox .contents table tr td h3 .material-icons { color: #696464; }
+#vaccinationStatusBox .formBox .contents table td { vertical-align: middle; position: relative; padding: 15px; border-bottom: 1px solid #d9d9d9; text-align: center; }
 
-#vaccinationStatusBox .formBox .contents #vaccineOptionBox { display: -webkit-box; display: -ms-flexbox; display: flex; }
+#vaccinationStatusBox .formBox .contents #vaccineGraphBox { width: 800px; margin: 50px 0px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+#vaccinationStatusBox .formBox .contents #vaccineGraphBox #vaccineOptionBox { width: 600px; display: -webkit-box; display: -ms-flexbox; display: flex; margin-bottom: 40px; -ms-flex-pack: distribute; justify-content: space-around; }
+
+#vaccinationStatusBox .formBox .contents #vaccineAreaDataBox { width: 800px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }

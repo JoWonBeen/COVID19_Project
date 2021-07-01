@@ -35,7 +35,7 @@
                     </table>
                 </div>
                 <div id= "vaccineGraphBox">
-                    <div id= "vaccineOptionBox">
+                    <div id="vaccineOptionBox">
                         <div>
                             <label for="type">종류</label> 
                             <select name="type" id="type" onChange="changeVaccineCategory(); showVaccineData();">
@@ -79,7 +79,7 @@
                             </select>
                         </div>
                     </div>
-                    <div id = "chartBox" style = "width:700px; height:400px;">
+                    <div id="chartBox" style = "width:700px; height:400px;">
                         <canvas id="myChart"></canvas><!-- 차트를 그릴 공간 -->
                     </div>
                 </div>
