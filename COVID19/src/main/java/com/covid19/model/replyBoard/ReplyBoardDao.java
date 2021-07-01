@@ -139,13 +139,12 @@ public class ReplyBoardDao {
 		return result;
 	}
 	
-//	public String getPasswordBoard(int no) {
-//		String password = "";
-//		SqlSession sqlSession = sqlSessionFactory.openSession();
-//		password = sqlSession.selectOne("getPasswordBoard",no);
-//		sqlSession.close();
-//		return password;
-//	}
+	public List<Integer> getSelectMyBoard(String memberId) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<Integer> refList = sqlSession.selectList("getSelectMyBoard",memberId);
+		sqlSession.close();
+		return refList;
+	}
 	
 	
 	public int getTotal() {

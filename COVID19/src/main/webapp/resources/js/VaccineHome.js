@@ -42,12 +42,12 @@ function showVaccineDataMainHome(){
 			$(".vaccineReservationSecond td").remove();  
 			                        
 			$(".vaccineReservationFirst").append("<td class = 'firstTurn'><p>1차</p></td>");
-			$(".vaccineReservationFirst").append("<td>"+ addList[0] +"</td>");
-			$(".vaccineReservationFirst").append("<td>"+ addList[2] +"</td>");
+			$(".vaccineReservationFirst").append("<td>"+ addList[0].format() +" 명</td>");
+			$(".vaccineReservationFirst").append("<td>"+ addList[2].format() +" 명</td>");
 			
 			$(".vaccineReservationSecond").append("<td class = 'secondTurn'><p>2차</p></td>");
-			$(".vaccineReservationSecond").append("<td>"+ addList[1] +"</td>");
-			$(".vaccineReservationSecond").append("<td>"+ addList[3] +"</td>");
+			$(".vaccineReservationSecond").append("<td>"+ addList[1].format() +" 명</td>");
+			$(".vaccineReservationSecond").append("<td>"+ addList[3].format() +" 명</td>");
         }
     })
 }
