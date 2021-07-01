@@ -119,7 +119,7 @@
 			</table>
 			<div class="btns">
 				<input type="hidden" value="${loggedMemberInfo.id}" name = "loggedMemberId">
-				<input type="button" value="확인" id="reserve"> 
+				<input type="button" value="확인" id="reserveWriteBtn"> 
 				<input type="reset" value="취소" id="cancel">
 			</div>
 		</form>

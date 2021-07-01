@@ -14,16 +14,6 @@ $.ajax({
 			else
 				target.append("<option>"+ gubun[x] +"</option>");
 		}
-		let vaccine = ["아스트라제네카","얀센","화이자","모더나"];
-		target = $("#vaccine");
-		
-		$("#vaccine option").remove();
-		for(x in vaccine) {
-			if(vaccine[x] == result.vaccine)
-				target.append("<option selected='selected'>"+ vaccine[x] +"</option>");
-			else
-				target.append("<option>"+ vaccine[x] +"</option>");
-		}
 		let mainArea = ["서울특별시","부산광역시","대구광역시","인천광역시","광주광역시","대전광역시","울산광역시","세종시","경기도","강원도","충청북도","충청남도","전라북도","전라남도","경상북도","경상남도","제주도"];
 		target = $("#mainArea");
 		
@@ -31,7 +21,7 @@ $.ajax({
 		let address1 = addressArr[0];
 		let address2 = addressArr[1];
 		let address3 = addressArr[2];
-	
+		let address4 = addressArr[3];
 		$("#mainArea option").remove();  
 		for (x in mainArea) {
 			if(mainArea[x] == address1)
@@ -49,20 +39,16 @@ $.ajax({
 			else
 				target.append("<option>"+ detailArea[x] +"</option>");
 		}
-		let hospital = ["강남병원","강남병원01","강남병원02","강남병원03","강남병원04","강남병원05","강남병원06","강남병원07","강동병원","강동병원01","강동병원02","강동병원03","강동병원04","강동병원05","강동병원06","강동병원07","강동병원08","강동병원09","강북병원","강북병원01","강북병원02","강북병원03","강북병원04","강북병원05","강북병원06","강북병원07","강북병원08","강서병원","강서병원01","강서병원02","강서병원03","강서병원04","강서병원05","강서병원06","강서병원07","강서병원08","관악병원","관악병원01","관악병원02","관악병원03","관악병원04","관악병원05","관악병원06","관악병원07","관악병원08","광진병원","광진병원01","광진병원02","광진병원03","광진병원04","광진병원05","광진병원06","광진병원07","광진병원08","구로병원","구로병원01","구로병원02","구로병원03","구로병원04","구로병원05","구로병원06","구로병원07","구로병원08","금천병원","금천병원01","금천병원02","금천병원03","금천병원04","금천병원05","금천병원06","금천병원07","금천병원08","노원병원","노원병원01","노원병원02","노원병원03","노원병원04","노원병원05","노원병원06","노원병원07","노원병원08"];
-		target = $("#hospital");
 		
+		$("#roadName").val(address3);
+		
+		target = $("#hospital");
 		$("#hospital option").remove();  
-		for (x in hospital) {
-			if(hospital[x] == address3)
-				target.append("<option selected='selected'>"+ hospital[x] +"</option>");
-			else
-				target.append("<option>"+ hospital[x] +"</option>");
-		}
+		target.append("<option selected='selected'>"+ address4 +"</option>");
 		
 		let reserveDate = result.rsDate.split(" ")[0];
 		let buf = reserveDate.split("-");
-		reserveDate = buf[0] + "/" + buf[1] + "/" + buf[2];
+		reserveDate = buf[1] + "/" + buf[2] + "/" + buf[0];
  		$("#datepicker").val(reserveDate); 		
  		
  		let hour = ["09","10","11","12","13","14","15","16","17","18"];
@@ -85,11 +71,13 @@ $.ajax({
 			else
 				target.append("<option>"+ minute[x] +"</option>");
 		}
+		changeHospital();
 	}
+	
 });
 
 
-function changeCategory(){
+function changeAddressModifyCategory(){
 	let seoul = ["강남구","강동구","강북구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구","동대문구","동작구","마포구","서대문구","서초구","성동구","성북구","송파구","양천구","영등포구","용산구","은평구","종로구","중구","중랑구","강서구","금정구"];
 	let busan = ["남구","동구","동래구","북구","사상구","사하구","서구","수영구","연제구","영도구","중구","진구","해운대구","기장군"];
 	let daegu = ["남구","달서구","북구","서구","중구","동구","남구","수성구","달성군"];
@@ -162,12 +150,9 @@ function choiceHospital(el){
 	    
 }
 
-$("#reserve").on("click",function(){
+$("#reserveModifyBtn").on("click",function(){
     if($("#gubun").val() == "선택하세요") {
         alert("대상자 구분은 필수 입력 사항입니다.");
-        return;
-    }else if($("#vaccine").val() == "선택하세요"){
-        alert("백신은 필수 입력 사항입니다.");
         return;
     } else if($("#mainArea").val() == "선택하세요"){
         alert("시도별 선택은 필수 입력 사항입니다.");
@@ -175,8 +160,14 @@ $("#reserve").on("click",function(){
     } else if($("#detailArea").val() == "선택하세요"){
         alert("시군구별 선택은 필수 입력 사항입니다.");
         return;
+    } else if($("#roadName").val().length <= 0){
+        alert("도로명은 필수 입력 사항입니다.");
+        return;
     } else if($("#hospital").val() == "선택하세요"){
         alert("병원은 필수 입력 사항입니다.");
+        return;
+    } else if($("#vaccine").val() == "선택하세요"){
+        alert("백신은 필수 입력 사항입니다.");
         return;
     } else if($("#datepicker").val().length <= 0){
         alert("날짜는 필수 입력 사항입니다.");

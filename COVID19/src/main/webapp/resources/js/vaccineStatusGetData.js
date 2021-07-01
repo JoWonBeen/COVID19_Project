@@ -42,7 +42,6 @@ function updateVaccineStatusData(){
 								url:"InsertVaccineInfo.do",
 								data:sendData,
 								success:function(resultData){
-									console.log(resultData);
 								}
 							})
 						}
@@ -64,7 +63,6 @@ function dateToYearVaccine(_date) {
     return year + '' + month + '' + date;
 }
 function StringToDateVaccine(_str) {
-	//console.log(_str);
 	if(typeof _str == "number"){
 		_str = _str.toString();
 	}
@@ -73,7 +71,6 @@ function StringToDateVaccine(_str) {
 }
 
 function prevDataVaccine(amount, _date){
-	//console.log(_date);
 	if(typeof _date == "number"){
 		_date = _date.toString();
 	}

@@ -41,7 +41,6 @@ function showVaccineData(){
 			area : area,
             period : period, 
 		};
-        console.log(sendOptionData);
 		requestURL = "GetVaccineAllAreaData.do";
 	}
     $.ajax({

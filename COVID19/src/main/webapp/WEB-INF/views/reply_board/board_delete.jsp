@@ -24,7 +24,7 @@
 				</tbody>
 			</table>
 			<div class="btns">
-				<input type="hidden" value="${replyBoardBean.no}" name = "no" class="no">
+				<input type="hidden" value="${replyBoardBean.ref}" name = "ref" class="ref">
 				<input type="button" value="삭제" id="join">
 				<a href="BoardList.do">목록</a>
 			</div>
@@ -32,11 +32,11 @@
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 <script>
-	let boardNo = $(".no").val();
+	let boardRef = $(".ref").val();
 	$("#join").on("click", function(){
 		let check = confirm("진짜 삭제하시겠습니까?");
 		if(check == true){
-			location.href = "BoardDelete.do?no="+boardNo;
+			location.href = "BoardDelete.do?ref="+boardRef;
 		}
 	})
 </script>

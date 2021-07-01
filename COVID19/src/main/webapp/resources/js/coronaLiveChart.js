@@ -140,7 +140,6 @@ function showAreaData(){
 			}
 			$("#areaDataBox").append("<tr>");
 			for (x in addList) {
-//				$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
 				if(x==0)
 					$("#areaDataBox").append("<td>"+ addList[x] +"</td>");
 				else
@@ -152,7 +151,6 @@ function showAreaData(){
     	addList = [result[gumyeok].area, result[gumyeok].todayCnt, result[gumyeok].defCnt, result[gumyeok].deathCnt];
     	$("#areaDataBox").append("<tr>");
 		for (x in addList) {
-//			$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
 			if(x==0)
 				$("#areaDataBox").append("<td>"+ addList[x] +"</td>");
 			else
@@ -163,7 +161,6 @@ function showAreaData(){
 		addList = [result[sumData].area, result[sumData].todayCnt, result[sumData].defCnt, result[sumData].deathCnt]
     	$("#areaDataBox").append("<tr>");
 		for (x in addList) {
-//			$("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
 			if(x==0)
 				$("#areaDataBox").append("<td>"+ addList[x] +"</td>");
 			else

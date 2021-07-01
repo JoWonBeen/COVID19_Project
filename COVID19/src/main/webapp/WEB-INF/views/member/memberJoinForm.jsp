@@ -23,11 +23,11 @@
 						</tr>
 						<tr>
 							<th>PASSWORD</th>
-							<td><input type="password" name="password" id="userPassword"></td>
+							<td><input type="password" name="password" id="userPassword" placeholder = "숫자, 문자, 특수문자를 포함한 8자리 이상"></td>
 						</tr>
 						<tr>
 							<th>PW-CHECK</th>
-							<td><input type="password" name="checkPassword" id="checkPassword"></td>
+							<td><input type="password" name="checkPassword" id="checkPassword" placeholder = "숫자, 문자, 특수문자를 포함한 8자리 이상"></td>
 						</tr>
 						<tr>
 							<th>Birth</th>
@@ -50,8 +50,8 @@
 					</tbody>
 				</table>
 				<div class="btns">
-					<input type="button" value="회원가입" id="memberJoin">
-					<input type="reset" value="취소" id="cancel"> 
+					<input type="button" value="회원가입" id="memberJoin" class = "boldFontUse">
+					<input type="reset" value="취소" id="cancel" class = "boldFontUse"> 
 				</div>
 			</form>
 		</div>

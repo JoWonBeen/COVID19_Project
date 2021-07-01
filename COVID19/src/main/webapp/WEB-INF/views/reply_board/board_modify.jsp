@@ -29,7 +29,7 @@
 			</table>
 			<div class="btns">
 				<input type="hidden" value="${replyBoardBean.no}" name = "no" class="no">
-				<input type="button" value="수정" id="join">
+				<input type="button" value="수정" id="boardModifyBtn">
 				<a href="BoardList.do">목록</a>
 			</div>
 
@@ -38,15 +38,26 @@
 	<%@ include file="../include/footer.jsp" %>
 	<script>
 
-	$("#join").on("click", function(){
-		let check = confirm("수정하시겠습니까?");
-		let boardNo = $(".no").val();
-		let subject = $("#subject").val();
-		let contents = $("#contents").val();
-		if(check == true){
-			location.href = "BoardModify.do?no="+boardNo+"&subject="+subject+"&contents="+contents;
+	$("#boardModifyBtn").on("click", function(){
+		if($("#subject").val().length <= 0){
+			alert("제목은 필수입니다.");
+			$("#subject").focus();
+			return;
+		} else if($("#contents").val().length<=0){
+			alert("내용은 필수입니다.");
+			$("#contents").focus();
+			return;
+		}else{
+			let check = confirm("수정하시겠습니까?");
+			let boardNo = $(".no").val();
+			let subject = $("#subject").val();
+			let contents = $("#contents").val();
+			if(check == true){
+				location.href = "BoardModify.do?no="+boardNo+"&subject="+subject+"&contents="+contents;
+			}
 		}
 	})
+	
 	</script>
 </body>
 

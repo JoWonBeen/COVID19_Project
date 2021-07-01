@@ -121,8 +121,8 @@ public class BoardController {
 	@RequestMapping("/BoardDelete.do")
 	public String boardDelete(HttpSession session,HttpServletResponse response, HttpServletRequest request) throws IOException {
 
-		int no = Integer.parseInt(request.getParameter("no"));
-		int result = replyBoardDao.deleteBoard(no);
+		int ref = Integer.parseInt(request.getParameter("ref"));
+		int result = replyBoardDao.deleteBoard(ref);
 		if(result > 0) {
 			ScriptWriterUtil.alertAndNext(response, "글이 삭제되었습니다.", "BoardList.do");
 			return null;

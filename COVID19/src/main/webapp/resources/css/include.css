@@ -11,7 +11,9 @@
   font-weight: normal;
   font-style: normal;
 }
-
+body * {
+  font-family: 'GmarketSansBold';
+}
 #adminJoinBox, #memberLoginBox, #memberInfoDeleteBox, #memberInfoBox, #memberJoinBox, #memberInfoUpdateBox,
 #header, #footer, #mainVisualBox, #coronaLivePageBox,
 #vaccineMainHomeBox, #largeBox,
@@ -20,8 +22,10 @@
 #mediCenterSearchBox {
   font-family: 'GmarketSansBold';
 }
-
-td {
+input.boldFontUse{
+  font-family: 'GmarketSansBold' !important;
+}
+td, input, select, option, textarea {
   font-family: 'GmarketSansMedium' !important;
 }
 

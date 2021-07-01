@@ -6,7 +6,6 @@ function getMediCenterInfo1() {
         url: "VaccCenterApiCall.do",
         success: function(resultData) {
             const mediCenterArray = resultData.data;
-             console.log(mediCenterArray);
              let sendStr = "";
              for(let i = 0; i < mediCenterArray.length; i++){
                  let phoneNum = mediCenterArray[i].phoneNumber;
@@ -22,7 +21,6 @@ function getMediCenterInfo1() {
                  url: "InsertVaccCenterInfo.do",
                  data: sendData,
                  success: function(resultData) {
-                     console.log(resultData);
                  }
              })
 
@@ -58,9 +56,7 @@ function getMediCenterInfo2() {
         url:"ConsignedInstApiCall.do",
         data : sendData,
         success:function(resultData){
-            //console.log(resultData);
             let maxCount = resultData.totalCount;
-			//console.log(maxCount);
 			sendData ={
 				sendData : maxCount
 			}
@@ -68,9 +64,7 @@ function getMediCenterInfo2() {
 		        url:"ConsignedInstApiCall.do",
 		        data : sendData,
 		        success:function(resultData){
-		            //console.log(resultData);
                     const mediCenterArray = resultData.data;
-                    console.log(mediCenterArray);
                     let lastNum = 0;
                     for(let j = 0; j<15; j++){
                         let sendStr = "";
@@ -92,20 +86,9 @@ function getMediCenterInfo2() {
 					       url: "InsertConsignedInstInfo.do",
 					       data: sendData,
 					       success: function(resultData) {
-					           console.log(resultData);
 					       }
 					   })
 					   
-					//     sendData = {
-					//        sendData:sendDataList[numberList[1]]
-					//    }
-					//    $.ajax({
-					//        url: "InsertConsignedInstInfo.do",
-					//        data: sendData,
-					//        success: function(resultData) {
-					//            console.log(resultData);
-					//        }
-					//    })    
 		        }
 		    });
         }

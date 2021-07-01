@@ -23,7 +23,7 @@
 	            </tbody>
 	         </table>
 	         <div class="btns">
-	            <input type="submit" value="로그인" id="join">
+	            <input type="submit" value="로그인" id="join" class = "boldFontUse">
 	            <a href = "SignUp.do" id = "signUp">회원가입</a>
 	         </div>
 	      </form>

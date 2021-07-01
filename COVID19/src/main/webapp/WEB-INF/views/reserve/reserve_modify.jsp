@@ -44,7 +44,7 @@
 					<tr>
 						<th>의료기관 선택</th>
 						<td>
-						<select name="sido" id = "mainArea" onChange="changeCategory(); resetHospital();">
+						<select name="sido" id = "mainArea" onChange="changeAddressModifyCategory(); resetHospital();">
 						<option>서울특별시</option>
 						<option>부산광역시</option>
 						<option>대구광역시</option>
@@ -67,7 +67,7 @@
 							
 						</select>
 						<input type="text" name="roadName" id="roadName" onkeyup="choiceHospital(this)" placeholder = "ex)중부대로" style="width:200px;">
-						<select name="hospital" id = "hospital">
+						<select name="hospital" id = "hospital" onChange = "changeHospital();">
 						</select>
 						</td>
 					</tr>
@@ -75,7 +75,7 @@
 						<th>예약 대상 백신</th>
 						<td>
 						<select name="vaccine" id = "vaccine">
-						
+							<option selected="selected">선택하세요</option>
 						</select>
 						</td>
 					</tr>
@@ -107,8 +107,10 @@
 				</tbody>
 			</table>
 			<div class="btns">
+				<input type="hidden" value="${hospitalAdd}" name = "initialHospitalAdd">
+				<input type="hidden" value="${vaccine}" name = "initialVaccine">
 				<input type="hidden" value="${loggedMemberInfo.id}" name = "loggedMemberId">
-				<input type="submit" value="확인" id="reserve"> 
+				<input type="button" value="확인" id="reserveModifyBtn"> 
 				<input type="reset" value="취소" id="cancel">
 			</div>
 		</form>

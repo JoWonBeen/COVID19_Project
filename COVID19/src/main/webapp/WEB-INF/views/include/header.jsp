@@ -3,7 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <meta charset="UTF-8">
+
 <title>COVID19 Reservation</title>
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="css/include.css">
 <link rel="stylesheet" href="css/reset.css">
@@ -14,10 +16,14 @@
 <link rel="stylesheet" href="css/vaccinationSymptom.css">
 <link rel="stylesheet" href="css/vaccinationStatus.css">
 <link rel="stylesheet" href="css/vaccineReservaion.css">
+<link rel="stylesheet" href="css/coronaSymptoms.css">
+<link rel="stylesheet" href="css/coronaVaccineTypes.css">
+<link rel="stylesheet" href="css/vaccinationTargetTiming.css">
+<link rel="stylesheet" href="css/mediCenter.css">
+<link rel="stylesheet" href="css/reservation.css">
 
 <script src="js/coronaLiveGetCoronaData.js" defer></script>
 <script src="js/vaccineStatusGetData.js" defer></script>
-<!-- <script src="js/vaccineStatus.js" defer></script> -->
 <script src="js/jquery-3.6.0.min.js"></script> 
 <script src="js/chart.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
@@ -26,34 +32,10 @@
 <script src="js/include.js" defer></script>
 <script src="js/gsap/gsap.min.js"></script>
 <script src="js/swiper-bundle.min.js"></script>
-
-<!-- coronaSymptoms -->
-<link rel="stylesheet" href="css/coronaSymptoms.css">
-<!-- coronVaccineTypes -->
-<link rel="stylesheet" href="css/coronaVaccineTypes.css">
-<!-- vaccinationTargetTiming -->
-<link rel="stylesheet" href="css/vaccinationTargetTiming.css">
-
-<!-- mediCenterSearch -->
-<link rel="stylesheet" href="css/mediCenter.css">
+<script src="js/replyBoard.js" defer></script>
 <script src="js/mediCenterGetData.js" defer></script>
 <script src="js/mediCenterSearch.js" defer></script>
-<!-- mediCenterVaccSearch -->
-<!-- <link rel="stylesheet" href="css/mediCenter.css"> -->
-<!-- <script src="js/mediCenterSearch.js" defer></script> -->
 <script src="js/reserve.js" defer></script>
-
-<!-- board -->
-<link rel="stylesheet" href="css/reservation.css">
-
-<!-- reservation -->
-<link rel="stylesheet" href="css/reservation.css">
-
-<!-- reserve_modify -->
-<!-- <script src="js/reserve_modify.js" defer></script> -->
-<!-- reserve_write -->
-<script src="js/reserve.js" defer></script>
-
 
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -113,8 +95,6 @@
          </c:choose>
       </ul>
    </nav>
-
-
 
    <div class = "loginBox">
       <c:choose>

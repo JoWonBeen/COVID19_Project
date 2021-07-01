@@ -27,7 +27,6 @@ function searchMediCenter(){
             sigungu:sigungu,
             roadName:roadName
         }
-    console.log(sendOptData);   
     } else{
         if(centerType == "예방접종센터") centerGubun = "1";
         if(centerType == "위탁의료기관") centerGubun = "2";
@@ -43,7 +42,6 @@ function searchMediCenter(){
         url: "ShowCenter.do",
         data:sendOptData,
         success:function(resultData){
-            console.log(resultData);
             
             const mediCenterArray = resultData;
             $(".mediCenterList").html("");
@@ -81,7 +79,6 @@ function changeMediCenterAreaCategory(){
     let target = $("#sigungu");
     let _this = $("#sido");
     let addList = null;
-    console.log(_this.val());
 
     if(_this.val() == "서울특별시") addList = seoul;
     else if(_this.val() == "부산광역시") addList = busan;
@@ -140,7 +137,6 @@ function searchMediCenter2(){
         url: "ShowCenterWithVacc.do",
         data:sendOptData,
         success:function(resultData){
-            console.log(resultData);
             
             const mediCenterArray = resultData;
             $(".mediCenterList").html("");

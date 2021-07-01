@@ -37,12 +37,40 @@
 				</tbody>
 			</table>
 			<div class="btns">
-				<c:if test="${loggedMemberInfo.type == 3 }">
-					<a href="BoardRewriteForm.do?no=${replyBoardBean.no}&ref=${replyBoardBean.ref}&reStep=${replyBoardBean.reStep}&reLevel=${replyBoardBean.reLevel}" id="join">답글쓰기</a>
-				</c:if>
-					<a href="BoardModifyForm.do?no=${replyBoardBean.no}">수정</a>
-					<a href="BoardDeleteForm.do?no=${replyBoardBean.no}">삭제</a>
-				<a href="BoardList.do">목록</a>
+<%-- 				<c:if test="${loggedMemberInfo.type == 3 }"> --%>
+<%-- 					<a href="BoardRewriteForm.do?no=${replyBoardBean.no}&ref=${replyBoardBean.ref}&reStep=${replyBoardBean.reStep}&reLevel=${replyBoardBean.reLevel}" id="join">답글쓰기</a> --%>
+<%-- 				</c:if> --%>
+<%-- 					<a href="BoardModifyForm.do?no=${replyBoardBean.no}">수정</a> --%>
+<%-- 					<a href="BoardDeleteForm.do?no=${replyBoardBean.no}">삭제</a> --%>
+<!-- 				<a href="BoardList.do">목록</a> -->
+				
+				
+				
+				<c:choose>
+                  <c:when test="${loggedMemberInfo.type == 3 && replyBoardBean.memberId == loggedMemberInfo.id}">
+	                  <a href="BoardRewriteForm.do?no=${replyBoardBean.no}&ref=${replyBoardBean.ref}&reStep=${replyBoardBean.reStep}&reLevel=${replyBoardBean.reLevel}" id="join">답글쓰기</a>
+					  <a href="BoardModifyForm.do?no=${replyBoardBean.no}">수정</a>
+					  <a href="BoardDeleteForm.do?no=${replyBoardBean.no}">삭제</a>
+					  <a href="BoardList.do">목록</a>
+					  
+                  </c:when>
+                  <c:when test="${loggedMemberInfo.type == 3 && replyBoardBean.memberId != loggedMemberInfo.id}">
+	                  <a href="BoardRewriteForm.do?no=${replyBoardBean.no}&ref=${replyBoardBean.ref}&reStep=${replyBoardBean.reStep}&reLevel=${replyBoardBean.reLevel}" id="join">답글쓰기</a>
+                  	  <a href="BoardDeleteForm.do?no=${replyBoardBean.no}">삭제</a>
+                  	  <a href="BoardList.do">목록</a>
+                  </c:when>
+                  <c:when test="${loggedMemberInfo.type != 3 && replyBoardBean.memberId == loggedMemberInfo.id}">
+	                  <a href="BoardModifyForm.do?no=${replyBoardBean.no}">수정</a>
+					  <a href="BoardDeleteForm.do?no=${replyBoardBean.no}">삭제</a>
+					  <a href="BoardList.do">목록</a>
+                  </c:when>
+				  <c:otherwise>
+                     <a href="BoardList.do">목록</a>
+                  </c:otherwise>					                  
+               </c:choose>
+				
+				
+				
 			</div>
 		</form>
 	</div>
