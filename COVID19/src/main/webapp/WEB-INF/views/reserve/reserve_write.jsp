@@ -16,32 +16,33 @@
 
 
 <body>
+<div id="largeBox">
 	<div class="formBox">
 		<h2>예약페이지</h2>
 		<form action="ReserveWrite.do" id="reserveForm" method="POST">
 			<table>
 				<colgroup>
-					<col style="width: 400px">
-					<col style="width: 1100px">
+					<col style="width: 200px">
+					<col style="width: 800px">
 				</colgroup>
 				<tbody>
 					<tr>
 						<th>성명</th>
-						<td><input type="text" name="name" id="userName" value="${loggedMemberInfo.name }  " readonly></td>
+						<td><input type="text" name="name" id="userName" value="${loggedMemberInfo.name }  " readonly style="width:200px;"></td>
 					</tr>
 					<tr>
 						<th>ID</th>
-						<td><input type="text" name="id" id="userId" value="${loggedMemberInfo.id }" readonly></td>
+						<td><input type="text" name="id" id="userId" value="${loggedMemberInfo.id }" readonly style="width:200px;"></td>
 					</tr>
 					<tr>
 						<th>생년월일</th>
 						<td>
-						<input type="text" name="birth" id="birth" value="${loggedMemberInfo.birth }" readonly>
+						<input type="text" name="birth" id="birth" value="${loggedMemberInfo.birth }" readonly style="width:200px;">
 						</td>
 					</tr>
 					<tr>
 						<th>폰번호</th>
-						<td><input type="text" name="phone" id="userphone" value="${loggedMemberInfo.phone }" readonly></td>
+						<td><input type="text" name="phone" id="userphone" value="${loggedMemberInfo.phone }" readonly style="width:200px;"></td>
 					</tr>
 					<tr>
 						<th>예약 대상자 구분</th>
@@ -85,7 +86,7 @@
 						<select name="sigungu" id = "detailArea" onChange = "resetHospital();"> 
 							<option selected="selected">선택하세요</option>
 						</select>
-						<input type="text" name="roadName" id="roadName" onkeyup="choiceHospital(this)" placeholder = "ex)중부대로">
+						<input type="text" name="roadName" id="roadName" onkeyup="choiceHospital(this)" placeholder = "ex)중부대로" style="width:200px;">
 						<select name="hospital" id = "hospital" onChange = "changeHospital();">
 						<option selected="selected">선택하세요</option>
 						</select>
@@ -103,7 +104,7 @@
 						<th class="dateBox">예약일시</th>
 						<td>
 						<span class="material-icons">event_available</span>
-						<input type="text" id="datepicker" name = "date">
+						<input type="text" id="datepicker" name = "date" style="width:200px;">
 						<select name="hour" id="hour">
 						<option selected="selected">선택하세요</option>
 							<option>09</option>
@@ -134,6 +135,7 @@
 				<input type="reset" value="취소" id="cancel">
 			</div>
 		</form>
+	</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 </body>

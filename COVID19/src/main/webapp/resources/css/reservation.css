@@ -1,116 +1,47 @@
-@charset "UTF-8";
+#largeBox .formBox { width: 1500px; margin: 50px auto; }
 
-table {
-	border: none;
-	border-collapse: collapse;
-	border-top: 1px solid #d9d9d9;
-}
+#largeBox .formBox table { border: none; border-collapse: collapse; border: 1px solid #d9d9d9; }
 
-table tr th {
-	background-color: #f8f8f8;
-}
+#largeBox .formBox table tr th { background-color: #f8f8f8; padding: 15px; border-bottom: 1px solid #d9d9d9; text-align: center; }
 
-table tr th, table tr td {
-	padding: 15px;
-	border-bottom: 1px solid #d9d9d9;
-}
+#largeBox .formBox table tr td { padding: 15px; border-bottom: 1px solid #d9d9d9; }
 
-table tr td input[type="text"], table tr td input[type="password"],
-	table tr td select {
-	height: 30px;
-	border: 1px solid #d9d9d9;
-	padding: 5px;
-	border-radius: 3px;
-	width: 150px;
-}
-table tr td input[id="subject"] {
-	height:30px;
-	width: 600px;
-}
+#largeBox .formBox table tr td input [type="text"], #largeBox .formBox table tr td input [type="password"], #largeBox .formBox table tr td input select { height: 30px; border: 1px solid #d9d9d9; padding: 5px; border-radius: 3px; width: 150px; }
 
-table tr td select {
-	width: 120px;
-}
+#largeBox .formBox table tr td input [type="text"] [id="subject"], #largeBox .formBox table tr td input [type="password"] [id="subject"], #largeBox .formBox table tr td input select [id="subject"] { height: 30px; width: 600px; }
 
-.formBox {
-	width: 1500px;
-	margin: 100px auto;
-}
+#largeBox .formBox table tr td select { width: 120px; }
 
-.formBox h2 {
-	padding-top: 200px;
-	margin-bottom: 50px;
-	text-align: center;
-}
+#largeBox .formBox h2 { margin-bottom: 80px; text-align: center; }
 
-.formBox .btns {
-	text-align: center;
-	margin-top: 150px;
-}
+#largeBox .formBox .btns { text-align: center; margin-top: 150px; }
 
-.formBox .btns * {
-	display: inline-block;
-	width: 150px;
-	height: 50px;
-	line-height:50px;
-	border: none;
-	border-radius: 5px;
-	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
-	font-size: 16px;
-	font-weight: 500;
-	background-color: rgb(109, 109, 109);
-	color: #fff;
-}
+#largeBox .formBox .btns #reserve { background-color: #0179b1; }
 
-.formBox #contents {
-	width:100%;
-	min-height:400px;
-	resize: none;
-	border: 1px solid #d9d9d9;
-	padding: 5px;
-}
+#largeBox .formBox .btns * { display: inline-block; width: 150px; height: 50px; line-height: 50px; border: none; border-radius: 5px; -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); font-size: 16px; font-weight: 500; background-color: #6d6d6d; color: #fff; }
 
-.formBox .btns #reserve {
-	background-color: rgb(1, 121, 177);
-}
-.formBox .pagination {
-	margin-top: 50px;
-	text-align: center;
-	display:block;
-}
-.formBox .pagination a {
-	display: inline-block;
-	width:30px;
-	height:30px;
-	background-color: #000;
-	color:#fff;
-	font-size: 14px;
-	line-height: 30px;
-	border-radius: 3px;
-}
+#largeBox .formBox #contents { width: 100%; min-height: 400px; resize: none; border: 1px solid #d9d9d9; padding: 5px; }
 
-#list thead th {text-align:center}
+#largeBox .formBox .pagination { margin-top: 50px; text-align: center; display: block; }
 
-#list tbody td {
-	text-align: center;
-}
-#list tbody td.subject {
-	text-align: left;
-	padding-left:50px;
-}
-#list tbody td.space1 {padding-left:50px;}
-#list tbody td.space2 {padding-left:70px;}
-#list tbody td.space3 {padding-left:90px;}
-#list tbody td.space4 {padding-left:110px;}
-#list tbody td.space5 {padding-left:130px;}
+#largeBox .formBox .pagination a { display: inline-block; width: 30px; height: 30px; background-color: #000; color: #fff; font-size: 14px; line-height: 30px; border-radius: 3px; }
 
+#largeBox .formBox .pagination a .clicked { background-color: #0179b1; }
 
-.formBox .pagination a.clicked {
-	background-color: rgb(1, 121, 177);
-}
-.formBox .pagination a .material-icons {
-	width:30px;
-	height:30px;
-	line-height: 30px;
-	vertical-align: top;
-}
+#largeBox .formBox .pagination a .material-icons { width: 30px; height: 30px; line-height: 30px; vertical-align: top; }
+
+#largeBox .formBox #list thead th { text-align: center; }
+
+#largeBox .formBox #list tbody td { text-align: center; }
+
+#largeBox .formBox #list tbody td .subject { text-align: left; padding-left: 50px; }
+
+#largeBox .formBox #list tbody td .space1 { padding-left: 50px; }
+
+#largeBox .formBox #list tbody td .space2 { padding-left: 70px; }
+
+#largeBox .formBox #list tbody td .space3 { padding-left: 90px; }
+
+#largeBox .formBox #list tbody td .space4 { padding-left: 110px; }
+
+#largeBox .formBox #list tbody td .space5 { padding-left: 130px; }

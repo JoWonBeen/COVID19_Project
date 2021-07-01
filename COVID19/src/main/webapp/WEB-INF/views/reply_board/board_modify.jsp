@@ -13,13 +13,13 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <body>
+<div id="largeBox">
 	<div class="formBox">
 		<h2>문의게시판</h2>
-<!-- 		<form id="joinForm" method="POST" action="BoardModify.do"> -->
 			<table>
 				<colgroup>
 					<col style="width: 200px">
-					<col style="width: 1300px">
+					<col style="width: 800px">
 				</colgroup>
 				<tbody>
 					<tr>
@@ -41,7 +41,8 @@
 				<input type="button" value="수정" id="join">
 				<a href="BoardList.do">목록</a>
 			</div>
-<!-- 		</form> -->
+
+	</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 	<script>

@@ -43,7 +43,7 @@ public class ReserveController {
 	@Autowired
 	CenterAdminDao centerAdminDao;
 	
-	@GetMapping("/ReserveForm.do")
+	@RequestMapping(value="/ReserveForm.do" , produces = "application/json; charset=UTF-8;")
 	public String reserveForm(HttpServletResponse response, HttpSession session,Model model) throws IOException {
 		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo"); 
 		int result = reserveDao.checkReserve(memberBean.getId());
@@ -109,6 +109,8 @@ public class ReserveController {
 		int result = reserveDao.checkReserve(memberBean.getId());
 		if (result > 0) { 
 			reserveBean = reserveDao.getAllReservation(memberBean.getId());
+			String[] addArr = reserveBean.getHospitalAdd().split(" ");
+			reserveBean.setHospitalAdd(addArr[addArr.length-1]);
 			model.addAttribute("reserveBean", reserveBean);
 			return "reserve/reserve_list";
 		} else {
@@ -173,7 +175,7 @@ public class ReserveController {
 				String hospitalAdd = request.getParameter("hospitalAdd");
 				String vaccine = request.getParameter("vaccine");
 				centerAdminDao.addOneVaccine(vaccine, hospitalAdd);
-				ScriptWriterUtil.alertAndNext(response, "예약이 취소되었습니다.", "VaccineHome.do");
+				ScriptWriterUtil.alertAndNext(response, "예약이 취소되었습니다.", "Index.do");
 				return null;
 			} else {
 				ScriptWriterUtil.alertAndBack(response, "예약이 취소되지 않았습니다.");
