@@ -12,8 +12,8 @@
 <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
 <script src="js/coronaLiveGetCoronaData.js" defer></script>
+<script src="js/vaccineStatusGetData.js" defer></script>
 <script src="js/jquery-3.6.0.min.js"></script> 
-<script src="js/swiper-bundle.min.js"></script>
 <script src="js/chart.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
 <script src="js/centerAdmin.js" defer></script>

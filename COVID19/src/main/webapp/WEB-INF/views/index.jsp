@@ -38,18 +38,38 @@
 				<p>확진자 수 :  </p>
 			</div>
 			<div id = "mainVisualPaginationBtnBox">
-<!-- 				<button class="prev"><img src="images/paginationUpBtn.png"></button> -->
 				<div class = "pagination">
 				</div>
-<!-- 				<button class="next"><img src="images/paginationDownBtn.png"></button> -->
 			</div>
 		</div>
 		
 		<div id = "vaccineStatusSection">
 			<h2 class = "mainTitle">백신 예약 접종 현황</h2>
 			<div class = "contentsBox">
-				<p>데이터를 입력하세요.</p>
+				<div class = "vaccineReservationDataBox">
+					<div>
+	                    <table>
+	                        <colgroup>
+	                           <col style="width:150px">
+	                           <col style="width:250px">
+	                           <col style="width:250px">
+	                        </colgroup>
+	                        <tbody>
+	                           <tr class = "vaccineReservationNameBox">
+	                              <th>회차</th>
+	                              <th>오늘 접종자</th>
+	                              <th>총 접종자</th>
+	                           </tr>
+	                           <tr class = "vaccineReservationFirst">
+	                           </tr>
+	                           <tr class = "vaccineReservationSecond">
+	                           </tr>
+	                        </tbody>
+	                     </table>
+	            	</div>
+				</div>
 			</div>
+			<div class = "moreBtn"><a href = "VaccineStatus.do">자세히보기</a></div>
 		</div>
 		
 	</div>

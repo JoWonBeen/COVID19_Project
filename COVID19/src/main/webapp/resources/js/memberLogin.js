@@ -200,16 +200,15 @@ function birthFormat(el){
 
 
 window.onload = function(){
-  engAndNumberFunc(document.getElementById("userID"));
+	engAndNumberFunc($("#userID"));
 }
 
 function engAndNumberFunc(t){
-  var regexp = /[^a-z0-9]/gi;
-  t.onkeyup = function(e){
-    var v = this.value;
-    this.value = v.replace(regexp,'');
-  }
+	let regexp = /[^a-z0-9]/gi;
+	
+	t.keyup(function(){
+		let v = $(this).val();
+	    $(this).val(v.replace(regexp,''));
+	})
 }
-
-
 

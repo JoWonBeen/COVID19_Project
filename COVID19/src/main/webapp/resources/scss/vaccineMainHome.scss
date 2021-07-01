@@ -126,9 +126,47 @@
     }
     }
     .contentsBox{
-      padding-bottom: 100px;
-      p{
-
+      padding-bottom: 50px;
+      .vaccineReservationDataBox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        div{
+          border: 1px solid white;
+          border-radius: 20px;
+          table{
+            font-size: 20px;
+            tbody{
+              tr{
+                th{
+                  padding: 15px 25px;
+                }
+                td{
+                  padding: 15px 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .moreBtn{
+      padding-bottom: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a{
+        text-decoration: none;
+        border:1px solid #B7C1CC;          
+        display: block;   
+        width: 120px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 10px;
+        color: white;
+        background-color: #B7C1CC;
+        padding: 10px 30px;
+             
       }
     }
   }

@@ -25,3 +25,31 @@ const mainSlider  = new Swiper("#mainVisualBox .mask", {
 	},
 });
 
+
+showVaccineDataMainHome();
+
+function showVaccineDataMainHome(){
+    let area = "전국";
+    let sendData = {
+        area:area,   
+       }
+	$.ajax({
+        url:"GetVaccineMainData.do",   
+        data:sendData,
+        success:function(result){
+            let addList = [result.firstCnt, result.secondCnt, result.totalFirstCnt, result.totalSecondCnt];
+            $(".vaccineReservationFirst td").remove();  
+			$(".vaccineReservationSecond td").remove();  
+			                        
+			$(".vaccineReservationFirst").append("<td>1차</td>");
+			$(".vaccineReservationFirst").append("<td>"+ addList[0] +"</td>");
+			$(".vaccineReservationFirst").append("<td>"+ addList[2] +"</td>");
+			
+			$(".vaccineReservationSecond").append("<td>2차</td>");
+			$(".vaccineReservationSecond").append("<td>"+ addList[1] +"</td>");
+			$(".vaccineReservationSecond").append("<td>"+ addList[3] +"</td>");
+        }
+    })
+}
+
+
