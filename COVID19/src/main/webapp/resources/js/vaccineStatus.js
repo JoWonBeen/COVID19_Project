@@ -107,7 +107,7 @@ function showMainVaccineData(){
             let addList = [result.firstCnt, result.secondCnt, result.totalFirstCnt, result.totalSecondCnt];
             $("#vaccTotalDataBox td").remove();  
             for (x in addList) {
-                $("#vaccTotalDataBox").append("<td>"+ addList[x] +"</td>");
+                $("#vaccTotalDataBox").append("<td>"+ addList[x].format() +" 명</td>");
             }
         }
     })
@@ -130,7 +130,10 @@ function showAreaVaccineData(){
 		
 			$("#areaDataBox").append("<tr>");
                 for (x in addList) {
-                    $("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+                    if(x==0)
+                        $("#areaDataBox").append("<td>"+ addList[x] +"</td>");
+                    else
+                        $("#areaDataBox").append("<td>"+ addList[x].format() +" 명</td>");
                 }
 			$("#areaDataBox").append("</tr>");
     	}
@@ -139,7 +142,10 @@ function showAreaVaccineData(){
     	$("#areaDataBox").append("<tr>");
         addList[0] = "합계";
             for (x in addList) {
-                $("#areaDataBox").append("<td style = 'border:1px solid gray;'>"+ addList[x] +"</td>");
+                if(x==0)
+                    $("#areaDataBox").append("<td>"+ addList[x] +"</td>");
+                else
+                    $("#areaDataBox").append("<td>"+ addList[x].format() +" 명</td>");
             }
 		$("#areaDataBox").append("</tr>");
 		
