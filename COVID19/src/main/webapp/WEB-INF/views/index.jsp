@@ -72,6 +72,36 @@
 			<div class = "moreBtn"><a href = "VaccineStatus.do">자세히보기</a></div>
 		</div>
 		
+		<div id = "coronaSymptomMainHome">
+			<h2 class = "mainTitle">COVID19 증상</h2>
+			<div class = "contentsBox">
+				<div class = "coronaSymptomMainDataBox">
+                    <div><img src="images/symptoms01.png" alt=""><p>발열</p></div> 
+				  	<div><img src="images/symptoms02.png" alt=""><p>마른기침</p></div> 
+				  	<div><img src="images/symptoms03.png" alt=""><p>피로감</p></div>
+				</div>
+			</div>
+			<div class = "moreBtn"><a href = "CoronaSymptoms.do">자세히보기</a></div>
+		</div>
+		
+		<div id = "coronaVaccineInfoMainHome">
+			<h2 class = "mainTitle">국내 COVID19 백신 종류</h2>
+			<div class = "contentsBox">
+				<div class = "coronaVaccineInfoMainDataBox">
+                    <div><img src="images/logo-pfizer.png" alt=""><p>화이자</p></div> 
+				  	<div><img src="images/logo-janssen.png" alt=""><p>얀센</p></div> 
+				  	<div><img src="images/logo-moderna.png" alt=""><p>모더나</p></div>
+				  	<div><img src="images/logo-AstraZeneca.png" alt=""><p>아스트라제네카</p></div>
+				</div>
+			</div>
+			<div class = "moreBtn"><a href = "CoronaVaccineTypes.do">자세히보기</a></div>
+		</div>
+		
+		<div id = "goReservation">
+			<h2 class = "mainTitle">Book a COVID19 Vaccine right now!</h2>
+			<div class = "moreBtn"><div onclick="goLogin(${loggedMemberInfo}); return false;"><a href = "ReserveForm.do">예약 바로가기</a></div></div>
+		</div>
+		
 	</div>
 <%@ include file="include/footer.jsp" %>
 </body>

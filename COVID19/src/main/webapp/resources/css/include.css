@@ -48,7 +48,11 @@ a { text-decoration: none; color: inherit; }
 
 #header:hover ~ #vaccineMainHomeBox { opacity: 0.5; }
 
-#footer { width: 100%; height: 100px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #CDCFD5; color: white; margin-top: 200px; }
+#footer { width: 100%; height: 150px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #928684; color: white; margin-top: 200px; position: relative; }
+
+#footer #footerLogo { position: absolute; left: 80px; top: calc(75px - 65px); z-index: 100; }
+
+#footer #footerLogo a img { height: 130px; }
 
 #btnTop { outline: none; border: none; position: fixed; right: 100px; bottom: -100px; width: 60px; height: 60px; border-radius: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; background-color: #B7C1CC; color: white; -webkit-transition: all 0.5s ease; transition: all 0.5s ease; z-index: 999; }
 
