@@ -123,29 +123,17 @@ function changeCategory(){
 });
 
 function searchMediCenter2(){
-    let centerType = $("#centerType").val();
+    // let centerType = $("#centerType").val();
     let mainArea = $("#mainArea").val();
     let detailArea = $("#detailArea").val();
     let roadName = $("#roadName").val();
+    let hospital = $("#hospital").val();
 
-	let centerGubun = "0";
-    if(centerType == "All"){
-        sendOptData = {
-        	gubun:centerGubun,
-            sido:mainArea,
-            sigungu:detailArea,
-            roadName:roadName
-        }
-    //console.log(sendOptData);   
-    } else{
-        if(centerType == "예방접종센터") centerGubun = "1";
-        if(centerType == "위탁의료기관") centerGubun = "2";
-        sendOptData = {
-            gubun:centerGubun,
-            sido:mainArea,
-            sigungu:detailArea,
-            roadName:roadName
-        }
+    sendOptData = {
+        sido:mainArea,
+        sigungu:detailArea,
+        roadName:roadName,
+        centerName:hospital,
     }
 
     $.ajax({

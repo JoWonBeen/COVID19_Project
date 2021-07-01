@@ -55,19 +55,22 @@ public class MediCenterDao {
 	}
 	
 
-	public List<MediCenterBean> showCenterWithVacc(int gubun, String sido, String sigungu, String roadName) {
+	public List<MediCenterBean> showCenterWithVacc(String sido, String sigungu, String roadName, String centerName) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		HashMap<String, Object> option = new HashMap<String, Object>();
 		String address = sido + " " + sigungu + " %" + roadName + "%";
+		String center = "%"+ centerName;
 		
-		option.put("gubun", gubun);
 		option.put("address", address);
+		option.put("center", center);
 		List<MediCenterBean> mediCenterList;
-//		if(gubun == 0) {			
+		
+		if(centerName == "선택하세요") {
 			mediCenterList = sqlSession.selectList("showCenterWithVacc", option);
-//		} else {
-//			mediCenterList = sqlSession.selectList("showClassifiedCenter", option);
-//		}
+		} else {
+			mediCenterList = sqlSession.selectList("showOneCenterWithVacc", option);			
+		}
+
 		sqlSession.close();
 		return mediCenterList;
 	}

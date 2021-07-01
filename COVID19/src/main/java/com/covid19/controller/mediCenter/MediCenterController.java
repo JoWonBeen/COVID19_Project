@@ -41,8 +41,8 @@ public class MediCenterController {
 
 	@RequestMapping(value = "/ShowCenterWithVacc.do", produces = "application/json;charset=UTF-8;")
 	@ResponseBody
-	public List<MediCenterBean> showCenterWithVacc(int gubun, String sido, String sigungu, String roadName) {
-		List<MediCenterBean> mediCenterList = mediCenterDao.showCenterWithVacc(gubun, sido, sigungu, roadName);
+	public List<MediCenterBean> showCenterWithVacc(String sido, String sigungu, String roadName, String centerName) {
+		List<MediCenterBean> mediCenterList = mediCenterDao.showCenterWithVacc(sido, sigungu, roadName, centerName);
 		return mediCenterList;
 	}
 	
