@@ -37,8 +37,8 @@
 					</div>
 				</div>
 				<div class="swiper-container">
-					<ul class="solution swiper-wrapper">
-						<li class="swiper-slide">
+					<ul>
+						<li>
 							<div class="lineBox">
 								<div class="imgBox">
 									<img src="images/vaccineafter05.png" alt="">
@@ -64,7 +64,7 @@
 								</div>
 							</div>
 						</li>
-						<li class="swiper-slide">
+						<li>
 							<div class="lineBox">
 								<div class="imgBox">
 									<img src="images/vaccineafter06.png" alt="">
@@ -95,7 +95,7 @@
 								</div>
 							</div>
 						</li>
-						<li class="swiper-slide">
+						<li>
 							<div class="lineBox">
 								<div class="imgBox">
 									<img src="images/vaccineafter07.png" alt="">

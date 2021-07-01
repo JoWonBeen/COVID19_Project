@@ -12,7 +12,7 @@
 	<div class="formBox" id="list">
 		<h2>예약조회</h2>
 		<form action="" method="GET">
-		<table>
+		<table class = "reservationTable">
 			<colgroup>
 				<col style="width: 100px">
 				<col style="width: 100px">

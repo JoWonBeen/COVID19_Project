@@ -7,11 +7,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 1500px;
+        margin: 50px auto;
+        .reservationTable{
+            text-align: center;
+        }
         table {
-        border: none;
-        border-collapse: collapse;
-        border: 1px solid #d9d9d9;
-
+            border: none;
+            border-collapse: collapse;
+            border: 1px solid #d9d9d9;
+            
             tr{
                 th {
                 background-color: #f8f8f8;
@@ -44,14 +49,13 @@
                 }
             }
         }
-        width: 1500px;
-        margin: 50px auto;
 
         h2 {
             //padding-top: 50px;
             margin-bottom: 80px;
             text-align: center;
-            }
+            font-size: 40px;
+        }
 
         .btns {
             text-align: center;

@@ -4,10 +4,21 @@
     font-weight: normal;
     font-style: normal;
 }
-#header, #footer, #mainVisualBox, #memberLoginBox, #coronaLivePageBox, #vaccineMainHomeBox, #largeBox{
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+#header, #footer, #mainVisualBox, #memberLoginBox, #coronaLivePageBox, 
+#vaccineMainHomeBox, #largeBox,#coronaVaccineTypesBox, 
+#coronaSymptomsBox, #coronaVaccineTypesBox, #vaccinationStatusBox, #vaccinationSymptomBox, #vaccinationTargetTimingBox,
+#mediCenterSearchBox{
     font-family: 'GmarketSansBold';
 }
-
+td{
+    font-family: 'GmarketSansMedium' !important;
+}
 a {
 	text-decoration:none;
 	color:inherit;

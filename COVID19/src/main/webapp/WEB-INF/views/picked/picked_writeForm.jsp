@@ -22,7 +22,7 @@
 				<table>
 					<colgroup>
 						<col style="width: 200px">
-						<col style="width: 800px">
+						<col style="width: 600px">
 					</colgroup>
 					<tbody>
 						<tr>

@@ -13,9 +13,11 @@
 <link rel="stylesheet" href="css/reservation.css">
 <link rel="stylesheet" href="css/vaccinationSymptom.css">
 <link rel="stylesheet" href="css/vaccinationStatus.css">
+<link rel="stylesheet" href="css/vaccineReservaion.css">
 
 <script src="js/coronaLiveGetCoronaData.js" defer></script>
 <script src="js/vaccineStatusGetData.js" defer></script>
+<script src="js/vaccineStatus.js" defer></script>
 <script src="js/jquery-3.6.0.min.js"></script> 
 <script src="js/chart.min.js"></script> 
 <script src="js/memberLogin.js" defer></script>
