@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="css/memberInfoForm.css">
 <link rel="stylesheet" href="css/vaccineMainHome.css">
 <link rel="stylesheet" href="css/swiper-bundle.min.css">
+<link rel="stylesheet" href="css/reservation.css">
+<link rel="stylesheet" href="css/vaccinationSymptom.css">
+<link rel="stylesheet" href="css/vaccinationStatus.css">
 
 <script src="js/coronaLiveGetCoronaData.js" defer></script>
 <script src="js/vaccineStatusGetData.js" defer></script>

@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
-<link rel="stylesheet" href="css/vaccinationStatus.css">
-<title>Insert title here</title>
-<script src="js/vaccineStatusGetData.js" defer></script>
-<script src="js/vaccineStatus.js" defer></script>
-</head>
 <body>
     <div id="vaccinationStatusBox"> 
         <div class="formBox">
@@ -104,4 +99,3 @@
     </div>
 <%@ include file="../include/footer.jsp" %>
 </body>
-</html>
