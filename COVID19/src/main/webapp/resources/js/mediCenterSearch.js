@@ -49,19 +49,13 @@ function searchMediCenter(){
             $(".mediCenterList").html("");
             $.each(mediCenterArray, function(i,item){
                 $(".mediCenterList").append(`
-                    <li>
-                        <dl>
-                            <dd>${item.centerName}</dd>
-                        </dl>
-                        <dl>
-                            <dt>주소 : </dt>
-                            <dd>${item.address}</dd>
-                        </dl>
-                        <dl>
-                            <dt>전화번호 : </dt>
-                            <dd>${item.phone}</dd>
-                        </dl>
-                    </li>
+                    <tr>
+                        <td rowspan="2" class="centerName">${item.centerName}</td>
+                        <td>주소 : ${item.address}</td>
+                    </tr>
+                    <tr>
+                        <td>전화번호 : ${item.phone}</td>
+                    </tr>
                 `);
             })
         }
@@ -163,50 +157,28 @@ function searchMediCenter2(){
             const mediCenterArray = resultData;
             $(".mediCenterList").html("");
             for(let i = 0; i<mediCenterArray.length; i++){
+                var arr = new Array();
+                arr = mediCenterArray[i].centerName.split(" ");
+                centerName = arr[arr.length-1];
             	if(i%4==0){
             		$(".mediCenterList").append(`
-		                <li>
-		                    <dl>
-		                        <dd>${mediCenterArray[i].centerName}</dd>
-		                    </dl>
-		                    <dl>
-		                        <dd>${mediCenterArray[i].vaccineType}</dd>
-		                    </dl>
-		                    <dl>
-		                        <dd>${mediCenterArray[i].vaccineCnt}</dd>
-		                    </dl>
-		                </li>
+                    <tr>
+                        <td rowspan="4" class="centerName">${centerName}</td>
+                         <td> ${mediCenterArray[i].vaccineType} : 
+                             ${mediCenterArray[i].vaccineCnt}</td>
+                    </tr>
 	                `);
             	}
             	else{
             		$(".mediCenterList").append(`
-		                <li>
-		                    <dl>
-		                        <dd>${mediCenterArray[i].vaccineType}</dd>
-		                    </dl>
-		                    <dl>
-		                        <dd>${mediCenterArray[i].vaccineCnt}</dd>
-		                    </dl>
-		                </li>
+                        <tr> 
+                        <td> ${mediCenterArray[i].vaccineType} : 
+                            ${mediCenterArray[i].vaccineCnt}</td>
+                        </tr>
 	                `);
             	}
             }
             
-//            $.each(mediCenterArray, function(i,item){
-//                $(".mediCenterList").append(`
-//                <li>
-//                    <dl>
-//                        <dd>${item.centerName}</dd>
-//                    </dl>
-//                    <dl>
-//                        <dd>${item.vaccineType}</dd>
-//                    </dl>
-//                    <dl>
-//                        <dd>${item.vaccineCnt}</dd>
-//                    </dl>
-//                </li>
-//                `);
-//            })
         }
     })
 }

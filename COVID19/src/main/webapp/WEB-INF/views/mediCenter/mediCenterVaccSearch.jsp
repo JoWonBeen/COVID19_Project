@@ -11,19 +11,17 @@
 <script src="js/reserve.js" defer></script>
 </head>
 <body>
-	<div id="mediCenter">
+	<div id="mediCenterSearchBox">
 		<div class="formBox">
 			<header id="mediCenterheader">
-				<h1>
-					<span class="title">백신 수량</span>
-				</h1>
+				<p class="title">백신수량 검색</p>
 			</header>
-			<main id="main">
-				<select id="centerType" name="centerType">
+			<div class="contents">
+				<!-- <select id="centerType" name="centerType">
 					<option value="All">전체 의료기관</option>
 					<option value="예방접종센터">예방접종 센터</option>
 					<option value="위탁의료기관">위탁 의료기관</option>
-				</select> 
+				</select>  -->
 				<select name="mainArea" id = "mainArea" onChange="changeAddressCategory(); resetHospital();">
 	                <option selected="selected">광역시도</option>
 	                <option>서울특별시</option>
@@ -52,10 +50,18 @@
 	                <option selected="selected">선택하세요</option>
 	            </select>
 				<input type="button" value="백신수량 확인하기" id="searchVacc">
-				<ul class="mediCenterList">
-	               
-				</ul>
-			</main>
+				<p class="result">백신수량 검색결과</p>
+				<hr>
+				<table>
+					<colgroup>
+						<col style="width:400px">
+						<col style="width:400px">
+					</colgroup>	
+					<tbody class="mediCenterList">
+
+					</tbody>	
+				</table>
+			</div>
 		</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>

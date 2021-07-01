@@ -12,14 +12,17 @@
 	</select>
 	<select id="showClassifiedCenter"  resultType="MediCenterBean" parameterType="HashMap">
 		SELECT * FROM MEDICENTER WHERE GUBUN = #{gubun}
-								   AND ADDRESS LIKE #{address} 
-							  ORDER BY GUBUN   
+								   AND ADDRESS LIKE #{address} ORDER BY GUBUN   
 	</select>
 	
-	<!-- SELECT CENTERNAME FROM MEDICENTER WHERE ADDRESS LIKE #{address} -->
-		
+	
+	<!-- SELECT * FROM CENTERVACCINEINFO -->
 	<select id="showCenterWithVacc" resultType="CenterVaccineInfoBean" parameterType="HashMap">
-		SELECT * FROM CENTERVACCINEINFO WHERE CENTERNAME Like #{address}
+		SELECT * FROM CENTERVACCINEINFO WHERE CENTERNAME LIKE #{address}
+	</select>
+	
+	<select id="showOneCenterWithVacc" resultType="CenterVaccineInfoBean" parameterType="HashMap">
+		SELECT * FROM CENTERVACCINEINFO WHERE CENTERNAME LIKE #{address}
 	</select>
 	
 </mapper>

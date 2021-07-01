@@ -11,14 +11,12 @@
 <script src="js/mediCenterSearch.js" defer></script>
 </head>
 <body>
-	<div id="mediCenter">
+	<div id="mediCenterSearchBox">
 		<div class="formBox">
 			<header id="mediCenterheader">
-				<h1>
-					<span class="title">의료기관 검색</span>
-				</h1>
+				<p class="title">의료기관 검색</p>
 			</header>
-			<main id="main">
+			<div class="contents">
 				<select id="centerType" name="centerType">
 					<option value="All">전체 의료기관</option>
 					<option value="예방접종센터">예방접종 센터</option>
@@ -49,10 +47,18 @@
 				</select>
 				<input type="text" id="roadName" name="roadName" placeholder="도로명을 입력하세요">
 				<input type="button" value="의료기관 찾기" id="search">
-				<ul class="mediCenterList">
-	
-				</ul>
-			</main>
+				<p class="result">의료기관 검색 결과</p>
+				<hr>
+				<table>
+					<colgroup>
+						<col style="width:400px">
+						<col style="width:400px">
+					</colgroup>	
+					<tbody class="mediCenterList">
+
+					</tbody>	
+				</table>
+			</div>
 		</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>

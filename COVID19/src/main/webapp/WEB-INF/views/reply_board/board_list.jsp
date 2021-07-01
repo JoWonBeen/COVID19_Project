@@ -47,7 +47,7 @@
 								subdirectory_arrow_right
 								</span>
 							</c:if>
-							<a href="BoardView.do?no=${replyBoardBean.no }&memberId=${replyBoardBean.memberId}&type=${loggedMemberInfo.type}">${replyBoardBean.subject}</a>
+							<a href="BoardView.do?no=${replyBoardBean.no }&memberId=${replyBoardBean.memberId}&ref=${replyBoardBean.ref}&type=${loggedMemberInfo.type}">${replyBoardBean.subject}</a>
 						</td>
 						
 						<td style="text-align: center;">${replyBoardBean.memberId}</td>

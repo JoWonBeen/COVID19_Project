@@ -1,38 +1,41 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp" %>
-<link rel="stylesheet" href="css/coronaInfoLayout.css">
+<link rel="stylesheet" href="css/vaccinationStatus.css">
 <title>Insert title here</title>
 <script src="js/vaccineStatusGetData.js" defer></script>
 <script src="js/vaccineStatus.js" defer></script>
 </head>
 <body>
-    <div class = "container">
-        <h1 class="mainMenu">COVID19 정보</h1>
-	    <h2 class="subMenu">백신 접종 현황</h2>
-        <div class="contents">
-                <div id = "vaccineTotalDataBox">
+    <div id="vaccinationStatusBox"> 
+        <div class="formBox">
+            <div class="menuBox">
+                <p class="mainMenu">COVID19 정보</p>
+                <p class="subMenu">백신 접종 현황</p>
+            </div>
+            <div class="contents">
+                <div id= "vaccineTotalDataBox">
                     <table>
                         <colgroup>
-                           <col style="width:200px">
-                           <col style="width:200px">
-                           <col style="width:200px">
-                           <col style="width:200px">
+                            <col style="width:200px">
+                            <col style="width:200px">
+                            <col style="width:200px">
+                            <col style="width:200px">
                         </colgroup>
                         <tbody>
-                           <tr id = "totalDataNameBox">
-                              <th>추가 1차접종자</th>
-                              <th>추가 접종완료자</th>
-                              <th>1차접종자</th>
-                              <th>접종완료자</th>
-                           </tr>
-                           <tr id = "vaccTotalDataBox">
-                           </tr>
+                            <tr id = "totalDataNameBox">
+                                <th>추가 1차접종자</th>
+                                <th>추가 접종완료자</th>
+                                <th>1차접종자</th>
+                                <th>접종완료자</th>
+                            </tr>
+                            <tr id = "vaccTotalDataBox">
+                            </tr>
                         </tbody>
-                     </table>
+                    </table>
                 </div>
-                <div id = "vaccineGraphBox">
-                    <div id = "vaccineOptionBox">
+                <div id= "vaccineGraphBox">
+                    <div id="vaccineOptionBox">
                         <div>
                             <label for="type">종류</label> 
                             <select name="type" id="type" onChange="changeVaccineCategory(); showVaccineData();">
@@ -76,27 +79,27 @@
                             </select>
                         </div>
                     </div>
-                    <div id = "chartBox" style = "width:700px; height:400px;">
-                       <canvas id="myChart"></canvas><!-- 차트를 그릴 공간 -->
+                    <div id="chartBox" style = "width:700px; height:400px;">
+                        <canvas id="myChart"></canvas><!-- 차트를 그릴 공간 -->
                     </div>
                 </div>
-                <div id = "vaccineAreaDataBox">
+                <div id= "vaccineAreaDataBox">
                     <table>
                         <colgroup>
-                           <col style="width:100px">
-                           <col style="width:200px">
-                           <col style="width:200px">
-                           <!-- <col style="width:200px"> -->
+                            <col style="width:200px">
+                            <col style="width:200px">
+                            <col style="width:200px">
                         </colgroup>
-                        <tbody id = "areaDataBox">
-                           <tr>
-                              <th>지역</th>
-                              <th>오늘 추가접종자</th>
-                              <th>총 접종완료</th>
-                           </tr>
+                        <tbody id="areaDataBox">
+                            <tr>
+                                <th>지역</th>
+                                <th>오늘 추가접종자</th>
+                                <th>총 접종완료</th>
+                            </tr>
                         </tbody>
-                     </table>
+                    </table>
                 </div>
+            </div>    
         </div>
     </div>
 <%@ include file="../include/footer.jsp" %>

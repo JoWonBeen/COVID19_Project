@@ -91,14 +91,15 @@ public class BoardController {
 
 
 	@GetMapping("/BoardView.do")
-	public String boardView(Model model, int no, String memberId, int type, HttpSession session, HttpServletResponse response) throws IOException {
-		if(type == 2) {
+	public String boardView(Model model, int no, String memberId, int type, int ref, HttpSession session, HttpServletResponse response) throws IOException {
+		if(type == 3) {
 			replyBoardBean = replyBoardDao.getSelectOneBoard(no);
 			model.addAttribute("replyBoardBean", replyBoardBean);
 			return "reply_board/board_view";
 		} else {
 			loggedMemberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
-			if(loggedMemberBean.getId().equals(memberId)) {
+			List<Integer> refList = replyBoardDao.getSelectMyBoard(loggedMemberBean.getId());
+			if(refList.contains(ref)) {
 				replyBoardBean = replyBoardDao.getSelectOneBoard(no);
 				model.addAttribute("replyBoardBean", replyBoardBean);
 				return "reply_board/board_view";
