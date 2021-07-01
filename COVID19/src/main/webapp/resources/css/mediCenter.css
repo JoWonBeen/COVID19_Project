@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-#mediCenter .formBox { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
-=======
+
 #mediCenterSearchBox .formBox #mediCenterheader { width: 1300px; }
 
 #mediCenterSearchBox .formBox #mediCenterheader p { font-size: 30px; font-weight: 600; padding-top: 50px; margin-bottom: 50px; text-align: center; }
@@ -20,4 +18,4 @@
 #mediCenterSearchBox .formBox .contents table tr .centerName { background-color: #f8f8f8 !important; }
 
 #mediCenterSearchBox .formBox .contents table tr td { vertical-align: middle; position: relative; padding: 15px; border-bottom: 1px solid #d9d9d9; text-align: center; }
->>>>>>> JangHyeRim_master_merge
+
