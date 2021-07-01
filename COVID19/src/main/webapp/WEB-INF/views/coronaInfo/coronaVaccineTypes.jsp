@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div id = "coronaVaccineTypesBox">
+	<div id="coronaVaccineTypesBox">
 		<div class="formBox">
 			<div class = "menuBox">
 				<p class="mainMenu">COVID19 정보</p>

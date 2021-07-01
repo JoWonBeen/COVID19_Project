@@ -11,8 +11,8 @@
     <div id="vaccinationSymptomBox">
         <div class = "formBox">
             <div class="menuBox">
-                <h1 class="mainMenu">COVID19 정보</h1>
-                <h2 class="subMenu">접종 후 증상 및 대처방안</h2>
+                <p class="mainMenu">COVID19 정보</p>
+                <p class="subMenu">접종 후 증상 및 대처방안</p>
             </div>
             <div class="content">
                 <div class="basicSymptoms">
