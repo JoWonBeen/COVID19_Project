@@ -25,9 +25,6 @@ function showVaccineData(){
 	else if(period == "1달") period = prevDataVaccine(30, dateToYearVaccine(new Date()));
 	else if(period == "3달") period = prevDataVaccine(90, dateToYearVaccine(new Date()));
 	else if(period == "전체") period = prevDataVaccine(1000, dateToYearVaccine(new Date()));
-	//console.log(type);
-	//console.log(period);
-    //console.log(area);
 
     period = StringToDateVaccine(period);
 

@@ -4,7 +4,6 @@ $(function() {
 $.ajax({
 	url:"GetReserveData.do",
 	success:function(result){
-		console.log(result);
 		let gubun = ["의료종사자","돌봄종사자(어린이집,유아교사)","사회필수인력(경찰,소방관,해경등)","60~75세 미만의 어르신","군인,군종사자,예비군,민방위","취약시설 입소 및 종사자","만성 신장질환자","일부 지정된 의료기관 종사자"];
 		let target = $("#gubun");
 		 
@@ -35,7 +34,6 @@ $.ajax({
 	
 		$("#mainArea option").remove();  
 		for (x in mainArea) {
-			console.log(result.hospitalAdd.substr(0,2));
 			if(mainArea[x] == address1)
 				target.append("<option selected='selected'>"+ mainArea[x] +"</option>");
 			else
@@ -46,7 +44,6 @@ $.ajax({
 		
 		$("#detailArea option").remove();  
 		for (x in detailArea) {
-			console.log(result.hospitalAdd.substr(3,3));
 			if(detailArea[x] == address2)
 				target.append("<option selected='selected'>"+ detailArea[x] +"</option>");
 			else
@@ -57,7 +54,6 @@ $.ajax({
 		
 		$("#hospital option").remove();  
 		for (x in hospital) {
-			console.log(result.hospitalAdd.substr(7,4));
 			if(hospital[x] == address3)
 				target.append("<option selected='selected'>"+ hospital[x] +"</option>");
 			else
@@ -115,7 +111,6 @@ function changeCategory(){
 	let target = $("#detailArea");
 	let _this = $("#mainArea");
 	let addList = null;
-	console.log(_this.val());
 	if(_this.val() == "서울특별시") addList = seoul;
 	else if(_this.val() == "부산광역시") addList = busan;
 	else if(_this.val() == "대구광역시") addList = daegu;
