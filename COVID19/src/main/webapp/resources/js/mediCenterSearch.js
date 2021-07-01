@@ -50,7 +50,7 @@ function searchMediCenter(){
             $.each(mediCenterArray, function(i,item){
                 $(".mediCenterList").append(`
                     <tr>
-                        <td rowspan="2">${item.centerName}</td>
+                        <td rowspan="2" class="centerName">${item.centerName}</td>
                         <td>주소 : ${item.address}</td>
                     </tr>
                     <tr>
@@ -157,10 +157,13 @@ function searchMediCenter2(){
             const mediCenterArray = resultData;
             $(".mediCenterList").html("");
             for(let i = 0; i<mediCenterArray.length; i++){
+                var arr = new Array();
+                arr = mediCenterArray[i].centerName.split(" ");
+                centerName = arr[arr.length-1];
             	if(i%4==0){
             		$(".mediCenterList").append(`
                     <tr>
-                        <td rowspan="4">${mediCenterArray[i].centerName}</td>
+                        <td rowspan="4" class="centerName">${centerName}</td>
                          <td> ${mediCenterArray[i].vaccineType} : 
                              ${mediCenterArray[i].vaccineCnt}</td>
                     </tr>

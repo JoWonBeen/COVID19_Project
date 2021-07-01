@@ -14,9 +14,9 @@
 	<div id="mediCenterSearchBox">
 		<div class="formBox">
 			<header id="mediCenterheader">
-				<p class="subMenu">의료기관 검색</p>
+				<p class="title">의료기관 검색</p>
 			</header>
-			<main id="main">
+			<div class="contents">
 				<select id="centerType" name="centerType">
 					<option value="All">전체 의료기관</option>
 					<option value="예방접종센터">예방접종 센터</option>
@@ -47,18 +47,20 @@
 				</select>
 				<input type="text" id="roadName" name="roadName" placeholder="도로명을 입력하세요">
 				<input type="button" value="의료기관 찾기" id="search">
+				<p class="result">의료기관 검색 결과</p>
+				<hr>
 				<table>
 					<colgroup>
 						<col style="width:400px">
 						<col style="width:400px">
 					</colgroup>	
 					<tbody class="mediCenterList">
-						<tr>
+						<!-- <tr>
 							<td colspan= "2">의료기관 검색결과</td>
-						</tr>
+						</tr> -->
 					</tbody>	
 				</table>
-			</main>
+			</div>
 		</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
