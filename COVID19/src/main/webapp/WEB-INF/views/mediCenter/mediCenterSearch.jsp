@@ -55,9 +55,7 @@
 						<col style="width:400px">
 					</colgroup>	
 					<tbody class="mediCenterList">
-						<!-- <tr>
-							<td colspan= "2">의료기관 검색결과</td>
-						</tr> -->
+
 					</tbody>	
 				</table>
 			</div>

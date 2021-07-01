@@ -17,11 +17,11 @@
 				<p class="title">백신수량 검색</p>
 			</header>
 			<div class="contents">
-				<select id="centerType" name="centerType">
+				<!-- <select id="centerType" name="centerType">
 					<option value="All">전체 의료기관</option>
 					<option value="예방접종센터">예방접종 센터</option>
 					<option value="위탁의료기관">위탁 의료기관</option>
-				</select> 
+				</select>  -->
 				<select name="mainArea" id = "mainArea" onChange="changeAddressCategory(); resetHospital();">
 	                <option selected="selected">광역시도</option>
 	                <option>서울특별시</option>
@@ -58,9 +58,7 @@
 						<col style="width:400px">
 					</colgroup>	
 					<tbody class="mediCenterList">
-						<!-- <tr>
-							<td colspan= "2">백신수량 검색결과</td>
-						</tr> -->
+
 					</tbody>	
 				</table>
 			</div>
