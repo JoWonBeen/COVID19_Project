@@ -4,27 +4,23 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <%@ include file="../include/header.jsp" %>
 <body>
+<div id="largeBox">
 	<div class="formBox">
 		<h2>문의게시판</h2>
-<!-- 		<form id="joinForm" method="POST" action="BoardDelete.do"> -->
 			<table>
 				<colgroup>
-					<col style="width: 150px">
-					<col style="width: 850px">
+					<col style="width:150px">
+					<col style="width:500px">
 				</colgroup>
 				<tbody>
 					<tr>
-						<th>ID</th>
-						<td>${replyBoardBean.memberId}</td>
+						<th style="border: 1px solid #d9d9d9; background-color: #f8f8f8;">아이디</th>
+						<td style="border: 1px solid #d9d9d9; ">${replyBoardBean.memberId}</td>
 					</tr>
 					<tr>
-						<th>SUBJECT</th>
-						<td>${replyBoardBean.subject}</td>
+						<th style="border: 1px solid #d9d9d9; background-color: #f8f8f8;">제목</th>
+						<td style="border: 1px solid #d9d9d9;">${replyBoardBean.subject}</td>
 					</tr>
-<!-- 					<tr> -->
-<!-- 						<th>PASSWORD</th> -->
-<!-- 						<td><input type="password" name="password" id="userPassword"></td> -->
-<!-- 					</tr> -->
 				</tbody>
 			</table>
 			<div class="btns">
@@ -32,7 +28,7 @@
 				<input type="button" value="삭제" id="join">
 				<a href="BoardList.do">목록</a>
 			</div>
-<!-- 		</form> -->
+	</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 <script>

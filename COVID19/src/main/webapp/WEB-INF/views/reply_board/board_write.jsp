@@ -13,13 +13,14 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <body>
+<div id="largeBox">
 	<div class="formBox">
 		<h2>문의게시판</h2>
 		<form action="BoardWrite.do" id="joinForm" method="POST">
 			<table>
 				<colgroup>
 					<col style="width: 200px">
-					<col style="width: 1300px">
+					<col style="width: 800px">
 				</colgroup>
 				<tbody>
 					<tr>
@@ -49,6 +50,7 @@
 					type="reset" value="취소" id="cancel">
 			</div>
 		</form>
+	</div>
 	</div>
 	<script>
 		

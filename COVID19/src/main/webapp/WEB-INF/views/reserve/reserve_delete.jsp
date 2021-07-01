@@ -8,12 +8,13 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <body>
+<div id="largeBox">
 	<div class="formBox" id="list">
 		<h2>예약취소</h2>
 		<form action="ReserveDelete.do" method="POST">
 		<table>
 			<colgroup>
-				<col style="width: 300px">
+				<col style="width: 200px">
 			</colgroup>
 			<thead>
 				<tr>
@@ -32,6 +33,7 @@
 				<input type="submit" value="확인" id="reserve"> 
 			</div>
 			</form>
+	</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 </body>

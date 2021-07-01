@@ -1,0 +1,121 @@
+#largeBox{
+
+    .formBox { 
+        
+        table {
+        border: none;
+        border-collapse: collapse;
+        border: 1px solid #d9d9d9;
+
+            tr{
+                th {
+                background-color: #f8f8f8;
+                padding: 15px;
+                border-bottom: 1px solid #d9d9d9;
+                text-align: center;
+                }
+
+                td {
+                    padding: 15px;
+                    border-bottom: 1px solid #d9d9d9;
+                    
+                    input{
+                        [type="text"], [type="password"],select {
+                        height: 30px;
+                        border: 1px solid #d9d9d9;
+                        padding: 5px;
+                        border-radius: 3px;
+                        width: 150px;
+                        [id="subject"] {
+                            height:30px;
+                            width: 600px;
+                            }
+                        }
+                    }
+                    select {
+                    width: 120px;
+                    }
+                }
+            }
+        }
+        width: 1500px;
+        margin: 50px auto;
+
+        h2 {
+            //padding-top: 50px;
+            margin-bottom: 80px;
+            text-align: center;
+            }
+
+        .btns {
+            text-align: center;
+            margin-top: 150px;
+                #reserve {
+                    background-color: rgb(1, 121, 177);
+                }
+            }
+
+        .btns * {
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            line-height:50px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            font-weight: 500;
+            background-color: rgb(109, 109, 109);
+            color: #fff;
+            }
+
+        #contents {
+            width:100%;
+            min-height:400px;
+            resize: none;
+            border: 1px solid #d9d9d9;
+            padding: 5px;
+            }
+
+        .pagination {
+            margin-top: 50px;
+            text-align: center;
+            display:block;
+            a {
+                display: inline-block;
+                width:30px;
+                height:30px;
+                background-color: #000;
+                color:#fff;
+                font-size: 14px;
+                line-height: 30px;
+                border-radius: 3px;
+                .clicked {
+                    background-color: rgb(1, 121, 177);
+                }
+                .material-icons {
+                    width:30px;
+                    height:30px;
+                    line-height: 30px;
+                    vertical-align: top;
+                }
+            }
+            
+        }
+
+        #list thead th {text-align:center}
+
+        #list tbody td {
+            text-align: center;
+            .subject {
+                text-align: left;
+                padding-left:50px;
+            }
+            .space1 {padding-left:50px;}
+            .space2 {padding-left:70px;}
+            .space3 {padding-left:90px;}
+            .space4 {padding-left:110px;}
+            .space5 {padding-left:130px;}
+        }
+    }
+}
