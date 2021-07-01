@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #vaccinationTargetTimingBox .container .formBox .menuBox { width: 1300px; }
 
 #vaccinationTargetTimingBox .container .formBox .menuBox p { position: relative; left: 0px; }
@@ -25,3 +26,32 @@
 #vaccinationTargetTimingBox .container .formBox .contents table tr td .symptomsIconBox .iconBox .icon { text-align: center; }
 
 #vaccinationTargetTimingBox .container .formBox .contents table tr .box { margin: 20px 0; padding-left: 100px; text-align: left; line-height: 1.3em; }
+=======
+#vaccinationTargetTimingBox .formBox .menuBox { width: 1300px; }
+
+#vaccinationTargetTimingBox .formBox .menuBox p { position: relative; left: 0px; }
+
+#vaccinationTargetTimingBox .formBox .menuBox .mainMenu { font-size: 35px; font-weight: 600; margin: 50px 0 50px 0; }
+
+#vaccinationTargetTimingBox .formBox .menuBox .subMenu { font-size: 30px; font-weight: 600; margin-bottom: 40px; }
+
+#vaccinationTargetTimingBox .formBox .menuBox .subMenu .material-icons { color: #5f5f64; }
+
+#vaccinationTargetTimingBox .formBox .contents table { border: 1px solid #d9d9d9; border-collapse: collapse; }
+
+#vaccinationTargetTimingBox .formBox .contents table tr { font-size: 15px; }
+
+#vaccinationTargetTimingBox .formBox .contents table tr th { vertical-align: middle; font-size: 20px; background-color: #f8f8f8; border-bottom: 1px solid #d9d9d9; }
+
+#vaccinationTargetTimingBox .formBox .contents table tr td { vertical-align: middle; position: relative; padding: 15px; border-bottom: 1px solid #d9d9d9; text-align: center; }
+
+#vaccinationTargetTimingBox .formBox .contents table tr td h3 .material-icons { color: #696464; }
+
+#vaccinationTargetTimingBox .formBox .contents table tr td .symptomsIconBox { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: left; -ms-flex-pack: left; justify-content: left; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+#vaccinationTargetTimingBox .formBox .contents table tr td .symptomsIconBox .iconBox { text-align: center; width: 150px; height: 150px; border: none; }
+
+#vaccinationTargetTimingBox .formBox .contents table tr td .symptomsIconBox .iconBox .icon { text-align: center; }
+
+#vaccinationTargetTimingBox .formBox .contents table tr .box { margin: 20px 0; padding-left: 100px; text-align: left; line-height: 1.3em; }
+>>>>>>> JangHyeRim_master_merge

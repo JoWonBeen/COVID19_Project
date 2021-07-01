@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #vaccineMainHomeBox #mainVisualBox { overflow: hidden; height: 800px; position: relative; }
 
 #vaccineMainHomeBox #mainVisualBox ul li { position: relative; }
@@ -25,6 +26,13 @@
 #vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .prev { background: none; border: none; outline: none; padding: 0; cursor: pointer; z-index: 999; }
 
 #vaccineMainHomeBox #mainVisualBox #mainVisualPaginationBtnBox .next { background: none; border: none; outline: none; padding: 0; cursor: pointer; z-index: 999; }
+=======
+#vaccineMainHomeBox #mainVisualBox { overflow: hidden; height: 800px; background: url("../images/mainVisual01.jpg") no-repeat; background-size: cover; }
+
+#vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox { position: absolute; top: 30%; right: 100px; }
+
+#vaccineMainHomeBox #mainVisualBox #coronaTotalDataBox p { font-size: 30px; font-weight: 400; color: white; border: 1px solid white; padding: 20px; }
+>>>>>>> JangHyeRim_master_merge
 
 #vaccineMainHomeBox #vaccineStatusSection { text-align: center; margin-top: 150px; background-color: #c9c9c9; position: relative; color: white; }
 
@@ -32,6 +40,7 @@
 
 #vaccineMainHomeBox #vaccineStatusSection .mainTitle:before { content: ""; display: block; position: absolute; left: calc(50%); top: 0px; width: 1px; height: 40px; z-index: 99; background: white; }
 
+<<<<<<< HEAD
 #vaccineMainHomeBox #vaccineStatusSection .contentsBox { padding-bottom: 50px; }
 
 #vaccineMainHomeBox #vaccineStatusSection .contentsBox .vaccineReservationDataBox { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
@@ -47,3 +56,6 @@
 #vaccineMainHomeBox #vaccineStatusSection .moreBtn { padding-bottom: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
 #vaccineMainHomeBox #vaccineStatusSection .moreBtn a { text-decoration: none; border: 1px solid #B7C1CC; display: block; width: 120px; height: 30px; line-height: 30px; border-radius: 10px; color: white; background-color: #B7C1CC; padding: 10px 30px; }
+=======
+#vaccineMainHomeBox #vaccineStatusSection .contentsBox { padding-bottom: 100px; }
+>>>>>>> JangHyeRim_master_merge

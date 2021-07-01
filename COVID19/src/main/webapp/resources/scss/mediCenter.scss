@@ -1,6 +1,58 @@
-#mediCenter {
+#mediCenterSearchBox {
   .formBox {
-    display: flex;
-    flex-direction: column;
+    #mediCenterheader {
+      width: 1300px;
+      p {
+        font-size: 30px;
+        font-weight: 600;
+        padding-top: 50px;
+        margin-bottom: 50px;
+        text-align: center;
+      }
+    }
+    .contents {
+      select {
+        width: 150px;
+        padding: 0.8em 0.5em;
+        font-family: inherit;
+        background: url("../images/selectBoxBlack.png") no-repeat 95% 50%;
+        border: 1px solid #464d52;
+        border-radius: 0px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        color: #464d52;
+      }
+      #roadName {
+        width: 150px;
+        padding: 0.8em 0.5em;
+      }
+      .result {
+        padding-top: 30px;
+      }
+      table {
+        border: 1px solid #d9d9d9;
+        border-collapse: collapse;
+        tr {
+          font-size: 15px;
+          th {
+            vertical-align: middle;
+            font-size: 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #d9d9d9;
+          }
+          .centerName {
+            background-color: #f8f8f8 !important;
+          }
+          td {
+            vertical-align: middle;
+            position: relative;
+            padding: 15px;
+            border-bottom: 1px solid #d9d9d9;
+            text-align: center;
+          }
+        }
+      }
+    }
   }
 }
