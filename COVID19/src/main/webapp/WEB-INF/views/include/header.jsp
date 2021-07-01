@@ -29,7 +29,6 @@
       <ul class="gnbList">
          <c:choose>
             <c:when test="${loggedMemberInfo.type != 3 || loggedMemberInfo == null}">
-<<<<<<< HEAD
             	<li>
                 	<a href="CoronaSymptoms.do" class="depth01">COVID19 정보</a>
 		        	<ul class="depth02">
@@ -46,25 +45,6 @@
 		               <li><a href="MediCenterVaccSearch.do">백신 수량</a></li>
 		            </ul>
 		         </li>
-=======
-               <li>
-                   <a href="CoronaSymptoms.do" class="depth01">COVID19 정보</a>
-                 <ul class="depth02">
-                     <li><a href="CoronaSymptoms.do">코로나 증상</a></li>
-                     <li><a href="CoronaVaccineTypes.do">코로나 백신</a></li>
-                     <li><a href="VaccineTargetTiming.do">접종대상&시기</a></li>
-                     <li><a href="VaccineStatus.do">백신 접종현황</a></li>
-                     <li><a href="VaccineSymptoms.do">백신 부작용&처치방안</a></li>
-                  </ul>
-               </li>
-               <li><a href="MediCenterSearch.do" class="depth01">의료기관</a>
-                  <ul class="depth02">
-                     <li><a href="MediCenterSearch.do">의료기관 검색</a></li>
-                     <li><a href="MediCenterVaccSearch.do">백신 수량</a></li>
-                  </ul>
-               </li>
->>>>>>> JangHyeRim_master_merge
-               
                <c:choose>
                   <c:when test="${loggedMemberInfo.type == 1 || loggedMemberInfo == null}">
                      <li onclick="goLogin(${loggedMemberInfo}); return false;"><a href="" class="depth01">백신접종 예약</a>
@@ -115,8 +95,4 @@
    <div class="coronaLiveNav">   
       <a href = "CoronaConditionHome.do">Corona Live 바로가기</a>
    </div>
-<<<<<<< HEAD
-</header>
-=======
-</header>
->>>>>>> JangHyeRim_master_merge
+	</header>
