@@ -70,7 +70,7 @@
                                 <option value="경상남도">경남</option>
                                 <option value="전라북도">전북</option>
                                 <option value="전라남도">전남</option>
-                                <option value="제주특별자치시">제주</option>
+                                <option value="제주특별자치도">제주</option>
                             </select>
                         </div>
                     </div>
