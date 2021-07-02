@@ -3,10 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <%@ include file="../include/header.jsp" %>
-<link rel="stylesheet" href="css/reservation.css">
-<link rel="stylesheet" href="css/reset.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
 <body>
 <div id="largeBox">
 	<div class="formBox" id="list">
@@ -58,15 +54,14 @@
 		</table>
 		<div class="btns">
 				
-				<a href="ReserveModifyForm.do">예약수정</a> 
-				<a href="ReserveDeleteForm.do?hospitalAdd=${reserveBean.hospitalAdd}&vaccine=${reserveBean.vaccine}">예약취소</a>
+				<a href="ReserveModifyForm.do?vaccine=${reserveBean.vaccine}&hospitalAdd=${fullHospitalAddress}">예약수정</a> 
+				<a href="ReserveDeleteForm.do?hospitalAdd=${fullHospitalAddress}&vaccine=${reserveBean.vaccine}">예약취소</a>
 			</div>
 			</form>
 	</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 </body>
-</html>
 
 
 

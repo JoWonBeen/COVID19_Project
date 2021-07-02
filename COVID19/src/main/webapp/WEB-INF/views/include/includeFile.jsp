@@ -9,6 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title>COVID19 Reservation</title>
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="css/include.css">
 <link rel="stylesheet" href="css/reset.css">
@@ -20,6 +21,10 @@
 <script src="js/coronaLiveGetCoronaData.js" defer></script>
 <script src="js/include.js" defer></script>
 <script src="js/gsap/gsap.min.js"></script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <header id="header">
 	<h1 id="logo">

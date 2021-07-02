@@ -110,6 +110,7 @@ public class ReserveController {
 		if (result > 0) { 
 			reserveBean = reserveDao.getAllReservation(memberBean.getId());
 			String[] addArr = reserveBean.getHospitalAdd().split(" ");
+			model.addAttribute("fullHospitalAddress", reserveBean.getHospitalAdd());
 			reserveBean.setHospitalAdd(addArr[addArr.length-1]);
 			model.addAttribute("reserveBean", reserveBean);
 			return "reserve/reserve_list";
@@ -121,16 +122,21 @@ public class ReserveController {
 		}
 	}
 	@GetMapping("/ReserveModifyForm.do")
-	public String reserveModifyForm() {
+	public String reserveModifyForm(String vaccine, String hospitalAdd,  Model model) {
+		model.addAttribute("vaccine", vaccine);
+		model.addAttribute("hospitalAdd", hospitalAdd);
 		return "reserve/reserve_modify";
 	}
 	@PostMapping("/ReserveModify.do")
 	public String reserveModify(HttpServletResponse response, Model model, HttpSession session,HttpServletRequest request) throws IOException {
 		memberBean = (MemberBean) session.getAttribute("loggedMemberInfo");
 		reserveBean = reserveDao.getAllReservation(memberBean.getId());
+		String initialVaccine = request.getParameter("initialVaccine");
+		String initialHospitalAdd = request.getParameter("initialHospitalAdd");
+		
 		String gubun = request.getParameter("gubun");
 		String vaccine = request.getParameter("vaccine");
-		String hospitalAdd = request.getParameter("sido")+" "+request.getParameter("sigungu")+" "+request.getParameter("hospital");
+		String hospitalAdd = request.getParameter("sido")+" "+request.getParameter("sigungu")+" "+request.getParameter("roadName")+ " " +request.getParameter("hospital");
 		String reserveMemberId = request.getParameter("loggedMemberId");
 		String reserveDate = request.getParameter("date");
 		String year = reserveDate.substring(6); 
@@ -145,7 +151,9 @@ public class ReserveController {
 		reserveBean.setMemberId(reserveMemberId);
 		model.addAttribute("reserveBean", reserveBean);
 		int result = reserveDao.updateReserve(reserveBean);
-		if (result > 0) {
+		if (result > 0) { 
+			centerAdminDao.reduceVaccine(vaccine, hospitalAdd);
+			centerAdminDao.addOneVaccine(initialVaccine, initialHospitalAdd);
 			ScriptWriterUtil.alertAndNext(response, "예약이 수정되었습니다.", "ReserveList.do");
 			return null;
 		} else {

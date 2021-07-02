@@ -13,17 +13,17 @@
 	            </colgroup>
 	            <tbody>
 	               <tr>
-	                  <th>ID</th>
+	                  <th>아이디</th>
 	                  <td><input type="text" name="id" id="userID"></td>
 	               </tr>
 	               <tr>
-	                  <th>PASSWORD</th>
-	                  <td><input type="password" name="password" id="userPassword"></td>
+	                  <th style="border: 1px solid #d9d9d9; background-color: #f8f8f8;">비밀번호</th>
+	                  <td style="border: 1px solid #d9d9d9; "><input type="password" name="password" id="userPassword"></td>
 	               </tr>
 	            </tbody>
 	         </table>
 	         <div class="btns">
-	            <input type="submit" value="로그인" id="join">
+	            <input type="submit" value="로그인" id="join" class = "boldFontUse">
 	            <a href = "SignUp.do" id = "signUp">회원가입</a>
 	         </div>
 	      </form>

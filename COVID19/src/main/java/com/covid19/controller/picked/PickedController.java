@@ -52,7 +52,7 @@ public class PickedController {
 		String pragnent = request.getParameter("pragnent");
 		
 		if(pragnent.equals("yes")) {
-			ScriptWriterUtil.alertAndNext(response, "임산부는 접종 대상자가 아닙니다.", "VaccineHome.do");
+			ScriptWriterUtil.alertAndNext(response, "임산부는 접종 대상자가 아닙니다.", "Index.do");
 			return null;
 		} else if(special.equals("yes")) {
 			memberBean = (MemberBean) session.getAttribute("loggedMemberInfo"); 
@@ -62,7 +62,7 @@ public class PickedController {
 			ScriptWriterUtil.alertAndNext(response, "특수직군 종사자는 접종 대상자입니다. 예방 접종 예약이 가능합니다.", "ReserveForm.do");
 			return null;
 		} else if(Integer.parseInt(birth.substring(0,2)) > 91) {
-			ScriptWriterUtil.alertAndNext(response, "연령대가 접종 대상자에 해당하지 않습니다.", "VaccineHome.do");
+			ScriptWriterUtil.alertAndNext(response, "연령대가 접종 대상자에 해당하지 않습니다.", "Index.do");
 			return null;
 		} else {
 			memberBean = (MemberBean) session.getAttribute("loggedMemberInfo"); 

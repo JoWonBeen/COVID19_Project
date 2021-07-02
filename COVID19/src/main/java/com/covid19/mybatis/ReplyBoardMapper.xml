@@ -54,7 +54,7 @@
 	</update>
 
 	<delete id="deleteBoard" parameterType="Integer">
-		DELETE FROM REPLYBOARD WHERE NO = #{boardNo}
+		DELETE FROM REPLYBOARD WHERE REF = #{ref}
 	</delete>
 	<select id="getSelectMyBoard" parameterType="String" resultType="Integer">
 		SELECT REF FROM REPLYBOARD WHERE MEMBERID = #{memberId}

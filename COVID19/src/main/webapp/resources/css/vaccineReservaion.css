@@ -6,13 +6,19 @@
 
 #vaccineReservationBox .formBox table tr { padding: 20px; font-size: 20px; font-weight: 400; }
 
-#vaccineReservationBox .formBox table tr th { padding: 25px; margin-right: 50px; }
+#vaccineReservationBox .formBox table tr th { padding: 25px; margin-right: 50px; vertical-align: middle; }
 
-#vaccineReservationBox .formBox table tr td { padding: 25px; }
+#vaccineReservationBox .formBox table tr td { width: 600px; padding: 25px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-#vaccineReservationBox .formBox table tr td input { width: 400px; height: 20px; }
+#vaccineReservationBox .formBox table tr td div { width: 600px; height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin-bottom: 5px; }
 
-#vaccineReservationBox .formBox table tr td select { width: 120px; height: 25px; }
+#vaccineReservationBox .formBox table tr td div input { margin: 0px 10px; width: 400px; height: 20px; }
+
+#vaccineReservationBox .formBox table tr td div .up, #vaccineReservationBox .formBox table tr td div .down { margin-right: 10px; }
+
+#vaccineReservationBox .formBox table tr td div .up, #vaccineReservationBox .formBox table tr td div .down, #vaccineReservationBox .formBox table tr td div .use, #vaccineReservationBox .formBox table tr td div .add { width: 25px; height: 25px; border: none; border-radius: 5px; background-color: #6d6d6d; }
+
+#vaccineReservationBox .formBox table tr td div .up .material-icons, #vaccineReservationBox .formBox table tr td div .down .material-icons, #vaccineReservationBox .formBox table tr td div .use .material-icons, #vaccineReservationBox .formBox table tr td div .add .material-icons { position: relative; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; color: #fff; }
 
 #vaccineReservationBox .formBox .btns { text-align: center; margin-top: 50px; }
 

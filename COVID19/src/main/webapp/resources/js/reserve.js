@@ -1,5 +1,6 @@
 function resetHospital(){
-	$("#hospital option").remove(); 
+	$("#hospital option").remove();
+	$("#hospital").append("<option>선택하세요</option>"); 
 	$("#roadName").val(""); 
 }
 
@@ -85,12 +86,9 @@ function choiceHospital(el){
 
 
 
-$("#reserve").on("click",function(){
+$("#reserveWriteBtn").on("click",function(){
     if($("#gubun").val() == "선택하세요") {
         alert("대상자 구분은 필수 입력 사항입니다.");
-        return;
-    }else if($("#vaccine").val() == "선택하세요"){
-        alert("백신은 필수 입력 사항입니다.");
         return;
     } else if($("#mainArea").val() == "선택하세요"){
         alert("시도별 선택은 필수 입력 사항입니다.");
@@ -98,8 +96,14 @@ $("#reserve").on("click",function(){
     } else if($("#detailArea").val() == "선택하세요"){
         alert("시군구별 선택은 필수 입력 사항입니다.");
         return;
+    } else if($("#roadName").val().length <= 0){
+        alert("도로명은 필수 입력 사항입니다.");
+        return;
     } else if($("#hospital").val() == "선택하세요"){
         alert("병원은 필수 입력 사항입니다.");
+        return;
+    } else if($("#vaccine").val() == "선택하세요"){
+        alert("백신은 필수 입력 사항입니다.");
         return;
     } else if($("#datepicker").val().length <= 0){
         alert("날짜는 필수 입력 사항입니다.");

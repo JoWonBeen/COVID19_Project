@@ -16,16 +16,16 @@
 					<tbody>
 					
 						<tr>
-							<th>ID</th>
+							<th>아이디</th>
 							<td>${loggedMemberInfo.id }</td>
 						</tr>
 						<tr>
-							<th>NAME</th>
+							<th>성명</th>
 							<td>${loggedMemberInfo.name }</td>
 						</tr>
 						
 						<tr>
-							<th>PASSWORD</th>
+							<th>비밀번호</th>
 							<td><input type="password" name="password" value=""></td>
 						</tr>
 					</tbody>

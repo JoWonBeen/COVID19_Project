@@ -87,10 +87,10 @@ public class ReplyBoardDao {
 		return replyBoardBean;
 	}
 	
-	public int deleteBoard(int boardNo) {
+	public int deleteBoard(int ref) {
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		result = sqlSession.delete("deleteBoard",boardNo);
+		result = sqlSession.delete("deleteBoard",ref);
 		sqlSession.commit();
 		sqlSession.close();
 		return result;
@@ -99,7 +99,6 @@ public class ReplyBoardDao {
 	
 	
 	public int updateBoard(ReplyBoardBean replyBoardBean) {
-		System.out.println(replyBoardBean.toString());
 		int result = 0;
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		result = sqlSession.update("updateBoard", replyBoardBean);

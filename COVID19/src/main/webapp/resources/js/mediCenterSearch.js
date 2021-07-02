@@ -27,7 +27,6 @@ function searchMediCenter(){
             sigungu:sigungu,
             roadName:roadName
         }
-    console.log(sendOptData);   
     } else{
         if(centerType == "예방접종센터") centerGubun = "1";
         if(centerType == "위탁의료기관") centerGubun = "2";
@@ -43,7 +42,6 @@ function searchMediCenter(){
         url: "ShowCenter.do",
         data:sendOptData,
         success:function(resultData){
-            console.log(resultData);
             
             const mediCenterArray = resultData;
             $(".mediCenterList").html("");
@@ -66,7 +64,7 @@ function searchMediCenter(){
 
 
 
-function changeCategory(){
+function changeMediCenterAreaCategory(){
     let seoul = ["강남구","강동구","강북구","강서구","관악구","광진구","구로구","금천구","노원구","도봉구","동대문구","동작구","마포구","서대문구","서초구","성동구","성북구","송파구","양천구","영등포구","용산구","은평구","종로구","중구","중랑구","강서구","금정구"];
     let busan = ["남구","동구","동래구","북구","사상구","사하구","서구","수영구","연제구","영도구","중구","진구","해운대구","기장군"];
     let daegu = ["남구","달서구","북구","서구","중구","동구","남구","수성구","달성군"];
@@ -81,7 +79,6 @@ function changeCategory(){
     let target = $("#sigungu");
     let _this = $("#sido");
     let addList = null;
-    console.log(_this.val());
 
     if(_this.val() == "서울특별시") addList = seoul;
     else if(_this.val() == "부산광역시") addList = busan;
@@ -140,7 +137,6 @@ function searchMediCenter2(){
         url: "ShowCenterWithVacc.do",
         data:sendOptData,
         success:function(resultData){
-            console.log(resultData);
             
             const mediCenterArray = resultData;
             $(".mediCenterList").html("");

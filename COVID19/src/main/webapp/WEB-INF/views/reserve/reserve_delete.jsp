@@ -3,10 +3,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
 <%@ include file="../include/header.jsp" %>
-<link rel="stylesheet" href="css/reservation.css">
-<link rel="stylesheet" href="css/reset.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
 <body>
 <div id="largeBox">
 	<div class="formBox" id="list">
@@ -28,16 +24,15 @@
 			</tbody>
 		</table>
 		<div class="btns">
-				<input type="hidden" value="${vaccine }"  name = "vaccine" id="reserve"> 
-				<input type="hidden" value="${hospitalAdd}" name = "hospitalAdd" id="reserve"> 
-				<input type="submit" value="확인" id="reserve"> 
+				<input type="hidden" value="${vaccine }"  name = "vaccine" id="vaccine"> 
+				<input type="hidden" value="${hospitalAdd}" name = "hospitalAdd" id="hospitalAdd"> 
+				<input type="submit" value="확인" id="reserveDeleteBtn"> 
 			</div>
 			</form>
 	</div>
 	</div>
 	<%@ include file="../include/footer.jsp" %>
 </body>
-</html>
 
 
 
