@@ -17,6 +17,7 @@
 	
 	
 	<!-- SELECT * FROM CENTERVACCINEINFO -->
+	
 	<select id="showCenterWithVacc" resultType="CenterVaccineInfoBean" parameterType="HashMap">
 		SELECT * FROM CENTERVACCINEINFO WHERE CENTERNAME LIKE #{address}
 	</select>

@@ -65,10 +65,10 @@ public class MediCenterDao {
 		option.put("center", center);
 		List<MediCenterBean> mediCenterList;
 		
-		if(centerName == "선택하세요") {
+		if(centerName.equals("선택하세요")) {
 			mediCenterList = sqlSession.selectList("showCenterWithVacc", option);
 		} else {
-			mediCenterList = sqlSession.selectList("showOneCenterWithVacc", option);			
+			mediCenterList = sqlSession.selectOne("showOneCenterWithVacc", option);			
 		}
 
 		sqlSession.close();
