@@ -19,7 +19,7 @@ body * {
 #vaccineMainHomeBox, #largeBox,
 #coronaVaccineTypesBox, #coronaSymptomsBox, #coronaVaccineTypesBox,
 #vaccinationStatusBox, #vaccinationSymptomBox, #vaccinationTargetTimingBox,
-#mediCenterSearchBox {
+#mediCenterSearchBox, #vaccineReservationBox, #vaccineReserveListBox{
   font-family: 'GmarketSansBold';
 }
 input.boldFontUse{

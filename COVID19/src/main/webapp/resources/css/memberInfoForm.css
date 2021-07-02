@@ -1,141 +1,21 @@
-#memberLoginBox,
-#memberJoinBox,
-#adminJoinBox,
-#memberInfoUpdateBox,
-#memberInfoBox,
-#memberInfoDeleteBox {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
+#memberLoginBox, #memberJoinBox, #adminJoinBox, #memberInfoUpdateBox, #memberInfoBox, #memberInfoDeleteBox, #vaccineReservationBox { height: 100vh; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
-#memberLoginBox .formBox,
-#memberJoinBox .formBox,
-#adminJoinBox .formBox,
-#memberInfoUpdateBox .formBox,
-#memberInfoBox .formBox,
-#memberInfoDeleteBox .formBox {
-  width: 100%;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
+#memberLoginBox .formBox, #memberJoinBox .formBox, #adminJoinBox .formBox, #memberInfoUpdateBox .formBox, #memberInfoBox .formBox, #memberInfoDeleteBox .formBox, #vaccineReservationBox .formBox { width: 100%; height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-#memberLoginBox .formBox h2,
-#memberJoinBox .formBox h2,
-#adminJoinBox .formBox h2,
-#memberInfoUpdateBox .formBox h2,
-#memberInfoBox .formBox h2,
-#memberInfoDeleteBox .formBox h2 {
-  margin-bottom: 50px;
-  font-size: 40px;
-  font-weight: 700;
-  text-align: center;
-}
+#memberLoginBox .formBox h2, #memberJoinBox .formBox h2, #adminJoinBox .formBox h2, #memberInfoUpdateBox .formBox h2, #memberInfoBox .formBox h2, #memberInfoDeleteBox .formBox h2, #vaccineReservationBox .formBox h2 { margin: 80px 0 50px 0; font-size: 40px; font-weight: 700; text-align: center; }
 
-#memberLoginBox .formBox table,
-#memberJoinBox .formBox table,
-#adminJoinBox .formBox table,
-#memberInfoUpdateBox .formBox table,
-#memberInfoBox .formBox table,
-#memberInfoDeleteBox .formBox table {
-  border: none;
-  border-collapse: collapse;
-  border-top: 1px solid #d9d9d9;
-}
+#memberLoginBox .formBox table, #memberJoinBox .formBox table, #adminJoinBox .formBox table, #memberInfoUpdateBox .formBox table, #memberInfoBox .formBox table, #memberInfoDeleteBox .formBox table, #vaccineReservationBox .formBox table { border: none; border-collapse: collapse; border: 1px solid #d9d9d9; }
 
-#memberLoginBox .formBox table tr,
-#memberJoinBox .formBox table tr,
-#adminJoinBox .formBox table tr,
-#memberInfoUpdateBox .formBox table tr,
-#memberInfoBox .formBox table tr,
-#memberInfoDeleteBox .formBox table tr {
-  padding: 20px;
-  font-size: 20px;
-  font-weight: 400;
-}
+#memberLoginBox .formBox table tr, #memberJoinBox .formBox table tr, #adminJoinBox .formBox table tr, #memberInfoUpdateBox .formBox table tr, #memberInfoBox .formBox table tr, #memberInfoDeleteBox .formBox table tr, #vaccineReservationBox .formBox table tr { padding: 20px; font-size: 20px; font-weight: 400; }
 
-#memberLoginBox .formBox table tr th,
-#memberJoinBox .formBox table tr th,
-#adminJoinBox .formBox table tr th,
-#memberInfoUpdateBox .formBox table tr th,
-#memberInfoBox .formBox table tr th,
-#memberInfoDeleteBox .formBox table tr th {
-  padding: 25px;
-  margin-right: 50px;
-}
+#memberLoginBox .formBox table tr th, #memberJoinBox .formBox table tr th, #adminJoinBox .formBox table tr th, #memberInfoUpdateBox .formBox table tr th, #memberInfoBox .formBox table tr th, #memberInfoDeleteBox .formBox table tr th, #vaccineReservationBox .formBox table tr th { padding: 25px; margin-right: 50px; border: 1px solid #d9d9d9; background-color: #f8f8f8; }
 
-#memberLoginBox .formBox table tr td,
-#memberJoinBox .formBox table tr td,
-#adminJoinBox .formBox table tr td,
-#memberInfoUpdateBox .formBox table tr td,
-#memberInfoBox .formBox table tr td,
-#memberInfoDeleteBox .formBox table tr td {
-  padding: 25px;
-}
+#memberLoginBox .formBox table tr td, #memberJoinBox .formBox table tr td, #adminJoinBox .formBox table tr td, #memberInfoUpdateBox .formBox table tr td, #memberInfoBox .formBox table tr td, #memberInfoDeleteBox .formBox table tr td, #vaccineReservationBox .formBox table tr td { padding: 25px; border: 1px solid #d9d9d9; }
 
-#memberLoginBox .formBox table tr td input,
-#memberJoinBox .formBox table tr td input,
-#adminJoinBox .formBox table tr td input,
-#memberInfoUpdateBox .formBox table tr td input,
-#memberInfoBox .formBox table tr td input,
-#memberInfoDeleteBox .formBox table tr td input {
-  width: 400px;
-  height: 20px;
-}
+#memberLoginBox .formBox table tr td input, #memberJoinBox .formBox table tr td input, #adminJoinBox .formBox table tr td input, #memberInfoUpdateBox .formBox table tr td input, #memberInfoBox .formBox table tr td input, #memberInfoDeleteBox .formBox table tr td input, #vaccineReservationBox .formBox table tr td input { width: 400px; height: 20px; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-#memberLoginBox .formBox table tr td select,
-#memberJoinBox .formBox table tr td select,
-#adminJoinBox .formBox table tr td select,
-#memberInfoUpdateBox .formBox table tr td select,
-#memberInfoBox .formBox table tr td select,
-#memberInfoDeleteBox .formBox table tr td select {
-  width: 120px;
-  height: 25px;
-}
+#memberLoginBox .formBox table tr td select, #memberJoinBox .formBox table tr td select, #adminJoinBox .formBox table tr td select, #memberInfoUpdateBox .formBox table tr td select, #memberInfoBox .formBox table tr td select, #memberInfoDeleteBox .formBox table tr td select, #vaccineReservationBox .formBox table tr td select { width: 120px; height: 25px; }
 
-#memberLoginBox .formBox .btns,
-#memberJoinBox .formBox .btns,
-#adminJoinBox .formBox .btns,
-#memberInfoUpdateBox .formBox .btns,
-#memberInfoBox .formBox .btns,
-#memberInfoDeleteBox .formBox .btns {
-  text-align: center;
-  margin-top: 50px;
-}
+#memberLoginBox .formBox .btns, #memberJoinBox .formBox .btns, #adminJoinBox .formBox .btns, #memberInfoUpdateBox .formBox .btns, #memberInfoBox .formBox .btns, #memberInfoDeleteBox .formBox .btns, #vaccineReservationBox .formBox .btns { text-align: center; margin-top: 50px; }
 
-#memberLoginBox .formBox .btns *,
-#memberJoinBox .formBox .btns *,
-#adminJoinBox .formBox .btns *,
-#memberInfoUpdateBox .formBox .btns *,
-#memberInfoBox .formBox .btns *,
-#memberInfoDeleteBox .formBox .btns * {
-  display: inline-block;
-  width: 150px;
-  height: 50px;
-  line-height: 50px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 500;
-  background-color: #6d6d6d;
-  color: #fff;
-}
+#memberLoginBox .formBox .btns *, #memberJoinBox .formBox .btns *, #adminJoinBox .formBox .btns *, #memberInfoUpdateBox .formBox .btns *, #memberInfoBox .formBox .btns *, #memberInfoDeleteBox .formBox .btns *, #vaccineReservationBox .formBox .btns * { display: inline-block; width: 150px; height: 50px; line-height: 50px; border: none; border-radius: 5px; font-size: 16px; font-weight: 500; background-color: #6d6d6d; color: #fff; }

@@ -17,50 +17,50 @@
 						<c:choose>
 							<c:when test="${loggedMemberInfo.type == 1 }">
 								<tr>
-									<th>ID</th>
+									<th>아이디</th>
 									<td><input type="text" name="id" value="${loggedMemberInfo.id }" readonly></td>
 								</tr>
 								<tr>
-									<th>NAME</th>
+									<th>성명</th>
 									<td><input type="text" name="name" value="${loggedMemberInfo.name }"></td>
 								</tr>
 								<tr>
-									<th>PASSWORD</th>
+									<th>비밀번호</th>
 									<td><input type="password" name="password" value="" placeholder = "비밀번호를 입력해주세요."></td>
 								</tr>
 								<tr>
-									<th>AGE</th>
+									<th>생년월일</th>
 									<td><input type="text" name="birth" value="${loggedMemberInfo.birth }" readonly></td>
 								</tr>
 								<tr>
-									<th>GENDER</th>
+									<th>성별</th>
 									<td><input type="gender" name="gender" value="${loggedMemberInfo.gender }" readonly></td>
 								</tr>
 								<tr>
-									<th>PHONE</th>
+									<th>전화번호</th>
 									<td><input type="text" name="phone" value="${loggedMemberInfo.phone }" onkeyup="phoneFormat(this)"></td>
 								</tr>
 							</c:when>
 							<c:otherwise>
 								<tr>
-									<th>ID</th>
+									<th>아이디</th>
 									<td><input type="text" name="id" value="${loggedMemberInfo.id }" readonly></td>
 								</tr>
 								
 								<tr>
-									<th>NAME</th>
+									<th>성명</th>
 									<td><input type="text" name="name" value="${loggedMemberInfo.name }" maxlength = "7"></td>
 								</tr>
 								<tr>
-									<th>PASSWORD</th>
+									<th>비밀번호</th>
 									<td><input type="password" name="password" value=""></td>
 								</tr>
 								<tr>
-									<th>CENTER NAME</th>
+									<th>의료센터 이름</th>
 									<td><input type="text" name="centerName" value="${loggedMemberInfo.centerName }"></td>
 								</tr>
 								<tr>
-									<th>PHONE</th>
+									<th>전화번호</th>
 									<td><input type="text" name="phone" value="${loggedMemberInfo.phone }" onkeyup="phoneFormat(this)"></td>
 								</tr>
 							</c:otherwise>

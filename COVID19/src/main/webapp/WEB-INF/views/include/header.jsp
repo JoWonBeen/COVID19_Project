@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="css/vaccinationTargetTiming.css">
 <link rel="stylesheet" href="css/mediCenter.css">
 <link rel="stylesheet" href="css/reservation.css">
+<link rel="stylesheet" href="css/vaccineReserveList.css">
 
 <script src="js/coronaLiveGetCoronaData.js" defer></script>
 <script src="js/vaccineStatusGetData.js" defer></script>

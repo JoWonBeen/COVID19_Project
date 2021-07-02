@@ -13,25 +13,25 @@
 					</colgroup>
 					<tbody>
 						<tr>
-							<th>ID</th>
+							<th>아이디</th>
 							<td><input type="text" name="id" id="userID" maxlength = "10">
 								<button id="adminIdCheck">중복확인</button>
 							</td>
 						</tr>
 						<tr>
-							<th>NAME</th>
+							<th>성명</th>
 							<td><input type="text" name="name" id="userName" value=""maxlength = "8"></td>
 						</tr>
 						<tr>
-							<th>PASSWORD</th>
+							<th>비밀번호</th>
 							<td><input type="password" name="password" id="userPassword" maxlength = "12" placeholder = "숫자, 문자, 특수문자를 포함한 8자리 이상"></td>
 						</tr>
 						<tr>
-							<th>PW-CHECK</th>
+							<th>비밀번호 확인</th>
 							<td><input type="password" name="checkPassword" id="checkPassword" placeholder = "숫자, 문자, 특수문자를 포함한 8자리 이상"></td>
 						</tr>
 						<tr>
-							<th>CENTER NAME</th>
+							<th>의료센터 이름</th>
 							<td>
 								<select name="mainArea" id = "mainArea" onChange="changeAddressCategory(); resetHospital();">
 									<option selected="selected">선택하세요</option>
@@ -63,7 +63,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th>PHONE</th>
+							<th>전화번호</th>
 							<td><input type="text" name="phone" id="userPhone" onkeyup="phoneFormat(this)"></td>
 						</tr>
 		

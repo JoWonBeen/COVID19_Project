@@ -16,42 +16,42 @@
 					<c:choose>
 						<c:when test="${loggedMemberInfo.type == 1 }">
 							<tr>
-								<th>ID</th>
+								<th>아이디</th>
 								<td>${loggedMemberInfo.id }</td>
 							</tr>
 							<tr>
-								<th>NAME</th>
+								<th>성명</th>
 								<td>${loggedMemberInfo.name }</td>
 							</tr>
 							<tr>
-								<th>BIRTH</th>
+								<th>생년월일</th>
 								<td>${loggedMemberInfo.birth }</td>
 							</tr>
 							<tr>
-								<th>GENDER</th>
+								<th>성별</th>
 								<td>${loggedMemberInfo.gender}</td>
 							</tr>
 							<tr>
-								<th>PHONE</th>
+								<th>전화번호</th>
 								<td>${loggedMemberInfo.phone }</td>
 							</tr>
 						</c:when>
 						<c:otherwise>
 							<tr>
-								<th>ID</th>
+								<th>아이디</th>
 								<td>${loggedMemberInfo.id }</td>
 							</tr>
 							<tr>
-								<th>NAME</th>
+								<th>성명</th>
 								<td>${loggedMemberInfo.name }</td>
 							</tr>
 							
 							<tr>
-								<th>CENTER NAME</th>
+								<th>의료센터 이름</th>
 								<td>${loggedMemberInfo.centerName }</td>
 							</tr>
 							<tr>
-								<th>PHONE</th>
+								<th>전화번호</th>
 								<td>${loggedMemberInfo.phone }</td>
 							</tr>
 						</c:otherwise>

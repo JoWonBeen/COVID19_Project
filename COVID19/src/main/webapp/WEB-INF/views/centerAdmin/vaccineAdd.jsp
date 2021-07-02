@@ -8,68 +8,92 @@
 			<form action="UpdateCenterVaccineInfo.do" id="joinForm" method="POST">
 				<table>
 					<colgroup>
-						<col style="width:150px">
-						<col style="width:850px">
+						<col style="width:200px">
+						<col style="width:600px">
 					</colgroup>
 					<tbody>
 						<tr>
 							<th>화이자</th>
 							<td>
-								<label>보유량 : </label>
-								<input type="text" name="vaccineType" id="pfizer" value="${centerVaccineInfoBeanList[0].vaccineCnt }">
-								<button class = "up"><span class="material-icons">arrow_upward</span></button>
-								<button class = "down"><span class="material-icons">arrow_downward</span></button>
-								<br><label>소모량 : </label>
-								<input type="text" name="useVaccine" class="useVaccine" value="0">
-								<button class = "use"><span class="material-icons">remove</span></button>
-								<br><label>입고량 : </label>
-								<input type="text" name="addVaccine" class="addVaccine" value="0">
-								<button class = "add"><span class="material-icons">add</span></button>
+								<div>
+									<label>보유량 : </label>
+									<input type="text" name="vaccineType" id="pfizer" value="${centerVaccineInfoBeanList[0].vaccineCnt }">
+									<button class = "up"><span class="material-icons">arrow_upward</span></button>
+									<button class = "down"><span class="material-icons">arrow_downward</span></button>
+								</div>
+								<div>
+									<label>소모량 : </label>
+									<input type="text" name="useVaccine" class="useVaccine" value="0">
+									<button class = "use"><span class="material-icons">remove</span></button>
+								</div>
+								<div>
+									<label>입고량 : </label>
+									<input type="text" name="addVaccine" class="addVaccine" value="0">
+									<button class = "add"><span class="material-icons">add</span></button>
+								</div>
 							</td>
 						</tr>
 						<tr>
 							<th>아스트라제네카</th>
 							<td>
-								<label>보유량 : </label>
-								<input type="text" name="vaccineType" id="astrazeneca" value="${centerVaccineInfoBeanList[1].vaccineCnt }">					
-								<button class = "up"><span class="material-icons">arrow_upward</span></button>
-								<button class = "down"><span class="material-icons">arrow_downward</span></button>
-								<br><label>소모량 : </label>
-								<input type="text" name="useVaccine" class="useVaccine" value="0">
-								<button class = "use"><span class="material-icons">remove</span></button>
-								<br><label>입고량 : </label>
-								<input type="text" name="addVaccine" class="addVaccine" value="0">
-								<button class = "add"><span class="material-icons">add</span></button>
+								<div>
+									<label>보유량 : </label>
+									<input type="text" name="vaccineType" id="astrazeneca" value="${centerVaccineInfoBeanList[1].vaccineCnt }">					
+									<button class = "up"><span class="material-icons">arrow_upward</span></button>
+									<button class = "down"><span class="material-icons">arrow_downward</span></button>
+								</div>
+								<div>	
+									<label>소모량 : </label>
+									<input type="text" name="useVaccine" class="useVaccine" value="0">
+									<button class = "use"><span class="material-icons">remove</span></button>
+								</div>
+								<div>	
+									<label>입고량 : </label>
+									<input type="text" name="addVaccine" class="addVaccine" value="0">
+									<button class = "add"><span class="material-icons">add</span></button>
+								</div>
 							</td>
 						</tr>
 						<tr>
 							<th>얀센</th>
 							<td>
-								<label>보유량 : </label>
-								<input type="text" name="vaccineType" id="janssen" value="${centerVaccineInfoBeanList[2].vaccineCnt }">
-								<button class = "up"><span class="material-icons">arrow_upward</span></button>
-								<button class = "down"><span class="material-icons">arrow_downward</span></button>
-								<br><label>소모량 : </label>
-								<input type="text" name="useVaccine" class="useVaccine" value="0">
-								<button class = "use"><span class="material-icons">remove</span></button>
-								<br><label>입고량 : </label>
-								<input type="text" name="addVaccine" class="addVaccine" value="0">
-								<button class = "add"><span class="material-icons">add</span></button>
+								<div>
+									<label>보유량 : </label>
+									<input type="text" name="vaccineType" id="janssen" value="${centerVaccineInfoBeanList[2].vaccineCnt }">
+									<button class = "up"><span class="material-icons">arrow_upward</span></button>
+									<button class = "down"><span class="material-icons">arrow_downward</span></button>
+								</div>
+								<div>	
+									<label>소모량 : </label>
+									<input type="text" name="useVaccine" class="useVaccine" value="0">
+									<button class = "use"><span class="material-icons">remove</span></button>
+								</div>
+								<div>	
+									<label>입고량 : </label>
+									<input type="text" name="addVaccine" class="addVaccine" value="0">
+									<button class = "add"><span class="material-icons">add</span></button>
+								</div>
 							</td>
 						</tr>
 						<tr>
 							<th>모더나</th>
 							<td>
-								<label>보유량 : </label>
-								<input type="text" name="vaccineType" id="moderna" value="${centerVaccineInfoBeanList[3].vaccineCnt }">
-								<button class = "up"><span class="material-icons">arrow_upward</span></button>
-								<button class = "down"><span class="material-icons">arrow_downward</span></button>
-								<br><label>소모량 : </label>
-								<input type="text" name="useVaccine" class="useVaccine" value="0">
-								<button class = "use"><span class="material-icons">remove</span></button>
-								<br><label>입고량 : </label>
-								<input type="text" name="addVaccine" class="addVaccine" value="0">
-								<button class = "add"><span class="material-icons">add</span></button>
+								<div>
+									<label>보유량 : </label>
+									<input type="text" name="vaccineType" id="moderna" value="${centerVaccineInfoBeanList[3].vaccineCnt }">
+									<button class = "up"><span class="material-icons">arrow_upward</span></button>
+									<button class = "down"><span class="material-icons">arrow_downward</span></button>
+								</div>
+								<div>	
+									<label>소모량 : </label>
+									<input type="text" name="useVaccine" class="useVaccine" value="0">
+									<button class = "use"><span class="material-icons">remove</span></button>
+								</div>
+								<div>	
+									<label>입고량 : </label>
+									<input type="text" name="addVaccine" class="addVaccine" value="0">
+									<button class = "add"><span class="material-icons">add</span></button>
+								</div>
 							</td>
 						</tr>
 						
