@@ -1,49 +1,159 @@
-#vaccineReserveListBox .formBox { width: 100%; height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 1500px; margin: 50px auto; }
+#vaccineReserveListBox .formBox {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1500px;
+  margin: 50px auto;
+}
 
-#vaccineReserveListBox .formBox .reservationTable { text-align: center; }
+#vaccineReserveListBox .formBox .reservationTable {
+  text-align: center;
+}
 
-#vaccineReserveListBox .formBox table { border: none; border-collapse: collapse; border: 1px solid #d9d9d9; }
+#vaccineReserveListBox .formBox table {
+  border: none;
+  border-collapse: collapse;
+  border: 1px solid #d9d9d9;
+}
 
-#vaccineReserveListBox .formBox table tr th { background-color: #f8f8f8; padding: 15px; border-bottom: 1px solid #d9d9d9; text-align: center; vertical-align: middle; }
+#vaccineReserveListBox .formBox table tr th {
+  background-color: #f8f8f8;
+  padding: 15px;
+  border-bottom: 1px solid #d9d9d9;
+  text-align: center;
+  vertical-align: middle;
+}
 
-#vaccineReserveListBox .formBox table tr td { padding: 15px; border-bottom: 1px solid #d9d9d9; }
+#vaccineReserveListBox .formBox table tr td {
+  padding: 15px;
+  border-bottom: 1px solid #d9d9d9;
+  text-align: center;
+}
 
-#vaccineReserveListBox .formBox table tr td input [type="text"], #vaccineReserveListBox .formBox table tr td input [type="password"], #vaccineReserveListBox .formBox table tr td input select { height: 30px; border: 1px solid #d9d9d9; padding: 5px; border-radius: 3px; width: 150px; }
+#vaccineReserveListBox .formBox table tr td input [type="text"], #vaccineReserveListBox .formBox table tr td input [type="password"], #vaccineReserveListBox .formBox table tr td input select {
+  height: 30px;
+  border: 1px solid #d9d9d9;
+  padding: 5px;
+  border-radius: 3px;
+  width: 150px;
+}
 
-#vaccineReserveListBox .formBox table tr td input [type="text"] [id="subject"], #vaccineReserveListBox .formBox table tr td input [type="password"] [id="subject"], #vaccineReserveListBox .formBox table tr td input select [id="subject"] { height: 30px; width: 600px; }
+#vaccineReserveListBox .formBox table tr td input [type="text"] [id="subject"], #vaccineReserveListBox .formBox table tr td input [type="password"] [id="subject"], #vaccineReserveListBox .formBox table tr td input select [id="subject"] {
+  height: 30px;
+  width: 600px;
+}
 
-#vaccineReserveListBox .formBox table tr td select { width: 120px; }
+#vaccineReserveListBox .formBox table tr td select {
+  width: 120px;
+}
 
-#vaccineReserveListBox .formBox h2 { margin-bottom: 80px; text-align: center; font-size: 40px; }
+#vaccineReserveListBox .formBox h2 {
+  margin-bottom: 80px;
+  text-align: center;
+  font-size: 40px;
+}
 
-#vaccineReserveListBox .formBox .btns { text-align: center; margin-top: 150px; }
+#vaccineReserveListBox .formBox .btns {
+  text-align: center;
+  margin-top: 150px;
+}
 
-#vaccineReserveListBox .formBox .btns #reserve { background-color: #0179b1; }
+#vaccineReserveListBox .formBox .btns #reserve {
+  background-color: #0179b1;
+}
 
-#vaccineReserveListBox .formBox .btns * { display: inline-block; width: 150px; height: 50px; line-height: 50px; border: none; border-radius: 5px; -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); font-size: 16px; font-weight: 500; background-color: #6d6d6d; color: #fff; }
+#vaccineReserveListBox .formBox .btns * {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  line-height: 50px;
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  font-weight: 500;
+  background-color: #6d6d6d;
+  color: #fff;
+}
 
-#vaccineReserveListBox .formBox #contents { width: 100%; min-height: 400px; resize: none; border: 1px solid #d9d9d9; padding: 5px; }
+#vaccineReserveListBox .formBox #contents {
+  width: 100%;
+  min-height: 400px;
+  resize: none;
+  border: 1px solid #d9d9d9;
+  padding: 5px;
+}
 
-#vaccineReserveListBox .formBox .pagination { margin-top: 50px; text-align: center; display: block; }
+#vaccineReserveListBox .formBox .pagination {
+  margin-top: 50px;
+  text-align: center;
+  display: block;
+}
 
-#vaccineReserveListBox .formBox .pagination a { display: inline-block; width: 30px; height: 30px; background-color: #000; color: #fff; font-size: 14px; line-height: 30px; border-radius: 3px; }
+#vaccineReserveListBox .formBox .pagination a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  line-height: 30px;
+  border-radius: 3px;
+}
 
-#vaccineReserveListBox .formBox .pagination a .clicked { background-color: #0179b1; }
+#vaccineReserveListBox .formBox .pagination a .clicked {
+  background-color: #0179b1;
+}
 
-#vaccineReserveListBox .formBox .pagination a .material-icons { width: 30px; height: 30px; line-height: 30px; vertical-align: top; }
+#vaccineReserveListBox .formBox .pagination a .material-icons {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  vertical-align: top;
+}
 
-#vaccineReserveListBox .formBox #list thead th { text-align: center; }
+#vaccineReserveListBox .formBox #list thead th {
+  text-align: center;
+}
 
-#vaccineReserveListBox .formBox #list tbody td { text-align: center; }
+#vaccineReserveListBox .formBox #list tbody td {
+  text-align: center;
+}
 
-#vaccineReserveListBox .formBox #list tbody td .subject { text-align: left; padding-left: 50px; }
+#vaccineReserveListBox .formBox #list tbody td .subject {
+  text-align: left;
+  padding-left: 50px;
+}
 
-#vaccineReserveListBox .formBox #list tbody td .space1 { padding-left: 50px; }
+#vaccineReserveListBox .formBox #list tbody td .space1 {
+  padding-left: 50px;
+}
 
-#vaccineReserveListBox .formBox #list tbody td .space2 { padding-left: 70px; }
+#vaccineReserveListBox .formBox #list tbody td .space2 {
+  padding-left: 70px;
+}
 
-#vaccineReserveListBox .formBox #list tbody td .space3 { padding-left: 90px; }
+#vaccineReserveListBox .formBox #list tbody td .space3 {
+  padding-left: 90px;
+}
 
-#vaccineReserveListBox .formBox #list tbody td .space4 { padding-left: 110px; }
+#vaccineReserveListBox .formBox #list tbody td .space4 {
+  padding-left: 110px;
+}
 
-#vaccineReserveListBox .formBox #list tbody td .space5 { padding-left: 130px; }
+#vaccineReserveListBox .formBox #list tbody td .space5 {
+  padding-left: 130px;
+}

@@ -64,7 +64,7 @@
 						</tr>
 						<tr>
 							<th>전화번호</th>
-							<td><input type="text" name="phone" id="userPhone" onkeyup="phoneFormat(this)"></td>
+							<td><input type="text" name="phone" id="userPhone" placeholder = "ex)010-1234-5678"></td>
 						</tr>
 		
 					</tbody>

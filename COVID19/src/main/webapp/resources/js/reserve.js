@@ -1,7 +1,9 @@
 function resetHospital(){
 	$("#hospital option").remove();
 	$("#hospital").append("<option>선택하세요</option>"); 
-	$("#roadName").val(""); 
+	$("#roadName").val("");
+	$("#vaccine option").remove();
+	$("#vaccine").append("<option>선택하세요</option>"); 	
 }
 
 $(function(){

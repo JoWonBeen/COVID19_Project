@@ -190,9 +190,6 @@ function goLogin(memberType){
     } 
 } 
 
-function phoneFormat(el){
-    el.value = el.value.replace(/(\d\d\d)(\d\d\d\d)(\d\d\d\d)/g, '$1-$2-$3');
-}
 function birthFormat(el){
 	if (el.value.length == 6)
 	    el.value = el.value.replace(/(\d\d)(\d\d)(\d\d)/g, '$1/$2/$3');
@@ -201,10 +198,28 @@ function birthFormat(el){
 
 window.onload = function(){
 	engAndNumberFunc($("#userID"));
+	birthNumberFunc($("#userBirth"));
+	userPhoneNumberFunc($("#userPhone"));
 }
 
 function engAndNumberFunc(t){
 	let regexp = /[^a-z0-9]/gi;
+	
+	t.keyup(function(){
+		let v = $(this).val();
+	    $(this).val(v.replace(regexp,''));
+	})
+}
+function birthNumberFunc(t){
+	let regexp = /[^/0-9]/gi;
+	
+	t.keyup(function(){
+		let v = $(this).val();
+	    $(this).val(v.replace(regexp,''));
+	})
+}
+function userPhoneNumberFunc(t){
+	let regexp = /[^-0-9]/gi;
 	
 	t.keyup(function(){
 		let v = $(this).val();
