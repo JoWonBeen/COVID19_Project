@@ -148,12 +148,10 @@ function searchMediCenter2(){
         roadName:roadName,
         centerName:hospital,
     }
-    console.log(sendOptData);
     $.ajax({
         url: "ShowCenterWithVacc.do",
         data:sendOptData,
         success:function(resultData){
-            console.log(resultData);
             const mediCenterArray = resultData;
             $(".mediCenterList").html("");
             for(let i = 0; i<mediCenterArray.length; i++){

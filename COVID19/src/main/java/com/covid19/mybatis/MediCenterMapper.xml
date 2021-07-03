@@ -22,10 +22,6 @@
 		SELECT * FROM CENTERVACCINEINFO WHERE CENTERNAME LIKE #{address}
 	</select>
 	
-	<select id="showOneCenterWithVacc" resultType="CenterVaccineInfoBean" parameterType="HashMap">
-		SELECT * FROM CENTERVACCINEINFO WHERE CENTERNAME LIKE #{address} AND CENTERNAME LIKE #{center}
-	</select>
-	
 </mapper>
 
 
