@@ -13,7 +13,7 @@
 					<option value="예방접종센터">예방접종 센터</option>
 					<option value="위탁의료기관">위탁 의료기관</option>
 				</select> 
-				<select id="sido" name="sido" onchange="changeMediCenterAreaCategory(this)">
+				<select id="sido" name="sido" onchange="changeMediCenterAreaCategory(this); resetAddress();">
 					<option value="광역시도">광역시도</option>
 					<option value="서울특별시">서울특별시</option>
 					<option value="부산광역시">부산광역시</option>
@@ -33,7 +33,7 @@
 					<option value="경상남도">경상남도</option>
 					<option value="제주특별자치도">제주특별자치도</option>
 				</select>
-				<select id="sigungu" name="sigungu">
+				<select id="sigungu" name="sigungu" onchange="resetAddress();">
 					<option value="시군구">시군구</option>
 				</select>
 				<input type="text" id="roadName" name="roadName" placeholder="도로명을 입력하세요">
