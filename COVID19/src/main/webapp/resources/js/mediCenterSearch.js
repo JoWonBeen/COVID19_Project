@@ -42,20 +42,30 @@ function searchMediCenter(){
         url: "ShowCenter.do",
         data:sendOptData,
         success:function(resultData){
-            
+            //console.log(resultData);
             const mediCenterArray = resultData;
             $(".mediCenterList").html("");
-            $.each(mediCenterArray, function(i,item){
+            if(mediCenterArray.length == 0){
+                //console.log(mediCenterArray);
                 $(".mediCenterList").append(`
                     <tr>
-                        <td rowspan="2" class="centerName">${item.centerName}</td>
-                        <td>주소 : ${item.address}</td>
-                    </tr>
-                    <tr>
-                        <td>전화번호 : ${item.phone}</td>
+                        <td style="text-align:left;">검색결과가 없습니다.</td>
                     </tr>
                 `);
-            })
+            }else{
+                //console.log(mediCenterArray);
+                $.each(mediCenterArray, function(i,item){
+                    $(".mediCenterList").append(`
+                        <tr>
+                            <td rowspan="2" class="centerName">${item.centerName}</td>
+                            <td>주소 : ${item.address}</td>
+                        </tr>
+                        <tr>
+                            <td>전화번호 : ${item.phone}</td>
+                        </tr>
+                    `);
+                })
+            }
         }
     })
 }
@@ -92,7 +102,7 @@ function changeMediCenterAreaCategory(){
     if(_this.val() == "서울특별시") addList = seoul;
     else if(_this.val() == "부산광역시") addList = busan;
     else if(_this.val() == "대구광역시") addList = daegu;
-    else if(_this.val() == "인천특별시") addList = inchen;
+    else if(_this.val() == "인천광역시") addList = inchen;
     else if(_this.val() == "광주광역시") addList = gwangju;
     else if(_this.val() == "대전광역시") addList = daejeon;
     else if(_this.val() == "울산광역시") addList = ulsan;
@@ -105,7 +115,7 @@ function changeMediCenterAreaCategory(){
 	else if(_this.val() == "전라남도") addList = jeonnam;
 	else if(_this.val() == "경상북도") addList = kyungbuk;
 	else if(_this.val() == "경상남도") addList = gyenggi;
-	else if(_this.val() == "제주도") addList = jeju;
+	else if(_this.val() == "제주특별자치도") addList = jeju;
      
     $("#sigungu option").remove();  
     target.append(`<option value="시군구">시군구</option>`);
@@ -114,6 +124,9 @@ function changeMediCenterAreaCategory(){
     }   
  }
  
+ function resetAddress(){ 
+	$("#roadName").val(""); 
+}
  
 
 
@@ -154,28 +167,37 @@ function searchMediCenter2(){
         success:function(resultData){
             const mediCenterArray = resultData;
             $(".mediCenterList").html("");
-            for(let i = 0; i<mediCenterArray.length; i++){
-                var arr = new Array();
-                arr = mediCenterArray[i].centerName.split(" ");
-                centerName = arr[arr.length-1];
-            	if(i%4==0){
-            		$(".mediCenterList").append(`
+            if(mediCenterArray.length == 0){
+                $(".mediCenterList").append(`
                     <tr>
-                        <td rowspan="4" class="centerName">${centerName}</td>
-                         <td> ${mediCenterArray[i].vaccineType} : 
-                             ${mediCenterArray[i].vaccineCnt}</td>
+                        <td style="text-align:left;">검색결과가 없습니다.</td>
                     </tr>
-	                `);
-            	}
-            	else{
-            		$(".mediCenterList").append(`
-                        <tr> 
-                        <td> ${mediCenterArray[i].vaccineType} : 
-                            ${mediCenterArray[i].vaccineCnt}</td>
+                `);
+            }else{
+                for(let i = 0; i<mediCenterArray.length; i++){
+                    var arr = new Array();
+                    arr = mediCenterArray[i].centerName.split(" ");
+                    centerName = arr[arr.length-1];
+                    if(i%4==0){
+                        $(".mediCenterList").append(`
+                        <tr>
+                            <td rowspan="4" class="centerName">${centerName}</td>
+                             <td> ${mediCenterArray[i].vaccineType} : 
+                                 ${mediCenterArray[i].vaccineCnt}</td>
                         </tr>
-	                `);
-            	}
+                        `);
+                    }
+                    else{
+                        $(".mediCenterList").append(`
+                            <tr> 
+                            <td> ${mediCenterArray[i].vaccineType} : 
+                                ${mediCenterArray[i].vaccineCnt}</td>
+                            </tr>
+                        `);
+                    }
+                }
             }
+
             
         }
     })
