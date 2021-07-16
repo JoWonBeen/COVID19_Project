@@ -133,7 +133,7 @@ public class MemberController {
 
       int result = memberDao.insertMember(memberBean);
       if (result > 0) {
-         ScriptWriterUtil.alertAndNext(response, "회원가입 되었습니다..","LoginForm.do");
+         ScriptWriterUtil.alertAndNext(response, "회원가입 되었습니다.","LoginForm.do");
          return null;
       } else {
          ScriptWriterUtil.alertAndBack(response, "회원가입에 실패했습니다.");
@@ -197,7 +197,7 @@ public class MemberController {
          }
          if(result > 0) {
 
-            ScriptWriterUtil.alertAndNext(response, "회원정보가 수정되었습니다..", "MemberInfo.do");
+            ScriptWriterUtil.alertAndNext(response, "회원정보가 수정되었습니다.", "MemberInfo.do");
             return null;
          } else {
             ScriptWriterUtil.alertAndBack(response, "회원정보가 수정되지 않았습니다.");
@@ -236,7 +236,7 @@ public class MemberController {
             ScriptWriterUtil.alertAndNext(response,"회원탈퇴 되었습니다.", "MemberLogout.do");
             return null;
          } else {
-            ScriptWriterUtil.alertAndBack(response,"회원탈퇴에 실패했습니다..");
+            ScriptWriterUtil.alertAndBack(response,"회원탈퇴에 실패했습니다.");
             return null;
          }
       } else {
